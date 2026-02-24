@@ -1,4 +1,4 @@
-local PATCH_VERSION = "1.0.0"
+local PATCH_VERSION = "1.1.0"
 local PATCH_NAME = "Customisable Sleep Screen"
 local GITHUB_REPO = "pxlflux/koreader-patches"
 
@@ -2056,7 +2056,7 @@ local function getAvailableIconSets()
 end
 
 -------------------------------------------------------------------------
--- Background Images
+-- Background Images (modified with orientation filter)
 -------------------------------------------------------------------------
 
 local function getRandomImageFromFolder(folder_path)
@@ -2064,6 +2064,9 @@ local function getRandomImageFromFolder(folder_path)
     folder_path = folder_path:gsub("/$", "")
     
     local screen_size = Screen:getSize()
+    local w, h = screen_size.w, screen_size.h
+    local is_landscape = w > h
+
     local valid_images = {}
     local dir = ffi.C.opendir(folder_path)
     
@@ -2074,8 +2077,24 @@ local function getRandomImageFromFolder(folder_path)
                 local name = ffi.string(entry.d_name)
                 if name ~= "." and name ~= ".." then
                     local lower = name:lower()
-                    if lower:match("%.png$") or lower:match("%.jpg$") or lower:match("%.jpeg$") then
-                        valid_images[#valid_images + 1] = folder_path .. "/" .. name
+
+                    -- Is it a valid image?
+                    local is_image = lower:match("%.png$") or lower:match("%.jpg$") or lower:match("%.jpeg$")
+                    if is_image then
+                        local is_landscape_image = lower:match("%.landscape%.") ~= nil
+
+                        -- Filter according to orientation
+                        if is_landscape then
+                            -- Only .landscape images
+                            if is_landscape_image then
+                                valid_images[#valid_images + 1] = folder_path .. "/" .. name
+                            end
+                        else
+                            -- Only regular images (no .landscape)
+                            if not is_landscape_image then
+                                valid_images[#valid_images + 1] = folder_path .. "/" .. name
+                            end
+                        end
                     end
                 end
                 entry = ffi.C.readdir(dir)
