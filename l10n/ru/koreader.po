@@ -1,0 +1,1192 @@
+# CUSTOMISABLE SLEEP SCREEN
+# Copyright (C) 2026
+# This file is distributed under the same license as the KOReader package.
+# pxlflux
+#
+msgid ""
+msgstr ""
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. ---- Display sleep screen strings ----
+
+msgid "Untitled"
+msgstr "Без названия"
+
+msgid "Unknown Author"
+msgstr "Автор неизвестен"
+
+#, lua-format
+msgid "Page %d of %d"
+msgstr "Страница %d из %d"
+
+#, lua-format
+msgid "%s left"
+msgstr "Осталось %s"
+
+msgid "No Chapter"
+msgstr "Нет главы"
+
+#, lua-format
+msgid "Chapter %d of %d"
+msgstr "Глава %d из %d"
+
+#, lua-format
+msgid "%s read today"
+msgstr "%s прочитано сегодня"
+
+#, lua-format
+msgid "%d days read in a row"
+msgstr "%d дней подряд"
+
+#, lua-format
+msgid "Met goal %d/%d days this week"
+msgstr "Цель выполнена %d/%d дней на этой неделе"
+
+#, lua-format
+msgid "%d/%d page goal"
+msgstr "%d/%d страниц по цели"
+
+msgid "Achieved!"
+msgstr "Достигнуто!"
+
+msgid "Goal achieved!"
+msgstr "Цель достигнута!"
+
+#, lua-format
+msgid "%d%% of goal"
+msgstr "%d%% от цели"
+
+msgid "0 mins"
+msgstr "0 мин"
+
+#, lua-format
+msgid "Approx. %d %s left"
+msgstr "Прибл. %d %s осталось"
+
+msgid "Approx. <1 hr left"
+msgstr "Прибл. <1 ч осталось"
+
+msgid "hr"
+msgid_plural "hrs"
+msgstr[0] "ч"
+msgstr[1] "ч"
+msgstr[2] "ч"
+
+#, lua-format
+msgid "~%.1f%% per hour"
+msgstr "~%.1f%% в час"
+
+msgid "Rate unavailable"
+msgstr "Скорость недоступна"
+
+msgid "No message set"
+msgstr "Сообщение не задано"
+
+msgid "No highlights found"
+msgstr "Выделений не найдено"
+
+msgid "Message header is empty"
+msgstr "Заголовок сообщения пуст"
+
+#, lua-format
+msgid "pg. %s"
+msgstr "стр. %s"
+
+msgid "min"
+msgid_plural "mins"
+msgstr[0] "мин"
+msgstr[1] "мин"
+msgstr[2] "мин"
+
+msgid "< 1 min"
+msgstr "< 1 мин"
+
+#. Ordinal date suffix for 1 (e.g. "1st January"). Return "" if your language does not use suffixes.
+msgid "st"
+msgstr "-й"
+
+#. Ordinal date suffix for 2 (e.g. "2nd January"). Return "" if your language does not use suffixes.
+msgid "nd"
+msgstr "-й"
+
+#. Ordinal date suffix for 3 (e.g. "3rd January"). Return "" if your language does not use suffixes.
+msgid "rd"
+msgstr "-й"
+
+#. Ordinal date suffix for 4 and above (e.g. "4th January"). Return "" if your language does not use suffixes.
+msgid "th"
+msgstr "-й"
+
+msgid "January"
+msgstr "Январь"
+
+msgid "February"
+msgstr "Февраль"
+
+msgid "March"
+msgstr "Март"
+
+msgid "April"
+msgstr "Апрель"
+
+msgid "May"
+msgstr "Май"
+
+msgid "June"
+msgstr "Июнь"
+
+msgid "July"
+msgstr "Июль"
+
+msgid "August"
+msgstr "Август"
+
+msgid "September"
+msgstr "Сентябрь"
+
+msgid "October"
+msgstr "Октябрь"
+
+msgid "November"
+msgstr "Ноябрь"
+
+msgid "December"
+msgstr "Декабрь"
+
+#. ---- All other strings (menu items, help text, headers, buttons) ----
+
+msgid "Pick a colour"
+msgstr "Выбрать цвет"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Apply"
+msgstr "Применить"
+
+#, lua-format
+msgid "Brightness: %d%%"
+msgstr "Яркость: %d%%"
+
+msgid "Enter hex"
+msgstr "Ввести HEX"
+
+msgid "Enter hex colour code"
+msgstr "Ввести HEX-код цвета"
+
+msgid "Invalid hex code. Use format: #RRGGBB"
+msgstr "Неверный HEX-код. Используйте формат: #RRGGBB"
+
+msgid "Delete all custom presets"
+msgstr "Удалить все пользовательские пресеты"
+
+msgid ""
+"Permanently removes all custom presets you've created. The built-in "
+"'Default' preset will remain. This cannot be undone."
+msgstr ""
+"Безвозвратно удаляет все созданные вами пользовательские пресеты. "
+"Встроенный пресет «По умолчанию» сохранится. Это действие нельзя отменить."
+
+msgid ""
+"Are you sure you want to delete all custom presets? (built-in presets will "
+"remain)"
+msgstr ""
+"Вы уверены, что хотите удалить все пользовательские пресеты? "
+"(встроенные пресеты останутся)"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "All custom presets deleted. Built-in presets remain."
+msgstr "Все пользовательские пресеты удалены. Встроенные пресеты остаются."
+
+msgid "Battery time calculation"
+msgstr "Расчёт времени работы батареи"
+
+msgid "Method used to estimate remaining battery life."
+msgstr "Метод, используемый для оценки оставшегося заряда батареи."
+
+msgid "Since last charge"
+msgstr "С момента последней зарядки"
+
+msgid "Uses combined awake and sleeping battery drain since last charge"
+msgstr "Использует суммарный расход батареи в активном и спящем режиме с момента последней зарядки"
+
+msgid "Awake since last charge"
+msgstr "В активном режиме с момента последней зарядки"
+
+msgid "Uses only active reading battery drain (more conservative estimate)"
+msgstr "Использует только расход батареи при активном чтении (более консервативная оценка)"
+
+msgid "Sleeping since last charge"
+msgstr "В спящем режиме с момента последней зарядки"
+
+msgid "Uses only sleep mode battery drain"
+msgstr "Использует только расход батареи в спящем режиме"
+
+msgid "Manual calculation"
+msgstr "Ручной расчёт"
+
+msgid "Use a custom battery drain rate (1-10% per hour)"
+msgstr "Использовать пользовательскую скорость расхода батареи (1-10% в час)"
+
+msgid "Set manual drain rate"
+msgstr "Задать скорость расхода вручную"
+
+msgid "Battery drain rate (% per hour)"
+msgstr "Скорость расхода батареи (% в час)"
+
+msgid "Typical devices drain 1-5% per hour while reading"
+msgstr "Типичные устройства потребляют 1–5% в час при чтении"
+
+msgid "Daily statistics scope"
+msgstr "Охват дневной статистики"
+
+msgid ""
+"Controls whether today's reading time and page count applies to the current "
+"book only, or all books read today. Note: reading streak and weekly goal "
+"achievement always reflect all books regardless of this setting."
+msgstr "Определяет, применяется ли сегодняшнее время чтения и количество страниц только к текущей книге или ко всем книгам, прочитанным сегодня. Примечание: серия чтения и достижение еженедельной цели всегда отражают все книги вне зависимости от этой настройки."
+
+msgid "All books"
+msgstr "Все книги"
+
+msgid "Today's reading time and page count across all books read today"
+msgstr "Сегодняшнее время чтения и количество страниц по всем прочитанным сегодня книгам"
+
+msgid "Current book only"
+msgstr "Только текущая книга"
+
+msgid "Today's reading time and page count for the current book only"
+msgstr "Сегодняшнее время чтения и количество страниц только для текущей книги"
+
+msgid "Show in file manager (outside of book)"
+msgstr "Показывать в файловом менеджере (вне книги)"
+
+msgid ""
+"When enabled, the customisable sleep screen will display in file manager "
+"using the last saved book data."
+msgstr ""
+"Если включено, настраиваемый экран сна будет отображаться в файловом менеджере "
+"с использованием последних сохранённых данных книги."
+
+msgid "Hide built-in presets (except Default)"
+msgstr "Скрыть встроенные пресеты (кроме По умолчанию)"
+
+msgid ""
+"Hide the built-in presets from the preset list, keeping only the Default "
+"preset and your custom presets visible."
+msgstr ""
+"Скрывает встроенные пресеты из списка, оставляя видимыми только пресет "
+"«По умолчанию» и ваши пользовательские пресеты."
+
+msgid "Setting saved. Preset list will update when you reopen this menu."
+msgstr "Настройка сохранена. Список пресетов обновится при следующем открытии этого меню."
+
+msgid "Presets"
+msgstr "Пресеты"
+
+msgid "Save, load, and manage presets."
+msgstr "Сохранение, загрузка и управление пресетами."
+
+msgid "Display modes"
+msgstr "Режимы отображения"
+
+msgid "Global appearance settings."
+msgstr "Глобальные настройки внешнего вида."
+
+msgid "Contents"
+msgstr "Содержимое"
+
+msgid "Control which sections appear and what information they display."
+msgstr "Управляет тем, какие разделы отображаются и какую информацию они показывают."
+
+msgid "Layout & Spacing"
+msgstr "Макет и отступы"
+
+msgid "Adjust the spatial settings of the information box."
+msgstr "Настройка пространственных параметров информационного блока."
+
+msgid "Colours, Icons & Bars"
+msgstr "Цвета, иконки и полосы"
+
+msgid "Customise section colours, icon appearance, and progress bar styling."
+msgstr "Настройка цветов разделов, вида иконок и стиля полос прогресса."
+
+msgid "Fonts & Text"
+msgstr "Шрифты и текст"
+
+msgid "Configure text appearance."
+msgstr "Настройка внешнего вида текста."
+
+msgid "Background"
+msgstr "Фон"
+
+msgid "Choose what appears behind the information box."
+msgstr "Выбор того, что отображается за информационным блоком."
+
+msgid "Advanced"
+msgstr "Дополнительно"
+
+msgid "Advanced configuration options."
+msgstr "Расширенные параметры конфигурации."
+
+msgid "About"
+msgstr "О программе"
+
+#, lua-format
+msgid ""
+"%s\n"
+"Version: %s\n"
+"\n"
+"For updates and issues:\n"
+"github.com/%s"
+msgstr ""
+"%s\n"
+"Версия: %s\n"
+"\n"
+"Обновления и сообщения об ошибках:\n"
+"github.com/%s"
+
+msgid "Customisable sleep screen settings"
+msgstr "Настройки настраиваемого экрана сна"
+
+msgid "Customisable sleep screen presets"
+msgstr "Пресеты настраиваемого экрана сна"
+
+msgid "Cycle through customisable sleep screen presets"
+msgstr "Перебирать пресеты настраиваемого экрана сна"
+
+msgid "Customisable sleep screen"
+msgstr "Настраиваемый экран сна"
+
+msgid "Enable customisable sleep screen"
+msgstr "Включить настраиваемый экран сна"
+
+msgid "Hairline"
+msgstr "Тончайшая"
+
+msgid "Narrow"
+msgstr "Узкая"
+
+msgid "Standard"
+msgstr "Стандартная"
+
+msgid "Bold"
+msgstr "Жирная"
+
+msgid "Chunky"
+msgstr "Толстая"
+
+msgid "Heavy"
+msgstr "Тяжёлая"
+
+msgid "No border"
+msgstr "Без рамки"
+
+msgid "Clean"
+msgstr "Чистая"
+
+msgid "Defined"
+msgstr "Чёткая"
+
+msgid "Framed"
+msgstr "Обрамлённая"
+
+msgid "Thick"
+msgstr "Толстая"
+
+msgid "No second border"
+msgstr "Без второй рамки"
+
+msgid "Touching"
+msgstr "Вплотную"
+
+msgid "Tight"
+msgstr "Плотно"
+
+msgid "Balanced"
+msgstr "Сбалансировано"
+
+msgid "Relaxed"
+msgstr "Свободно"
+
+msgid "Wide"
+msgstr "Широко"
+
+msgid "Extra Wide"
+msgstr "Очень широко"
+
+msgid "No margin"
+msgstr "Без полей"
+
+msgid "XX-Small"
+msgstr "XX-Малый"
+
+msgid "X-Small"
+msgstr "X-Малый"
+
+msgid "Small"
+msgstr "Малый"
+
+msgid "Medium"
+msgstr "Средний"
+
+msgid "Large"
+msgstr "Большой"
+
+msgid "X-Large"
+msgstr "X-Большой"
+
+msgid "XX-Large"
+msgstr "XX-Большой"
+
+msgid "Flush"
+msgstr "Вровень"
+
+msgid "Spacious"
+msgstr "Просторно"
+
+msgid "Extra Large"
+msgstr "Очень большой"
+
+msgid "Opaque"
+msgstr "Непрозрачный"
+
+msgid "Top left"
+msgstr "Вверху слева"
+
+msgid "Top centre"
+msgstr "Вверху по центру"
+
+msgid "Top right"
+msgstr "Вверху справа"
+
+msgid "Middle left"
+msgstr "По центру слева"
+
+msgid "Centre"
+msgstr "По центру"
+
+msgid "Middle right"
+msgstr "По центру справа"
+
+msgid "Bottom left"
+msgstr "Внизу слева"
+
+msgid "Bottom centre"
+msgstr "Внизу по центру"
+
+msgid "Bottom right"
+msgstr "Внизу справа"
+
+msgid "Dark mode"
+msgstr "Тёмный режим"
+
+msgid ""
+"Inverts the colour scheme. Text becomes white and backgrounds becomes black. "
+"Useful for reading in low-light conditions. Can be combined with monochrome "
+"mode."
+msgstr ""
+"Инвертирует цветовую схему. Текст становится белым, фон — чёрным. "
+"Полезно для чтения при слабом освещении. Можно сочетать с монохромным режимом."
+
+msgid "Monochrome mode"
+msgstr "Монохромный режим"
+
+msgid ""
+"Suitable for B&W e-readers. Assigns one colour to all sections using "
+"monochrome light or monochrome dark hex values. Overwrites individual "
+"assigned section colours. Can be combined with dark mode."
+msgstr ""
+"Подходит для чёрно-белых электронных книг. Назначает один цвет всем разделам, "
+"используя светлые или тёмные монохромные значения HEX. Перезаписывает "
+"индивидуально назначенные цвета разделов. Можно сочетать с тёмным режимом."
+
+msgid "Enable section gaps"
+msgstr "Включить промежутки между разделами"
+
+msgid ""
+"Add transparent gaps between sections to make each appear as a separate box"
+msgstr ""
+"Добавляет прозрачные промежутки между разделами, чтобы каждый выглядел "
+"отдельным блоком"
+
+msgid "Section gap size"
+msgstr "Размер промежутка между разделами"
+
+msgid "Spacing between sections when gaps are enabled."
+msgstr "Расстояние между разделами при включённых промежутках."
+
+msgid "Section gap size (pixels)"
+msgstr "Размер промежутка между разделами (пикселей)"
+
+msgid "Position"
+msgstr "Положение"
+
+msgid "Screen location where the information box appears."
+msgstr "Местоположение информационного блока на экране."
+
+msgid "Width"
+msgstr "Ширина"
+
+msgid ""
+"Horizontal width of the information box as a percentage of screen width."
+msgstr ""
+"Горизонтальная ширина информационного блока в процентах от ширины экрана."
+
+msgid "Opacity"
+msgstr "Непрозрачность"
+
+msgid "Transparency of the information box."
+msgstr "Прозрачность информационного блока."
+
+msgid "Border size"
+msgstr "Размер рамки"
+
+msgid "Thickness of the primary border around sections."
+msgstr "Толщина основной рамки вокруг разделов."
+
+msgid "Border trim size"
+msgstr "Размер декоративной рамки"
+
+msgid "Secondary decorative border surrounding the primary border."
+msgstr "Дополнительная декоративная рамка вокруг основной."
+
+msgid "Internal padding"
+msgstr "Внутренние отступы"
+
+msgid "Space between section borders and their content."
+msgstr "Пространство между рамками разделов и их содержимым."
+
+msgid "Icon to text gap"
+msgstr "Отступ от иконки до текста"
+
+msgid "Horizontal spacing between section icons and their accompanying text."
+msgstr "Горизонтальное расстояние между иконками разделов и сопровождающим текстом."
+
+msgid "Y-axis margin (top/bottom left/right pos)"
+msgstr "Отступ по оси Y (верхнее/нижнее левое/правое положение)"
+
+msgid ""
+"Vertical offset from the top or bottom edge when positioned at the top "
+"centre, bottom centre, top left, bottom left, top right or bottom right."
+msgstr ""
+"Вертикальное смещение от верхнего или нижнего края при размещении в позициях "
+"«вверху по центру», «внизу по центру», «вверху слева», «внизу слева», "
+"«вверху справа» или «внизу справа»."
+
+msgid "No icon sets found in customisablesleepscreen.koplugin/icons/"
+msgstr "Наборы иконок не найдены в customisablesleepscreen.koplugin/icons/"
+
+msgid "Off"
+msgstr "Выкл."
+
+msgid "Overlay colour"
+msgstr "Цвет наложения"
+
+msgid "Background overlay colour"
+msgstr "Цвет наложения фона"
+
+msgid "Colours (progress bars)"
+msgstr "Цвета (прогресс-бары)"
+
+msgid "Set the progress bar colours for each section."
+msgstr "Задаёт цвета прогресс-баров для каждого раздела."
+
+msgid "Colours (modes)"
+msgstr "Цвета (режимы)"
+
+msgid ""
+"Configure colours for monochrome mode, infobox background, and text. "
+"Light and dark correspond to the current dark mode setting. "
+"Monochrome replaces all colours with that single chosen color."
+msgstr ""
+"Настройка цветов для монохромного режима, фона информационного блока и "
+"текста. Светлый и тёмный соответствуют текущей настройке тёмного режима. "
+"Монохромный заменяет все цвета одним выбранным цветом."
+
+msgid "Use saved colours for icon fill"
+msgstr "Использовать сохранённые цвета для заливки иконок"
+
+msgid ""
+"When enabled, icons will match the colour of their section's progress bar."
+msgstr ""
+"Если включено, иконки будут соответствовать цвету полосы прогресса своего раздела."
+
+msgid "Book section"
+msgstr "Раздел книги"
+
+msgid "Chapter section"
+msgstr "Раздел главы"
+
+msgid "Reading goal section"
+msgstr "Раздел цели чтения"
+
+msgid "Battery section (High)"
+msgstr "Раздел батареи (Высокий)"
+
+msgid "Battery section (Med)"
+msgstr "Раздел батареи (Средний)"
+
+msgid "Battery section (Low)"
+msgstr "Раздел батареи (Низкий)"
+
+msgid "Battery section (Charging)"
+msgstr "Раздел батареи (Зарядка)"
+
+msgid "Message section"
+msgstr "Раздел сообщений"
+
+msgid "Monochrome mode (light)"
+msgstr "Монохромный режим (светлый)"
+
+msgid "Monochrome mode (dark)"
+msgstr "Монохромный режим (тёмный)"
+
+msgid "Background (light)"
+msgstr "Фон (светлый)"
+
+msgid "Background (dark)"
+msgstr "Фон (тёмный)"
+
+msgid "Text (light)"
+msgstr "Текст (светлый)"
+
+msgid "Text (dark)"
+msgstr "Текст (тёмный)"
+
+msgid "Icon set"
+msgstr "Набор иконок"
+
+msgid "Choose from different icon styles."
+msgstr "Выбор из различных стилей иконок."
+
+msgid "Icon size"
+msgstr "Размер иконок"
+
+msgid "Size of section icons."
+msgstr "Размер иконок разделов."
+
+msgid "Progress bar height"
+msgstr "Высота полосы прогресса"
+
+msgid "Thickness of the horizontal progress bars shown in each section."
+msgstr "Толщина горизонтальных полос прогресса, отображаемых в каждом разделе."
+
+msgid "Show icons"
+msgstr "Показывать иконки"
+
+msgid "Display decorative icons at the start of each section."
+msgstr "Отображает декоративные иконки в начале каждого раздела."
+
+msgid "Show progress bars"
+msgstr "Показывать полосы прогресса"
+
+msgid "Display horizontal progress bars showing completion percentage."
+msgstr "Отображает горизонтальные полосы прогресса с процентом выполнения."
+
+msgid "Show decorative bar on message section"
+msgstr "Показать декоративную полосу в разделе сообщений"
+
+msgid ""
+"Displays a purely decorative progress bar under the message section, "
+"matching the message section colour and the progress bars in other sections."
+msgstr "Отображает чисто декоративную полосу прогресса под разделом сообщений, соответствующую цвету раздела сообщений и полосам прогресса в других разделах."
+
+msgid "Title font face"
+msgstr "Шрифт заголовка"
+
+msgid "Choose the font face for the main heading text in each section"
+msgstr "Выбор шрифта для основного заголовка в каждом разделе"
+
+msgid "Title font size"
+msgstr "Размер шрифта заголовка"
+
+msgid "Choose the font size for the main heading text in each section"
+msgstr "Выбор размера шрифта для основного заголовка в каждом разделе"
+
+msgid "Subtitle font face"
+msgstr "Шрифт подзаголовка"
+
+msgid "Choose the font face for the information below the main heading text."
+msgstr "Выбор шрифта для информации под основным заголовком."
+
+msgid "Subtitle font size"
+msgstr "Размер шрифта подзаголовка"
+
+msgid "Choose the font size for the information below the main heading text."
+msgstr "Выбор размера шрифта для информации под основным заголовком."
+
+msgid "Text alignment"
+msgstr "Выравнивание текста"
+
+msgid "Horizontal alignment of all text within sections."
+msgstr "Горизонтальное выравнивание всего текста внутри разделов."
+
+msgid "Left"
+msgstr "По левому краю"
+
+msgid "Right"
+msgstr "По правому краю"
+
+msgid "Book multiline titles"
+msgstr "Многострочные заголовки книг"
+
+msgid ""
+"If deselected book titles will be truncated to a single line with an ellipsis"
+msgstr ""
+"Если отключено, заголовки книг будут усечены до одной строки с многоточием"
+
+msgid "Chapter multiline titles"
+msgstr "Многострочные заголовки глав"
+
+msgid ""
+"If deselected chapter titles will be truncated to a single line with an "
+"ellipsis"
+msgstr ""
+"Если отключено, заголовки глав будут усечены до одной строки с многоточием"
+
+msgid "Clean chapter titles"
+msgstr "Очищать заголовки глав"
+
+msgid ""
+"Removes structural prefixes like 'Chapter 5:' or 'Part II' from chapter "
+"titles and normalises capitalisation. Only works correctly with English "
+"chapter titles - disable for non-English books."
+msgstr ""
+"Удаляет структурные префиксы вида «Глава 5:» или «Часть II» из заголовков глав "
+"и нормализует регистр. Работает корректно только с английскими заголовками глав — "
+"отключите для книг на других языках."
+
+msgid "Make book title bold"
+msgstr "Выделить заголовок книги жирным"
+
+msgid "Display the book title in bold font weight for extra emphasis."
+msgstr "Отображает заголовок книги жирным шрифтом для дополнительного акцента."
+
+msgid "No background"
+msgstr "Без фона"
+
+msgid "Book cover"
+msgstr "Обложка книги"
+
+msgid "Solid colour"
+msgstr "Сплошной цвет"
+
+msgid "Random image from folder"
+msgstr "Случайное изображение из папки"
+
+msgid "Stretch book cover to fill"
+msgstr "Растянуть обложку книги"
+
+msgid ""
+"When disabled, book cover will be scaled to fit within the screen while "
+"preserving aspect ratio."
+msgstr ""
+"Если отключено, обложка книги будет масштабирована по размеру экрана "
+"с сохранением пропорций."
+
+msgid "Cover fill colour"
+msgstr "Цвет заливки обложки"
+
+msgid "Background colour for non-stretched covers."
+msgstr "Цвет фона для нерастянутых обложек."
+
+msgid "Black"
+msgstr "Чёрный"
+
+msgid "White"
+msgstr "Белый"
+
+msgid "Solid background colour"
+msgstr "Сплошной цвет фона"
+
+msgid "Pick background colour"
+msgstr "Выбрать цвет фона"
+
+msgid "Background folder path"
+msgstr "Путь к папке с фоновыми изображениями"
+
+msgid "No images found in the selected folder. No background will be shown."
+msgstr "Изображения в выбранной папке не найдены. Фон не будет отображаться."
+
+msgid "Background type"
+msgstr "Тип фона"
+
+msgid "Background overlay"
+msgstr "Наложение на фон"
+
+msgid "Add a colour layer over the background to reduce contrast."
+msgstr "Добавляет цветовой слой поверх фона для уменьшения контрастности."
+
+msgid "Reset layout & spacing settings to default"
+msgstr "Сбросить настройки макета и отступов до значений по умолчанию"
+
+msgid "Are you sure you want to reset layout & spacing settings?"
+msgstr "Вы уверены, что хотите сбросить настройки макета и отступов?"
+
+msgid "Layout & spacing settings reset to defaults"
+msgstr "Настройки макета и отступов сброшены до значений по умолчанию"
+
+msgid "Reset contents settings to default"
+msgstr "Сбросить настройки содержимого до значений по умолчанию"
+
+msgid "Are you sure you want to reset contents settings?"
+msgstr "Вы уверены, что хотите сбросить настройки содержимого?"
+
+msgid "Contents settings reset to defaults"
+msgstr "Настройки содержимого сброшены до значений по умолчанию"
+
+msgid "Reset colours, icons & bars settings to default"
+msgstr "Сбросить настройки цветов, иконок и полос до значений по умолчанию"
+
+msgid "Are you sure you want to reset colours, icons & bars settings?"
+msgstr "Вы уверены, что хотите сбросить настройки цветов, иконок и полос?"
+
+msgid "Colours, icons & bars settings reset to defaults"
+msgstr "Настройки цветов, иконок и полос сброшены до значений по умолчанию"
+
+msgid "Reset fonts & text settings to default"
+msgstr "Сбросить настройки шрифтов и текста до значений по умолчанию"
+
+msgid "Are you sure you want to reset fonts & text settings?"
+msgstr "Вы уверены, что хотите сбросить настройки шрифтов и текста?"
+
+msgid "Fonts & text settings reset to defaults"
+msgstr "Настройки шрифтов и текста сброшены до значений по умолчанию"
+
+msgid "Reset background settings to default"
+msgstr "Сбросить настройки фона до значений по умолчанию"
+
+msgid "Are you sure you want to reset background settings?"
+msgstr "Вы уверены, что хотите сбросить настройки фона?"
+
+msgid "Background settings reset to defaults"
+msgstr "Настройки фона сброшены до значений по умолчанию"
+
+msgid "Reset the settings in this part of the menu to their defaults."
+msgstr "Сбрасывает настройки этой части меню до значений по умолчанию."
+
+msgid "factory defaults"
+msgstr "заводские настройки по умолчанию"
+
+#, lua-format
+msgid "Values will be restored from: %s"
+msgstr "Значения будут восстановлены из: %s"
+
+msgid "Reset"
+msgstr "Сбросить"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "None"
+msgstr "Нет"
+
+msgid "Active preset: "
+msgstr "Активный пресет: "
+
+msgid "Save current settings as new preset"
+msgstr "Сохранить текущие настройки как новый пресет"
+
+#, lua-format
+msgid "What would you like to do with preset '%s'?"
+msgstr "Что вы хотите сделать с пресетом «%s»?"
+
+msgid "Update"
+msgstr "Обновить"
+
+#, lua-format
+msgid "Are you sure you want to overwrite preset '%s' with current settings?"
+msgstr "Вы уверены, что хотите перезаписать пресет «%s» текущими настройками?"
+
+#, lua-format
+msgid "Preset '%s' was updated with current settings"
+msgstr "Пресет «%s» обновлён текущими настройками"
+
+#, lua-format
+msgid "Are you sure you want to delete preset '%s'?"
+msgstr "Вы уверены, что хотите удалить пресет «%s»?"
+
+msgid "Rename"
+msgstr "Переименовать"
+
+msgid "Enter new preset name"
+msgstr "Введите новое название пресета"
+
+msgid "[ Built-in Presets ]"
+msgstr "[ Встроенные пресеты ]"
+
+msgid "[ Your Custom Presets ]"
+msgstr "[ Ваши пользовательские пресеты ]"
+
+msgid "Book info"
+msgstr "Сведения о книге"
+
+msgid "Chapter info"
+msgstr "Сведения о главе"
+
+msgid "Daily info"
+msgstr "Ежедневная информация"
+
+msgid "Device info"
+msgstr "Сведения об устройстве"
+
+msgid "Custom message"
+msgstr "Пользовательское сообщение"
+
+msgid "Reorder sections"
+msgstr "Изменить порядок разделов"
+
+msgid "Section order"
+msgstr "Порядок разделов"
+
+msgid "At least one section must remain visible."
+msgstr "Хотя бы один раздел должен оставаться видимым."
+
+msgid "Show book author"
+msgstr "Показывать автора книги"
+
+msgid "Display the author name below the book title."
+msgstr "Отображает имя автора под заголовком книги."
+
+msgid "Show book pages (pg x of x)"
+msgstr "Показывать страницы книги (стр. x из x)"
+
+msgid "Display total page count for the entire book."
+msgstr "Отображает общее количество страниц всей книги."
+
+msgid "Show book time remaining"
+msgstr "Показывать оставшееся время до конца книги"
+
+msgid ""
+"Estimated reading time left to finish the book, based on your average "
+"reading speed."
+msgstr ""
+"Расчётное время чтения до конца книги, основанное на вашей средней скорости чтения."
+
+msgid "Show chapter count (ch x of x)"
+msgstr "Показывать количество глав (гл. x из x)"
+
+msgid ""
+"Display current chapter number and total chapters (e.g., 'Chapter 5 of 12')."
+msgstr ""
+"Отображает номер текущей главы и общее число глав (напр., «Глава 5 из 12»)."
+
+msgid "Show chapter pages (pg x of x)"
+msgstr "Показывать страницы главы (стр. x из x)"
+
+msgid "Display the number of pages in the current chapter."
+msgstr "Отображает количество страниц в текущей главе."
+
+msgid "Show chapter time remaining"
+msgstr "Показывать оставшееся время до конца главы"
+
+msgid ""
+"Estimated time to finish the current chapter, based on your reading speed."
+msgstr ""
+"Расчётное время до конца текущей главы, основанное на вашей скорости чтения."
+
+msgid "Daily page goal"
+msgstr "Ежедневная цель по страницам"
+
+msgid ""
+"Set how many pages you aim to read each day. Progress shown in the goal "
+"section."
+msgstr ""
+"Задаёт количество страниц, которые вы планируете читать ежедневно. "
+"Прогресс отображается в разделе целей."
+
+msgid "Show current reading streak"
+msgstr "Показывать текущую серию чтения"
+
+msgid "Display consecutive days you've met your reading goal."
+msgstr "Отображает количество дней подряд, когда вы выполняли цель по чтению."
+
+msgid "Show weekly goal achievement"
+msgstr "Показывать выполнение недельной цели"
+
+msgid "Number of days this week you've met your daily reading goal."
+msgstr "Количество дней на этой неделе, когда вы выполняли дневную цель по чтению."
+
+msgid "Show pages read out of daily goal"
+msgstr "Показывать прочитанные страницы относительно дневной цели"
+
+msgid ""
+"Display pages read today compared to your daily target (e.g. '35/50 pages')."
+msgstr ""
+"Отображает страницы, прочитанные сегодня, относительно дневной цели (напр., «35/50 страниц»)."
+
+msgid "Show current time/date on separate line"
+msgstr "Показывать текущее время/дату на отдельной строке"
+
+msgid ""
+"Display time/date on its own line below battery percentage instead of inline."
+msgstr ""
+"Отображает время/дату на отдельной строке под процентом заряда батареи, а не в строку."
+
+msgid "Enable 'Show battery time remaining' to use this option"
+msgstr "Включите «Показывать оставшееся время батареи», чтобы использовать эту опцию"
+
+msgid "Show date instead of time"
+msgstr "Показывать дату вместо времени"
+
+msgid ""
+"Display current date (e.g. '29th Jan') instead of time in battery section"
+msgstr ""
+"Отображает текущую дату (напр., «29 янв.») вместо времени в разделе батареи"
+
+msgid "Show battery consumption rate"
+msgstr "Показывать скорость расхода батареи"
+
+msgid ""
+"Display battery drain percentage per hour based on recent usage or manual "
+"input (see advanced menu)"
+msgstr ""
+"Отображает процент расхода батареи в час на основе последнего использования "
+"или ручного ввода (см. расширенное меню)"
+
+msgid "Show battery time remaining"
+msgstr "Показывать оставшееся время батареи"
+
+msgid ""
+"Estimated hours and minutes until battery is depleted, based on current "
+"drain rate."
+msgstr ""
+"Расчётное время в часах и минутах до разряда батареи, основанное на текущей "
+"скорости расхода."
+
+msgid "Use a separate custom message just for Customisable Sleep Screen"
+msgstr "Использовать отдельное сообщение только для настраиваемого экрана сна"
+
+msgid "Book highlights"
+msgstr "Выделения из книги"
+
+msgid "Show a random highlight from the current book"
+msgstr "Показывать случайное выделение из текущей книги"
+
+msgid "KOReader sleep message"
+msgstr "Сообщение экрана сна KOReader"
+
+msgid ""
+"Uses KOReaders own sleep screen message function. Enable 'Add custom message "
+"to sleep screen' to use this (Settings → Screen → Sleep screen → Sleep "
+"screen message)."
+msgstr ""
+"Использует собственную функцию сообщений экрана сна KOReader. Включите "
+"«Добавить пользовательское сообщение на экран сна», чтобы воспользоваться "
+"этим (Настройки → Экран → Экран сна → Сообщение экрана сна)."
+
+msgid "Message header"
+msgstr "Заголовок сообщения"
+
+msgid ""
+"Custom header text displayed above the message. Supports variables: %d, %y, "
+"%t, %b, %r."
+msgstr ""
+"Пользовательский текст заголовка, отображаемый над сообщением. "
+"Поддерживает переменные: %d, %y, %t, %b, %r."
+
+msgid "Change custom message header"
+msgstr "Изменить заголовок пользовательского сообщения"
+
+msgid "Edit custom message"
+msgstr "Редактировать пользовательское сообщение"
+
+msgid ""
+"Write your custom message text. Only active when 'Custom message' is "
+"selected. Supports variables: %d, %y, %t, %b, %r."
+msgstr ""
+"Введите текст вашего сообщения. Активно только когда выбрано «Пользовательское "
+"сообщение». Поддерживает переменные: %d, %y, %t, %b, %r."
+
+msgid "Custom Customisable Sleep Screen message"
+msgstr "Сообщение настраиваемого экрана сна"
+
+msgid "Book highlight maximum length"
+msgstr "Максимальная длина выделения из книги"
+
+msgid "Maximum characters to display for highlights (0 = no limit)."
+msgstr "Максимальное количество символов для отображения выделений (0 = без ограничений)."
+
+msgid "Maximum highlight length"
+msgstr "Максимальная длина выделения"
+
+msgid "Set to 0 for no limit"
+msgstr "Установите 0 для отмены ограничения"
+
+msgid "Add quotation marks to highlights"
+msgstr "Добавить кавычки к выделениям"
+
+msgid ""
+"Wraps all highlights in curly double quotes, removing any pre-existing "
+"quotation marks."
+msgstr ""
+"Оборачивает все выделения в парные двойные кавычки, удаляя существующие знаки кавычек."
+
+msgid "Show highlight location"
+msgstr "Показывать местоположение выделения"
+
+msgid ""
+"Display the chapter title and page number where the highlight is found, "
+"shown below the highlight text."
+msgstr ""
+"Отображает название главы и номер страницы, где находится выделение, "
+"под текстом выделения."
+
+msgid "Show titles (top line)"
+msgstr "Показывать заголовки (верхняя строка)"
+
+msgid ""
+"Display the main heading text in each section. At least one of titles or "
+"subtitles must be visible."
+msgstr ""
+"Отображает основной заголовок в каждом разделе. Хотя бы один из элементов — "
+"заголовки или подзаголовки — должен быть видим."
+
+msgid "Cannot hide both titles and subtitles. At least one must be visible."
+msgstr "Нельзя скрыть одновременно заголовки и подзаголовки. Хотя бы один должен быть видим."
+
+msgid "Show subtitles (bottom lines)"
+msgstr "Показывать подзаголовки (нижние строки)"
+
+msgid ""
+"Display information below main heading text in each section. At least one of "
+"titles or subtitles must be visible."
+msgstr ""
+"Отображает информацию под основным заголовком в каждом разделе. Хотя бы один "
+"из элементов — заголовки или подзаголовки — должен быть видим."
+
+msgid "Displayed sections"
+msgstr "Отображаемые разделы"
+
+msgid ""
+"Toggle which sections show on the sleep screen. At least one must be visible."
+msgstr ""
+"Переключает, какие разделы отображаются на экране сна. Хотя бы один должен быть видим."
+
+msgid "[ Section Content ]"
+msgstr "[ Содержимое раздела ]"
+
+msgid "Configure book-specific details."
+msgstr "Настройка параметров, специфичных для книги."
+
+msgid "Configure chapter-specific details"
+msgstr "Настройка параметров, специфичных для главы"
+
+msgid "Configure reading goal details"
+msgstr "Настройка параметров цели чтения"
+
+msgid "Battery & time/date section"
+msgstr "Раздел батареи и времени/даты"
+
+msgid "Configure battery & time/date details"
+msgstr "Настройка параметров батареи и времени/даты"
+
+msgid "Configure message-specific details"
+msgstr "Настройка параметров, специфичных для сообщения"
