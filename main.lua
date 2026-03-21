@@ -288,6 +288,13 @@ end
 
 function CustomisableSleepScreen:_installScreensaverHook()
     self._screensaver_hook = util.wrapMethod(Screensaver, "show", function(ss_self)
+
+        if ss_self.prefix and ss_self.prefix ~= "" then
+            ss_self.screensaver_type = "message"
+            ss_self.show_message = true
+            return self._screensaver_hook:raw_call(ss_self)
+        end
+
         local screensaver_type = G_reader_settings:readSetting("screensaver_type")
         if screensaver_type ~= "customisable_ss" then
             return self._screensaver_hook:raw_call(ss_self)
