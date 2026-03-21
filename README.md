@@ -47,8 +47,8 @@ The following list assumes KOReader’s latest build (2026.03 Snowflake) is inst
 
 ## Installation:
 
-1. Download the latest [release](https://github.com/pxlflux/customisablesleepscreen.koplugin/releases)
-2. Extract and copy the `customisablesleepscreen.koplugin` folder into your KOReader `/plugins` folder
+1. Download `customisablesleepscreen_v2.0.0.zip` from the latest [release](https://github.com/pxlflux/customisablesleepscreen.koplugin/releases)
+2. Extract the zip and place the `customisablesleepscreen.koplugin` folder into your KOReader `/plugins` folder
 3. Restart KOReader
 4. Enable the plugin in  'Settings → Screen → Customisable Sleep Screen'
 
