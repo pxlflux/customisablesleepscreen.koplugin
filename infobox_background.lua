@@ -80,7 +80,6 @@ local function buildBackground(ui)
     local stretch    = getSetting("BG_STRETCH")
     local fill_color = getSetting("BG_COVER_FILL_COLOR")
     local scaled_bb  = scaleImageToFit(cover_bb, screen_size.w, screen_size.h, stretch, fill_color)
-    pcall(cover_bb.free, cover_bb)
     if not scaled_bb then return nil end
     return ImageWidget:new {
         image  = scaled_bb,
@@ -154,7 +153,6 @@ local function getRandomImageFromFolder(folder)
             local stretch    = getSetting("BG_STRETCH")
             local fill_color = getSetting("BG_COVER_FILL_COLOR")
             local scaled_bb  = scaleImageToFit(image_bb, screen_size.w, screen_size.h, stretch, fill_color)
-            pcall(image_bb.free, image_bb)
             if not scaled_bb then return nil end
             return ImageWidget:new {
                 image  = scaled_bb,
