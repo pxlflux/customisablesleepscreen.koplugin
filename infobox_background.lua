@@ -34,7 +34,10 @@ end
 local function scaleImageToFit(bb, target_w, target_h, stretch, fill_color)
     if not bb then return nil end
     local src_w, src_h = bb:getWidth(), bb:getHeight()
-    if src_w <= 0 or src_h <= 0 then return nil end
+    if src_w <= 0 or src_h <= 0 then
+        if bb.free then pcall(bb.free, bb) end
+        return nil
+    end
 
     if src_w == target_w and src_h == target_h then
         return trackBB(bb)
@@ -80,7 +83,6 @@ local function buildBackground(ui)
     local stretch    = getSetting("BG_STRETCH")
     local fill_color = getSetting("BG_COVER_FILL_COLOR")
     local scaled_bb  = scaleImageToFit(cover_bb, screen_size.w, screen_size.h, stretch, fill_color)
-    pcall(cover_bb.free, cover_bb)
     if not scaled_bb then return nil end
     return ImageWidget:new {
         image  = scaled_bb,
@@ -154,7 +156,6 @@ local function getRandomImageFromFolder(folder)
             local stretch    = getSetting("BG_STRETCH")
             local fill_color = getSetting("BG_COVER_FILL_COLOR")
             local scaled_bb  = scaleImageToFit(image_bb, screen_size.w, screen_size.h, stretch, fill_color)
-            pcall(image_bb.free, image_bb)
             if not scaled_bb then return nil end
             return ImageWidget:new {
                 image  = scaled_bb,
