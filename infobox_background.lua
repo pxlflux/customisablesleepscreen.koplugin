@@ -34,7 +34,10 @@ end
 local function scaleImageToFit(bb, target_w, target_h, stretch, fill_color)
     if not bb then return nil end
     local src_w, src_h = bb:getWidth(), bb:getHeight()
-    if src_w <= 0 or src_h <= 0 then return nil end
+    if src_w <= 0 or src_h <= 0 then
+        if bb.free then pcall(bb.free, bb) end
+        return nil
+    end
 
     if src_w == target_w and src_h == target_h then
         return trackBB(bb)
