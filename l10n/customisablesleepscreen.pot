@@ -10,110 +10,13 @@ msgstr ""
 
 #. ---- Display sleep screen strings ----
 
+msgid "No Chapter"
+msgstr ""
+
 msgid "Untitled"
 msgstr ""
 
 msgid "Unknown Author"
-msgstr ""
-
-#, lua-format
-msgid "Page %d of %d"
-msgstr ""
-
-#, lua-format
-msgid "%s left"
-msgstr ""
-
-msgid "No Chapter"
-msgstr ""
-
-#, lua-format
-msgid "Chapter %d of %d"
-msgstr ""
-
-#, lua-format
-msgid "%s read today"
-msgstr ""
-
-#, lua-format
-msgid "%d days read in a row"
-msgstr ""
-
-#, lua-format
-msgid "Met goal %d/%d days this week"
-msgstr ""
-
-#, lua-format
-msgid "%d/%d page goal"
-msgstr ""
-
-msgid "Achieved!"
-msgstr ""
-
-msgid "Goal achieved!"
-msgstr ""
-
-#, lua-format
-msgid "%d%% of goal"
-msgstr ""
-
-msgid "0 mins"
-msgstr ""
-
-#, lua-format
-msgid "Approx. %d %s left"
-msgstr ""
-
-msgid "Approx. <1 hr left"
-msgstr ""
-
-msgid "hr"
-msgid_plural "hrs"
-msgstr[0] ""
-msgstr[1] ""
-
-#, lua-format
-msgid "~%.1f%% per hour"
-msgstr ""
-
-msgid "Rate unavailable"
-msgstr ""
-
-msgid "No message set"
-msgstr ""
-
-msgid "No highlights found"
-msgstr ""
-
-msgid "Message header is empty"
-msgstr ""
-
-#, lua-format
-msgid "pg. %s"
-msgstr ""
-
-msgid "min"
-msgid_plural "mins"
-msgstr[0] ""
-msgstr[1] ""
-
-msgid "< 1 min"
-msgstr ""
-
-#. Ordinal date suffix for 1 (e.g. "1st January"). Return "" if your language does not use suffixes.
-msgid "st"
-msgstr ""
-
-#. Ordinal date suffix for 2 (e.g. "2nd January"). Return "" if your language does not use suffixes.
-msgid "nd"
-msgstr ""
-
-#. Ordinal date suffix for 3 (e.g. "3rd January"). Return "" if your language does not use suffixes.
-msgid "rd"
-msgstr ""
-
-#. Ordinal date suffix for 4 and above (e.g. "4th January"). Return "" if your language does not use suffixes.
-msgid "th"
 msgstr ""
 
 msgid "January"
@@ -152,28 +55,247 @@ msgstr ""
 msgid "December"
 msgstr ""
 
+msgid "st"
+msgstr ""
+
+msgid "nd"
+msgstr ""
+
+msgid "rd"
+msgstr ""
+
+msgid "th"
+msgstr ""
+
+msgid "< 1 min"
+msgstr ""
+
+#, lua-format
+msgid "~%d %s left"
+msgstr ""
+
+msgid "~<1 hr left"
+msgstr ""
+
+#, lua-format
+msgid "%s left"
+msgstr ""
+
+#, lua-format
+msgid "Page %d of %d"
+msgstr ""
+
+#, lua-format
+msgid "Chapter %d of %d"
+msgstr ""
+
+msgid "0 mins"
+msgstr ""
+
+#, lua-format
+msgid "%s %s read today"
+msgstr ""
+
+msgid "pg"
+msgstr ""
+
+msgid "pgs"
+msgstr ""
+
+#, lua-format
+msgid "%s %s & %s read today"
+msgstr ""
+
+#, lua-format
+msgid "%s read today"
+msgstr ""
+
+#, lua-format
+msgid "%d day streak"
+msgstr ""
+
+#, lua-format
+msgid "%d/%d days met this week"
+msgstr ""
+
+msgid "Achieved!"
+msgstr ""
+
+msgid "goal"
+msgstr ""
+
+msgid "Goal achieved!"
+msgstr ""
+
+#, lua-format
+msgid "%d%% of goal"
+msgstr ""
+
+#, lua-format
+msgid "%d page goal"
+msgstr ""
+
+#, lua-format
+msgid "~%.1f%%/hour"
+msgstr ""
+
+msgid "Rate unavailable"
+msgstr ""
+
+msgid "No message set"
+msgstr ""
+
+msgid "No custom quotes found. Add quotes to custom_quotes.lua."
+msgstr ""
+
+#, lua-format
+msgid "pg. %s"
+msgstr ""
+
+msgid "No highlights found"
+msgstr ""
+
+msgid "Sleeping"
+msgstr ""
+
+msgid "Highlights"
+msgstr ""
+
+msgid "Quotations"
+msgstr ""
+
+msgid "Message"
+msgstr ""
+
 #. ---- All other strings (menu items, help text, headers, buttons) ----
 
-msgid "Pick a colour"
+msgid "None"
+msgstr ""
+
+msgid "Active preset: "
+msgstr ""
+
+msgid "Save current settings as new preset"
+msgstr ""
+
+#, lua-format
+msgid "What would you like to do with preset '%s'?"
+msgstr ""
+
+msgid "Update"
+msgstr ""
+
+#, lua-format
+msgid "Are you sure you want to overwrite preset '%s' with current settings?"
+msgstr ""
+
+#, lua-format
+msgid "Preset '%s' was updated with current settings"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+#, lua-format
+msgid "Are you sure you want to delete preset '%s'?"
+msgstr ""
+
+msgid "Rename"
+msgstr ""
+
+msgid "Enter new preset name"
+msgstr ""
+
+msgid "[ Built-in Presets ]"
+msgstr ""
+
+msgid "[ Your Custom Presets ]"
+msgstr ""
+
+msgid "Customisable sleep screen settings"
+msgstr ""
+
+msgid "Customisable sleep screen presets"
+msgstr ""
+
+msgid "Cycle through customisable sleep screen presets"
+msgstr ""
+
+msgid "Customisable sleep screen"
+msgstr ""
+
+msgid "Enable customisable sleep screen"
+msgstr ""
+
+msgid ""
+"Customisable Sleep Screen: no book data found.\n"
+"\n"
+"Open a book and trigger the sleep screen at least once before it will work "
+"in the file manager."
+msgstr ""
+
+msgid "Reset layout & spacing settings to default"
+msgstr ""
+
+msgid "Are you sure you want to reset layout & spacing settings?"
+msgstr ""
+
+msgid "Layout & spacing settings reset to defaults"
+msgstr ""
+
+msgid "Reset contents settings to default"
+msgstr ""
+
+msgid "Are you sure you want to reset contents settings?"
+msgstr ""
+
+msgid "Contents settings reset to defaults"
+msgstr ""
+
+msgid "Reset colours, icons & bars settings to default"
+msgstr ""
+
+msgid "Are you sure you want to reset colours, icons & bars settings?"
+msgstr ""
+
+msgid "Colours, icons & bars settings reset to defaults"
+msgstr ""
+
+msgid "Reset fonts & text settings to default"
+msgstr ""
+
+msgid "Are you sure you want to reset fonts & text settings?"
+msgstr ""
+
+msgid "Fonts & text settings reset to defaults"
+msgstr ""
+
+msgid "Reset background settings to default"
+msgstr ""
+
+msgid "Are you sure you want to reset background settings?"
+msgstr ""
+
+msgid "Background settings reset to defaults"
+msgstr ""
+
+msgid "Reset the settings in this part of the menu to their defaults."
+msgstr ""
+
+msgid "factory defaults"
+msgstr ""
+
+#, lua-format
+msgid "Values will be restored from: %s"
+msgstr ""
+
+msgid "Reset"
 msgstr ""
 
 msgid "Cancel"
 msgstr ""
 
-msgid "Apply"
-msgstr ""
-
-#, lua-format
-msgid "Brightness: %d%%"
-msgstr ""
-
-msgid "Enter hex"
-msgstr ""
-
-msgid "Enter hex colour code"
-msgstr ""
-
-msgid "Invalid hex code. Use format: #RRGGBB"
+msgid "Save"
 msgstr ""
 
 msgid "Delete all custom presets"
@@ -189,10 +311,45 @@ msgid ""
 "remain)"
 msgstr ""
 
-msgid "Delete"
+msgid "All custom presets deleted. Built-in presets remain."
 msgstr ""
 
-msgid "All custom presets deleted. Built-in presets remain."
+msgid "Sleep screen orientation"
+msgstr ""
+
+msgid ""
+"Force the sleep screen to display in a specific orientation, regardless of "
+"how the device is held."
+msgstr ""
+
+msgid "Auto (follow device)"
+msgstr ""
+
+msgid "Use whatever orientation the device is currently in."
+msgstr ""
+
+msgid "Force portrait"
+msgstr ""
+
+msgid "Always display the sleep screen in portrait mode."
+msgstr ""
+
+msgid "Force landscape"
+msgstr ""
+
+msgid "Always display the sleep screen in landscape mode."
+msgstr ""
+
+msgid "Force upside-down portrait"
+msgstr ""
+
+msgid "Always display the sleep screen in inverted portrait mode."
+msgstr ""
+
+msgid "Force upside-down landscape"
+msgstr ""
+
+msgid "Always display the sleep screen in inverted landscape mode."
 msgstr ""
 
 msgid "Battery time calculation"
@@ -334,19 +491,351 @@ msgid ""
 "github.com/%s"
 msgstr ""
 
-msgid "Customisable sleep screen settings"
+msgid "Pick a colour"
 msgstr ""
 
-msgid "Customisable sleep screen presets"
+msgid "Apply"
 msgstr ""
 
-msgid "Cycle through customisable sleep screen presets"
+#, lua-format
+msgid "Brightness: %d%%"
 msgstr ""
 
-msgid "Customisable sleep screen"
+msgid "Enter hex"
 msgstr ""
 
-msgid "Enable customisable sleep screen"
+msgid "Enter hex colour code"
+msgstr ""
+
+msgid "Invalid hex code. Use format: #RRGGBB"
+msgstr ""
+
+msgid "Book info"
+msgstr ""
+
+msgid "Chapter info"
+msgstr ""
+
+msgid "Daily info"
+msgstr ""
+
+msgid "Battery info"
+msgstr ""
+
+msgid "Message info"
+msgstr ""
+
+msgid "Reorder sections"
+msgstr ""
+
+msgid "Section order"
+msgstr ""
+
+msgid "At least one section must remain visible."
+msgstr ""
+
+msgid "Show book author"
+msgstr ""
+
+msgid "Display the author name below the book title."
+msgstr ""
+
+msgid "Show series name"
+msgstr ""
+
+msgid "Display the book's series name and index below the title."
+msgstr ""
+
+msgid "Show book pages (pg x of x)"
+msgstr ""
+
+msgid "Display total page count for the entire book."
+msgstr ""
+
+msgid "Show book time remaining"
+msgstr ""
+
+msgid ""
+"Estimated reading time left to finish the book, based on your average "
+"reading speed."
+msgstr ""
+
+msgid "Show chapter count (ch x of x)"
+msgstr ""
+
+msgid ""
+"Display current chapter number and total chapters (e.g., 'Chapter 5 of 12')."
+msgstr ""
+
+msgid "Show chapter pages (pg x of x)"
+msgstr ""
+
+msgid "Display the number of pages in the current chapter."
+msgstr ""
+
+msgid "Show chapter time remaining"
+msgstr ""
+
+msgid ""
+"Estimated time to finish the current chapter, based on your reading speed."
+msgstr ""
+
+msgid "Title Line"
+msgstr ""
+
+msgid "Choose what the top line of the daily info section displays."
+msgstr ""
+
+msgid "Pages read today"
+msgstr ""
+
+msgid "e.g. '35 pages read today'"
+msgstr ""
+
+msgid "Time read today"
+msgstr ""
+
+msgid "e.g. '42 mins read today'"
+msgstr ""
+
+msgid "Pages and time read today"
+msgstr ""
+
+msgid "e.g. '35 pgs & 42 mins read today'"
+msgstr ""
+
+msgid "Goal type"
+msgstr ""
+
+msgid "Choose whether your daily goal tracks pages read or time spent reading."
+msgstr ""
+
+msgid "Page goal"
+msgstr ""
+
+msgid "Track daily progress by number of pages read."
+msgstr ""
+
+msgid "Time goal"
+msgstr ""
+
+msgid "Track daily progress by minutes spent reading."
+msgstr ""
+
+msgid "Daily page goal"
+msgstr ""
+
+msgid "Set how many pages you aim to read each day."
+msgstr ""
+
+msgid "Daily time goal"
+msgstr ""
+
+msgid "Set how many minutes you aim to read each day."
+msgstr ""
+
+msgid "Daily time goal (minutes)"
+msgstr ""
+
+msgid "Show current reading streak"
+msgstr ""
+
+msgid "Display consecutive days you've met your reading goal."
+msgstr ""
+
+msgid "Show weekly progress"
+msgstr ""
+
+msgid ""
+"Days this week you have met your reading goal, shown as completed days out "
+"of the current weekday (Monday = 1... Sunday = 7). For example: Thursday "
+"with goals met on Monday and Tuesday will show 2/4."
+msgstr ""
+
+msgid "Show daily goal"
+msgstr ""
+
+msgid ""
+"Target page mode: e.g. 50 page goal. Target time mode: e.g. 1hr 15min time "
+"goal."
+msgstr ""
+
+msgid "Show current time/date on separate line"
+msgstr ""
+
+msgid ""
+"Display time/date on its own line below battery percentage instead of inline."
+msgstr ""
+
+msgid "Enable 'Show battery time remaining' to use this option"
+msgstr ""
+
+msgid "Show date instead of time"
+msgstr ""
+
+msgid ""
+"Display current date (e.g. '29th Jan') instead of time in battery section"
+msgstr ""
+
+msgid "Show battery consumption rate"
+msgstr ""
+
+msgid ""
+"Display battery drain percentage per hour based on recent usage or manual "
+"input (see advanced menu)"
+msgstr ""
+
+msgid "Show battery time remaining"
+msgstr ""
+
+msgid ""
+"Estimated hours and minutes until battery is depleted, based on current "
+"drain rate."
+msgstr ""
+
+msgid "Custom message"
+msgstr ""
+
+msgid "Use a separate custom message just for Customisable Sleep Screen"
+msgstr ""
+
+msgid "Book highlights"
+msgstr ""
+
+msgid "Show a random highlight from the current book"
+msgstr ""
+
+msgid "Custom quotes"
+msgstr ""
+
+msgid ""
+"Show a random quote from the custom_quotes.lua file in the plugin folder."
+msgstr ""
+
+msgid "KOReader sleep message"
+msgstr ""
+
+msgid ""
+"Uses KOReaders own sleep screen message function. Enable 'Add custom message "
+"to sleep screen' to use this (Settings → Screen → Sleep screen → Sleep "
+"screen message)."
+msgstr ""
+
+msgid "Message header"
+msgstr ""
+
+msgid ""
+"Custom header text displayed above the message. Supports variables: %d, %y, "
+"%t, %b, %r."
+msgstr ""
+
+msgid "Change custom message header"
+msgstr ""
+
+msgid "Edit custom message"
+msgstr ""
+
+msgid ""
+"Write your custom message text. Only active when 'Custom message' is "
+"selected. Supports variables: %d, %y, %t, %b, %r."
+msgstr ""
+
+msgid "Custom Customisable Sleep Screen message"
+msgstr ""
+
+msgid "Book highlight maximum length"
+msgstr ""
+
+msgid "Maximum characters to display for highlights (0 = no limit)."
+msgstr ""
+
+msgid "Maximum highlight length"
+msgstr ""
+
+msgid "Set to 0 for no limit"
+msgstr ""
+
+msgid "Add quotation marks to highlights"
+msgstr ""
+
+msgid ""
+"Wraps all highlights in curly double quotes, removing any pre-existing "
+"quotation marks."
+msgstr ""
+
+msgid "Show highlight location"
+msgstr ""
+
+msgid ""
+"Display the chapter title and page number where the highlight is found, "
+"shown below the highlight text."
+msgstr ""
+
+msgid "Show quote attribution"
+msgstr ""
+
+msgid ""
+"Display the author and book name below the quote, if provided in "
+"custom_quotes.lua."
+msgstr ""
+
+msgid "Show titles (top line)"
+msgstr ""
+
+msgid ""
+"Display the main heading text in each section. At least one of titles or "
+"subtitles must be visible."
+msgstr ""
+
+msgid "Cannot hide both titles and subtitles. At least one must be visible."
+msgstr ""
+
+msgid "Show subtitles (bottom lines)"
+msgstr ""
+
+msgid ""
+"Display information below main heading text in each section. At least one of "
+"titles or subtitles must be visible."
+msgstr ""
+
+msgid "Displayed sections"
+msgstr ""
+
+msgid ""
+"Toggle which sections show on the sleep screen. At least one must be visible."
+msgstr ""
+
+msgid "[ Section Content ]"
+msgstr ""
+
+msgid "Book section"
+msgstr ""
+
+msgid "Configure book-specific details."
+msgstr ""
+
+msgid "Chapter section"
+msgstr ""
+
+msgid "Configure chapter-specific details"
+msgstr ""
+
+msgid "Daily goal section"
+msgstr ""
+
+msgid "Configure reading goal details"
+msgstr ""
+
+msgid "Battery section"
+msgstr ""
+
+msgid "Configure battery & time/date details"
+msgstr ""
+
+msgid "Message section"
+msgstr ""
+
+msgid "Configure message-specific details"
 msgstr ""
 
 msgid "Hairline"
@@ -484,11 +973,14 @@ msgid ""
 "assigned section colours. Can be combined with dark mode."
 msgstr ""
 
-msgid "Enable section gaps"
+msgid "Section gaps"
 msgstr ""
 
 msgid ""
 "Add transparent gaps between sections to make each appear as a separate box"
+msgstr ""
+
+msgid "Enable section gaps"
 msgstr ""
 
 msgid "Section gap size"
@@ -569,29 +1061,11 @@ msgstr ""
 msgid "Set the progress bar colours for each section."
 msgstr ""
 
-msgid "Colours (modes)"
-msgstr ""
-
-msgid ""
-"Configure colours for monochrome mode, infobox background, and text. "
-"Light and dark correspond to the current dark mode setting. "
-"Monochrome replaces all colours with that single chosen color."
-msgstr ""
-
 msgid "Use saved colours for icon fill"
 msgstr ""
 
 msgid ""
 "When enabled, icons will match the colour of their section's progress bar."
-msgstr ""
-
-msgid "Book section"
-msgstr ""
-
-msgid "Chapter section"
-msgstr ""
-
-msgid "Reading goal section"
 msgstr ""
 
 msgid "Battery section (High)"
@@ -606,7 +1080,13 @@ msgstr ""
 msgid "Battery section (Charging)"
 msgstr ""
 
-msgid "Message section"
+msgid "Colours (modes)"
+msgstr ""
+
+msgid ""
+"Configure colours for monochrome mode, infobox background, and text. Light "
+"and dark correspond to the current dark mode setting. Monochrome replaces "
+"all colours with that single chosen color."
 msgstr ""
 
 msgid "Monochrome mode (light)"
@@ -757,10 +1237,13 @@ msgstr ""
 msgid "Background colour for non-stretched covers."
 msgstr ""
 
-msgid "Black"
+msgid "Pick cover fill colour"
 msgstr ""
 
-msgid "White"
+msgid "Cover alignment"
+msgstr ""
+
+msgid "Horizontal alignment of the cover image when not stretched."
 msgstr ""
 
 msgid "Solid background colour"
@@ -782,344 +1265,4 @@ msgid "Background overlay"
 msgstr ""
 
 msgid "Add a colour layer over the background to reduce contrast."
-msgstr ""
-
-msgid "Reset layout & spacing settings to default"
-msgstr ""
-
-msgid "Are you sure you want to reset layout & spacing settings?"
-msgstr ""
-
-msgid "Layout & spacing settings reset to defaults"
-msgstr ""
-
-msgid "Reset contents settings to default"
-msgstr ""
-
-msgid "Are you sure you want to reset contents settings?"
-msgstr ""
-
-msgid "Contents settings reset to defaults"
-msgstr ""
-
-msgid "Reset colours, icons & bars settings to default"
-msgstr ""
-
-msgid "Are you sure you want to reset colours, icons & bars settings?"
-msgstr ""
-
-msgid "Colours, icons & bars settings reset to defaults"
-msgstr ""
-
-msgid "Reset fonts & text settings to default"
-msgstr ""
-
-msgid "Are you sure you want to reset fonts & text settings?"
-msgstr ""
-
-msgid "Fonts & text settings reset to defaults"
-msgstr ""
-
-msgid "Reset background settings to default"
-msgstr ""
-
-msgid "Are you sure you want to reset background settings?"
-msgstr ""
-
-msgid "Background settings reset to defaults"
-msgstr ""
-
-msgid "Reset the settings in this part of the menu to their defaults."
-msgstr ""
-
-msgid "factory defaults"
-msgstr ""
-
-#, lua-format
-msgid "Values will be restored from: %s"
-msgstr ""
-
-msgid "Reset"
-msgstr ""
-
-msgid "Save"
-msgstr ""
-
-msgid "None"
-msgstr ""
-
-msgid "Active preset: "
-msgstr ""
-
-msgid "Save current settings as new preset"
-msgstr ""
-
-#, lua-format
-msgid "What would you like to do with preset '%s'?"
-msgstr ""
-
-msgid "Update"
-msgstr ""
-
-#, lua-format
-msgid "Are you sure you want to overwrite preset '%s' with current settings?"
-msgstr ""
-
-#, lua-format
-msgid "Preset '%s' was updated with current settings"
-msgstr ""
-
-#, lua-format
-msgid "Are you sure you want to delete preset '%s'?"
-msgstr ""
-
-msgid "Rename"
-msgstr ""
-
-msgid "Enter new preset name"
-msgstr ""
-
-msgid "[ Built-in Presets ]"
-msgstr ""
-
-msgid "[ Your Custom Presets ]"
-msgstr ""
-
-msgid "Book info"
-msgstr ""
-
-msgid "Chapter info"
-msgstr ""
-
-msgid "Daily info"
-msgstr ""
-
-msgid "Device info"
-msgstr ""
-
-msgid "Custom message"
-msgstr ""
-
-msgid "Reorder sections"
-msgstr ""
-
-msgid "Section order"
-msgstr ""
-
-msgid "At least one section must remain visible."
-msgstr ""
-
-msgid "Show book author"
-msgstr ""
-
-msgid "Display the author name below the book title."
-msgstr ""
-
-msgid "Show book pages (pg x of x)"
-msgstr ""
-
-msgid "Display total page count for the entire book."
-msgstr ""
-
-msgid "Show book time remaining"
-msgstr ""
-
-msgid ""
-"Estimated reading time left to finish the book, based on your average "
-"reading speed."
-msgstr ""
-
-msgid "Show chapter count (ch x of x)"
-msgstr ""
-
-msgid ""
-"Display current chapter number and total chapters (e.g., 'Chapter 5 of 12')."
-msgstr ""
-
-msgid "Show chapter pages (pg x of x)"
-msgstr ""
-
-msgid "Display the number of pages in the current chapter."
-msgstr ""
-
-msgid "Show chapter time remaining"
-msgstr ""
-
-msgid ""
-"Estimated time to finish the current chapter, based on your reading speed."
-msgstr ""
-
-msgid "Daily page goal"
-msgstr ""
-
-msgid ""
-"Set how many pages you aim to read each day. Progress shown in the goal "
-"section."
-msgstr ""
-
-msgid "Show current reading streak"
-msgstr ""
-
-msgid "Display consecutive days you've met your reading goal."
-msgstr ""
-
-msgid "Show weekly goal achievement"
-msgstr ""
-
-msgid "Number of days this week you've met your daily reading goal."
-msgstr ""
-
-msgid "Show pages read out of daily goal"
-msgstr ""
-
-msgid ""
-"Display pages read today compared to your daily target (e.g. '35/50 pages')."
-msgstr ""
-
-msgid "Show current time/date on separate line"
-msgstr ""
-
-msgid ""
-"Display time/date on its own line below battery percentage instead of inline."
-msgstr ""
-
-msgid "Enable 'Show battery time remaining' to use this option"
-msgstr ""
-
-msgid "Show date instead of time"
-msgstr ""
-
-msgid ""
-"Display current date (e.g. '29th Jan') instead of time in battery section"
-msgstr ""
-
-msgid "Show battery consumption rate"
-msgstr ""
-
-msgid ""
-"Display battery drain percentage per hour based on recent usage or manual "
-"input (see advanced menu)"
-msgstr ""
-
-msgid "Show battery time remaining"
-msgstr ""
-
-msgid ""
-"Estimated hours and minutes until battery is depleted, based on current "
-"drain rate."
-msgstr ""
-
-msgid "Use a separate custom message just for Customisable Sleep Screen"
-msgstr ""
-
-msgid "Book highlights"
-msgstr ""
-
-msgid "Show a random highlight from the current book"
-msgstr ""
-
-msgid "KOReader sleep message"
-msgstr ""
-
-msgid ""
-"Uses KOReaders own sleep screen message function. Enable 'Add custom message "
-"to sleep screen' to use this (Settings → Screen → Sleep screen → Sleep "
-"screen message)."
-msgstr ""
-
-msgid "Message header"
-msgstr ""
-
-msgid ""
-"Custom header text displayed above the message. Supports variables: %d, %y, "
-"%t, %b, %r."
-msgstr ""
-
-msgid "Change custom message header"
-msgstr ""
-
-msgid "Edit custom message"
-msgstr ""
-
-msgid ""
-"Write your custom message text. Only active when 'Custom message' is "
-"selected. Supports variables: %d, %y, %t, %b, %r."
-msgstr ""
-
-msgid "Custom Customisable Sleep Screen message"
-msgstr ""
-
-msgid "Book highlight maximum length"
-msgstr ""
-
-msgid "Maximum characters to display for highlights (0 = no limit)."
-msgstr ""
-
-msgid "Maximum highlight length"
-msgstr ""
-
-msgid "Set to 0 for no limit"
-msgstr ""
-
-msgid "Add quotation marks to highlights"
-msgstr ""
-
-msgid ""
-"Wraps all highlights in curly double quotes, removing any pre-existing "
-"quotation marks."
-msgstr ""
-
-msgid "Show highlight location"
-msgstr ""
-
-msgid ""
-"Display the chapter title and page number where the highlight is found, "
-"shown below the highlight text."
-msgstr ""
-
-msgid "Show titles (top line)"
-msgstr ""
-
-msgid ""
-"Display the main heading text in each section. At least one of titles or "
-"subtitles must be visible."
-msgstr ""
-
-msgid "Cannot hide both titles and subtitles. At least one must be visible."
-msgstr ""
-
-msgid "Show subtitles (bottom lines)"
-msgstr ""
-
-msgid ""
-"Display information below main heading text in each section. At least one of "
-"titles or subtitles must be visible."
-msgstr ""
-
-msgid "Displayed sections"
-msgstr ""
-
-msgid ""
-"Toggle which sections show on the sleep screen. At least one must be visible."
-msgstr ""
-
-msgid "[ Section Content ]"
-msgstr ""
-
-msgid "Configure book-specific details."
-msgstr ""
-
-msgid "Configure chapter-specific details"
-msgstr ""
-
-msgid "Configure reading goal details"
-msgstr ""
-
-msgid "Battery & time/date section"
-msgstr ""
-
-msgid "Configure battery & time/date details"
-msgstr ""
-
-msgid "Configure message-specific details"
 msgstr ""

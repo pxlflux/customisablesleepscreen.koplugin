@@ -7,112 +7,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"\n"
 
 #. ---- Display sleep screen strings ----
+
+msgid "No Chapter"
+msgstr "チャプターなし"
 
 msgid "Untitled"
 msgstr "無題"
 
 msgid "Unknown Author"
 msgstr "著者不明"
-
-#, lua-format
-msgid "Page %d of %d"
-msgstr "%dページ / %dページ"
-
-#, lua-format
-msgid "%s left"
-msgstr "残り%s"
-
-msgid "No Chapter"
-msgstr "チャプターなし"
-
-#, lua-format
-msgid "Chapter %d of %d"
-msgstr "第%d章 / 全%d章"
-
-#, lua-format
-msgid "%s read today"
-msgstr "今日の読書時間：%s"
-
-#, lua-format
-msgid "%d days read in a row"
-msgstr "%d日連続読書"
-
-#, lua-format
-msgid "Met goal %d/%d days this week"
-msgstr "今週%d/%d日達成"
-
-#, lua-format
-msgid "%d/%d page goal"
-msgstr "%d/%dページ目標"
-
-msgid "Achieved!"
-msgstr "達成！"
-
-msgid "Goal achieved!"
-msgstr "目標達成！"
-
-#, lua-format
-msgid "%d%% of goal"
-msgstr "目標の%d%%"
-
-msgid "0 mins"
-msgstr "0分"
-
-#, lua-format
-msgid "Approx. %d %s left"
-msgstr "約%d%s残り"
-
-msgid "Approx. <1 hr left"
-msgstr "約1時間未満"
-
-msgid "hr"
-msgid_plural "hrs"
-msgstr[0] "時間"
-
-#, lua-format
-msgid "~%.1f%% per hour"
-msgstr "約%.1f%%/時"
-
-msgid "Rate unavailable"
-msgstr "レート不明"
-
-msgid "No message set"
-msgstr "メッセージ未設定"
-
-msgid "No highlights found"
-msgstr "ハイライトが見つかりません"
-
-msgid "Message header is empty"
-msgstr "メッセージヘッダーが空です"
-
-#, lua-format
-msgid "pg. %s"
-msgstr "%sページ"
-
-msgid "min"
-msgid_plural "mins"
-msgstr[0] "分"
-
-msgid "< 1 min"
-msgstr "1分未満"
-
-#. Ordinal date suffix for 1 (e.g. "1st January"). Return "" if your language does not use suffixes.
-msgid "st"
-msgstr "日"
-
-#. Ordinal date suffix for 2 (e.g. "2nd January"). Return "" if your language does not use suffixes.
-msgid "nd"
-msgstr "日"
-
-#. Ordinal date suffix for 3 (e.g. "3rd January"). Return "" if your language does not use suffixes.
-msgid "rd"
-msgstr "日"
-
-#. Ordinal date suffix for 4 and above (e.g. "4th January"). Return "" if your language does not use suffixes.
-msgid "th"
-msgstr "日"
 
 msgid "January"
 msgstr "1月"
@@ -150,52 +56,298 @@ msgstr "11月"
 msgid "December"
 msgstr "12月"
 
-#. ---- All other strings (menu items, help text, headers, buttons) ----
+msgid "st"
+msgstr "日"
 
-msgid "Pick a colour"
-msgstr "色を選択"
+msgid "nd"
+msgstr "日"
 
-msgid "Cancel"
-msgstr "キャンセル"
+msgid "rd"
+msgstr "日"
 
-msgid "Apply"
-msgstr "適用"
+msgid "th"
+msgstr "日"
+
+msgid "< 1 min"
+msgstr "1分未満"
 
 #, lua-format
-msgid "Brightness: %d%%"
-msgstr "輝度：%d%%"
+msgid "~%d %s left"
+msgstr "約%d%s残り"
 
-msgid "Enter hex"
-msgstr "16進数を入力"
+msgid "~<1 hr left"
+msgstr "約1時間未満"
 
-msgid "Enter hex colour code"
-msgstr "16進数カラーコードを入力"
+#, lua-format
+msgid "%s left"
+msgstr "残り%s"
 
-msgid "Invalid hex code. Use format: #RRGGBB"
-msgstr "無効な16進数コードです。形式：#RRGGBB"
+#, lua-format
+msgid "Page %d of %d"
+msgstr "%dページ / %dページ"
 
-msgid "Delete all custom presets"
-msgstr "すべてのカスタムプリセットを削除"
+#, lua-format
+msgid "Chapter %d of %d"
+msgstr "第%d章 / 全%d章"
 
-msgid ""
-"Permanently removes all custom presets you've created. The built-in "
-"'Default' preset will remain. This cannot be undone."
-msgstr ""
-"作成したすべてのカスタムプリセットを完全に削除します。"
-"組み込みの「デフォルト」プリセットは残ります。この操作は元に戻せません。"
+msgid "0 mins"
+msgstr "0分"
 
-msgid ""
-"Are you sure you want to delete all custom presets? (built-in presets will "
-"remain)"
-msgstr ""
-"すべてのカスタムプリセットを削除しますか？"
-"（組み込みプリセットは残ります）"
+#, lua-format
+msgid "%s %s read today"
+msgstr "今日の読書：%s%s"
+
+msgid "pg"
+msgstr "p"
+
+msgid "pgs"
+msgstr "p"
+
+#, lua-format
+msgid "%s %s & %s read today"
+msgstr "今日：%s%s & %s"
+
+#, lua-format
+msgid "%s read today"
+msgstr "今日の読書時間：%s"
+
+#, lua-format
+msgid "%d day streak"
+msgstr "%d日連続"
+
+#, lua-format
+msgid "%d/%d days met this week"
+msgstr "今週%d/%d日達成"
+
+msgid "Achieved!"
+msgstr "達成！"
+
+msgid "goal"
+msgstr "目標"
+
+msgid "Goal achieved!"
+msgstr "目標達成！"
+
+#, lua-format
+msgid "%d%% of goal"
+msgstr "目標の%d%%"
+
+#, lua-format
+msgid "%d page goal"
+msgstr "%dページ目標"
+
+#, lua-format
+msgid "~%.1f%%/hour"
+msgstr "約%.1f%%/時"
+
+msgid "Rate unavailable"
+msgstr "レート不明"
+
+msgid "No message set"
+msgstr "メッセージ未設定"
+
+msgid "No custom quotes found. Add quotes to custom_quotes.lua."
+msgstr "カスタム引用文が見つかりません。custom_quotes.luaに引用文を追加してください。"
+
+#, lua-format
+msgid "pg. %s"
+msgstr "%sページ"
+
+msgid "No highlights found"
+msgstr "ハイライトが見つかりません"
+
+msgid "Sleeping"
+msgstr "スリープ中"
+
+msgid "Highlights"
+msgstr "ハイライト"
+
+msgid "Quotations"
+msgstr "引用文"
+
+msgid "Message"
+msgstr "メッセージ"
+
+#. ---- All other strings (menu items, help text, headers, buttons) ----
+
+msgid "None"
+msgstr "なし"
+
+msgid "Active preset: "
+msgstr "使用中のプリセット: "
+
+msgid "Save current settings as new preset"
+msgstr "現在の設定を新しいプリセットとして保存"
+
+#, lua-format
+msgid "What would you like to do with preset '%s'?"
+msgstr "プリセット「%s」をどうしますか？"
+
+msgid "Update"
+msgstr "更新"
+
+#, lua-format
+msgid "Are you sure you want to overwrite preset '%s' with current settings?"
+msgstr "プリセット「%s」を現在の設定で上書きしますか？"
+
+#, lua-format
+msgid "Preset '%s' was updated with current settings"
+msgstr "プリセット「%s」を現在の設定で更新しました"
 
 msgid "Delete"
 msgstr "削除"
 
+#, lua-format
+msgid "Are you sure you want to delete preset '%s'?"
+msgstr "プリセット「%s」を削除しますか？"
+
+msgid "Rename"
+msgstr "名前を変更"
+
+msgid "Enter new preset name"
+msgstr "新しいプリセット名を入力"
+
+msgid "[ Built-in Presets ]"
+msgstr "[ 組み込みプリセット ]"
+
+msgid "[ Your Custom Presets ]"
+msgstr "[ カスタムプリセット ]"
+
+msgid "Customisable sleep screen settings"
+msgstr "カスタマイズ可能スリープ画面の設定"
+
+msgid "Customisable sleep screen presets"
+msgstr "カスタマイズ可能スリープ画面のプリセット"
+
+msgid "Cycle through customisable sleep screen presets"
+msgstr "カスタマイズ可能スリープ画面のプリセットを切り替え"
+
+msgid "Customisable sleep screen"
+msgstr "カスタマイズ可能スリープ画面"
+
+msgid "Enable customisable sleep screen"
+msgstr "カスタマイズ可能スリープ画面を有効にする"
+
+msgid ""
+"Customisable Sleep Screen: no book data found.\n"
+"\n"
+"Open a book and trigger the sleep screen at least once before it will work in the file manager."
+msgstr ""
+"カスタマイズ可能スリープ画面：本のデータが見つかりません。\n"
+"\n"
+"ファイルマネージャーで機能するには、まず本を開いてスリープ画面を少なくとも一度表示させてください。"
+
+msgid "Reset layout & spacing settings to default"
+msgstr "レイアウトと間隔の設定をリセット"
+
+msgid "Are you sure you want to reset layout & spacing settings?"
+msgstr "レイアウトと間隔の設定をリセットしますか？"
+
+msgid "Layout & spacing settings reset to defaults"
+msgstr "レイアウトと間隔の設定をリセットしました"
+
+msgid "Reset contents settings to default"
+msgstr "コンテンツ設定をリセット"
+
+msgid "Are you sure you want to reset contents settings?"
+msgstr "コンテンツ設定をリセットしますか？"
+
+msgid "Contents settings reset to defaults"
+msgstr "コンテンツ設定をリセットしました"
+
+msgid "Reset colours, icons & bars settings to default"
+msgstr "色・アイコン・バーの設定をリセット"
+
+msgid "Are you sure you want to reset colours, icons & bars settings?"
+msgstr "色・アイコン・バーの設定をリセットしますか？"
+
+msgid "Colours, icons & bars settings reset to defaults"
+msgstr "色・アイコン・バーの設定をリセットしました"
+
+msgid "Reset fonts & text settings to default"
+msgstr "フォントとテキストの設定をリセット"
+
+msgid "Are you sure you want to reset fonts & text settings?"
+msgstr "フォントとテキストの設定をリセットしますか？"
+
+msgid "Fonts & text settings reset to defaults"
+msgstr "フォントとテキストの設定をリセットしました"
+
+msgid "Reset background settings to default"
+msgstr "背景設定をリセット"
+
+msgid "Are you sure you want to reset background settings?"
+msgstr "背景設定をリセットしますか？"
+
+msgid "Background settings reset to defaults"
+msgstr "背景設定をリセットしました"
+
+msgid "Reset the settings in this part of the menu to their defaults."
+msgstr "このメニュー部分の設定をデフォルトにリセットします。"
+
+msgid "factory defaults"
+msgstr "工場出荷時の設定"
+
+#, lua-format
+msgid "Values will be restored from: %s"
+msgstr "値の復元元: %s"
+
+msgid "Reset"
+msgstr "リセット"
+
+msgid "Cancel"
+msgstr "キャンセル"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Delete all custom presets"
+msgstr "すべてのカスタムプリセットを削除"
+
+msgid "Permanently removes all custom presets you've created. The built-in 'Default' preset will remain. This cannot be undone."
+msgstr "作成したすべてのカスタムプリセットを完全に削除します。組み込みの「デフォルト」プリセットは残ります。この操作は元に戻せません。"
+
+msgid "Are you sure you want to delete all custom presets? (built-in presets will remain)"
+msgstr "すべてのカスタムプリセットを削除しますか？（組み込みプリセットは残ります）"
+
 msgid "All custom presets deleted. Built-in presets remain."
 msgstr "すべてのカスタムプリセットを削除しました。組み込みプリセットは残っています。"
+
+msgid "Sleep screen orientation"
+msgstr "スリープ画面の向き"
+
+msgid "Force the sleep screen to display in a specific orientation, regardless of how the device is held."
+msgstr "端末の持ち方に関わらず、スリープ画面を特定の向きで表示します。"
+
+msgid "Auto (follow device)"
+msgstr "自動（端末に従う）"
+
+msgid "Use whatever orientation the device is currently in."
+msgstr "端末の現在の向きを使用します。"
+
+msgid "Force portrait"
+msgstr "縦向きに固定"
+
+msgid "Always display the sleep screen in portrait mode."
+msgstr "スリープ画面を常に縦向きで表示します。"
+
+msgid "Force landscape"
+msgstr "横向きに固定"
+
+msgid "Always display the sleep screen in landscape mode."
+msgstr "スリープ画面を常に横向きで表示します。"
+
+msgid "Force upside-down portrait"
+msgstr "逆縦向きに固定"
+
+msgid "Always display the sleep screen in inverted portrait mode."
+msgstr "スリープ画面を常に逆縦向きで表示します。"
+
+msgid "Force upside-down landscape"
+msgstr "逆横向きに固定"
+
+msgid "Always display the sleep screen in inverted landscape mode."
+msgstr "スリープ画面を常に逆横向きで表示します。"
 
 msgid "Battery time calculation"
 msgstr "バッテリー時間の計算"
@@ -239,10 +391,7 @@ msgstr "一般的な端末の読書中消費率は1〜5%/時間"
 msgid "Daily statistics scope"
 msgstr "日次統計の範囲"
 
-msgid ""
-"Controls whether today's reading time and page count applies to the current "
-"book only, or all books read today. Note: reading streak and weekly goal "
-"achievement always reflect all books regardless of this setting."
+msgid "Controls whether today's reading time and page count applies to the current book only, or all books read today. Note: reading streak and weekly goal achievement always reflect all books regardless of this setting."
 msgstr "今日の読書時間とページ数を現在の本のみに適用するか、今日読んだすべての本に適用するかを設定します。注意：読書ストリークと週間目標達成は、この設定に関わらず常にすべての本を反映します。"
 
 msgid "All books"
@@ -260,22 +409,14 @@ msgstr "現在の本のみの今日の読書時間とページ数"
 msgid "Show in file manager (outside of book)"
 msgstr "ファイルマネージャーで表示（本を開いていない場合）"
 
-msgid ""
-"When enabled, the customisable sleep screen will display in file manager "
-"using the last saved book data."
-msgstr ""
-"有効にすると、ファイルマネージャーでも最後に保存した本のデータを使って"
-"カスタマイズ可能スリープ画面が表示されます。"
+msgid "When enabled, the customisable sleep screen will display in file manager using the last saved book data."
+msgstr "有効にすると、ファイルマネージャーでも最後に保存した本のデータを使ってカスタマイズ可能スリープ画面が表示されます。"
 
 msgid "Hide built-in presets (except Default)"
 msgstr "組み込みプリセットを非表示（デフォルト以外）"
 
-msgid ""
-"Hide the built-in presets from the preset list, keeping only the Default "
-"preset and your custom presets visible."
-msgstr ""
-"プリセット一覧から組み込みプリセットを非表示にし、"
-"デフォルトとカスタムプリセットのみ表示します。"
+msgid "Hide the built-in presets from the preset list, keeping only the Default preset and your custom presets visible."
+msgstr "プリセット一覧から組み込みプリセットを非表示にし、デフォルトとカスタムプリセットのみ表示します。"
 
 msgid "Setting saved. Preset list will update when you reopen this menu."
 msgstr "設定を保存しました。このメニューを再度開くとプリセット一覧が更新されます。"
@@ -345,20 +486,318 @@ msgstr ""
 "アップデートと問題報告:\n"
 "github.com/%s"
 
-msgid "Customisable sleep screen settings"
-msgstr "カスタマイズ可能スリープ画面の設定"
+msgid "Pick a colour"
+msgstr "色を選択"
 
-msgid "Customisable sleep screen presets"
-msgstr "カスタマイズ可能スリープ画面のプリセット"
+msgid "Apply"
+msgstr "適用"
 
-msgid "Cycle through customisable sleep screen presets"
-msgstr "カスタマイズ可能スリープ画面のプリセットを切り替え"
+#, lua-format
+msgid "Brightness: %d%%"
+msgstr "輝度：%d%%"
 
-msgid "Customisable sleep screen"
-msgstr "カスタマイズ可能スリープ画面"
+msgid "Enter hex"
+msgstr "16進数を入力"
 
-msgid "Enable customisable sleep screen"
-msgstr "カスタマイズ可能スリープ画面を有効にする"
+msgid "Enter hex colour code"
+msgstr "16進数カラーコードを入力"
+
+msgid "Invalid hex code. Use format: #RRGGBB"
+msgstr "無効な16進数コードです。形式：#RRGGBB"
+
+msgid "Book info"
+msgstr "本の情報"
+
+msgid "Chapter info"
+msgstr "チャプター情報"
+
+msgid "Daily info"
+msgstr "日次情報"
+
+msgid "Battery info"
+msgstr "バッテリー情報"
+
+msgid "Message info"
+msgstr "メッセージ情報"
+
+msgid "Reorder sections"
+msgstr "セクションの並び替え"
+
+msgid "Section order"
+msgstr "セクションの順序"
+
+msgid "At least one section must remain visible."
+msgstr "少なくとも1つのセクションを表示する必要があります。"
+
+msgid "Show book author"
+msgstr "著者を表示"
+
+msgid "Display the author name below the book title."
+msgstr "本のタイトルの下に著者名を表示します。"
+
+msgid "Show series name"
+msgstr "シリーズ名を表示"
+
+msgid "Display the book's series name and index below the title."
+msgstr "本のシリーズ名とインデックスをタイトルの下に表示します。"
+
+msgid "Show book pages (pg x of x)"
+msgstr "本のページ数を表示（xページ / xページ）"
+
+msgid "Display total page count for the entire book."
+msgstr "本全体の総ページ数を表示します。"
+
+msgid "Show book time remaining"
+msgstr "残り読書時間を表示"
+
+msgid "Estimated reading time left to finish the book, based on your average reading speed."
+msgstr "平均読書速度に基づいた本を読み終えるまでの推定残り時間。"
+
+msgid "Show chapter count (ch x of x)"
+msgstr "チャプター数を表示（第x章 / 全x章）"
+
+msgid "Display current chapter number and total chapters (e.g., 'Chapter 5 of 12')."
+msgstr "現在のチャプター番号と総チャプター数を表示します（例：「第5章 / 全12章」）。"
+
+msgid "Show chapter pages (pg x of x)"
+msgstr "チャプターのページ数を表示（xページ / xページ）"
+
+msgid "Display the number of pages in the current chapter."
+msgstr "現在のチャプターのページ数を表示します。"
+
+msgid "Show chapter time remaining"
+msgstr "チャプターの残り時間を表示"
+
+msgid "Estimated time to finish the current chapter, based on your reading speed."
+msgstr "読書速度に基づいた現在のチャプターを読み終えるまでの推定時間。"
+
+msgid "Title Line"
+msgstr "タイトル行"
+
+msgid "Choose what the top line of the daily info section displays."
+msgstr "日次情報セクションの上段行に表示する内容を選択します。"
+
+msgid "Pages read today"
+msgstr "今日のページ数"
+
+msgid "e.g. '35 pages read today'"
+msgstr "例：「35ページ 今日読書」"
+
+msgid "Time read today"
+msgstr "今日の読書時間"
+
+msgid "e.g. '42 mins read today'"
+msgstr "例：「42分 今日読書」"
+
+msgid "Pages and time read today"
+msgstr "今日のページ数と読書時間"
+
+msgid "e.g. '35 pgs & 42 mins read today'"
+msgstr "例：「35p & 42分 今日読書」"
+
+msgid "Goal type"
+msgstr "目標タイプ"
+
+msgid "Choose whether your daily goal tracks pages read or time spent reading."
+msgstr "日次目標をページ数で管理するか、読書時間で管理するかを選択します。"
+
+msgid "Page goal"
+msgstr "ページ目標"
+
+msgid "Track daily progress by number of pages read."
+msgstr "読んだページ数で日次進捗を管理します。"
+
+msgid "Time goal"
+msgstr "時間目標"
+
+msgid "Track daily progress by minutes spent reading."
+msgstr "読書時間（分）で日次進捗を管理します。"
+
+msgid "Daily page goal"
+msgstr "1日のページ目標"
+
+msgid "Set how many pages you aim to read each day."
+msgstr "1日に読むページ数の目標を設定します。"
+
+msgid "Daily time goal"
+msgstr "1日の読書時間目標"
+
+msgid "Set how many minutes you aim to read each day."
+msgstr "1日の読書目標時間（分）を設定します。"
+
+msgid "Daily time goal (minutes)"
+msgstr "1日の読書時間目標（分）"
+
+msgid "Show current reading streak"
+msgstr "現在の連続読書日数を表示"
+
+msgid "Display consecutive days you've met your reading goal."
+msgstr "読書目標を達成した連続日数を表示します。"
+
+msgid "Show weekly progress"
+msgstr "週間進捗を表示"
+
+msgid "Days this week you have met your reading goal, shown as completed days out of the current weekday (Monday = 1... Sunday = 7). For example: Thursday with goals met on Monday and Tuesday will show 2/4."
+msgstr "今週の読書目標達成日数。現在の曜日（月曜日=1…日曜日=7）に対する達成日数として表示。例：月・火に目標達成した木曜日は「2/4」と表示。"
+
+msgid "Show daily goal"
+msgstr "日次目標を表示"
+
+msgid "Target page mode: e.g. 50 page goal. Target time mode: e.g. 1hr 15min time goal."
+msgstr "ページ目標モード：例「50ページ目標」。時間目標モード：例「1時間15分目標」。"
+
+msgid "Show current time/date on separate line"
+msgstr "現在の時刻/日付を別行に表示"
+
+msgid "Display time/date on its own line below battery percentage instead of inline."
+msgstr "時刻/日付をインラインではなく、バッテリー残量の下の独立した行に表示します。"
+
+msgid "Enable 'Show battery time remaining' to use this option"
+msgstr "このオプションを使用するには「バッテリー残り時間を表示」を有効にしてください"
+
+msgid "Show date instead of time"
+msgstr "時刻の代わりに日付を表示"
+
+msgid "Display current date (e.g. '29th Jan') instead of time in battery section"
+msgstr "バッテリーセクションに時刻の代わりに現在の日付（例：「1月29日」）を表示"
+
+msgid "Show battery consumption rate"
+msgstr "バッテリー消費率を表示"
+
+msgid "Display battery drain percentage per hour based on recent usage or manual input (see advanced menu)"
+msgstr "最近の使用状況または手動入力に基づいた1時間あたりのバッテリー消費率を表示（詳細設定メニュー参照）"
+
+msgid "Show battery time remaining"
+msgstr "バッテリー残り時間を表示"
+
+msgid "Estimated hours and minutes until battery is depleted, based on current drain rate."
+msgstr "現在の消費率に基づいたバッテリーが切れるまでの推定時間（時間・分）。"
+
+msgid "Custom message"
+msgstr "カスタムメッセージ"
+
+msgid "Use a separate custom message just for Customisable Sleep Screen"
+msgstr "カスタマイズ可能スリープ画面専用のカスタムメッセージを使用"
+
+msgid "Book highlights"
+msgstr "本のハイライト"
+
+msgid "Show a random highlight from the current book"
+msgstr "現在の本からランダムなハイライトを表示"
+
+msgid "Custom quotes"
+msgstr "カスタム引用文"
+
+msgid "Show a random quote from the custom_quotes.lua file in the plugin folder."
+msgstr "プラグインフォルダのcustom_quotes.luaファイルからランダムな引用文を表示します。"
+
+msgid "KOReader sleep message"
+msgstr "KOReaderスリープメッセージ"
+
+msgid "Uses KOReaders own sleep screen message function. Enable 'Add custom message to sleep screen' to use this (Settings → Screen → Sleep screen → Sleep screen message)."
+msgstr "KOReader独自のスリープ画面メッセージ機能を使用します。「スリープ画面にカスタムメッセージを追加」を有効にしてください（設定 → 画面 → スリープ画面 → スリープ画面メッセージ）。"
+
+msgid "Message header"
+msgstr "メッセージヘッダー"
+
+msgid "Custom header text displayed above the message. Supports variables: %d, %y, %t, %b, %r."
+msgstr "メッセージの上に表示されるカスタムヘッダーテキスト。変数対応：%d、%y、%t、%b、%r。"
+
+msgid "Change custom message header"
+msgstr "カスタムメッセージヘッダーを変更"
+
+msgid "Edit custom message"
+msgstr "カスタムメッセージを編集"
+
+msgid "Write your custom message text. Only active when 'Custom message' is selected. Supports variables: %d, %y, %t, %b, %r."
+msgstr "カスタムメッセージのテキストを入力します。「カスタムメッセージ」選択時のみ有効。変数対応：%d、%y、%t、%b、%r。"
+
+msgid "Custom Customisable Sleep Screen message"
+msgstr "カスタマイズ可能スリープ画面のカスタムメッセージ"
+
+msgid "Book highlight maximum length"
+msgstr "ハイライトの最大文字数"
+
+msgid "Maximum characters to display for highlights (0 = no limit)."
+msgstr "ハイライトに表示する最大文字数（0 = 無制限）。"
+
+msgid "Maximum highlight length"
+msgstr "ハイライトの最大長"
+
+msgid "Set to 0 for no limit"
+msgstr "無制限にするには0に設定"
+
+msgid "Add quotation marks to highlights"
+msgstr "ハイライトに引用符を追加"
+
+msgid "Wraps all highlights in curly double quotes, removing any pre-existing quotation marks."
+msgstr "すべてのハイライトを波形二重引用符で囲み、既存の引用符を削除します。"
+
+msgid "Show highlight location"
+msgstr "ハイライトの位置を表示"
+
+msgid "Display the chapter title and page number where the highlight is found, shown below the highlight text."
+msgstr "ハイライトのあるチャプタータイトルとページ番号をハイライトテキストの下に表示します。"
+
+msgid "Show quote attribution"
+msgstr "引用文の帰属を表示"
+
+msgid "Display the author and book name below the quote, if provided in custom_quotes.lua."
+msgstr "custom_quotes.luaで提供されている場合、引用文の下に著者名と本のタイトルを表示します。"
+
+msgid "Show titles (top line)"
+msgstr "タイトルを表示（上段）"
+
+msgid "Display the main heading text in each section. At least one of titles or subtitles must be visible."
+msgstr "各セクションのメイン見出しテキストを表示します。タイトルまたはサブタイトルのどちらかは表示する必要があります。"
+
+msgid "Cannot hide both titles and subtitles. At least one must be visible."
+msgstr "タイトルとサブタイトルの両方を非表示にすることはできません。どちらかを表示してください。"
+
+msgid "Show subtitles (bottom lines)"
+msgstr "サブタイトルを表示（下段）"
+
+msgid "Display information below main heading text in each section. At least one of titles or subtitles must be visible."
+msgstr "各セクションのメイン見出しテキストの下に情報を表示します。タイトルまたはサブタイトルのどちらかは表示する必要があります。"
+
+msgid "Displayed sections"
+msgstr "表示するセクション"
+
+msgid "Toggle which sections show on the sleep screen. At least one must be visible."
+msgstr "スリープ画面に表示するセクションを切り替えます。少なくとも1つは表示が必要です。"
+
+msgid "[ Section Content ]"
+msgstr "[ セクションコンテンツ ]"
+
+msgid "Book section"
+msgstr "本セクション"
+
+msgid "Configure book-specific details."
+msgstr "本固有の詳細を設定します。"
+
+msgid "Chapter section"
+msgstr "チャプターセクション"
+
+msgid "Configure chapter-specific details"
+msgstr "チャプター固有の詳細を設定"
+
+msgid "Daily goal section"
+msgstr "日次目標セクション"
+
+msgid "Configure reading goal details"
+msgstr "読書目標の詳細を設定"
+
+msgid "Battery section"
+msgstr "バッテリーセクション"
+
+msgid "Configure battery & time/date details"
+msgstr "バッテリー・時刻/日付の詳細を設定"
+
+msgid "Message section"
+msgstr "メッセージセクション"
+
+msgid "Configure message-specific details"
+msgstr "メッセージ固有の詳細を設定"
 
 msgid "Hairline"
 msgstr "極細"
@@ -480,34 +919,23 @@ msgstr "右下"
 msgid "Dark mode"
 msgstr "ダークモード"
 
-msgid ""
-"Inverts the colour scheme. Text becomes white and backgrounds becomes black. "
-"Useful for reading in low-light conditions. Can be combined with monochrome "
-"mode."
-msgstr ""
-"配色を反転します。テキストが白、背景が黒になります。"
-"暗い環境での読書に便利です。モノクロモードと組み合わせることができます。"
+msgid "Inverts the colour scheme. Text becomes white and backgrounds becomes black. Useful for reading in low-light conditions. Can be combined with monochrome mode."
+msgstr "配色を反転します。テキストが白、背景が黒になります。暗い環境での読書に便利です。モノクロモードと組み合わせることができます。"
 
 msgid "Monochrome mode"
 msgstr "モノクロモード"
 
-msgid ""
-"Suitable for B&W e-readers. Assigns one colour to all sections using "
-"monochrome light or monochrome dark hex values. Overwrites individual "
-"assigned section colours. Can be combined with dark mode."
-msgstr ""
-"白黒電子書籍リーダー向けです。モノクロ明・モノクロ暗の16進数値を使って"
-"すべてのセクションに1色を割り当てます。個別に設定したセクションの色を上書きします。"
-"ダークモードと組み合わせることができます。"
+msgid "Suitable for B&W e-readers. Assigns one colour to all sections using monochrome light or monochrome dark hex values. Overwrites individual assigned section colours. Can be combined with dark mode."
+msgstr "白黒電子書籍リーダー向けです。モノクロ明・モノクロ暗の16進数値を使ってすべてのセクションに1色を割り当てます。個別に設定したセクションの色を上書きします。ダークモードと組み合わせることができます。"
+
+msgid "Section gaps"
+msgstr "セクション間のギャップ"
+
+msgid "Add transparent gaps between sections to make each appear as a separate box"
+msgstr "セクション間に透明なギャップを追加して、各セクションを独立したボックスとして表示します"
 
 msgid "Enable section gaps"
 msgstr "セクション間のギャップを有効にする"
-
-msgid ""
-"Add transparent gaps between sections to make each appear as a separate box"
-msgstr ""
-"セクション間に透明なギャップを追加して、各セクションを"
-"独立したボックスとして表示します"
 
 msgid "Section gap size"
 msgstr "セクションギャップのサイズ"
@@ -527,10 +955,8 @@ msgstr "情報ボックスが表示される画面上の位置。"
 msgid "Width"
 msgstr "幅"
 
-msgid ""
-"Horizontal width of the information box as a percentage of screen width."
-msgstr ""
-"画面幅に対する情報ボックスの横幅の割合（%）。"
+msgid "Horizontal width of the information box as a percentage of screen width."
+msgstr "画面幅に対する情報ボックスの横幅の割合（%）。"
 
 msgid "Opacity"
 msgstr "不透明度"
@@ -565,12 +991,8 @@ msgstr "セクションアイコンと付随するテキストの水平間隔。
 msgid "Y-axis margin (top/bottom left/right pos)"
 msgstr "Y軸余白（上下左右の位置指定時）"
 
-msgid ""
-"Vertical offset from the top or bottom edge when positioned at the top "
-"centre, bottom centre, top left, bottom left, top right or bottom right."
-msgstr ""
-"上中央・下中央・左上・左下・右上・右下に配置した場合の"
-"上端または下端からの垂直オフセット。"
+msgid "Vertical offset from the top or bottom edge when positioned at the top centre, bottom centre, top left, bottom left, top right or bottom right."
+msgstr "上中央・下中央・左上・左下・右上・右下に配置した場合の上端または下端からの垂直オフセット。"
 
 msgid "No icon sets found in customisablesleepscreen.koplugin/icons/"
 msgstr "customisablesleepscreen.koplugin/icons/ にアイコンセットが見つかりません"
@@ -590,34 +1012,11 @@ msgstr "色（プログレスバー）"
 msgid "Set the progress bar colours for each section."
 msgstr "各セクションのプログレスバーの色を設定します。"
 
-msgid "Colours (modes)"
-msgstr "色（モード）"
-
-msgid ""
-"Configure colours for monochrome mode, infobox background, and text. "
-"Light and dark correspond to the current dark mode setting. "
-"Monochrome replaces all colours with that single chosen color."
-msgstr ""
-"モノクロモード、情報ボックスの背景、テキストの色を設定します。"
-"明るいと暗いは現在のダークモード設定に対応します。"
-"モノクロはすべての色を選択した1色に置き換えます。"
-
 msgid "Use saved colours for icon fill"
 msgstr "アイコン塗りつぶしに保存した色を使用"
 
-msgid ""
-"When enabled, icons will match the colour of their section's progress bar."
-msgstr ""
-"有効にすると、アイコンの色がそのセクションのプログレスバーの色に合わせられます。"
-
-msgid "Book section"
-msgstr "本セクション"
-
-msgid "Chapter section"
-msgstr "チャプターセクション"
-
-msgid "Reading goal section"
-msgstr "読書目標セクション"
+msgid "When enabled, icons will match the colour of their section's progress bar."
+msgstr "有効にすると、アイコンの色がそのセクションのプログレスバーの色に合わせられます。"
 
 msgid "Battery section (High)"
 msgstr "バッテリーセクション（高）"
@@ -631,8 +1030,11 @@ msgstr "バッテリーセクション（低）"
 msgid "Battery section (Charging)"
 msgstr "バッテリーセクション（充電中）"
 
-msgid "Message section"
-msgstr "メッセージセクション"
+msgid "Colours (modes)"
+msgstr "色（モード）"
+
+msgid "Configure colours for monochrome mode, infobox background, and text. Light and dark correspond to the current dark mode setting. Monochrome replaces all colours with that single chosen color."
+msgstr "モノクロモード、情報ボックスの背景、テキストの色を設定します。明るいと暗いは現在のダークモード設定に対応します。モノクロはすべての色を選択した1色に置き換えます。"
 
 msgid "Monochrome mode (light)"
 msgstr "モノクロモード（明）"
@@ -685,9 +1087,7 @@ msgstr "完了率を示す水平プログレスバーを表示します。"
 msgid "Show decorative bar on message section"
 msgstr "メッセージセクションに装飾バーを表示"
 
-msgid ""
-"Displays a purely decorative progress bar under the message section, "
-"matching the message section colour and the progress bars in other sections."
+msgid "Displays a purely decorative progress bar under the message section, matching the message section colour and the progress bars in other sections."
 msgstr "メッセージセクションの下に純粋に装飾的なプログレスバーを表示します。メッセージセクションの色および他のセクションのプログレスバーと一致します。"
 
 msgid "Title font face"
@@ -729,31 +1129,20 @@ msgstr "右揃え"
 msgid "Book multiline titles"
 msgstr "本のタイトルを複数行で表示"
 
-msgid ""
-"If deselected book titles will be truncated to a single line with an ellipsis"
-msgstr ""
-"オフにすると、本のタイトルは省略記号付きの1行に切り詰められます"
+msgid "If deselected book titles will be truncated to a single line with an ellipsis"
+msgstr "オフにすると、本のタイトルは省略記号付きの1行に切り詰められます"
 
 msgid "Chapter multiline titles"
 msgstr "チャプタータイトルを複数行で表示"
 
-msgid ""
-"If deselected chapter titles will be truncated to a single line with an "
-"ellipsis"
-msgstr ""
-"オフにすると、チャプタータイトルは省略記号付きの1行に切り詰められます"
+msgid "If deselected chapter titles will be truncated to a single line with an ellipsis"
+msgstr "オフにすると、チャプタータイトルは省略記号付きの1行に切り詰められます"
 
 msgid "Clean chapter titles"
 msgstr "チャプタータイトルを整理"
 
-msgid ""
-"Removes structural prefixes like 'Chapter 5:' or 'Part II' from chapter "
-"titles and normalises capitalisation. Only works correctly with English "
-"chapter titles - disable for non-English books."
-msgstr ""
-"「第5章：」や「Part II」などの構造的プレフィックスをチャプタータイトルから削除し、"
-"大文字表記を正規化します。英語のチャプタータイトルのみ正しく機能します。"
-"英語以外の本ではオフにしてください。"
+msgid "Removes structural prefixes like 'Chapter 5:' or 'Part II' from chapter titles and normalises capitalisation. Only works correctly with English chapter titles - disable for non-English books."
+msgstr "「第5章：」や「Part II」などの構造的プレフィックスをチャプタータイトルから削除し、大文字表記を正規化します。英語のチャプタータイトルのみ正しく機能します。英語以外の本ではオフにしてください。"
 
 msgid "Make book title bold"
 msgstr "本のタイトルを太字にする"
@@ -776,12 +1165,8 @@ msgstr "フォルダからランダム画像"
 msgid "Stretch book cover to fill"
 msgstr "表紙を引き伸ばして全画面表示"
 
-msgid ""
-"When disabled, book cover will be scaled to fit within the screen while "
-"preserving aspect ratio."
-msgstr ""
-"無効にすると、アスペクト比を保ちながら画面内に収まるように"
-"表紙が拡縮されます。"
+msgid "When disabled, book cover will be scaled to fit within the screen while preserving aspect ratio."
+msgstr "無効にすると、アスペクト比を保ちながら画面内に収まるように表紙が拡縮されます。"
 
 msgid "Cover fill colour"
 msgstr "表紙の塗りつぶし色"
@@ -789,11 +1174,14 @@ msgstr "表紙の塗りつぶし色"
 msgid "Background colour for non-stretched covers."
 msgstr "引き伸ばし無効時の表紙の背景色。"
 
-msgid "Black"
-msgstr "黒"
+msgid "Pick cover fill colour"
+msgstr "表紙の塗りつぶし色を選択"
 
-msgid "White"
-msgstr "白"
+msgid "Cover alignment"
+msgstr "表紙の配置"
+
+msgid "Horizontal alignment of the cover image when not stretched."
+msgstr "引き伸ばし無効時の表紙画像の水平配置。"
 
 msgid "Solid background colour"
 msgstr "単色の背景色"
@@ -815,368 +1203,3 @@ msgstr "背景オーバーレイ"
 
 msgid "Add a colour layer over the background to reduce contrast."
 msgstr "コントラストを抑えるために背景の上に色のレイヤーを追加します。"
-
-msgid "Reset layout & spacing settings to default"
-msgstr "レイアウトと間隔の設定をリセット"
-
-msgid "Are you sure you want to reset layout & spacing settings?"
-msgstr "レイアウトと間隔の設定をリセットしますか？"
-
-msgid "Layout & spacing settings reset to defaults"
-msgstr "レイアウトと間隔の設定をリセットしました"
-
-msgid "Reset contents settings to default"
-msgstr "コンテンツ設定をリセット"
-
-msgid "Are you sure you want to reset contents settings?"
-msgstr "コンテンツ設定をリセットしますか？"
-
-msgid "Contents settings reset to defaults"
-msgstr "コンテンツ設定をリセットしました"
-
-msgid "Reset colours, icons & bars settings to default"
-msgstr "色・アイコン・バーの設定をリセット"
-
-msgid "Are you sure you want to reset colours, icons & bars settings?"
-msgstr "色・アイコン・バーの設定をリセットしますか？"
-
-msgid "Colours, icons & bars settings reset to defaults"
-msgstr "色・アイコン・バーの設定をリセットしました"
-
-msgid "Reset fonts & text settings to default"
-msgstr "フォントとテキストの設定をリセット"
-
-msgid "Are you sure you want to reset fonts & text settings?"
-msgstr "フォントとテキストの設定をリセットしますか？"
-
-msgid "Fonts & text settings reset to defaults"
-msgstr "フォントとテキストの設定をリセットしました"
-
-msgid "Reset background settings to default"
-msgstr "背景設定をリセット"
-
-msgid "Are you sure you want to reset background settings?"
-msgstr "背景設定をリセットしますか？"
-
-msgid "Background settings reset to defaults"
-msgstr "背景設定をリセットしました"
-
-msgid "Reset the settings in this part of the menu to their defaults."
-msgstr "このメニュー部分の設定をデフォルトにリセットします。"
-
-msgid "factory defaults"
-msgstr "工場出荷時の設定"
-
-#, lua-format
-msgid "Values will be restored from: %s"
-msgstr "値の復元元: %s"
-
-msgid "Reset"
-msgstr "リセット"
-
-msgid "Save"
-msgstr "保存"
-
-msgid "None"
-msgstr "なし"
-
-msgid "Active preset: "
-msgstr "使用中のプリセット: "
-
-msgid "Save current settings as new preset"
-msgstr "現在の設定を新しいプリセットとして保存"
-
-#, lua-format
-msgid "What would you like to do with preset '%s'?"
-msgstr "プリセット「%s」をどうしますか？"
-
-msgid "Update"
-msgstr "更新"
-
-#, lua-format
-msgid "Are you sure you want to overwrite preset '%s' with current settings?"
-msgstr "プリセット「%s」を現在の設定で上書きしますか？"
-
-#, lua-format
-msgid "Preset '%s' was updated with current settings"
-msgstr "プリセット「%s」を現在の設定で更新しました"
-
-#, lua-format
-msgid "Are you sure you want to delete preset '%s'?"
-msgstr "プリセット「%s」を削除しますか？"
-
-msgid "Rename"
-msgstr "名前を変更"
-
-msgid "Enter new preset name"
-msgstr "新しいプリセット名を入力"
-
-msgid "[ Built-in Presets ]"
-msgstr "[ 組み込みプリセット ]"
-
-msgid "[ Your Custom Presets ]"
-msgstr "[ カスタムプリセット ]"
-
-msgid "Book info"
-msgstr "本の情報"
-
-msgid "Chapter info"
-msgstr "チャプター情報"
-
-msgid "Daily info"
-msgstr "日次情報"
-
-msgid "Device info"
-msgstr "デバイス情報"
-
-msgid "Custom message"
-msgstr "カスタムメッセージ"
-
-msgid "Reorder sections"
-msgstr "セクションの並び替え"
-
-msgid "Section order"
-msgstr "セクションの順序"
-
-msgid "At least one section must remain visible."
-msgstr "少なくとも1つのセクションを表示する必要があります。"
-
-msgid "Show book author"
-msgstr "著者を表示"
-
-msgid "Display the author name below the book title."
-msgstr "本のタイトルの下に著者名を表示します。"
-
-msgid "Show book pages (pg x of x)"
-msgstr "本のページ数を表示（xページ / xページ）"
-
-msgid "Display total page count for the entire book."
-msgstr "本全体の総ページ数を表示します。"
-
-msgid "Show book time remaining"
-msgstr "残り読書時間を表示"
-
-msgid ""
-"Estimated reading time left to finish the book, based on your average "
-"reading speed."
-msgstr ""
-"平均読書速度に基づいた本を読み終えるまでの推定残り時間。"
-
-msgid "Show chapter count (ch x of x)"
-msgstr "チャプター数を表示（第x章 / 全x章）"
-
-msgid ""
-"Display current chapter number and total chapters (e.g., 'Chapter 5 of 12')."
-msgstr ""
-"現在のチャプター番号と総チャプター数を表示します（例：「第5章 / 全12章」）。"
-
-msgid "Show chapter pages (pg x of x)"
-msgstr "チャプターのページ数を表示（xページ / xページ）"
-
-msgid "Display the number of pages in the current chapter."
-msgstr "現在のチャプターのページ数を表示します。"
-
-msgid "Show chapter time remaining"
-msgstr "チャプターの残り時間を表示"
-
-msgid ""
-"Estimated time to finish the current chapter, based on your reading speed."
-msgstr ""
-"読書速度に基づいた現在のチャプターを読み終えるまでの推定時間。"
-
-msgid "Daily page goal"
-msgstr "1日のページ目標"
-
-msgid ""
-"Set how many pages you aim to read each day. Progress shown in the goal "
-"section."
-msgstr ""
-"1日に読むページ数の目標を設定します。進捗は目標セクションに表示されます。"
-
-msgid "Show current reading streak"
-msgstr "現在の連続読書日数を表示"
-
-msgid "Display consecutive days you've met your reading goal."
-msgstr "読書目標を達成した連続日数を表示します。"
-
-msgid "Show weekly goal achievement"
-msgstr "週間目標達成状況を表示"
-
-msgid "Number of days this week you've met your daily reading goal."
-msgstr "今週、日次読書目標を達成した日数。"
-
-msgid "Show pages read out of daily goal"
-msgstr "日次目標に対する読了ページ数を表示"
-
-msgid ""
-"Display pages read today compared to your daily target (e.g. '35/50 pages')."
-msgstr ""
-"本日の読了ページ数を日次目標と比較して表示します（例：「35/50ページ」）。"
-
-msgid "Show current time/date on separate line"
-msgstr "現在の時刻/日付を別行に表示"
-
-msgid ""
-"Display time/date on its own line below battery percentage instead of inline."
-msgstr ""
-"時刻/日付をインラインではなく、バッテリー残量の下の独立した行に表示します。"
-
-msgid "Enable 'Show battery time remaining' to use this option"
-msgstr "このオプションを使用するには「バッテリー残り時間を表示」を有効にしてください"
-
-msgid "Show date instead of time"
-msgstr "時刻の代わりに日付を表示"
-
-msgid ""
-"Display current date (e.g. '29th Jan') instead of time in battery section"
-msgstr ""
-"バッテリーセクションに時刻の代わりに現在の日付（例：「1月29日」）を表示"
-
-msgid "Show battery consumption rate"
-msgstr "バッテリー消費率を表示"
-
-msgid ""
-"Display battery drain percentage per hour based on recent usage or manual "
-"input (see advanced menu)"
-msgstr ""
-"最近の使用状況または手動入力に基づいた1時間あたりのバッテリー消費率を表示"
-"（詳細設定メニュー参照）"
-
-msgid "Show battery time remaining"
-msgstr "バッテリー残り時間を表示"
-
-msgid ""
-"Estimated hours and minutes until battery is depleted, based on current "
-"drain rate."
-msgstr ""
-"現在の消費率に基づいたバッテリーが切れるまでの推定時間（時間・分）。"
-
-msgid "Use a separate custom message just for Customisable Sleep Screen"
-msgstr "カスタマイズ可能スリープ画面専用のカスタムメッセージを使用"
-
-msgid "Book highlights"
-msgstr "本のハイライト"
-
-msgid "Show a random highlight from the current book"
-msgstr "現在の本からランダムなハイライトを表示"
-
-msgid "KOReader sleep message"
-msgstr "KOReaderスリープメッセージ"
-
-msgid ""
-"Uses KOReaders own sleep screen message function. Enable 'Add custom message "
-"to sleep screen' to use this (Settings → Screen → Sleep screen → Sleep "
-"screen message)."
-msgstr ""
-"KOReader独自のスリープ画面メッセージ機能を使用します。"
-"「スリープ画面にカスタムメッセージを追加」を有効にしてください"
-"（設定 → 画面 → スリープ画面 → スリープ画面メッセージ）。"
-
-msgid "Message header"
-msgstr "メッセージヘッダー"
-
-msgid ""
-"Custom header text displayed above the message. Supports variables: %d, %y, "
-"%t, %b, %r."
-msgstr ""
-"メッセージの上に表示されるカスタムヘッダーテキスト。"
-"変数対応：%d、%y、%t、%b、%r。"
-
-msgid "Change custom message header"
-msgstr "カスタムメッセージヘッダーを変更"
-
-msgid "Edit custom message"
-msgstr "カスタムメッセージを編集"
-
-msgid ""
-"Write your custom message text. Only active when 'Custom message' is "
-"selected. Supports variables: %d, %y, %t, %b, %r."
-msgstr ""
-"カスタムメッセージのテキストを入力します。「カスタムメッセージ」選択時のみ有効。"
-"変数対応：%d、%y、%t、%b、%r。"
-
-msgid "Custom Customisable Sleep Screen message"
-msgstr "カスタマイズ可能スリープ画面のカスタムメッセージ"
-
-msgid "Book highlight maximum length"
-msgstr "ハイライトの最大文字数"
-
-msgid "Maximum characters to display for highlights (0 = no limit)."
-msgstr "ハイライトに表示する最大文字数（0 = 無制限）。"
-
-msgid "Maximum highlight length"
-msgstr "ハイライトの最大長"
-
-msgid "Set to 0 for no limit"
-msgstr "無制限にするには0に設定"
-
-msgid "Add quotation marks to highlights"
-msgstr "ハイライトに引用符を追加"
-
-msgid ""
-"Wraps all highlights in curly double quotes, removing any pre-existing "
-"quotation marks."
-msgstr ""
-"すべてのハイライトを波形二重引用符で囲み、既存の引用符を削除します。"
-
-msgid "Show highlight location"
-msgstr "ハイライトの位置を表示"
-
-msgid ""
-"Display the chapter title and page number where the highlight is found, "
-"shown below the highlight text."
-msgstr ""
-"ハイライトのあるチャプタータイトルとページ番号を"
-"ハイライトテキストの下に表示します。"
-
-msgid "Show titles (top line)"
-msgstr "タイトルを表示（上段）"
-
-msgid ""
-"Display the main heading text in each section. At least one of titles or "
-"subtitles must be visible."
-msgstr ""
-"各セクションのメイン見出しテキストを表示します。"
-"タイトルまたはサブタイトルのどちらかは表示する必要があります。"
-
-msgid "Cannot hide both titles and subtitles. At least one must be visible."
-msgstr "タイトルとサブタイトルの両方を非表示にすることはできません。どちらかを表示してください。"
-
-msgid "Show subtitles (bottom lines)"
-msgstr "サブタイトルを表示（下段）"
-
-msgid ""
-"Display information below main heading text in each section. At least one of "
-"titles or subtitles must be visible."
-msgstr ""
-"各セクションのメイン見出しテキストの下に情報を表示します。"
-"タイトルまたはサブタイトルのどちらかは表示する必要があります。"
-
-msgid "Displayed sections"
-msgstr "表示するセクション"
-
-msgid ""
-"Toggle which sections show on the sleep screen. At least one must be visible."
-msgstr ""
-"スリープ画面に表示するセクションを切り替えます。少なくとも1つは表示が必要です。"
-
-msgid "[ Section Content ]"
-msgstr "[ セクションコンテンツ ]"
-
-msgid "Configure book-specific details."
-msgstr "本固有の詳細を設定します。"
-
-msgid "Configure chapter-specific details"
-msgstr "チャプター固有の詳細を設定"
-
-msgid "Configure reading goal details"
-msgstr "読書目標の詳細を設定"
-
-msgid "Battery & time/date section"
-msgstr "バッテリー・時刻/日付セクション"
-
-msgid "Configure battery & time/date details"
-msgstr "バッテリー・時刻/日付の詳細を設定"
-
-msgid "Configure message-specific details"
-msgstr "メッセージ固有の詳細を設定"

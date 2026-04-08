@@ -18,6 +18,7 @@ local _        = require("plugin_gettext")
 local ngettext = function(singular, plural, n)
     return _.ngettext(singular, plural, n)
 end
+
 local config      = require("config")
 local USER_CONFIG = config.USER_CONFIG
 local SETTINGS    = config.SETTINGS
@@ -35,9 +36,25 @@ local safeGet            = bookdata.safeGet
 local cleanChapterTitle  = bookdata.cleanChapterTitle
 local getChapterCount    = bookdata.getChapterCount
 local getRandomHighlight = bookdata.getRandomHighlight
+local getCurrentPage     = bookdata.getCurrentPage
+local getDocPages        = bookdata.getDocPages
+local addQuotationMarks  = bookdata.addQuotationMarks
+local getDisplayPage     = bookdata.getDisplayPage
 
 local bg_mod  = require("infobox_background")
 local trackBB = bg_mod.trackBB
+
+local function getRandomCustomQuote()
+    local ok, quotes = pcall(dofile, _plugin_dir .. "custom_quotes.lua")
+    if not ok or type(quotes) ~= "table" or #quotes == 0 then return nil end
+    local entry = quotes[math.random(#quotes)]
+    if type(entry) == "string" then
+        return { text = entry, author = nil, book = nil }
+    elseif type(entry) == "table" and type(entry.text) == "string" then
+        return { text = entry.text, author = entry.author, book = entry.book }
+    end
+    return nil
+end
 
 local Screen = Device.screen
 
@@ -81,9 +98,9 @@ end
 local function formatBatteryTime(hours_left)
     if hours_left > 0 then
         local hour_text = ngettext("hr", "hrs", hours_left)
-        return string.format(_("Approx. %d %s left"), hours_left, hour_text)
+        return string.format(_("~%d %s left"), hours_left, hour_text)
     else
-        return _("Approx. <1 hr left")
+        return _("~<1 hr left")
     end
 end
 
@@ -460,20 +477,30 @@ local function buildBookSection(ui, state, book_data, has_ui, total_width, color
     if has_ui then
         book_title = safeGet(ui, "doc_props", "display_title") or _("Untitled")
         authors    = safeGet(ui, "doc_props", "authors") or _("Unknown Author")
-        page_now   = (ui.document and ui.document:getCurrentPage()) or safeGet(state, "page") or 1
-        page_total = safeGet(ui, "doc_settings", "data", "doc_pages") or 1
+        page_now   = getDisplayPage(ui, state)
+        page_total = getDocPages(ui)
         avg_time   = safeGet(ui, "statistics", "avg_time") or 0
     else
         book_title = book_data.title   or _("Untitled")
         authors    = book_data.authors or _("Unknown Author")
-        page_now   = book_data.page    or 1
+        page_now   = book_data.display_page or book_data.page or 1
         page_total = book_data.doc_pages or 1
         avg_time   = book_data.avg_time  or 0
     end
 
     local progress       = page_now / page_total
     local show_book_time = getSettingWithDefault(SETTINGS.SHOW_BOOK_TIME_REMAINING, true)
-    local time_left_str = (show_book_time and avg_time > 0) and formatDuration(avg_time * (page_total - page_now)) or nil
+    local time_left_str  = nil
+    if show_book_time and avg_time > 0 then
+        local pages_left
+        if has_ui and ui.document and ui.document.getTotalPagesLeft then
+            local ok, left = pcall(ui.document.getTotalPagesLeft, ui.document, page_now)
+            pages_left = (ok and left) or (page_total - page_now)
+        else
+            pages_left = page_total - page_now
+        end
+        time_left_str = formatDuration(avg_time * pages_left)
+    end
 
     local progress_line = string.format("%d%%", math.floor(progress * 100 + 0.5))
     if time_left_str then
@@ -481,15 +508,20 @@ local function buildBookSection(ui, state, book_data, has_ui, total_width, color
     end
 
     local subtitle_lines = {}
+    if G_reader_settings:isTrue(SETTINGS.SHOW_BOOK_SERIES) and book_data and book_data.series then
+        local series_text = book_data.series
+        if book_data.series_index then
+            series_text = series_text .. " #" .. book_data.series_index
+        end
+        table.insert(subtitle_lines, series_text)
+    end
     if G_reader_settings:isTrue(SETTINGS.SHOW_BOOK_AUTHOR) then table.insert(subtitle_lines, authors) end
     if G_reader_settings:isTrue(SETTINGS.SHOW_BOOK_PAGES)  then
         table.insert(subtitle_lines, string.format(_("Page %d of %d"), page_now, page_total))
     end
     table.insert(subtitle_lines, progress_line)
 
-    local book_subtitle = #subtitle_lines > 1
-        and createMultiLineSubtitle(subtitle_lines, subtitle_face, colors.subtext)
-        or progress_line
+    local book_subtitle = createMultiLineSubtitle(subtitle_lines, subtitle_face, colors.subtext)
 
     local allow_multiline = getSettingWithDefault(SETTINGS.BOOK_MULTILINE, USER_CONFIG.BOOK_MULTILINE)
 
@@ -510,8 +542,8 @@ local function buildChapterSection(ui, state, book_data, has_ui, total_width, co
     local page_now
 
     if has_ui then
-        page_now = (ui.document and ui.document:getCurrentPage()) or safeGet(state, "page") or 1
-        if ui.toc then
+        page_now = getDisplayPage(ui, state)
+        if ui.toc and ui.toc.toc and #ui.toc.toc > 0 then
             local raw          = ui.toc:getTocTitleByPage(page_now) or ""
             local should_clean = getSettingWithDefault(SETTINGS.CLEAN_CHAP, USER_CONFIG.CLEAN_CHAP)
             chap_title = should_clean and cleanChapterTitle(raw) or (raw ~= "" and raw or _("No Chapter"))
@@ -538,7 +570,17 @@ local function buildChapterSection(ui, state, book_data, has_ui, total_width, co
 
     local chap_progress  = c_done / math.max(c_tot, 1)
     local show_chap_time = getSettingWithDefault(SETTINGS.SHOW_CHAP_TIME_REMAINING, true)
-    local time_left = (show_chap_time and avg_time > 0) and formatDuration(avg_time * pages_left) or nil
+    local time_left      = nil
+    if show_chap_time and avg_time > 0 then
+        local chap_pages_left
+        if has_ui and ui.toc and ui.toc.getChapterPagesLeft then
+            local ok, left = pcall(ui.toc.getChapterPagesLeft, ui.toc, page_now, true)
+            chap_pages_left = (ok and left) or pages_left
+        else
+            chap_pages_left = pages_left
+        end
+        time_left = formatDuration(avg_time * chap_pages_left)
+    end
 
     local chap_sub = string.format("%d%%", math.floor(chap_progress * 100 + 0.5))
     if time_left then chap_sub = chap_sub .. " · " .. string.format(_("%s left"), time_left) end
@@ -581,11 +623,11 @@ local function buildGoalSection(ui, state, book_data, has_ui, total_width, color
 
     local show_streak      = getSetting("SHOW_GOAL_STREAK")
     local show_achievement = getSetting("SHOW_GOAL_ACHIEVEMENT")
-    local daily_goal       = getSetting("DAILY_GOAL") or USER_CONFIG.DAILY_GOAL
+    local goal_type        = getSetting("GOAL_TYPE") or USER_CONFIG.GOAL_TYPE or "pages"
 
     local day_dur, day_pages
-    local current_streak                = 0
-    local days_met, days_in_week        = 0, 0
+    local current_streak         = 0
+    local days_met, days_in_week = 0, 0
 
     if book_data and book_data.day_duration ~= nil then
         day_dur      = book_data.day_duration
@@ -594,9 +636,9 @@ local function buildGoalSection(ui, state, book_data, has_ui, total_width, color
         days_met        = book_data.days_met or 0
         days_in_week    = book_data.days_in_week or 1
     else
-        local stats_mod         = require("stats")
+        local stats_mod    = require("stats")
         day_dur, day_pages = stats_mod.getDailyStats(has_ui and ui.statistics or nil, book_id)
-        day_pages = day_pages or 0
+        day_pages          = day_pages or 0
         if show_streak then
             current_streak = stats_mod.getCurrentDailyStreak()
         end
@@ -605,40 +647,100 @@ local function buildGoalSection(ui, state, book_data, has_ui, total_width, color
         end
     end
 
-    local goal_title = string.format(_("%s read today"),
-        formatDuration(day_dur) or _("0 mins"))
+    local goal_title_type = getSetting("GOAL_TITLE_TYPE") or USER_CONFIG.GOAL_TITLE_TYPE or "time"
+    local goal_title
+    do
+        local time_str  = formatDuration(day_dur) or _("0 mins")
+        local pages_str = tostring(day_pages or 0)
+        local goal_title_type = getSetting("GOAL_TITLE_TYPE") or USER_CONFIG.GOAL_TITLE_TYPE or "time"
 
-    local subtitle_lines  = {}
-    local show_goal_pages = getSettingWithDefault(SETTINGS.SHOW_GOAL_PAGES, USER_CONFIG.SHOW_GOAL_PAGES)
-
-    if show_streak then
-        table.insert(subtitle_lines, string.format(_("%d days read in a row"), current_streak))
+        if goal_title_type == "pages" then
+            local page_word = ngettext("page", "pages", day_pages or 0)
+            goal_title = string.format(_("%s %s read today"), pages_str, page_word)
+            
+        elseif goal_title_type == "both" then
+            local page_word = (day_pages == 1) and _("pg") or _("pgs")
+            goal_title = string.format(_("%s %s & %s read today"), pages_str, page_word, time_str)
+            
+        else
+            goal_title = string.format(_("%s read today"), time_str)
+        end
     end
-    if show_achievement then
-        table.insert(subtitle_lines, string.format(_("Met goal %d/%d days this week"), days_met, days_in_week))
-    end
+    local subtitle_lines = {}
+    local goal_achieved, goal_progress, icon
 
-    local goal_achieved = day_pages >= daily_goal
-    local goal_pct      = math.floor((day_pages / daily_goal) * 100)
+    if goal_type == "time" then
+        local daily_goal_minutes = getSetting("DAILY_GOAL_MINUTES") or USER_CONFIG.DAILY_GOAL_MINUTES or 30
+        local goal_seconds       = daily_goal_minutes * 60
+        local day_dur_safe       = day_dur or 0
 
-    if show_goal_pages then
-        local status = goal_achieved and _("Achieved!") or goal_pct .. "%"
-        table.insert(subtitle_lines, string.format("%s · %s", status,
-            string.format(_("%d/%d page goal"), day_pages, daily_goal)))
+        goal_achieved = day_dur_safe >= goal_seconds
+        goal_progress = goal_seconds > 0 and (day_dur_safe / goal_seconds) or 0
+        local goal_pct = math.floor(goal_progress * 100)
+
+        if show_streak then
+            table.insert(subtitle_lines, string.format(_("%d day streak"), current_streak))
+        end
+        if show_achievement then
+            table.insert(subtitle_lines, string.format(_("%d/%d days met this week"), days_met, days_in_week))
+        end
+
+        local show_detail = getSettingWithDefault(SETTINGS.SHOW_GOAL_PAGES, USER_CONFIG.SHOW_GOAL_PAGES)
+        if show_detail then
+            local done_str   = formatDuration(day_dur_safe) or _("0 mins")
+            local h          = math.floor(daily_goal_minutes / 60)
+            local m          = daily_goal_minutes % 60
+            local target_str
+            if h > 0 and m > 0 then
+                target_str = string.format("%d %s %d %s",
+                    h, ngettext("hr", "hrs", h), m, ngettext("min", "mins", m))
+            elseif h > 0 then
+                target_str = string.format("%d %s", h, ngettext("hr", "hrs", h))
+            else
+                target_str = string.format("%d %s", daily_goal_minutes, ngettext("min", "mins", daily_goal_minutes))
+            end
+            local status = goal_achieved and _("Achieved!") or (goal_pct .. "%")
+            table.insert(subtitle_lines, string.format("%s · %s %s", status, target_str, _("goal")))
+        else
+            table.insert(subtitle_lines, goal_achieved
+                and _("Goal achieved!")
+                or string.format(_("%d%% of goal"), goal_pct))
+        end
+
     else
-        table.insert(subtitle_lines, goal_achieved
-            and _("Goal achieved!")
-            or string.format(_("%d%% of goal"), goal_pct))
+        local daily_goal = getSetting("DAILY_GOAL") or USER_CONFIG.DAILY_GOAL
+
+        goal_achieved = day_pages >= daily_goal
+        goal_progress = daily_goal > 0 and (day_pages / daily_goal) or 0
+        local goal_pct = math.floor(goal_progress * 100)
+
+        if show_streak then
+            table.insert(subtitle_lines, string.format(_("%d day streak"), current_streak))
+        end
+        if show_achievement then
+            table.insert(subtitle_lines, string.format(_("%d/%d days met this week"), days_met, days_in_week))
+        end
+
+        local show_goal_pages = getSettingWithDefault(SETTINGS.SHOW_GOAL_PAGES, USER_CONFIG.SHOW_GOAL_PAGES)
+        if show_goal_pages then
+            local status = goal_achieved and _("Achieved!") or (goal_pct .. "%")
+            table.insert(subtitle_lines, string.format("%s · %s", status,
+                string.format(_("%d page goal"), daily_goal)))
+        else
+            table.insert(subtitle_lines, goal_achieved
+                and _("Goal achieved!")
+                or string.format(_("%d%% of goal"), goal_pct))
+        end
     end
 
     local goal_subtitle = #subtitle_lines > 1
         and createMultiLineSubtitle(subtitle_lines, subtitle_face, colors.subtext)
         or subtitle_lines[1]
 
-    local icon = goal_achieved and "custom_trophy" or "custom_goal"
+    icon = goal_achieved and "custom_trophy" or "custom_goal"
 
     return buildSection(
-        total_width, goal_title, goal_subtitle, icon, day_pages / daily_goal,
+        total_width, goal_title, goal_subtitle, icon, clamp(goal_progress, 0, 1),
         { bg = colors.bg, text = colors.text, subtext = colors.subtext, bar_bg = colors.bar_bg,
           fill = color_config.goal, fill_hex = color_config.goal_hex },
         layout and layout.bar_height or getSetting("BAR_HEIGHT"), true, true, title_face, subtitle_face, nil, false, layout
@@ -674,7 +776,7 @@ local function buildBatterySection(ui, state, book_data, has_ui, total_width, co
         if show_rate then
             local consumption_rate = require("stats").getBatteryConsumptionRate()
             if consumption_rate and consumption_rate > 0 then
-                table.insert(subtitle_lines, string.format(_("~%.1f%% per hour"), consumption_rate))
+                table.insert(subtitle_lines, string.format(_("~%.1f%%/hour"), consumption_rate))
             else
                 table.insert(subtitle_lines, _("Rate unavailable"))
             end
@@ -688,7 +790,7 @@ local function buildBatterySection(ui, state, book_data, has_ui, total_width, co
             if show_rate then
                 local consumption_rate = require("stats").getBatteryConsumptionRate()
                 if consumption_rate and consumption_rate > 0 then
-                    table.insert(subtitle_lines, string.format(_("~%.1f%% per hour"), consumption_rate))
+                    table.insert(subtitle_lines, string.format(_("~%.1f%%/hour"), consumption_rate))
                 else
                     table.insert(subtitle_lines, _("Rate unavailable"))
                 end
@@ -700,7 +802,7 @@ local function buildBatterySection(ui, state, book_data, has_ui, total_width, co
             if show_rate then
                 local consumption_rate = require("stats").getBatteryConsumptionRate()
                 if consumption_rate and consumption_rate > 0 then
-                    table.insert(subtitle_lines, string.format(_("~%.1f%% per hour"), consumption_rate))
+                    table.insert(subtitle_lines, string.format(_("~%.1f%%/hour"), consumption_rate))
                 else
                     table.insert(subtitle_lines, _("Rate unavailable"))
                 end
@@ -745,6 +847,23 @@ local function buildMessageSection(ui, state, book_data, has_ui, total_width, co
         else
             return nil
         end
+    elseif message_source == "custom_quotes" then
+        local quote = getRandomCustomQuote()
+        if quote then
+            local show_attribution = getSetting("SHOW_QUOTE_ATTRIBUTION")
+            if show_attribution and (quote.author or quote.book) then
+                local attribution_parts = {}
+                if quote.author then table.insert(attribution_parts, quote.author) end
+                if quote.book   then table.insert(attribution_parts, quote.book)   end
+                message_text = createMultiLineSubtitle(
+                    { addQuotationMarks(quote.text), table.concat(attribution_parts, ", ") },
+                    subtitle_face, colors.subtext)
+            else
+                message_text = addQuotationMarks(quote.text)
+            end
+        else
+            message_text = _("No custom quotes found. Add quotes to custom_quotes.lua.")
+        end
     elseif message_source == "highlight" then
         local cover_path = has_ui and ui.document.file or (book_data and book_data.cover_path)
         if cover_path then
@@ -779,10 +898,17 @@ local function buildMessageSection(ui, state, book_data, has_ui, total_width, co
         message_text = _("No message set")
     end
 
-    local raw_header  = getSetting("MSG_HEADER")
+    local raw_header = getSetting("MSG_HEADER")
+    local default_headers = {
+        custom        = _("Sleeping"),
+        highlight     = _("Highlights"),
+        custom_quotes = _("Quotations"),
+        koreader      = _("Message"),
+    }
     local header_text = (raw_header and util.trim(raw_header) ~= "")
         and expandMessage(raw_header)
-        or _("Message header is empty")
+        or default_headers[message_source]
+        or _("Message")
 
     local show_full_bar = getSetting("MSG_SHOW_FULL_BAR")
 

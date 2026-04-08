@@ -1,4 +1,3 @@
-# CUSTOMISABLE SLEEP SCREEN
 #
 msgid ""
 msgstr ""
@@ -9,112 +8,14 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. ---- Display sleep screen strings ----
+msgid "No Chapter"
+msgstr "Sin capítulo"
 
 msgid "Untitled"
 msgstr "Sin título"
 
 msgid "Unknown Author"
 msgstr "Autor desconocido"
-
-#, lua-format
-msgid "Page %d of %d"
-msgstr "Página %d de %d"
-
-#, lua-format
-msgid "%s left"
-msgstr "%s restante"
-
-msgid "No Chapter"
-msgstr "Sin capítulo"
-
-#, lua-format
-msgid "Chapter %d of %d"
-msgstr "Capítulo %d de %d"
-
-#, lua-format
-msgid "%s read today"
-msgstr "%s leído hoy"
-
-#, lua-format
-msgid "%d days read in a row"
-msgstr "%d días de lectura consecutivos"
-
-#, lua-format
-msgid "Met goal %d/%d days this week"
-msgstr "Meta cumplida %d/%d días esta semana"
-
-#, lua-format
-msgid "%d/%d page goal"
-msgstr "%d/%d meta de páginas"
-
-msgid "Achieved!"
-msgstr "¡Logrado!"
-
-msgid "Goal achieved!"
-msgstr "¡Meta alcanzada!"
-
-#, lua-format
-msgid "%d%% of goal"
-msgstr "%d%% de la meta"
-
-msgid "0 mins"
-msgstr "0 mins"
-
-#, lua-format
-msgid "Approx. %d %s left"
-msgstr "Aprox. %d %s restante"
-
-msgid "Approx. <1 hr left"
-msgstr "Aprox. <1 hr restante"
-
-msgid "hr"
-msgid_plural "hrs"
-msgstr[0] "hr"
-msgstr[1] "hrs"
-
-#, lua-format
-msgid "~%.1f%% per hour"
-msgstr "~%.1f%% por hora"
-
-msgid "Rate unavailable"
-msgstr "Tasa no disponible"
-
-msgid "No message set"
-msgstr "Sin mensaje"
-
-msgid "No highlights found"
-msgstr "No se encontraron destacados"
-
-msgid "Message header is empty"
-msgstr "Encabezado de mensaje vacío"
-
-#, lua-format
-msgid "pg. %s"
-msgstr "pág. %s"
-
-msgid "min"
-msgid_plural "mins"
-msgstr[0] "min"
-msgstr[1] "mins"
-
-msgid "< 1 min"
-msgstr "< 1 min"
-
-#. Ordinal date suffix for 1 (e.g. "1st January"). Return "" if your language does not use suffixes.
-msgid "st"
-msgstr "°"
-
-#. Ordinal date suffix for 2 (e.g. "2nd January"). Return "" if your language does not use suffixes.
-msgid "nd"
-msgstr "°"
-
-#. Ordinal date suffix for 3 (e.g. "3rd January"). Return "" if your language does not use suffixes.
-msgid "rd"
-msgstr "°"
-
-#. Ordinal date suffix for 4 and above (e.g. "4th January"). Return "" if your language does not use suffixes.
-msgid "th"
-msgstr "°"
 
 msgid "January"
 msgstr "Enero"
@@ -152,29 +53,253 @@ msgstr "Noviembre"
 msgid "December"
 msgstr "Diciembre"
 
-#. ---- All other strings (menu items, help text, headers, buttons) ----
+msgid "st"
+msgstr "°"
 
-msgid "Pick a colour"
-msgstr "Seleccionar color"
+msgid "nd"
+msgstr "°"
+
+msgid "rd"
+msgstr "°"
+
+msgid "th"
+msgstr "°"
+
+msgid "< 1 min"
+msgstr "< 1 min"
+
+#, lua-format
+msgid "~%d %s left"
+msgstr "~%d %s restante"
+
+msgid "~<1 hr left"
+msgstr "~<1 hr restante"
+
+#, lua-format
+msgid "%s left"
+msgstr "%s restante"
+
+#, lua-format
+msgid "Page %d of %d"
+msgstr "Página %d de %d"
+
+#, lua-format
+msgid "Chapter %d of %d"
+msgstr "Capítulo %d de %d"
+
+msgid "0 mins"
+msgstr "0 mins"
+
+#, lua-format
+msgid "%s %s read today"
+msgstr "%s %s leído hoy"
+
+msgid "pg"
+msgstr "pág."
+
+msgid "pgs"
+msgstr "págs."
+
+#, lua-format
+msgid "%s %s & %s read today"
+msgstr "%s %s & %s leído hoy"
+
+#, lua-format
+msgid "%s read today"
+msgstr "%s leído hoy"
+
+#, lua-format
+msgid "%d day streak"
+msgstr "%d días de racha"
+
+#, lua-format
+msgid "%d/%d days met this week"
+msgstr "%d/%d días cumplidos esta semana"
+
+msgid "Achieved!"
+msgstr "¡Logrado!"
+
+msgid "goal"
+msgstr "meta"
+
+msgid "Goal achieved!"
+msgstr "¡Meta alcanzada!"
+
+#, lua-format
+msgid "%d%% of goal"
+msgstr "%d%% de la meta"
+
+#, lua-format
+msgid "%d page goal"
+msgstr "%d meta de páginas"
+
+#, lua-format
+msgid "~%.1f%%/hour"
+msgstr "~%.1f%%/hora"
+
+msgid "Rate unavailable"
+msgstr "Tasa no disponible"
+
+msgid "No message set"
+msgstr "Sin mensaje"
+
+msgid "No custom quotes found. Add quotes to custom_quotes.lua."
+msgstr ""
+"No se encontraron citas personalizadas. Añade citas a custom_quotes.lua."
+
+#, lua-format
+msgid "pg. %s"
+msgstr "pág. %s"
+
+msgid "No highlights found"
+msgstr "No se encontraron destacados"
+
+msgid "Sleeping"
+msgstr "En reposo"
+
+msgid "Highlights"
+msgstr "Destacados"
+
+msgid "Quotations"
+msgstr "Citas"
+
+msgid "Message"
+msgstr "Mensaje"
+
+#. ---- All other strings (menu items, help text, headers, buttons) ----
+msgid "None"
+msgstr "Ninguno"
+
+msgid "Active preset: "
+msgstr "Preajuste activo: "
+
+msgid "Save current settings as new preset"
+msgstr "Guardar ajustes actuales como nuevo preajuste"
+
+#, lua-format
+msgid "What would you like to do with preset '%s'?"
+msgstr "¿Qué desea hacer con el preajuste '%s'?"
+
+msgid "Update"
+msgstr "Actualizar"
+
+#, lua-format
+msgid "Are you sure you want to overwrite preset '%s' with current settings?"
+msgstr "¿Sobrescribir el preajuste '%s' con los ajustes actuales?"
+
+#, lua-format
+msgid "Preset '%s' was updated with current settings"
+msgstr "El preajuste '%s' se actualizó con los ajustes actuales"
+
+msgid "Delete"
+msgstr "Eliminar"
+
+#, lua-format
+msgid "Are you sure you want to delete preset '%s'?"
+msgstr "¿Eliminar el preajuste '%s'?"
+
+msgid "Rename"
+msgstr "Renombrar"
+
+msgid "Enter new preset name"
+msgstr "Introducir nuevo nombre de preajuste"
+
+msgid "[ Built-in Presets ]"
+msgstr "[ Preajustes integrados ]"
+
+msgid "[ Your Custom Presets ]"
+msgstr "[ Sus preajustes personalizados ]"
+
+msgid "Customisable sleep screen settings"
+msgstr "Ajustes de la pantalla de reposo personalizable"
+
+msgid "Customisable sleep screen presets"
+msgstr "Preajustes de la pantalla de reposo personalizable"
+
+msgid "Cycle through customisable sleep screen presets"
+msgstr ""
+"Desplazarse por los preajustes de la pantalla de reposo personalizable"
+
+msgid "Customisable sleep screen"
+msgstr "Pantalla de reposo personalizable"
+
+msgid "Enable customisable sleep screen"
+msgstr "Activar pantalla de reposo personalizable"
+
+msgid ""
+"Customisable Sleep Screen: no book data found.\n"
+"\n"
+"Open a book and trigger the sleep screen at least once before it will work in the file manager."
+msgstr ""
+"Pantalla de reposo personalizable: no se encontraron datos de libro.\n"
+"\n"
+"Abre un libro y activa la pantalla de reposo al menos una vez antes de que funcione en el gestor de archivos."
+
+msgid "Reset layout & spacing settings to default"
+msgstr "Restablecer ajustes de diseño y espaciado"
+
+msgid "Are you sure you want to reset layout & spacing settings?"
+msgstr "¿Restablecer los ajustes de diseño y espaciado?"
+
+msgid "Layout & spacing settings reset to defaults"
+msgstr "Ajustes de diseño y espaciado restablecidos"
+
+msgid "Reset contents settings to default"
+msgstr "Restablecer ajustes de contenido"
+
+msgid "Are you sure you want to reset contents settings?"
+msgstr "¿Restablecer los ajustes de contenido?"
+
+msgid "Contents settings reset to defaults"
+msgstr "Ajustes de contenido restablecidos"
+
+msgid "Reset colours, icons & bars settings to default"
+msgstr "Restablecer ajustes de colores, iconos y barras"
+
+msgid "Are you sure you want to reset colours, icons & bars settings?"
+msgstr "¿Restablecer los ajustes de colores, iconos y barras?"
+
+msgid "Colours, icons & bars settings reset to defaults"
+msgstr "Ajustes de colores, iconos y barras restablecidos"
+
+msgid "Reset fonts & text settings to default"
+msgstr "Restablecer ajustes de fuentes y texto"
+
+msgid "Are you sure you want to reset fonts & text settings?"
+msgstr "¿Restablecer los ajustes de fuentes y texto?"
+
+msgid "Fonts & text settings reset to defaults"
+msgstr "Ajustes de fuentes y texto restablecidos"
+
+msgid "Reset background settings to default"
+msgstr "Restablecer ajustes de fondo"
+
+msgid "Are you sure you want to reset background settings?"
+msgstr "¿Restablecer los ajustes de fondo?"
+
+msgid "Background settings reset to defaults"
+msgstr "Ajustes de fondo restablecidos"
+
+msgid "Reset the settings in this part of the menu to their defaults."
+msgstr ""
+"Restablecer los ajustes de esta parte del menú a sus valores "
+"predeterminados."
+
+msgid "factory defaults"
+msgstr "valores predeterminados de fábrica"
+
+#, lua-format
+msgid "Values will be restored from: %s"
+msgstr "Los valores se restaurarán desde: %s"
+
+msgid "Reset"
+msgstr "Restablecer"
 
 msgid "Cancel"
 msgstr "Cancelar"
 
-msgid "Apply"
-msgstr "Aplicar"
-
-#, lua-format
-msgid "Brightness: %d%%"
-msgstr "Brillo: %d%%"
-
-msgid "Enter hex"
-msgstr "Introducir hex"
-
-msgid "Enter hex colour code"
-msgstr "Introducir código de color hex"
-
-msgid "Invalid hex code. Use format: #RRGGBB"
-msgstr "Código hex inválido. Usar formato: #RRGGBB"
+msgid "Save"
+msgstr "Guardar"
 
 msgid "Delete all custom presets"
 msgstr "Eliminar todos los preajustes personalizados"
@@ -183,22 +308,63 @@ msgid ""
 "Permanently removes all custom presets you've created. The built-in "
 "'Default' preset will remain. This cannot be undone."
 msgstr ""
-"Elimina permanentemente todos los preajustes personalizados creados. "
-"El preajuste integrado 'Predeterminado' permanecerá. "
-"Esta acción no se puede deshacer."
+"Elimina permanentemente todos los preajustes personalizados creados. El "
+"preajuste integrado 'Predeterminado' permanecerá. Esta acción no se puede "
+"deshacer."
 
 msgid ""
 "Are you sure you want to delete all custom presets? (built-in presets will "
 "remain)"
 msgstr ""
-"¿Eliminar todos los preajustes personalizados? "
-"(los preajustes integrados permanecerán)"
-
-msgid "Delete"
-msgstr "Eliminar"
+"¿Eliminar todos los preajustes personalizados? (los preajustes integrados "
+"permanecerán)"
 
 msgid "All custom presets deleted. Built-in presets remain."
-msgstr "Todos los preajustes personalizados eliminados. Los preajustes integrados permanecen."
+msgstr ""
+"Todos los preajustes personalizados eliminados. Los preajustes integrados "
+"permanecen."
+
+msgid "Sleep screen orientation"
+msgstr "Orientación de la pantalla de reposo"
+
+msgid ""
+"Force the sleep screen to display in a specific orientation, regardless of "
+"how the device is held."
+msgstr ""
+"Fuerza la orientación de la pantalla de reposo independientemente de cómo se"
+" sostenga el dispositivo."
+
+msgid "Auto (follow device)"
+msgstr "Automático (seguir dispositivo)"
+
+msgid "Use whatever orientation the device is currently in."
+msgstr "Usar la orientación actual del dispositivo."
+
+msgid "Force portrait"
+msgstr "Forzar orientación vertical"
+
+msgid "Always display the sleep screen in portrait mode."
+msgstr "Mostrar siempre la pantalla de reposo en orientación vertical."
+
+msgid "Force landscape"
+msgstr "Forzar orientación horizontal"
+
+msgid "Always display the sleep screen in landscape mode."
+msgstr "Mostrar siempre la pantalla de reposo en orientación horizontal."
+
+msgid "Force upside-down portrait"
+msgstr "Forzar orientación vertical invertida"
+
+msgid "Always display the sleep screen in inverted portrait mode."
+msgstr ""
+"Mostrar siempre la pantalla de reposo en orientación vertical invertida."
+
+msgid "Force upside-down landscape"
+msgstr "Forzar orientación horizontal invertida"
+
+msgid "Always display the sleep screen in inverted landscape mode."
+msgstr ""
+"Mostrar siempre la pantalla de reposo en orientación horizontal invertida."
 
 msgid "Battery time calculation"
 msgstr "Cálculo de autonomía de batería"
@@ -216,7 +382,8 @@ msgid "Awake since last charge"
 msgstr "Tiempo activo desde la última carga"
 
 msgid "Uses only active reading battery drain (more conservative estimate)"
-msgstr "Usa solo el consumo durante la lectura activa (estimación más conservadora)"
+msgstr ""
+"Usa solo el consumo durante la lectura activa (estimación más conservadora)"
 
 msgid "Sleeping since last charge"
 msgstr "Tiempo en reposo desde la última carga"
@@ -247,10 +414,10 @@ msgid ""
 "book only, or all books read today. Note: reading streak and weekly goal "
 "achievement always reflect all books regardless of this setting."
 msgstr ""
-"Controla si el tiempo de lectura y el recuento de páginas de hoy se "
-"aplican solo al libro actual o a todos los libros leídos hoy. Nota: la "
-"racha de lectura y el logro del objetivo semanal siempre reflejan "
-"todos los libros, independientemente de esta configuración."
+"Controla si el tiempo de lectura y el recuento de páginas de hoy se aplican "
+"solo al libro actual o a todos los libros leídos hoy. Nota: la racha de "
+"lectura y el logro del objetivo semanal siempre reflejan todos los libros, "
+"independientemente de esta configuración."
 
 msgid "All books"
 msgstr "Todos los libros"
@@ -315,7 +482,8 @@ msgid "Colours, Icons & Bars"
 msgstr "Colores, iconos y barras"
 
 msgid "Customise section colours, icon appearance, and progress bar styling."
-msgstr "Personalizar colores de sección, apariencia de iconos y estilo de barras."
+msgstr ""
+"Personalizar colores de sección, apariencia de iconos y estilo de barras."
 
 msgid "Fonts & Text"
 msgstr "Fuentes y texto"
@@ -352,20 +520,403 @@ msgstr ""
 "Para actualizaciones e incidencias:\n"
 "github.com/%s"
 
-msgid "Customisable sleep screen settings"
-msgstr "Ajustes de la pantalla de reposo personalizable"
+msgid "Pick a colour"
+msgstr "Seleccionar color"
 
-msgid "Customisable sleep screen presets"
-msgstr "Preajustes de la pantalla de reposo personalizable"
+msgid "Apply"
+msgstr "Aplicar"
 
-msgid "Cycle through customisable sleep screen presets"
-msgstr "Desplazarse por los preajustes de la pantalla de reposo personalizable"
+#, lua-format
+msgid "Brightness: %d%%"
+msgstr "Brillo: %d%%"
 
-msgid "Customisable sleep screen"
-msgstr "Pantalla de reposo personalizable"
+msgid "Enter hex"
+msgstr "Introducir hex"
 
-msgid "Enable customisable sleep screen"
-msgstr "Activar pantalla de reposo personalizable"
+msgid "Enter hex colour code"
+msgstr "Introducir código de color hex"
+
+msgid "Invalid hex code. Use format: #RRGGBB"
+msgstr "Código hex inválido. Usar formato: #RRGGBB"
+
+msgid "Book info"
+msgstr "Info del libro"
+
+msgid "Chapter info"
+msgstr "Info del capítulo"
+
+msgid "Daily info"
+msgstr "Info diaria"
+
+msgid "Battery info"
+msgstr "Info de batería"
+
+msgid "Message info"
+msgstr "Info del mensaje"
+
+msgid "Reorder sections"
+msgstr "Reordenar secciones"
+
+msgid "Section order"
+msgstr "Orden de secciones"
+
+msgid "At least one section must remain visible."
+msgstr "Al menos una sección debe permanecer visible."
+
+msgid "Show book author"
+msgstr "Mostrar autor del libro"
+
+msgid "Display the author name below the book title."
+msgstr "Mostrar el nombre del autor debajo del título del libro."
+
+msgid "Show series name"
+msgstr "Mostrar nombre de la serie"
+
+msgid "Display the book's series name and index below the title."
+msgstr "Mostrar el nombre de la serie y el índice del libro bajo el título."
+
+msgid "Show book pages (pg x of x)"
+msgstr "Mostrar páginas del libro (pág. x de x)"
+
+msgid "Display total page count for the entire book."
+msgstr "Mostrar el número total de páginas del libro."
+
+msgid "Show book time remaining"
+msgstr "Mostrar tiempo de lectura restante"
+
+msgid ""
+"Estimated reading time left to finish the book, based on your average "
+"reading speed."
+msgstr ""
+"Tiempo de lectura estimado restante para terminar el libro, basado en su "
+"velocidad de lectura media."
+
+msgid "Show chapter count (ch x of x)"
+msgstr "Mostrar número de capítulos (cap. x de x)"
+
+msgid ""
+"Display current chapter number and total chapters (e.g., 'Chapter 5 of 12')."
+msgstr ""
+"Mostrar el número del capítulo actual y el total (p. ej., 'Capítulo 5 de "
+"12')."
+
+msgid "Show chapter pages (pg x of x)"
+msgstr "Mostrar páginas del capítulo (pág. x de x)"
+
+msgid "Display the number of pages in the current chapter."
+msgstr "Mostrar el número de páginas en el capítulo actual."
+
+msgid "Show chapter time remaining"
+msgstr "Mostrar tiempo restante del capítulo"
+
+msgid ""
+"Estimated time to finish the current chapter, based on your reading speed."
+msgstr ""
+"Tiempo estimado para terminar el capítulo actual, basado en su velocidad de "
+"lectura."
+
+msgid "Title Line"
+msgstr "Línea de título"
+
+msgid "Choose what the top line of the daily info section displays."
+msgstr ""
+"Elegir qué muestra la línea superior de la sección de información diaria."
+
+msgid "Pages read today"
+msgstr "Páginas leídas hoy"
+
+msgid "e.g. '35 pages read today'"
+msgstr "p. ej. '35 páginas leídas hoy'"
+
+msgid "Time read today"
+msgstr "Tiempo de lectura hoy"
+
+msgid "e.g. '42 mins read today'"
+msgstr "p. ej. '42 mins leído hoy'"
+
+msgid "Pages and time read today"
+msgstr "Páginas y tiempo de lectura hoy"
+
+msgid "e.g. '35 pgs & 42 mins read today'"
+msgstr "p. ej. '35 págs. & 42 mins leído hoy'"
+
+msgid "Goal type"
+msgstr "Tipo de meta"
+
+msgid ""
+"Choose whether your daily goal tracks pages read or time spent reading."
+msgstr ""
+"Elegir si el objetivo diario registra páginas leídas o tiempo de lectura."
+
+msgid "Page goal"
+msgstr "Meta de páginas"
+
+msgid "Track daily progress by number of pages read."
+msgstr "Registrar el progreso diario por número de páginas leídas."
+
+msgid "Time goal"
+msgstr "Meta de tiempo"
+
+msgid "Track daily progress by minutes spent reading."
+msgstr "Registrar el progreso diario por minutos de lectura."
+
+msgid "Daily page goal"
+msgstr "Meta diaria de páginas"
+
+msgid "Set how many pages you aim to read each day."
+msgstr "Establecer cuántas páginas desea leer cada día."
+
+msgid "Daily time goal"
+msgstr "Meta de tiempo diaria"
+
+msgid "Set how many minutes you aim to read each day."
+msgstr "Establecer cuántos minutos se desea leer cada día."
+
+msgid "Daily time goal (minutes)"
+msgstr "Meta de tiempo diaria (minutos)"
+
+msgid "Show current reading streak"
+msgstr "Mostrar racha de lectura actual"
+
+msgid "Display consecutive days you've met your reading goal."
+msgstr ""
+"Mostrar los días consecutivos en que se cumplió el objetivo de lectura."
+
+msgid "Show weekly progress"
+msgstr "Mostrar progreso semanal"
+
+msgid ""
+"Days this week you have met your reading goal, shown as completed days out "
+"of the current weekday (Monday = 1... Sunday = 7). For example: Thursday "
+"with goals met on Monday and Tuesday will show 2/4."
+msgstr ""
+"Días esta semana en que se ha cumplido el objetivo de lectura, mostrados "
+"como días completados del día de la semana actual (lunes = 1... domingo = "
+"7). Ejemplo: jueves con objetivos cumplidos el lunes y martes mostrará 2/4."
+
+msgid "Show daily goal"
+msgstr "Mostrar meta diaria"
+
+msgid ""
+"Target page mode: e.g. 50 page goal. Target time mode: e.g. 1hr 15min time "
+"goal."
+msgstr ""
+"Modo meta de páginas: p. ej. 50 páginas de meta. Modo meta de tiempo: p. ej."
+" 1 hr 15 min de meta de tiempo."
+
+msgid "Show current time/date on separate line"
+msgstr "Mostrar hora/fecha actual en línea separada"
+
+msgid ""
+"Display time/date on its own line below battery percentage instead of "
+"inline."
+msgstr ""
+"Mostrar la hora/fecha en su propia línea debajo del porcentaje de batería en"
+" lugar de en línea."
+
+msgid "Enable 'Show battery time remaining' to use this option"
+msgstr "Activar 'Mostrar tiempo restante de batería' para usar esta opción"
+
+msgid "Show date instead of time"
+msgstr "Mostrar fecha en lugar de hora"
+
+msgid ""
+"Display current date (e.g. '29th Jan') instead of time in battery section"
+msgstr ""
+"Mostrar la fecha actual (p. ej., '29 ene') en lugar de la hora en la sección"
+" de batería"
+
+msgid "Show battery consumption rate"
+msgstr "Mostrar tasa de consumo de batería"
+
+msgid ""
+"Display battery drain percentage per hour based on recent usage or manual "
+"input (see advanced menu)"
+msgstr ""
+"Mostrar el porcentaje de descarga de batería por hora basado en el uso "
+"reciente o entrada manual (ver menú avanzado)"
+
+msgid "Show battery time remaining"
+msgstr "Mostrar tiempo restante de batería"
+
+msgid ""
+"Estimated hours and minutes until battery is depleted, based on current "
+"drain rate."
+msgstr ""
+"Horas y minutos estimados hasta el agotamiento de la batería, basados en la "
+"tasa de descarga actual."
+
+msgid "Custom message"
+msgstr "Mensaje personalizado"
+
+msgid "Use a separate custom message just for Customisable Sleep Screen"
+msgstr ""
+"Usar un mensaje personalizado separado solo para la pantalla de reposo "
+"personalizable"
+
+msgid "Book highlights"
+msgstr "Destacados del libro"
+
+msgid "Show a random highlight from the current book"
+msgstr "Mostrar un destacado aleatorio del libro actual"
+
+msgid "Custom quotes"
+msgstr "Citas personalizadas"
+
+msgid ""
+"Show a random quote from the custom_quotes.lua file in the plugin folder."
+msgstr ""
+"Mostrar una cita aleatoria del archivo custom_quotes.lua en la carpeta del "
+"plugin."
+
+msgid "KOReader sleep message"
+msgstr "Mensaje de reposo de KOReader"
+
+msgid ""
+"Uses KOReaders own sleep screen message function. Enable 'Add custom message"
+" to sleep screen' to use this (Settings → Screen → Sleep screen → Sleep "
+"screen message)."
+msgstr ""
+"Usa la función propia de mensaje de pantalla de reposo de KOReader. Activar "
+"'Añadir mensaje personalizado a la pantalla de reposo' para usarlo (Ajustes "
+"→ Pantalla → Pantalla de reposo → Mensaje de pantalla de reposo)."
+
+msgid "Message header"
+msgstr "Encabezado del mensaje"
+
+msgid ""
+"Custom header text displayed above the message. Supports variables: %d, %y, "
+"%t, %b, %r."
+msgstr ""
+"Texto de encabezado personalizado mostrado sobre el mensaje. Admite "
+"variables: %d, %y, %t, %b, %r."
+
+msgid "Change custom message header"
+msgstr "Cambiar encabezado del mensaje personalizado"
+
+msgid "Edit custom message"
+msgstr "Editar mensaje personalizado"
+
+msgid ""
+"Write your custom message text. Only active when 'Custom message' is "
+"selected. Supports variables: %d, %y, %t, %b, %r."
+msgstr ""
+"Escribir el texto del mensaje personalizado. Solo activo cuando se "
+"selecciona 'Mensaje personalizado'. Admite variables: %d, %y, %t, %b, %r."
+
+msgid "Custom Customisable Sleep Screen message"
+msgstr "Mensaje personalizado de la pantalla de reposo personalizable"
+
+msgid "Book highlight maximum length"
+msgstr "Longitud máxima de destacados del libro"
+
+msgid "Maximum characters to display for highlights (0 = no limit)."
+msgstr ""
+"Número máximo de caracteres a mostrar para los destacados (0 = sin límite)."
+
+msgid "Maximum highlight length"
+msgstr "Longitud máxima de destacados"
+
+msgid "Set to 0 for no limit"
+msgstr "Establecer en 0 para sin límite"
+
+msgid "Add quotation marks to highlights"
+msgstr "Añadir comillas a los destacados"
+
+msgid ""
+"Wraps all highlights in curly double quotes, removing any pre-existing "
+"quotation marks."
+msgstr ""
+"Envuelve todos los destacados en comillas dobles tipográficas, eliminando "
+"las comillas preexistentes."
+
+msgid "Show highlight location"
+msgstr "Mostrar ubicación del destacado"
+
+msgid ""
+"Display the chapter title and page number where the highlight is found, "
+"shown below the highlight text."
+msgstr ""
+"Mostrar el título del capítulo y el número de página donde se encuentra el "
+"destacado, debajo del texto destacado."
+
+msgid "Show quote attribution"
+msgstr "Mostrar atribución de la cita"
+
+msgid ""
+"Display the author and book name below the quote, if provided in "
+"custom_quotes.lua."
+msgstr ""
+"Mostrar el autor y el nombre del libro bajo la cita, si se indica en "
+"custom_quotes.lua."
+
+msgid "Show titles (top line)"
+msgstr "Mostrar títulos (línea superior)"
+
+msgid ""
+"Display the main heading text in each section. At least one of titles or "
+"subtitles must be visible."
+msgstr ""
+"Mostrar el texto de encabezado principal en cada sección. Al menos los "
+"títulos o los subtítulos deben ser visibles."
+
+msgid "Cannot hide both titles and subtitles. At least one must be visible."
+msgstr ""
+"No se pueden ocultar tanto los títulos como los subtítulos. Al menos uno "
+"debe ser visible."
+
+msgid "Show subtitles (bottom lines)"
+msgstr "Mostrar subtítulos (líneas inferiores)"
+
+msgid ""
+"Display information below main heading text in each section. At least one of"
+" titles or subtitles must be visible."
+msgstr ""
+"Mostrar información debajo del texto de encabezado principal en cada "
+"sección. Al menos los títulos o los subtítulos deben ser visibles."
+
+msgid "Displayed sections"
+msgstr "Secciones mostradas"
+
+msgid ""
+"Toggle which sections show on the sleep screen. At least one must be "
+"visible."
+msgstr ""
+"Activar o desactivar las secciones mostradas en la pantalla de reposo. Al "
+"menos una debe ser visible."
+
+msgid "[ Section Content ]"
+msgstr "[ Contenido de sección ]"
+
+msgid "Book section"
+msgstr "Sección libro"
+
+msgid "Configure book-specific details."
+msgstr "Configurar detalles específicos del libro."
+
+msgid "Chapter section"
+msgstr "Sección capítulo"
+
+msgid "Configure chapter-specific details"
+msgstr "Configurar detalles específicos del capítulo"
+
+msgid "Daily goal section"
+msgstr "Sección meta diaria"
+
+msgid "Configure reading goal details"
+msgstr "Configurar detalles del objetivo de lectura"
+
+msgid "Battery section"
+msgstr "Sección batería"
+
+msgid "Configure battery & time/date details"
+msgstr "Configurar detalles de batería y hora/fecha"
+
+msgid "Message section"
+msgstr "Sección mensaje"
+
+msgid "Configure message-specific details"
+msgstr "Configurar detalles específicos del mensaje"
 
 msgid "Hairline"
 msgstr "Finísimo"
@@ -488,12 +1039,13 @@ msgid "Dark mode"
 msgstr "Modo oscuro"
 
 msgid ""
-"Inverts the colour scheme. Text becomes white and backgrounds becomes black. "
-"Useful for reading in low-light conditions. Can be combined with monochrome "
-"mode."
+"Inverts the colour scheme. Text becomes white and backgrounds becomes black."
+" Useful for reading in low-light conditions. Can be combined with monochrome"
+" mode."
 msgstr ""
-"Invierte el esquema de colores. El texto se vuelve blanco y los fondos negros. "
-"Útil para leer con poca luz. Se puede combinar con el modo monocromo."
+"Invierte el esquema de colores. El texto se vuelve blanco y los fondos "
+"negros. Útil para leer con poca luz. Se puede combinar con el modo "
+"monocromo."
 
 msgid "Monochrome mode"
 msgstr "Modo monocromo"
@@ -504,17 +1056,20 @@ msgid ""
 "assigned section colours. Can be combined with dark mode."
 msgstr ""
 "Adecuado para lectores electrónicos B&N. Asigna un color a todas las "
-"secciones usando valores hexadecimales monocromo claro u oscuro. Sobrescribe "
-"los colores de sección individuales. Se puede combinar con el modo oscuro."
+"secciones usando valores hexadecimales monocromo claro u oscuro. Sobrescribe"
+" los colores de sección individuales. Se puede combinar con el modo oscuro."
 
-msgid "Enable section gaps"
-msgstr "Activar separación entre secciones"
+msgid "Section gaps"
+msgstr "Separación entre secciones"
 
 msgid ""
 "Add transparent gaps between sections to make each appear as a separate box"
 msgstr ""
-"Añadir separaciones transparentes entre secciones para que cada una "
-"aparezca como una caja independiente"
+"Añadir separaciones transparentes entre secciones para que cada una aparezca"
+" como una caja independiente"
+
+msgid "Enable section gaps"
+msgstr "Activar separación entre secciones"
 
 msgid "Section gap size"
 msgstr "Tamaño de la separación entre secciones"
@@ -537,7 +1092,8 @@ msgstr "Anchura"
 msgid ""
 "Horizontal width of the information box as a percentage of screen width."
 msgstr ""
-"Anchura horizontal del cuadro de información como porcentaje del ancho de pantalla."
+"Anchura horizontal del cuadro de información como porcentaje del ancho de "
+"pantalla."
 
 msgid "Opacity"
 msgstr "Opacidad"
@@ -567,7 +1123,8 @@ msgid "Icon to text gap"
 msgstr "Separación icono-texto"
 
 msgid "Horizontal spacing between section icons and their accompanying text."
-msgstr "Espaciado horizontal entre los iconos de sección y el texto acompañante."
+msgstr ""
+"Espaciado horizontal entre los iconos de sección y el texto acompañante."
 
 msgid "Y-axis margin (top/bottom left/right pos)"
 msgstr "Margen eje Y (posición arriba/abajo izquierda/derecha)"
@@ -577,10 +1134,13 @@ msgid ""
 "centre, bottom centre, top left, bottom left, top right or bottom right."
 msgstr ""
 "Desplazamiento vertical desde el borde superior o inferior al posicionar en "
-"arriba centro, abajo centro, arriba izquierda, abajo izquierda, arriba derecha o abajo derecha."
+"arriba centro, abajo centro, arriba izquierda, abajo izquierda, arriba "
+"derecha o abajo derecha."
 
 msgid "No icon sets found in customisablesleepscreen.koplugin/icons/"
-msgstr "No se encontraron conjuntos de iconos en customisablesleepscreen.koplugin/icons/"
+msgstr ""
+"No se encontraron conjuntos de iconos en "
+"customisablesleepscreen.koplugin/icons/"
 
 msgid "Off"
 msgstr "Desactivado"
@@ -597,19 +1157,6 @@ msgstr "Colores (barras de progreso)"
 msgid "Set the progress bar colours for each section."
 msgstr "Establece los colores de la barra de progreso para cada sección."
 
-msgid "Colours (modes)"
-msgstr "Colores (modos)"
-
-msgid ""
-"Configure colours for monochrome mode, infobox background, and text. "
-"Light and dark correspond to the current dark mode setting. "
-"Monochrome replaces all colours with that single chosen color."
-msgstr ""
-"Configura los colores para el modo monocromático, el fondo de la caja de "
-"información y el texto. Claro y oscuro corresponden a la configuración "
-"actual del modo oscuro. Monocromático reemplaza todos los colores por ese "
-"único color elegido."
-
 msgid "Use saved colours for icon fill"
 msgstr "Usar colores guardados para el relleno de iconos"
 
@@ -618,15 +1165,6 @@ msgid ""
 msgstr ""
 "Cuando está activado, los iconos coincidirán con el color de la barra de "
 "progreso de su sección."
-
-msgid "Book section"
-msgstr "Sección libro"
-
-msgid "Chapter section"
-msgstr "Sección capítulo"
-
-msgid "Reading goal section"
-msgstr "Sección objetivo de lectura"
 
 msgid "Battery section (High)"
 msgstr "Sección batería (Alta)"
@@ -640,8 +1178,18 @@ msgstr "Sección batería (Baja)"
 msgid "Battery section (Charging)"
 msgstr "Sección batería (Cargando)"
 
-msgid "Message section"
-msgstr "Sección mensaje"
+msgid "Colours (modes)"
+msgstr "Colores (modos)"
+
+msgid ""
+"Configure colours for monochrome mode, infobox background, and text. Light "
+"and dark correspond to the current dark mode setting. Monochrome replaces "
+"all colours with that single chosen color."
+msgstr ""
+"Configura los colores para el modo monocromático, el fondo de la caja de "
+"información y el texto. Claro y oscuro corresponden a la configuración "
+"actual del modo oscuro. Monocromático reemplaza todos los colores por ese "
+"único color elegido."
 
 msgid "Monochrome mode (light)"
 msgstr "Modo monocromo (claro)"
@@ -677,7 +1225,8 @@ msgid "Progress bar height"
 msgstr "Altura de la barra de progreso"
 
 msgid "Thickness of the horizontal progress bars shown in each section."
-msgstr "Grosor de las barras de progreso horizontales mostradas en cada sección."
+msgstr ""
+"Grosor de las barras de progreso horizontales mostradas en cada sección."
 
 msgid "Show icons"
 msgstr "Mostrar iconos"
@@ -699,32 +1248,39 @@ msgid ""
 "matching the message section colour and the progress bars in other sections."
 msgstr ""
 "Muestra una barra de progreso puramente decorativa bajo la sección de "
-"mensajes, con el color de dicha sección y de las barras de progreso de "
-"otras secciones."
+"mensajes, con el color de dicha sección y de las barras de progreso de otras"
+" secciones."
 
 msgid "Title font face"
 msgstr "Tipografía del título"
 
 msgid "Choose the font face for the main heading text in each section"
-msgstr "Elegir la tipografía para el texto de encabezado principal en cada sección"
+msgstr ""
+"Elegir la tipografía para el texto de encabezado principal en cada sección"
 
 msgid "Title font size"
 msgstr "Tamaño de fuente del título"
 
 msgid "Choose the font size for the main heading text in each section"
-msgstr "Elegir el tamaño de fuente para el texto de encabezado principal en cada sección"
+msgstr ""
+"Elegir el tamaño de fuente para el texto de encabezado principal en cada "
+"sección"
 
 msgid "Subtitle font face"
 msgstr "Tipografía del subtítulo"
 
 msgid "Choose the font face for the information below the main heading text."
-msgstr "Elegir la tipografía para la información debajo del texto de encabezado principal."
+msgstr ""
+"Elegir la tipografía para la información debajo del texto de encabezado "
+"principal."
 
 msgid "Subtitle font size"
 msgstr "Tamaño de fuente del subtítulo"
 
 msgid "Choose the font size for the information below the main heading text."
-msgstr "Elegir el tamaño de fuente para la información debajo del texto de encabezado principal."
+msgstr ""
+"Elegir el tamaño de fuente para la información debajo del texto de "
+"encabezado principal."
 
 msgid "Text alignment"
 msgstr "Alineación del texto"
@@ -742,9 +1298,11 @@ msgid "Book multiline titles"
 msgstr "Títulos de libro en varias líneas"
 
 msgid ""
-"If deselected book titles will be truncated to a single line with an ellipsis"
+"If deselected book titles will be truncated to a single line with an "
+"ellipsis"
 msgstr ""
-"Si está deseleccionado, los títulos de libro se truncarán a una sola línea con puntos suspensivos"
+"Si está deseleccionado, los títulos de libro se truncarán a una sola línea "
+"con puntos suspensivos"
 
 msgid "Chapter multiline titles"
 msgstr "Títulos de capítulo en varias líneas"
@@ -753,7 +1311,8 @@ msgid ""
 "If deselected chapter titles will be truncated to a single line with an "
 "ellipsis"
 msgstr ""
-"Si está deseleccionado, los títulos de capítulo se truncarán a una sola línea con puntos suspensivos"
+"Si está deseleccionado, los títulos de capítulo se truncarán a una sola "
+"línea con puntos suspensivos"
 
 msgid "Clean chapter titles"
 msgstr "Limpiar títulos de capítulo"
@@ -792,8 +1351,8 @@ msgid ""
 "When disabled, book cover will be scaled to fit within the screen while "
 "preserving aspect ratio."
 msgstr ""
-"Cuando está desactivado, la portada se escalará para ajustarse a la pantalla "
-"conservando la relación de aspecto."
+"Cuando está desactivado, la portada se escalará para ajustarse a la pantalla"
+" conservando la relación de aspecto."
 
 msgid "Cover fill colour"
 msgstr "Color de relleno de portada"
@@ -801,11 +1360,15 @@ msgstr "Color de relleno de portada"
 msgid "Background colour for non-stretched covers."
 msgstr "Color de fondo para portadas no estiradas."
 
-msgid "Black"
-msgstr "Negro"
+msgid "Pick cover fill colour"
+msgstr "Seleccionar color de relleno de portada"
 
-msgid "White"
-msgstr "Blanco"
+msgid "Cover alignment"
+msgstr "Alineación de portada"
+
+msgid "Horizontal alignment of the cover image when not stretched."
+msgstr ""
+"Alineación horizontal de la imagen de portada cuando no está estirada."
 
 msgid "Solid background colour"
 msgstr "Color de fondo sólido"
@@ -817,7 +1380,9 @@ msgid "Background folder path"
 msgstr "Ruta de la carpeta de fondos"
 
 msgid "No images found in the selected folder. No background will be shown."
-msgstr "No se encontraron imágenes en la carpeta seleccionada. No se mostrará ningún fondo."
+msgstr ""
+"No se encontraron imágenes en la carpeta seleccionada. No se mostrará ningún"
+" fondo."
 
 msgid "Background type"
 msgstr "Tipo de fondo"
@@ -827,373 +1392,3 @@ msgstr "Superposición de fondo"
 
 msgid "Add a colour layer over the background to reduce contrast."
 msgstr "Añadir una capa de color sobre el fondo para reducir el contraste."
-
-msgid "Reset layout & spacing settings to default"
-msgstr "Restablecer ajustes de diseño y espaciado"
-
-msgid "Are you sure you want to reset layout & spacing settings?"
-msgstr "¿Restablecer los ajustes de diseño y espaciado?"
-
-msgid "Layout & spacing settings reset to defaults"
-msgstr "Ajustes de diseño y espaciado restablecidos"
-
-msgid "Reset contents settings to default"
-msgstr "Restablecer ajustes de contenido"
-
-msgid "Are you sure you want to reset contents settings?"
-msgstr "¿Restablecer los ajustes de contenido?"
-
-msgid "Contents settings reset to defaults"
-msgstr "Ajustes de contenido restablecidos"
-
-msgid "Reset colours, icons & bars settings to default"
-msgstr "Restablecer ajustes de colores, iconos y barras"
-
-msgid "Are you sure you want to reset colours, icons & bars settings?"
-msgstr "¿Restablecer los ajustes de colores, iconos y barras?"
-
-msgid "Colours, icons & bars settings reset to defaults"
-msgstr "Ajustes de colores, iconos y barras restablecidos"
-
-msgid "Reset fonts & text settings to default"
-msgstr "Restablecer ajustes de fuentes y texto"
-
-msgid "Are you sure you want to reset fonts & text settings?"
-msgstr "¿Restablecer los ajustes de fuentes y texto?"
-
-msgid "Fonts & text settings reset to defaults"
-msgstr "Ajustes de fuentes y texto restablecidos"
-
-msgid "Reset background settings to default"
-msgstr "Restablecer ajustes de fondo"
-
-msgid "Are you sure you want to reset background settings?"
-msgstr "¿Restablecer los ajustes de fondo?"
-
-msgid "Background settings reset to defaults"
-msgstr "Ajustes de fondo restablecidos"
-
-msgid "Reset the settings in this part of the menu to their defaults."
-msgstr "Restablecer los ajustes de esta parte del menú a sus valores predeterminados."
-
-msgid "factory defaults"
-msgstr "valores predeterminados de fábrica"
-
-#, lua-format
-msgid "Values will be restored from: %s"
-msgstr "Los valores se restaurarán desde: %s"
-
-msgid "Reset"
-msgstr "Restablecer"
-
-msgid "Save"
-msgstr "Guardar"
-
-msgid "None"
-msgstr "Ninguno"
-
-msgid "Active preset: "
-msgstr "Preajuste activo: "
-
-msgid "Save current settings as new preset"
-msgstr "Guardar ajustes actuales como nuevo preajuste"
-
-#, lua-format
-msgid "What would you like to do with preset '%s'?"
-msgstr "¿Qué desea hacer con el preajuste '%s'?"
-
-msgid "Update"
-msgstr "Actualizar"
-
-#, lua-format
-msgid "Are you sure you want to overwrite preset '%s' with current settings?"
-msgstr "¿Sobrescribir el preajuste '%s' con los ajustes actuales?"
-
-#, lua-format
-msgid "Preset '%s' was updated with current settings"
-msgstr "El preajuste '%s' se actualizó con los ajustes actuales"
-
-#, lua-format
-msgid "Are you sure you want to delete preset '%s'?"
-msgstr "¿Eliminar el preajuste '%s'?"
-
-msgid "Rename"
-msgstr "Renombrar"
-
-msgid "Enter new preset name"
-msgstr "Introducir nuevo nombre de preajuste"
-
-msgid "[ Built-in Presets ]"
-msgstr "[ Preajustes integrados ]"
-
-msgid "[ Your Custom Presets ]"
-msgstr "[ Sus preajustes personalizados ]"
-
-msgid "Book info"
-msgstr "Info del libro"
-
-msgid "Chapter info"
-msgstr "Info del capítulo"
-
-msgid "Daily info"
-msgstr "Info diaria"
-
-msgid "Device info"
-msgstr "Info del dispositivo"
-
-msgid "Custom message"
-msgstr "Mensaje personalizado"
-
-msgid "Reorder sections"
-msgstr "Reordenar secciones"
-
-msgid "Section order"
-msgstr "Orden de secciones"
-
-msgid "At least one section must remain visible."
-msgstr "Al menos una sección debe permanecer visible."
-
-msgid "Show book author"
-msgstr "Mostrar autor del libro"
-
-msgid "Display the author name below the book title."
-msgstr "Mostrar el nombre del autor debajo del título del libro."
-
-msgid "Show book pages (pg x of x)"
-msgstr "Mostrar páginas del libro (pág. x de x)"
-
-msgid "Display total page count for the entire book."
-msgstr "Mostrar el número total de páginas del libro."
-
-msgid "Show book time remaining"
-msgstr "Mostrar tiempo de lectura restante"
-
-msgid ""
-"Estimated reading time left to finish the book, based on your average "
-"reading speed."
-msgstr ""
-"Tiempo de lectura estimado restante para terminar el libro, basado en su "
-"velocidad de lectura media."
-
-msgid "Show chapter count (ch x of x)"
-msgstr "Mostrar número de capítulos (cap. x de x)"
-
-msgid ""
-"Display current chapter number and total chapters (e.g., 'Chapter 5 of 12')."
-msgstr ""
-"Mostrar el número del capítulo actual y el total (p. ej., 'Capítulo 5 de 12')."
-
-msgid "Show chapter pages (pg x of x)"
-msgstr "Mostrar páginas del capítulo (pág. x de x)"
-
-msgid "Display the number of pages in the current chapter."
-msgstr "Mostrar el número de páginas en el capítulo actual."
-
-msgid "Show chapter time remaining"
-msgstr "Mostrar tiempo restante del capítulo"
-
-msgid ""
-"Estimated time to finish the current chapter, based on your reading speed."
-msgstr ""
-"Tiempo estimado para terminar el capítulo actual, basado en su velocidad de lectura."
-
-msgid "Daily page goal"
-msgstr "Meta diaria de páginas"
-
-msgid ""
-"Set how many pages you aim to read each day. Progress shown in the goal "
-"section."
-msgstr ""
-"Establecer cuántas páginas desea leer cada día. El progreso se muestra "
-"en la sección de objetivo."
-
-msgid "Show current reading streak"
-msgstr "Mostrar racha de lectura actual"
-
-msgid "Display consecutive days you've met your reading goal."
-msgstr "Mostrar los días consecutivos en que se cumplió el objetivo de lectura."
-
-msgid "Show weekly goal achievement"
-msgstr "Mostrar logro de objetivo semanal"
-
-msgid "Number of days this week you've met your daily reading goal."
-msgstr "Número de días esta semana en que se cumplió el objetivo de lectura diario."
-
-msgid "Show pages read out of daily goal"
-msgstr "Mostrar páginas leídas respecto al objetivo diario"
-
-msgid ""
-"Display pages read today compared to your daily target (e.g. '35/50 pages')."
-msgstr ""
-"Mostrar las páginas leídas hoy respecto al objetivo diario (p. ej., '35/50 páginas')."
-
-msgid "Show current time/date on separate line"
-msgstr "Mostrar hora/fecha actual en línea separada"
-
-msgid ""
-"Display time/date on its own line below battery percentage instead of inline."
-msgstr ""
-"Mostrar la hora/fecha en su propia línea debajo del porcentaje de batería en lugar de en línea."
-
-msgid "Enable 'Show battery time remaining' to use this option"
-msgstr "Activar 'Mostrar tiempo restante de batería' para usar esta opción"
-
-msgid "Show date instead of time"
-msgstr "Mostrar fecha en lugar de hora"
-
-msgid ""
-"Display current date (e.g. '29th Jan') instead of time in battery section"
-msgstr ""
-"Mostrar la fecha actual (p. ej., '29 ene') en lugar de la hora en la sección de batería"
-
-msgid "Show battery consumption rate"
-msgstr "Mostrar tasa de consumo de batería"
-
-msgid ""
-"Display battery drain percentage per hour based on recent usage or manual "
-"input (see advanced menu)"
-msgstr ""
-"Mostrar el porcentaje de descarga de batería por hora basado en el uso "
-"reciente o entrada manual (ver menú avanzado)"
-
-msgid "Show battery time remaining"
-msgstr "Mostrar tiempo restante de batería"
-
-msgid ""
-"Estimated hours and minutes until battery is depleted, based on current "
-"drain rate."
-msgstr ""
-"Horas y minutos estimados hasta el agotamiento de la batería, "
-"basados en la tasa de descarga actual."
-
-msgid "Use a separate custom message just for Customisable Sleep Screen"
-msgstr "Usar un mensaje personalizado separado solo para la pantalla de reposo personalizable"
-
-msgid "Book highlights"
-msgstr "Destacados del libro"
-
-msgid "Show a random highlight from the current book"
-msgstr "Mostrar un destacado aleatorio del libro actual"
-
-msgid "KOReader sleep message"
-msgstr "Mensaje de reposo de KOReader"
-
-msgid ""
-"Uses KOReaders own sleep screen message function. Enable 'Add custom message "
-"to sleep screen' to use this (Settings → Screen → Sleep screen → Sleep "
-"screen message)."
-msgstr ""
-"Usa la función propia de mensaje de pantalla de reposo de KOReader. "
-"Activar 'Añadir mensaje personalizado a la pantalla de reposo' para usarlo "
-"(Ajustes → Pantalla → Pantalla de reposo → Mensaje de pantalla de reposo)."
-
-msgid "Message header"
-msgstr "Encabezado del mensaje"
-
-msgid ""
-"Custom header text displayed above the message. Supports variables: %d, %y, "
-"%t, %b, %r."
-msgstr ""
-"Texto de encabezado personalizado mostrado sobre el mensaje. "
-"Admite variables: %d, %y, %t, %b, %r."
-
-msgid "Change custom message header"
-msgstr "Cambiar encabezado del mensaje personalizado"
-
-msgid "Edit custom message"
-msgstr "Editar mensaje personalizado"
-
-msgid ""
-"Write your custom message text. Only active when 'Custom message' is "
-"selected. Supports variables: %d, %y, %t, %b, %r."
-msgstr ""
-"Escribir el texto del mensaje personalizado. Solo activo cuando se selecciona "
-"'Mensaje personalizado'. Admite variables: %d, %y, %t, %b, %r."
-
-msgid "Custom Customisable Sleep Screen message"
-msgstr "Mensaje personalizado de la pantalla de reposo personalizable"
-
-msgid "Book highlight maximum length"
-msgstr "Longitud máxima de destacados del libro"
-
-msgid "Maximum characters to display for highlights (0 = no limit)."
-msgstr "Número máximo de caracteres a mostrar para los destacados (0 = sin límite)."
-
-msgid "Maximum highlight length"
-msgstr "Longitud máxima de destacados"
-
-msgid "Set to 0 for no limit"
-msgstr "Establecer en 0 para sin límite"
-
-msgid "Add quotation marks to highlights"
-msgstr "Añadir comillas a los destacados"
-
-msgid ""
-"Wraps all highlights in curly double quotes, removing any pre-existing "
-"quotation marks."
-msgstr ""
-"Envuelve todos los destacados en comillas dobles tipográficas, eliminando "
-"las comillas preexistentes."
-
-msgid "Show highlight location"
-msgstr "Mostrar ubicación del destacado"
-
-msgid ""
-"Display the chapter title and page number where the highlight is found, "
-"shown below the highlight text."
-msgstr ""
-"Mostrar el título del capítulo y el número de página donde se encuentra el "
-"destacado, debajo del texto destacado."
-
-msgid "Show titles (top line)"
-msgstr "Mostrar títulos (línea superior)"
-
-msgid ""
-"Display the main heading text in each section. At least one of titles or "
-"subtitles must be visible."
-msgstr ""
-"Mostrar el texto de encabezado principal en cada sección. Al menos los títulos "
-"o los subtítulos deben ser visibles."
-
-msgid "Cannot hide both titles and subtitles. At least one must be visible."
-msgstr "No se pueden ocultar tanto los títulos como los subtítulos. Al menos uno debe ser visible."
-
-msgid "Show subtitles (bottom lines)"
-msgstr "Mostrar subtítulos (líneas inferiores)"
-
-msgid ""
-"Display information below main heading text in each section. At least one of "
-"titles or subtitles must be visible."
-msgstr ""
-"Mostrar información debajo del texto de encabezado principal en cada sección. "
-"Al menos los títulos o los subtítulos deben ser visibles."
-
-msgid "Displayed sections"
-msgstr "Secciones mostradas"
-
-msgid ""
-"Toggle which sections show on the sleep screen. At least one must be visible."
-msgstr ""
-"Activar o desactivar las secciones mostradas en la pantalla de reposo. "
-"Al menos una debe ser visible."
-
-msgid "[ Section Content ]"
-msgstr "[ Contenido de sección ]"
-
-msgid "Configure book-specific details."
-msgstr "Configurar detalles específicos del libro."
-
-msgid "Configure chapter-specific details"
-msgstr "Configurar detalles específicos del capítulo"
-
-msgid "Configure reading goal details"
-msgstr "Configurar detalles del objetivo de lectura"
-
-msgid "Battery & time/date section"
-msgstr "Sección batería y hora/fecha"
-
-msgid "Configure battery & time/date details"
-msgstr "Configurar detalles de batería y hora/fecha"
-
-msgid "Configure message-specific details"
-msgstr "Configurar detalles específicos del mensaje"

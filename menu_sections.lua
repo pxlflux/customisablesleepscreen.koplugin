@@ -23,8 +23,8 @@ local function buildSectionOrderMenu()
         book    = _("Book info"),
         chapter = _("Chapter info"),
         goal    = _("Daily info"),
-        battery = _("Device info"),
-        message = _("Custom message"),
+        battery = _("Battery info"),
+        message = _("Message info"),
     }
 
     local label_to_key = {}
@@ -66,8 +66,8 @@ local function buildVisibilityMenu()
         { text = _("Book info"),      key = SETTINGS.SHOW_BOOK },
         { text = _("Chapter info"),   key = SETTINGS.SHOW_CHAP },
         { text = _("Daily info"),     key = SETTINGS.SHOW_GOAL },
-        { text = _("Device info"),   key = SETTINGS.SHOW_BATT },
-        { text = _("Custom message"), key = SETTINGS.SHOW_MSG  },
+        { text = _("Battery info"),   key = SETTINGS.SHOW_BATT },
+        { text = _("Message info"),   key = SETTINGS.SHOW_MSG  },
     }
 
     local function countVisibleSections()
@@ -113,6 +113,9 @@ local function buildBookSectionContentMenu()
         createToggleItem(_("Show book author"),
             _("Display the author name below the book title."),
             SETTINGS.SHOW_BOOK_AUTHOR, false),
+        createToggleItem(_("Show series name"),
+            _("Display the book's series name and index below the title."),
+            SETTINGS.SHOW_BOOK_SERIES, false),
         createToggleItem(_("Show book pages (pg x of x)"),
             _("Display total page count for the entire book."),
             SETTINGS.SHOW_BOOK_PAGES, false),
@@ -137,30 +140,108 @@ local function buildChapterSectionContentMenu()
 end
 
 local function buildGoalSectionContentMenu()
+    local function isTimeGoal()
+        return (getSetting("GOAL_TYPE") or USER_CONFIG.GOAL_TYPE or "pages") == "time"
+    end
+
     return {
         {
+            text      = _("Title Line"),
+            help_text = _("Choose what the top line of the daily info section displays."),
+            sub_item_table = {
+                createRadioItem(
+                    _("Pages read today"),
+                    _("e.g. '35 pages read today'"),
+                    SETTINGS.GOAL_TITLE_TYPE, "pages"
+                ),
+                createRadioItem(
+                    _("Time read today"),
+                    _("e.g. '42 mins read today'"),
+                    SETTINGS.GOAL_TITLE_TYPE, "time"
+                ),
+                createRadioItem(
+                    _("Pages and time read today"),
+                    _("e.g. '35 pgs & 42 mins read today'"),
+                    SETTINGS.GOAL_TITLE_TYPE, "both"
+                ),
+            },
+        },
+        {
+            text      = _("Goal type"),
+            help_text = _("Choose whether your daily goal tracks pages read or time spent reading."),
+            sub_item_table = {
+                {
+                    text         = _("Page goal"),
+                    help_text    = _("Track daily progress by number of pages read."),
+                    checked_func = function()
+                        local val = G_reader_settings:readSetting(SETTINGS.GOAL_TYPE)
+                        return val == nil or val == "pages"
+                    end,
+                    callback = function()
+                        G_reader_settings:saveSetting(SETTINGS.GOAL_TYPE, "pages")
+                    end,
+                    radio = true,
+                },
+                {
+                    text         = _("Time goal"),
+                    help_text    = _("Track daily progress by minutes spent reading."),
+                    checked_func = function()
+                        return G_reader_settings:readSetting(SETTINGS.GOAL_TYPE) == "time"
+                    end,
+                    callback = function()
+                        G_reader_settings:saveSetting(SETTINGS.GOAL_TYPE, "time")
+                    end,
+                    radio = true,
+                },
+            },
+        },
+        {
             text           = _("Daily page goal"),
-            help_text      = _("Set how many pages you aim to read each day. Progress shown in the goal section."),
+            help_text      = _("Set how many pages you aim to read each day."),
+            enabled_func   = function() return not isTimeGoal() end,
             keep_menu_open = true,
             callback = function()
                 createSpinDialog(
                     _("Daily page goal"),
                     getSetting("DAILY_GOAL") or DAILY_GOAL_DEFAULT,
-                    1, 1000, 1,
+                    1, 1000, 5,
                     function(val) G_reader_settings:saveSetting(SETTINGS.DAILY_GOAL, val) end,
-                    nil, nil, 20
+                    nil, nil, 25
+                )
+            end,
+        },
+        {   
+            text           = _("Daily time goal"),
+            help_text      = _("Set how many minutes you aim to read each day."),
+            enabled_func   = function() return isTimeGoal() end,
+            keep_menu_open = true,
+            callback = function()
+                createSpinDialog(
+                    _("Daily time goal (minutes)"),
+                    getSetting("DAILY_GOAL_MINUTES") or USER_CONFIG.DAILY_GOAL_MINUTES,
+                    1, 480, 5,
+                    function(val) G_reader_settings:saveSetting(SETTINGS.DAILY_GOAL_MINUTES, val) end,
+                    nil, nil, 15
                 )
             end,
         },
         createToggleItem(_("Show current reading streak"),
             _("Display consecutive days you've met your reading goal."),
             SETTINGS.SHOW_GOAL_STREAK, false),
-        createToggleItem(_("Show weekly goal achievement"),
-            _("Number of days this week you've met your daily reading goal."),
+        createToggleItem(_("Show weekly progress"),
+            _("Days this week you have met your reading goal, shown as completed days out of the current weekday (Monday = 1... Sunday = 7). For example: Thursday with goals met on Monday and Tuesday will show 2/4."),
             SETTINGS.SHOW_GOAL_ACHIEVEMENT, false),
-        createFlipNilOrTrueItem(_("Show pages read out of daily goal"),
-            _("Display pages read today compared to your daily target (e.g. '35/50 pages')."),
-            SETTINGS.SHOW_GOAL_PAGES),
+        {   
+            text      = _("Show daily goal"),
+            help_text = _("Target page mode: e.g. 50 page goal. Target time mode: e.g. 1hr 15min time goal."),
+            checked_func = function()
+                local val = G_reader_settings:readSetting(SETTINGS.SHOW_GOAL_PAGES)
+                return val == nil or val == true
+            end,
+            callback = function()
+                G_reader_settings:flipNilOrTrue(SETTINGS.SHOW_GOAL_PAGES)
+            end,
+        },
     }
 end
 
@@ -206,6 +287,9 @@ local function buildMessageSectionContentMenu()
         createRadioItem(_("Book highlights"),
             _("Show a random highlight from the current book"),
             SETTINGS.MESSAGE_SOURCE, "highlight"),
+        createRadioItem(_("Custom quotes"),
+            _("Show a random quote from the custom_quotes.lua file in the plugin folder."),
+            SETTINGS.MESSAGE_SOURCE, "custom_quotes"),
         createRadioItem(_("KOReader sleep message"),
             _("Uses KOReaders own sleep screen message function. Enable 'Add custom message to sleep screen' to use this (Settings → Screen → Sleep screen → Sleep screen message)."),
             SETTINGS.MESSAGE_SOURCE, "koreader",
@@ -271,6 +355,16 @@ local function buildMessageSectionContentMenu()
                     not getSetting("SHOW_HIGHLIGHT_LOCATION"))
             end,
         },
+        {
+            text         = _("Show quote attribution"),
+            help_text    = _("Display the author and book name below the quote, if provided in custom_quotes.lua."),
+            enabled_func = function() return getSetting("MESSAGE_SOURCE") == "custom_quotes" end,
+            checked_func = function() return getSetting("SHOW_QUOTE_ATTRIBUTION") end,
+            callback = function()
+                G_reader_settings:saveSetting(SETTINGS.SHOW_QUOTE_ATTRIBUTION,
+                    not getSetting("SHOW_QUOTE_ATTRIBUTION"))
+            end,
+        },
     }
 end
 
@@ -332,8 +426,10 @@ local function buildContentsMenu()
             SETTINGS.SHOW_BOOK_AUTHOR,         SETTINGS.SHOW_BOOK_PAGES,
             SETTINGS.SHOW_BOOK_TIME_REMAINING, SETTINGS.SHOW_CHAP_COUNT,
             SETTINGS.SHOW_CHAP_PAGES,          SETTINGS.SHOW_CHAP_TIME_REMAINING,
-            SETTINGS.DAILY_GOAL,               SETTINGS.SHOW_GOAL_STREAK,         
-            SETTINGS.SHOW_GOAL_ACHIEVEMENT,    SETTINGS.SHOW_GOAL_PAGES,          
+            SETTINGS.DAILY_GOAL,               SETTINGS.GOAL_TYPE,
+            SETTINGS.DAILY_GOAL_MINUTES,       SETTINGS.SHOW_GOAL_STREAK,         
+            SETTINGS.SHOW_GOAL_ACHIEVEMENT,    SETTINGS.SHOW_GOAL_PAGES,
+            SETTINGS.GOAL_TITLE_TYPE,         
             SETTINGS.SHOW_BATT_TIME_SEPARATE,  SETTINGS.SHOW_BATT_DATE,           
             SETTINGS.SHOW_BATT_RATE,           SETTINGS.SHOW_BATT_TIME,           
             SETTINGS.MESSAGE_SOURCE,           SETTINGS.MSG_HEADER,               
@@ -348,8 +444,8 @@ local function buildContentsMenu()
         { text = _("[ Section Content ]"), enabled = false },
         { text = _("Book section"),                help_text = _("Configure book-specific details."),          sub_item_table = buildBookSectionContentMenu()    },
         { text = _("Chapter section"),             help_text = _("Configure chapter-specific details"),        sub_item_table = buildChapterSectionContentMenu() },
-        { text = _("Reading goal section"),        help_text = _("Configure reading goal details"),            sub_item_table = buildGoalSectionContentMenu()    },
-        { text = _("Battery & time/date section"), help_text = _("Configure battery & time/date details"),     sub_item_table = buildBatterySectionContentMenu() },
+        { text = _("Daily goal section"),          help_text = _("Configure reading goal details"),            sub_item_table = buildGoalSectionContentMenu()    },
+        { text = _("Battery section"),             help_text = _("Configure battery & time/date details"),     sub_item_table = buildBatterySectionContentMenu() },
         { text = _("Message section"),             help_text = _("Configure message-specific details"),        sub_item_table = buildMessageSectionContentMenu() },
     }
     for i, item in ipairs(buildTitleSubtitleToggles()) do

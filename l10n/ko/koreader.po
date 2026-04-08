@@ -7,112 +7,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"\n"
 
 #. ---- Display sleep screen strings ----
+
+msgid "No Chapter"
+msgstr "챕터 없음"
 
 msgid "Untitled"
 msgstr "제목 없음"
 
 msgid "Unknown Author"
 msgstr "저자 미상"
-
-#, lua-format
-msgid "Page %d of %d"
-msgstr "%d페이지 / 전체 %d페이지"
-
-#, lua-format
-msgid "%s left"
-msgstr "%s 남음"
-
-msgid "No Chapter"
-msgstr "챕터 없음"
-
-#, lua-format
-msgid "Chapter %d of %d"
-msgstr "%d장 / 전체 %d장"
-
-#, lua-format
-msgid "%s read today"
-msgstr "오늘 %s 읽음"
-
-#, lua-format
-msgid "%d days read in a row"
-msgstr "%d일 연속 독서"
-
-#, lua-format
-msgid "Met goal %d/%d days this week"
-msgstr "이번 주 %d/%d일 목표 달성"
-
-#, lua-format
-msgid "%d/%d page goal"
-msgstr "%d/%d 페이지 목표"
-
-msgid "Achieved!"
-msgstr "달성!"
-
-msgid "Goal achieved!"
-msgstr "목표 달성!"
-
-#, lua-format
-msgid "%d%% of goal"
-msgstr "목표의 %d%%"
-
-msgid "0 mins"
-msgstr "0분"
-
-#, lua-format
-msgid "Approx. %d %s left"
-msgstr "약 %d%s 남음"
-
-msgid "Approx. <1 hr left"
-msgstr "약 1시간 미만 남음"
-
-msgid "hr"
-msgid_plural "hrs"
-msgstr[0] "시간"
-
-#, lua-format
-msgid "~%.1f%% per hour"
-msgstr "시간당 약 %.1f%%"
-
-msgid "Rate unavailable"
-msgstr "속도 정보 없음"
-
-msgid "No message set"
-msgstr "메시지 없음"
-
-msgid "No highlights found"
-msgstr "하이라이트 없음"
-
-msgid "Message header is empty"
-msgstr "메시지 헤더가 비어 있습니다"
-
-#, lua-format
-msgid "pg. %s"
-msgstr "%s페이지"
-
-msgid "min"
-msgid_plural "mins"
-msgstr[0] "분"
-
-msgid "< 1 min"
-msgstr "1분 미만"
-
-#. Ordinal date suffix for 1 (e.g. "1st January"). Return "" if your language does not use suffixes.
-msgid "st"
-msgstr "일"
-
-#. Ordinal date suffix for 2 (e.g. "2nd January"). Return "" if your language does not use suffixes.
-msgid "nd"
-msgstr "일"
-
-#. Ordinal date suffix for 3 (e.g. "3rd January"). Return "" if your language does not use suffixes.
-msgid "rd"
-msgstr "일"
-
-#. Ordinal date suffix for 4 and above (e.g. "4th January"). Return "" if your language does not use suffixes.
-msgid "th"
-msgstr "일"
 
 msgid "January"
 msgstr "1월"
@@ -150,52 +56,298 @@ msgstr "11월"
 msgid "December"
 msgstr "12월"
 
-#. ---- All other strings (menu items, help text, headers, buttons) ----
+msgid "st"
+msgstr "일"
 
-msgid "Pick a colour"
-msgstr "색상 선택"
+msgid "nd"
+msgstr "일"
 
-msgid "Cancel"
-msgstr "취소"
+msgid "rd"
+msgstr "일"
 
-msgid "Apply"
-msgstr "적용"
+msgid "th"
+msgstr "일"
+
+msgid "< 1 min"
+msgstr "1분 미만"
 
 #, lua-format
-msgid "Brightness: %d%%"
-msgstr "밝기: %d%%"
+msgid "~%d %s left"
+msgstr "약 %d%s 남음"
 
-msgid "Enter hex"
-msgstr "16진수 입력"
+msgid "~<1 hr left"
+msgstr "약 1시간 미만 남음"
 
-msgid "Enter hex colour code"
-msgstr "16진수 색상 코드 입력"
+#, lua-format
+msgid "%s left"
+msgstr "%s 남음"
 
-msgid "Invalid hex code. Use format: #RRGGBB"
-msgstr "유효하지 않은 16진수 코드입니다. 형식: #RRGGBB"
+#, lua-format
+msgid "Page %d of %d"
+msgstr "%d페이지 / 전체 %d페이지"
 
-msgid "Delete all custom presets"
-msgstr "모든 사용자 프리셋 삭제"
+#, lua-format
+msgid "Chapter %d of %d"
+msgstr "%d장 / 전체 %d장"
 
-msgid ""
-"Permanently removes all custom presets you've created. The built-in "
-"'Default' preset will remain. This cannot be undone."
-msgstr ""
-"사용자가 만든 모든 프리셋을 영구적으로 삭제합니다. "
-"기본 제공 '기본값' 프리셋은 유지됩니다. 이 작업은 취소할 수 없습니다."
+msgid "0 mins"
+msgstr "0분"
 
-msgid ""
-"Are you sure you want to delete all custom presets? (built-in presets will "
-"remain)"
-msgstr ""
-"모든 사용자 프리셋을 삭제하시겠습니까? "
-"(기본 제공 프리셋은 유지됩니다)"
+#, lua-format
+msgid "%s %s read today"
+msgstr "오늘 %s%s 읽음"
+
+msgid "pg"
+msgstr "p"
+
+msgid "pgs"
+msgstr "p"
+
+#, lua-format
+msgid "%s %s & %s read today"
+msgstr "오늘 %s%s & %s 읽음"
+
+#, lua-format
+msgid "%s read today"
+msgstr "오늘 %s 읽음"
+
+#, lua-format
+msgid "%d day streak"
+msgstr "%d일 연속"
+
+#, lua-format
+msgid "%d/%d days met this week"
+msgstr "이번 주 %d/%d일 달성"
+
+msgid "Achieved!"
+msgstr "달성!"
+
+msgid "goal"
+msgstr "목표"
+
+msgid "Goal achieved!"
+msgstr "목표 달성!"
+
+#, lua-format
+msgid "%d%% of goal"
+msgstr "목표의 %d%%"
+
+#, lua-format
+msgid "%d page goal"
+msgstr "%d 페이지 목표"
+
+#, lua-format
+msgid "~%.1f%%/hour"
+msgstr "약 %.1f%%/시간"
+
+msgid "Rate unavailable"
+msgstr "속도 정보 없음"
+
+msgid "No message set"
+msgstr "메시지 없음"
+
+msgid "No custom quotes found. Add quotes to custom_quotes.lua."
+msgstr "사용자 정의 인용구가 없습니다. custom_quotes.lua에 인용구를 추가하세요."
+
+#, lua-format
+msgid "pg. %s"
+msgstr "%s페이지"
+
+msgid "No highlights found"
+msgstr "하이라이트 없음"
+
+msgid "Sleeping"
+msgstr "절전 중"
+
+msgid "Highlights"
+msgstr "하이라이트"
+
+msgid "Quotations"
+msgstr "인용구"
+
+msgid "Message"
+msgstr "메시지"
+
+#. ---- All other strings (menu items, help text, headers, buttons) ----
+
+msgid "None"
+msgstr "없음"
+
+msgid "Active preset: "
+msgstr "활성 프리셋: "
+
+msgid "Save current settings as new preset"
+msgstr "현재 설정을 새 프리셋으로 저장"
+
+#, lua-format
+msgid "What would you like to do with preset '%s'?"
+msgstr "프리셋 '%s'을(를) 어떻게 하시겠습니까?"
+
+msgid "Update"
+msgstr "업데이트"
+
+#, lua-format
+msgid "Are you sure you want to overwrite preset '%s' with current settings?"
+msgstr "프리셋 '%s'을(를) 현재 설정으로 덮어쓰시겠습니까?"
+
+#, lua-format
+msgid "Preset '%s' was updated with current settings"
+msgstr "프리셋 '%s'이(가) 현재 설정으로 업데이트되었습니다"
 
 msgid "Delete"
 msgstr "삭제"
 
+#, lua-format
+msgid "Are you sure you want to delete preset '%s'?"
+msgstr "프리셋 '%s'을(를) 삭제하시겠습니까?"
+
+msgid "Rename"
+msgstr "이름 변경"
+
+msgid "Enter new preset name"
+msgstr "새 프리셋 이름 입력"
+
+msgid "[ Built-in Presets ]"
+msgstr "[ 기본 제공 프리셋 ]"
+
+msgid "[ Your Custom Presets ]"
+msgstr "[ 사용자 프리셋 ]"
+
+msgid "Customisable sleep screen settings"
+msgstr "맞춤형 절전 화면 설정"
+
+msgid "Customisable sleep screen presets"
+msgstr "맞춤형 절전 화면 프리셋"
+
+msgid "Cycle through customisable sleep screen presets"
+msgstr "맞춤형 절전 화면 프리셋 순환"
+
+msgid "Customisable sleep screen"
+msgstr "맞춤형 절전 화면"
+
+msgid "Enable customisable sleep screen"
+msgstr "맞춤형 절전 화면 활성화"
+
+msgid ""
+"Customisable Sleep Screen: no book data found.\n"
+"\n"
+"Open a book and trigger the sleep screen at least once before it will work in the file manager."
+msgstr ""
+"맞춤형 절전 화면: 책 데이터를 찾을 수 없습니다.\n"
+"\n"
+"파일 관리자에서 작동하려면 먼저 책을 열고 절전 화면을 최소 한 번 실행하세요."
+
+msgid "Reset layout & spacing settings to default"
+msgstr "레이아웃 및 간격 설정 초기화"
+
+msgid "Are you sure you want to reset layout & spacing settings?"
+msgstr "레이아웃 및 간격 설정을 초기화하시겠습니까?"
+
+msgid "Layout & spacing settings reset to defaults"
+msgstr "레이아웃 및 간격 설정이 초기화되었습니다"
+
+msgid "Reset contents settings to default"
+msgstr "콘텐츠 설정 초기화"
+
+msgid "Are you sure you want to reset contents settings?"
+msgstr "콘텐츠 설정을 초기화하시겠습니까?"
+
+msgid "Contents settings reset to defaults"
+msgstr "콘텐츠 설정이 초기화되었습니다"
+
+msgid "Reset colours, icons & bars settings to default"
+msgstr "색상, 아이콘 및 바 설정 초기화"
+
+msgid "Are you sure you want to reset colours, icons & bars settings?"
+msgstr "색상, 아이콘 및 바 설정을 초기화하시겠습니까?"
+
+msgid "Colours, icons & bars settings reset to defaults"
+msgstr "색상, 아이콘 및 바 설정이 초기화되었습니다"
+
+msgid "Reset fonts & text settings to default"
+msgstr "글꼴 및 텍스트 설정 초기화"
+
+msgid "Are you sure you want to reset fonts & text settings?"
+msgstr "글꼴 및 텍스트 설정을 초기화하시겠습니까?"
+
+msgid "Fonts & text settings reset to defaults"
+msgstr "글꼴 및 텍스트 설정이 초기화되었습니다"
+
+msgid "Reset background settings to default"
+msgstr "배경 설정 초기화"
+
+msgid "Are you sure you want to reset background settings?"
+msgstr "배경 설정을 초기화하시겠습니까?"
+
+msgid "Background settings reset to defaults"
+msgstr "배경 설정이 초기화되었습니다"
+
+msgid "Reset the settings in this part of the menu to their defaults."
+msgstr "이 메뉴 부분의 설정을 기본값으로 초기화합니다."
+
+msgid "factory defaults"
+msgstr "공장 기본값"
+
+#, lua-format
+msgid "Values will be restored from: %s"
+msgstr "값을 복원할 위치: %s"
+
+msgid "Reset"
+msgstr "초기화"
+
+msgid "Cancel"
+msgstr "취소"
+
+msgid "Save"
+msgstr "저장"
+
+msgid "Delete all custom presets"
+msgstr "모든 사용자 프리셋 삭제"
+
+msgid "Permanently removes all custom presets you've created. The built-in 'Default' preset will remain. This cannot be undone."
+msgstr "사용자가 만든 모든 프리셋을 영구적으로 삭제합니다. 기본 제공 '기본값' 프리셋은 유지됩니다. 이 작업은 취소할 수 없습니다."
+
+msgid "Are you sure you want to delete all custom presets? (built-in presets will remain)"
+msgstr "모든 사용자 프리셋을 삭제하시겠습니까? (기본 제공 프리셋은 유지됩니다)"
+
 msgid "All custom presets deleted. Built-in presets remain."
 msgstr "모든 사용자 프리셋이 삭제되었습니다. 기본 제공 프리셋은 유지됩니다."
+
+msgid "Sleep screen orientation"
+msgstr "절전 화면 방향"
+
+msgid "Force the sleep screen to display in a specific orientation, regardless of how the device is held."
+msgstr "기기를 어떻게 잡든 절전 화면을 특정 방향으로 강제 표시합니다."
+
+msgid "Auto (follow device)"
+msgstr "자동 (기기 따르기)"
+
+msgid "Use whatever orientation the device is currently in."
+msgstr "기기의 현재 방향을 그대로 사용합니다."
+
+msgid "Force portrait"
+msgstr "세로 방향 고정"
+
+msgid "Always display the sleep screen in portrait mode."
+msgstr "절전 화면을 항상 세로 방향으로 표시합니다."
+
+msgid "Force landscape"
+msgstr "가로 방향 고정"
+
+msgid "Always display the sleep screen in landscape mode."
+msgstr "절전 화면을 항상 가로 방향으로 표시합니다."
+
+msgid "Force upside-down portrait"
+msgstr "거꾸로 세로 방향 고정"
+
+msgid "Always display the sleep screen in inverted portrait mode."
+msgstr "절전 화면을 항상 거꾸로 세로 방향으로 표시합니다."
+
+msgid "Force upside-down landscape"
+msgstr "거꾸로 가로 방향 고정"
+
+msgid "Always display the sleep screen in inverted landscape mode."
+msgstr "절전 화면을 항상 거꾸로 가로 방향으로 표시합니다."
 
 msgid "Battery time calculation"
 msgstr "배터리 시간 계산"
@@ -239,10 +391,7 @@ msgstr "일반 기기의 독서 중 소모율은 1~5%/시간"
 msgid "Daily statistics scope"
 msgstr "일일 통계 범위"
 
-msgid ""
-"Controls whether today's reading time and page count applies to the current "
-"book only, or all books read today. Note: reading streak and weekly goal "
-"achievement always reflect all books regardless of this setting."
+msgid "Controls whether today's reading time and page count applies to the current book only, or all books read today. Note: reading streak and weekly goal achievement always reflect all books regardless of this setting."
 msgstr "오늘의 독서 시간과 페이지 수를 현재 책에만 적용할지, 오늘 읽은 모든 책에 적용할지 설정합니다. 참고: 독서 연속 일수와 주간 목표 달성은 이 설정과 관계없이 항상 모든 책을 반영합니다."
 
 msgid "All books"
@@ -260,22 +409,14 @@ msgstr "현재 책만의 오늘 독서 시간과 페이지 수"
 msgid "Show in file manager (outside of book)"
 msgstr "파일 관리자에서 표시 (책 밖에서)"
 
-msgid ""
-"When enabled, the customisable sleep screen will display in file manager "
-"using the last saved book data."
-msgstr ""
-"활성화하면 파일 관리자에서도 마지막으로 저장된 책 데이터를 사용하여 "
-"맞춤형 절전 화면이 표시됩니다."
+msgid "When enabled, the customisable sleep screen will display in file manager using the last saved book data."
+msgstr "활성화하면 파일 관리자에서도 마지막으로 저장된 책 데이터를 사용하여 맞춤형 절전 화면이 표시됩니다."
 
 msgid "Hide built-in presets (except Default)"
 msgstr "기본 제공 프리셋 숨기기 (기본값 제외)"
 
-msgid ""
-"Hide the built-in presets from the preset list, keeping only the Default "
-"preset and your custom presets visible."
-msgstr ""
-"프리셋 목록에서 기본 제공 프리셋을 숨겨 기본값 프리셋과 "
-"사용자 프리셋만 표시합니다."
+msgid "Hide the built-in presets from the preset list, keeping only the Default preset and your custom presets visible."
+msgstr "프리셋 목록에서 기본 제공 프리셋을 숨겨 기본값 프리셋과 사용자 프리셋만 표시합니다."
 
 msgid "Setting saved. Preset list will update when you reopen this menu."
 msgstr "설정이 저장되었습니다. 이 메뉴를 다시 열면 프리셋 목록이 업데이트됩니다."
@@ -345,20 +486,318 @@ msgstr ""
 "업데이트 및 문의:\n"
 "github.com/%s"
 
-msgid "Customisable sleep screen settings"
-msgstr "맞춤형 절전 화면 설정"
+msgid "Pick a colour"
+msgstr "색상 선택"
 
-msgid "Customisable sleep screen presets"
-msgstr "맞춤형 절전 화면 프리셋"
+msgid "Apply"
+msgstr "적용"
 
-msgid "Cycle through customisable sleep screen presets"
-msgstr "맞춤형 절전 화면 프리셋 순환"
+#, lua-format
+msgid "Brightness: %d%%"
+msgstr "밝기: %d%%"
 
-msgid "Customisable sleep screen"
-msgstr "맞춤형 절전 화면"
+msgid "Enter hex"
+msgstr "16진수 입력"
 
-msgid "Enable customisable sleep screen"
-msgstr "맞춤형 절전 화면 활성화"
+msgid "Enter hex colour code"
+msgstr "16진수 색상 코드 입력"
+
+msgid "Invalid hex code. Use format: #RRGGBB"
+msgstr "유효하지 않은 16진수 코드입니다. 형식: #RRGGBB"
+
+msgid "Book info"
+msgstr "책 정보"
+
+msgid "Chapter info"
+msgstr "챕터 정보"
+
+msgid "Daily info"
+msgstr "일간 정보"
+
+msgid "Battery info"
+msgstr "배터리 정보"
+
+msgid "Message info"
+msgstr "메시지 정보"
+
+msgid "Reorder sections"
+msgstr "섹션 순서 변경"
+
+msgid "Section order"
+msgstr "섹션 순서"
+
+msgid "At least one section must remain visible."
+msgstr "최소 하나의 섹션은 표시되어야 합니다."
+
+msgid "Show book author"
+msgstr "책 저자 표시"
+
+msgid "Display the author name below the book title."
+msgstr "책 제목 아래에 저자 이름을 표시합니다."
+
+msgid "Show series name"
+msgstr "시리즈 이름 표시"
+
+msgid "Display the book's series name and index below the title."
+msgstr "책의 시리즈 이름과 번호를 제목 아래에 표시합니다."
+
+msgid "Show book pages (pg x of x)"
+msgstr "책 페이지 표시 (x페이지 / 전체 x페이지)"
+
+msgid "Display total page count for the entire book."
+msgstr "책 전체의 총 페이지 수를 표시합니다."
+
+msgid "Show book time remaining"
+msgstr "남은 독서 시간 표시"
+
+msgid "Estimated reading time left to finish the book, based on your average reading speed."
+msgstr "평균 독서 속도를 기반으로 한 책을 다 읽을 때까지 예상 남은 시간."
+
+msgid "Show chapter count (ch x of x)"
+msgstr "챕터 수 표시 (x장 / 전체 x장)"
+
+msgid "Display current chapter number and total chapters (e.g., 'Chapter 5 of 12')."
+msgstr "현재 챕터 번호와 전체 챕터 수를 표시합니다 (예: '5장 / 전체 12장')."
+
+msgid "Show chapter pages (pg x of x)"
+msgstr "챕터 페이지 표시 (x페이지 / 전체 x페이지)"
+
+msgid "Display the number of pages in the current chapter."
+msgstr "현재 챕터의 페이지 수를 표시합니다."
+
+msgid "Show chapter time remaining"
+msgstr "챕터 남은 시간 표시"
+
+msgid "Estimated time to finish the current chapter, based on your reading speed."
+msgstr "독서 속도를 기반으로 한 현재 챕터를 마칠 때까지 예상 시간."
+
+msgid "Title Line"
+msgstr "제목 줄"
+
+msgid "Choose what the top line of the daily info section displays."
+msgstr "일간 정보 섹션의 첫 번째 줄에 표시할 내용을 선택합니다."
+
+msgid "Pages read today"
+msgstr "오늘 읽은 페이지"
+
+msgid "e.g. '35 pages read today'"
+msgstr "예: '오늘 35페이지 읽음'"
+
+msgid "Time read today"
+msgstr "오늘 읽은 시간"
+
+msgid "e.g. '42 mins read today'"
+msgstr "예: '오늘 42분 읽음'"
+
+msgid "Pages and time read today"
+msgstr "오늘 읽은 페이지와 시간"
+
+msgid "e.g. '35 pgs & 42 mins read today'"
+msgstr "예: '오늘 35p & 42분 읽음'"
+
+msgid "Goal type"
+msgstr "목표 유형"
+
+msgid "Choose whether your daily goal tracks pages read or time spent reading."
+msgstr "일일 목표를 읽은 페이지 수로 추적할지, 독서 시간으로 추적할지 선택합니다."
+
+msgid "Page goal"
+msgstr "페이지 목표"
+
+msgid "Track daily progress by number of pages read."
+msgstr "읽은 페이지 수로 일일 진행 상황을 추적합니다."
+
+msgid "Time goal"
+msgstr "시간 목표"
+
+msgid "Track daily progress by minutes spent reading."
+msgstr "독서에 소요된 시간(분)으로 일일 진행 상황을 추적합니다."
+
+msgid "Daily page goal"
+msgstr "일일 페이지 목표"
+
+msgid "Set how many pages you aim to read each day."
+msgstr "매일 읽을 목표 페이지 수를 설정합니다."
+
+msgid "Daily time goal"
+msgstr "일일 시간 목표"
+
+msgid "Set how many minutes you aim to read each day."
+msgstr "매일 읽을 목표 시간(분)을 설정합니다."
+
+msgid "Daily time goal (minutes)"
+msgstr "일일 시간 목표 (분)"
+
+msgid "Show current reading streak"
+msgstr "현재 연속 독서 기록 표시"
+
+msgid "Display consecutive days you've met your reading goal."
+msgstr "독서 목표를 달성한 연속 일수를 표시합니다."
+
+msgid "Show weekly progress"
+msgstr "주간 진행 상황 표시"
+
+msgid "Days this week you have met your reading goal, shown as completed days out of the current weekday (Monday = 1... Sunday = 7). For example: Thursday with goals met on Monday and Tuesday will show 2/4."
+msgstr "이번 주에 독서 목표를 달성한 날 수. 현재 요일(월요일=1…일요일=7)을 기준으로 달성한 날로 표시됩니다. 예: 월요일과 화요일에 목표를 달성한 목요일은 2/4로 표시됩니다."
+
+msgid "Show daily goal"
+msgstr "일일 목표 표시"
+
+msgid "Target page mode: e.g. 50 page goal. Target time mode: e.g. 1hr 15min time goal."
+msgstr "페이지 목표 모드: 예) 50 페이지 목표. 시간 목표 모드: 예) 1시간 15분 목표."
+
+msgid "Show current time/date on separate line"
+msgstr "현재 시간/날짜를 별도 줄에 표시"
+
+msgid "Display time/date on its own line below battery percentage instead of inline."
+msgstr "시간/날짜를 인라인이 아닌 배터리 퍼센트 아래 별도 줄에 표시합니다."
+
+msgid "Enable 'Show battery time remaining' to use this option"
+msgstr "이 옵션을 사용하려면 '남은 배터리 시간 표시'를 활성화하세요"
+
+msgid "Show date instead of time"
+msgstr "시간 대신 날짜 표시"
+
+msgid "Display current date (e.g. '29th Jan') instead of time in battery section"
+msgstr "배터리 섹션에 시간 대신 현재 날짜 (예: '1월 29일')를 표시"
+
+msgid "Show battery consumption rate"
+msgstr "배터리 소모율 표시"
+
+msgid "Display battery drain percentage per hour based on recent usage or manual input (see advanced menu)"
+msgstr "최근 사용 또는 수동 입력을 기반으로 한 시간당 배터리 소모율 표시 (고급 설정 메뉴 참조)"
+
+msgid "Show battery time remaining"
+msgstr "남은 배터리 시간 표시"
+
+msgid "Estimated hours and minutes until battery is depleted, based on current drain rate."
+msgstr "현재 소모율을 기반으로 한 배터리가 완전히 방전될 때까지 예상 시간 (시간, 분)."
+
+msgid "Custom message"
+msgstr "사용자 정의 메시지"
+
+msgid "Use a separate custom message just for Customisable Sleep Screen"
+msgstr "맞춤형 절전 화면 전용 사용자 정의 메시지 사용"
+
+msgid "Book highlights"
+msgstr "책 하이라이트"
+
+msgid "Show a random highlight from the current book"
+msgstr "현재 책에서 무작위 하이라이트 표시"
+
+msgid "Custom quotes"
+msgstr "사용자 정의 인용구"
+
+msgid "Show a random quote from the custom_quotes.lua file in the plugin folder."
+msgstr "플러그인 폴더의 custom_quotes.lua 파일에서 무작위 인용구를 표시합니다."
+
+msgid "KOReader sleep message"
+msgstr "KOReader 절전 메시지"
+
+msgid "Uses KOReaders own sleep screen message function. Enable 'Add custom message to sleep screen' to use this (Settings → Screen → Sleep screen → Sleep screen message)."
+msgstr "KOReader 자체 절전 화면 메시지 기능을 사용합니다. '절전 화면에 사용자 정의 메시지 추가'를 활성화하여 사용하세요 (설정 → 화면 → 절전 화면 → 절전 화면 메시지)."
+
+msgid "Message header"
+msgstr "메시지 헤더"
+
+msgid "Custom header text displayed above the message. Supports variables: %d, %y, %t, %b, %r."
+msgstr "메시지 위에 표시되는 사용자 정의 헤더 텍스트. 지원 변수: %d, %y, %t, %b, %r."
+
+msgid "Change custom message header"
+msgstr "사용자 정의 메시지 헤더 변경"
+
+msgid "Edit custom message"
+msgstr "사용자 정의 메시지 편집"
+
+msgid "Write your custom message text. Only active when 'Custom message' is selected. Supports variables: %d, %y, %t, %b, %r."
+msgstr "사용자 정의 메시지 텍스트를 입력합니다. '사용자 정의 메시지' 선택 시에만 활성화됩니다. 지원 변수: %d, %y, %t, %b, %r."
+
+msgid "Custom Customisable Sleep Screen message"
+msgstr "맞춤형 절전 화면 사용자 정의 메시지"
+
+msgid "Book highlight maximum length"
+msgstr "책 하이라이트 최대 길이"
+
+msgid "Maximum characters to display for highlights (0 = no limit)."
+msgstr "하이라이트에 표시할 최대 글자 수 (0 = 무제한)."
+
+msgid "Maximum highlight length"
+msgstr "최대 하이라이트 길이"
+
+msgid "Set to 0 for no limit"
+msgstr "무제한으로 설정하려면 0으로 설정"
+
+msgid "Add quotation marks to highlights"
+msgstr "하이라이트에 인용 부호 추가"
+
+msgid "Wraps all highlights in curly double quotes, removing any pre-existing quotation marks."
+msgstr "모든 하이라이트를 물결 모양의 큰따옴표로 감싸고 기존 인용 부호를 제거합니다."
+
+msgid "Show highlight location"
+msgstr "하이라이트 위치 표시"
+
+msgid "Display the chapter title and page number where the highlight is found, shown below the highlight text."
+msgstr "하이라이트가 있는 챕터 제목과 페이지 번호를 하이라이트 텍스트 아래에 표시합니다."
+
+msgid "Show quote attribution"
+msgstr "인용구 출처 표시"
+
+msgid "Display the author and book name below the quote, if provided in custom_quotes.lua."
+msgstr "custom_quotes.lua에 제공된 경우, 인용구 아래에 저자와 책 이름을 표시합니다."
+
+msgid "Show titles (top line)"
+msgstr "제목 표시 (상단 줄)"
+
+msgid "Display the main heading text in each section. At least one of titles or subtitles must be visible."
+msgstr "각 섹션의 주 제목 텍스트를 표시합니다. 제목 또는 부제목 중 하나는 표시되어야 합니다."
+
+msgid "Cannot hide both titles and subtitles. At least one must be visible."
+msgstr "제목과 부제목을 모두 숨길 수 없습니다. 최소 하나는 표시되어야 합니다."
+
+msgid "Show subtitles (bottom lines)"
+msgstr "부제목 표시 (하단 줄)"
+
+msgid "Display information below main heading text in each section. At least one of titles or subtitles must be visible."
+msgstr "각 섹션의 주 제목 텍스트 아래에 정보를 표시합니다. 제목 또는 부제목 중 하나는 표시되어야 합니다."
+
+msgid "Displayed sections"
+msgstr "표시 섹션"
+
+msgid "Toggle which sections show on the sleep screen. At least one must be visible."
+msgstr "절전 화면에 표시할 섹션을 켜고 끕니다. 최소 하나는 표시되어야 합니다."
+
+msgid "[ Section Content ]"
+msgstr "[ 섹션 콘텐츠 ]"
+
+msgid "Book section"
+msgstr "책 섹션"
+
+msgid "Configure book-specific details."
+msgstr "책 관련 세부 설정을 구성합니다."
+
+msgid "Chapter section"
+msgstr "챕터 섹션"
+
+msgid "Configure chapter-specific details"
+msgstr "챕터 관련 세부 설정을 구성"
+
+msgid "Daily goal section"
+msgstr "일일 목표 섹션"
+
+msgid "Configure reading goal details"
+msgstr "독서 목표 세부 설정을 구성"
+
+msgid "Battery section"
+msgstr "배터리 섹션"
+
+msgid "Configure battery & time/date details"
+msgstr "배터리 및 시간/날짜 세부 설정을 구성"
+
+msgid "Message section"
+msgstr "메시지 섹션"
+
+msgid "Configure message-specific details"
+msgstr "메시지 관련 세부 설정을 구성"
 
 msgid "Hairline"
 msgstr "극세"
@@ -480,34 +919,23 @@ msgstr "오른쪽 아래"
 msgid "Dark mode"
 msgstr "다크 모드"
 
-msgid ""
-"Inverts the colour scheme. Text becomes white and backgrounds becomes black. "
-"Useful for reading in low-light conditions. Can be combined with monochrome "
-"mode."
-msgstr ""
-"색상 구성을 반전합니다. 텍스트가 흰색, 배경이 검정으로 바뀝니다. "
-"어두운 환경에서의 독서에 유용합니다. 단색 모드와 결합할 수 있습니다."
+msgid "Inverts the colour scheme. Text becomes white and backgrounds becomes black. Useful for reading in low-light conditions. Can be combined with monochrome mode."
+msgstr "색상 구성을 반전합니다. 텍스트가 흰색, 배경이 검정으로 바뀝니다. 어두운 환경에서의 독서에 유용합니다. 단색 모드와 결합할 수 있습니다."
 
 msgid "Monochrome mode"
 msgstr "단색 모드"
 
-msgid ""
-"Suitable for B&W e-readers. Assigns one colour to all sections using "
-"monochrome light or monochrome dark hex values. Overwrites individual "
-"assigned section colours. Can be combined with dark mode."
-msgstr ""
-"흑백 전자책 리더에 적합합니다. 단색 밝음 또는 단색 어두움 16진수 값을 사용하여 "
-"모든 섹션에 한 가지 색상을 지정합니다. 개별 지정된 섹션 색상을 덮어씁니다. "
-"다크 모드와 결합할 수 있습니다."
+msgid "Suitable for B&W e-readers. Assigns one colour to all sections using monochrome light or monochrome dark hex values. Overwrites individual assigned section colours. Can be combined with dark mode."
+msgstr "흑백 전자책 리더에 적합합니다. 단색 밝음 또는 단색 어두움 16진수 값을 사용하여 모든 섹션에 한 가지 색상을 지정합니다. 개별 지정된 섹션 색상을 덮어씁니다. 다크 모드와 결합할 수 있습니다."
+
+msgid "Section gaps"
+msgstr "섹션 간격"
+
+msgid "Add transparent gaps between sections to make each appear as a separate box"
+msgstr "섹션 사이에 투명한 간격을 추가하여 각 섹션이 별도의 박스처럼 보이게 합니다"
 
 msgid "Enable section gaps"
 msgstr "섹션 간격 활성화"
-
-msgid ""
-"Add transparent gaps between sections to make each appear as a separate box"
-msgstr ""
-"섹션 사이에 투명한 간격을 추가하여 각 섹션이 "
-"별도의 박스처럼 보이게 합니다"
 
 msgid "Section gap size"
 msgstr "섹션 간격 크기"
@@ -527,10 +955,8 @@ msgstr "정보 박스가 표시되는 화면 위치."
 msgid "Width"
 msgstr "너비"
 
-msgid ""
-"Horizontal width of the information box as a percentage of screen width."
-msgstr ""
-"화면 너비에 대한 정보 박스의 가로 너비 비율 (%)."
+msgid "Horizontal width of the information box as a percentage of screen width."
+msgstr "화면 너비에 대한 정보 박스의 가로 너비 비율 (%)."
 
 msgid "Opacity"
 msgstr "불투명도"
@@ -565,12 +991,8 @@ msgstr "섹션 아이콘과 함께하는 텍스트 사이의 가로 간격."
 msgid "Y-axis margin (top/bottom left/right pos)"
 msgstr "Y축 여백 (위/아래 왼쪽/오른쪽 위치)"
 
-msgid ""
-"Vertical offset from the top or bottom edge when positioned at the top "
-"centre, bottom centre, top left, bottom left, top right or bottom right."
-msgstr ""
-"위 중앙, 아래 중앙, 왼쪽 위, 왼쪽 아래, 오른쪽 위 또는 오른쪽 아래에 배치할 때 "
-"상단 또는 하단 가장자리에서의 수직 오프셋."
+msgid "Vertical offset from the top or bottom edge when positioned at the top centre, bottom centre, top left, bottom left, top right or bottom right."
+msgstr "위 중앙, 아래 중앙, 왼쪽 위, 왼쪽 아래, 오른쪽 위 또는 오른쪽 아래에 배치할 때 상단 또는 하단 가장자리에서의 수직 오프셋."
 
 msgid "No icon sets found in customisablesleepscreen.koplugin/icons/"
 msgstr "customisablesleepscreen.koplugin/icons/에서 아이콘 세트를 찾을 수 없습니다"
@@ -590,34 +1012,11 @@ msgstr "색상 (진행 막대)"
 msgid "Set the progress bar colours for each section."
 msgstr "각 섹션의 진행 막대 색상을 설정합니다."
 
-msgid "Colours (modes)"
-msgstr "색상 (모드)"
-
-msgid ""
-"Configure colours for monochrome mode, infobox background, and text. "
-"Light and dark correspond to the current dark mode setting. "
-"Monochrome replaces all colours with that single chosen color."
-msgstr ""
-"흑백 모드, 정보 박스 배경 및 텍스트의 색상을 구성합니다. "
-"밝음과 어두움은 현재 다크 모드 설정에 해당합니다. "
-"흑백은 모든 색상을 선택한 단일 색상으로 대체합니다."
-
 msgid "Use saved colours for icon fill"
 msgstr "아이콘 채우기에 저장된 색상 사용"
 
-msgid ""
-"When enabled, icons will match the colour of their section's progress bar."
-msgstr ""
-"활성화하면 아이콘 색상이 해당 섹션의 진행 바 색상과 일치합니다."
-
-msgid "Book section"
-msgstr "책 섹션"
-
-msgid "Chapter section"
-msgstr "챕터 섹션"
-
-msgid "Reading goal section"
-msgstr "독서 목표 섹션"
+msgid "When enabled, icons will match the colour of their section's progress bar."
+msgstr "활성화하면 아이콘 색상이 해당 섹션의 진행 바 색상과 일치합니다."
 
 msgid "Battery section (High)"
 msgstr "배터리 섹션 (높음)"
@@ -631,8 +1030,11 @@ msgstr "배터리 섹션 (낮음)"
 msgid "Battery section (Charging)"
 msgstr "배터리 섹션 (충전 중)"
 
-msgid "Message section"
-msgstr "메시지 섹션"
+msgid "Colours (modes)"
+msgstr "색상 (모드)"
+
+msgid "Configure colours for monochrome mode, infobox background, and text. Light and dark correspond to the current dark mode setting. Monochrome replaces all colours with that single chosen color."
+msgstr "흑백 모드, 정보 박스 배경 및 텍스트의 색상을 구성합니다. 밝음과 어두움은 현재 다크 모드 설정에 해당합니다. 흑백은 모든 색상을 선택한 단일 색상으로 대체합니다."
 
 msgid "Monochrome mode (light)"
 msgstr "단색 모드 (밝음)"
@@ -685,9 +1087,7 @@ msgstr "완료율을 표시하는 가로 진행 바를 표시합니다."
 msgid "Show decorative bar on message section"
 msgstr "메시지 섹션에 장식 바 표시"
 
-msgid ""
-"Displays a purely decorative progress bar under the message section, "
-"matching the message section colour and the progress bars in other sections."
+msgid "Displays a purely decorative progress bar under the message section, matching the message section colour and the progress bars in other sections."
 msgstr "메시지 섹션 아래에 순전히 장식용 진행 표시줄을 표시하며, 메시지 섹션 색상과 다른 섹션의 진행 표시줄과 일치합니다."
 
 msgid "Title font face"
@@ -729,31 +1129,20 @@ msgstr "오른쪽"
 msgid "Book multiline titles"
 msgstr "책 제목 여러 줄 표시"
 
-msgid ""
-"If deselected book titles will be truncated to a single line with an ellipsis"
-msgstr ""
-"선택 해제하면 책 제목이 줄임표와 함께 한 줄로 잘립니다"
+msgid "If deselected book titles will be truncated to a single line with an ellipsis"
+msgstr "선택 해제하면 책 제목이 줄임표와 함께 한 줄로 잘립니다"
 
 msgid "Chapter multiline titles"
 msgstr "챕터 제목 여러 줄 표시"
 
-msgid ""
-"If deselected chapter titles will be truncated to a single line with an "
-"ellipsis"
-msgstr ""
-"선택 해제하면 챕터 제목이 줄임표와 함께 한 줄로 잘립니다"
+msgid "If deselected chapter titles will be truncated to a single line with an ellipsis"
+msgstr "선택 해제하면 챕터 제목이 줄임표와 함께 한 줄로 잘립니다"
 
 msgid "Clean chapter titles"
 msgstr "챕터 제목 정리"
 
-msgid ""
-"Removes structural prefixes like 'Chapter 5:' or 'Part II' from chapter "
-"titles and normalises capitalisation. Only works correctly with English "
-"chapter titles - disable for non-English books."
-msgstr ""
-"'Chapter 5:' 또는 'Part II'와 같은 구조적 접두사를 챕터 제목에서 제거하고 "
-"대문자 표기를 정규화합니다. 영어 챕터 제목에서만 올바르게 작동합니다. "
-"영어가 아닌 책에서는 비활성화하세요."
+msgid "Removes structural prefixes like 'Chapter 5:' or 'Part II' from chapter titles and normalises capitalisation. Only works correctly with English chapter titles - disable for non-English books."
+msgstr "'Chapter 5:' 또는 'Part II'와 같은 구조적 접두사를 챕터 제목에서 제거하고 대문자 표기를 정규화합니다. 영어 챕터 제목에서만 올바르게 작동합니다. 영어가 아닌 책에서는 비활성화하세요."
 
 msgid "Make book title bold"
 msgstr "책 제목 굵게 표시"
@@ -776,11 +1165,8 @@ msgstr "폴더에서 무작위 이미지"
 msgid "Stretch book cover to fill"
 msgstr "책 표지를 늘려 채우기"
 
-msgid ""
-"When disabled, book cover will be scaled to fit within the screen while "
-"preserving aspect ratio."
-msgstr ""
-"비활성화하면 책 표지가 종횡비를 유지하면서 화면에 맞게 크기가 조정됩니다."
+msgid "When disabled, book cover will be scaled to fit within the screen while preserving aspect ratio."
+msgstr "비활성화하면 책 표지가 종횡비를 유지하면서 화면에 맞게 크기가 조정됩니다."
 
 msgid "Cover fill colour"
 msgstr "표지 채우기 색상"
@@ -788,11 +1174,14 @@ msgstr "표지 채우기 색상"
 msgid "Background colour for non-stretched covers."
 msgstr "늘이지 않은 표지의 배경 색상."
 
-msgid "Black"
-msgstr "검정"
+msgid "Pick cover fill colour"
+msgstr "표지 채우기 색상 선택"
 
-msgid "White"
-msgstr "흰색"
+msgid "Cover alignment"
+msgstr "표지 정렬"
+
+msgid "Horizontal alignment of the cover image when not stretched."
+msgstr "늘이지 않을 때 표지 이미지의 가로 정렬."
 
 msgid "Solid background colour"
 msgstr "단색 배경 색상"
@@ -814,368 +1203,3 @@ msgstr "배경 오버레이"
 
 msgid "Add a colour layer over the background to reduce contrast."
 msgstr "대비를 줄이기 위해 배경 위에 색상 레이어를 추가합니다."
-
-msgid "Reset layout & spacing settings to default"
-msgstr "레이아웃 및 간격 설정 초기화"
-
-msgid "Are you sure you want to reset layout & spacing settings?"
-msgstr "레이아웃 및 간격 설정을 초기화하시겠습니까?"
-
-msgid "Layout & spacing settings reset to defaults"
-msgstr "레이아웃 및 간격 설정이 초기화되었습니다"
-
-msgid "Reset contents settings to default"
-msgstr "콘텐츠 설정 초기화"
-
-msgid "Are you sure you want to reset contents settings?"
-msgstr "콘텐츠 설정을 초기화하시겠습니까?"
-
-msgid "Contents settings reset to defaults"
-msgstr "콘텐츠 설정이 초기화되었습니다"
-
-msgid "Reset colours, icons & bars settings to default"
-msgstr "색상, 아이콘 및 바 설정 초기화"
-
-msgid "Are you sure you want to reset colours, icons & bars settings?"
-msgstr "색상, 아이콘 및 바 설정을 초기화하시겠습니까?"
-
-msgid "Colours, icons & bars settings reset to defaults"
-msgstr "색상, 아이콘 및 바 설정이 초기화되었습니다"
-
-msgid "Reset fonts & text settings to default"
-msgstr "글꼴 및 텍스트 설정 초기화"
-
-msgid "Are you sure you want to reset fonts & text settings?"
-msgstr "글꼴 및 텍스트 설정을 초기화하시겠습니까?"
-
-msgid "Fonts & text settings reset to defaults"
-msgstr "글꼴 및 텍스트 설정이 초기화되었습니다"
-
-msgid "Reset background settings to default"
-msgstr "배경 설정 초기화"
-
-msgid "Are you sure you want to reset background settings?"
-msgstr "배경 설정을 초기화하시겠습니까?"
-
-msgid "Background settings reset to defaults"
-msgstr "배경 설정이 초기화되었습니다"
-
-msgid "Reset the settings in this part of the menu to their defaults."
-msgstr "이 메뉴 부분의 설정을 기본값으로 초기화합니다."
-
-msgid "factory defaults"
-msgstr "공장 기본값"
-
-#, lua-format
-msgid "Values will be restored from: %s"
-msgstr "값을 복원할 위치: %s"
-
-msgid "Reset"
-msgstr "초기화"
-
-msgid "Save"
-msgstr "저장"
-
-msgid "None"
-msgstr "없음"
-
-msgid "Active preset: "
-msgstr "활성 프리셋: "
-
-msgid "Save current settings as new preset"
-msgstr "현재 설정을 새 프리셋으로 저장"
-
-#, lua-format
-msgid "What would you like to do with preset '%s'?"
-msgstr "프리셋 '%s'을(를) 어떻게 하시겠습니까?"
-
-msgid "Update"
-msgstr "업데이트"
-
-#, lua-format
-msgid "Are you sure you want to overwrite preset '%s' with current settings?"
-msgstr "프리셋 '%s'을(를) 현재 설정으로 덮어쓰시겠습니까?"
-
-#, lua-format
-msgid "Preset '%s' was updated with current settings"
-msgstr "프리셋 '%s'이(가) 현재 설정으로 업데이트되었습니다"
-
-#, lua-format
-msgid "Are you sure you want to delete preset '%s'?"
-msgstr "프리셋 '%s'을(를) 삭제하시겠습니까?"
-
-msgid "Rename"
-msgstr "이름 변경"
-
-msgid "Enter new preset name"
-msgstr "새 프리셋 이름 입력"
-
-msgid "[ Built-in Presets ]"
-msgstr "[ 기본 제공 프리셋 ]"
-
-msgid "[ Your Custom Presets ]"
-msgstr "[ 사용자 프리셋 ]"
-
-msgid "Book info"
-msgstr "책 정보"
-
-msgid "Chapter info"
-msgstr "챕터 정보"
-
-msgid "Daily info"
-msgstr "일간 정보"
-
-msgid "Device info"
-msgstr "기기 정보"
-
-msgid "Custom message"
-msgstr "사용자 정의 메시지"
-
-msgid "Reorder sections"
-msgstr "섹션 순서 변경"
-
-msgid "Section order"
-msgstr "섹션 순서"
-
-msgid "At least one section must remain visible."
-msgstr "최소 하나의 섹션은 표시되어야 합니다."
-
-msgid "Show book author"
-msgstr "책 저자 표시"
-
-msgid "Display the author name below the book title."
-msgstr "책 제목 아래에 저자 이름을 표시합니다."
-
-msgid "Show book pages (pg x of x)"
-msgstr "책 페이지 표시 (x페이지 / 전체 x페이지)"
-
-msgid "Display total page count for the entire book."
-msgstr "책 전체의 총 페이지 수를 표시합니다."
-
-msgid "Show book time remaining"
-msgstr "남은 독서 시간 표시"
-
-msgid ""
-"Estimated reading time left to finish the book, based on your average "
-"reading speed."
-msgstr ""
-"평균 독서 속도를 기반으로 한 책을 다 읽을 때까지 예상 남은 시간."
-
-msgid "Show chapter count (ch x of x)"
-msgstr "챕터 수 표시 (x장 / 전체 x장)"
-
-msgid ""
-"Display current chapter number and total chapters (e.g., 'Chapter 5 of 12')."
-msgstr ""
-"현재 챕터 번호와 전체 챕터 수를 표시합니다 (예: '5장 / 전체 12장')."
-
-msgid "Show chapter pages (pg x of x)"
-msgstr "챕터 페이지 표시 (x페이지 / 전체 x페이지)"
-
-msgid "Display the number of pages in the current chapter."
-msgstr "현재 챕터의 페이지 수를 표시합니다."
-
-msgid "Show chapter time remaining"
-msgstr "챕터 남은 시간 표시"
-
-msgid ""
-"Estimated time to finish the current chapter, based on your reading speed."
-msgstr ""
-"독서 속도를 기반으로 한 현재 챕터를 마칠 때까지 예상 시간."
-
-msgid "Daily page goal"
-msgstr "일일 페이지 목표"
-
-msgid ""
-"Set how many pages you aim to read each day. Progress shown in the goal "
-"section."
-msgstr ""
-"매일 읽을 목표 페이지 수를 설정합니다. 진행 상황은 목표 섹션에 표시됩니다."
-
-msgid "Show current reading streak"
-msgstr "현재 연속 독서 기록 표시"
-
-msgid "Display consecutive days you've met your reading goal."
-msgstr "독서 목표를 달성한 연속 일수를 표시합니다."
-
-msgid "Show weekly goal achievement"
-msgstr "주간 목표 달성 현황 표시"
-
-msgid "Number of days this week you've met your daily reading goal."
-msgstr "이번 주에 일일 독서 목표를 달성한 날 수."
-
-msgid "Show pages read out of daily goal"
-msgstr "일일 목표 대비 읽은 페이지 표시"
-
-msgid ""
-"Display pages read today compared to your daily target (e.g. '35/50 pages')."
-msgstr ""
-"오늘 읽은 페이지 수를 일일 목표와 비교하여 표시합니다 (예: '35/50페이지')."
-
-msgid "Show current time/date on separate line"
-msgstr "현재 시간/날짜를 별도 줄에 표시"
-
-msgid ""
-"Display time/date on its own line below battery percentage instead of inline."
-msgstr ""
-"시간/날짜를 인라인이 아닌 배터리 퍼센트 아래 별도 줄에 표시합니다."
-
-msgid "Enable 'Show battery time remaining' to use this option"
-msgstr "이 옵션을 사용하려면 '남은 배터리 시간 표시'를 활성화하세요"
-
-msgid "Show date instead of time"
-msgstr "시간 대신 날짜 표시"
-
-msgid ""
-"Display current date (e.g. '29th Jan') instead of time in battery section"
-msgstr ""
-"배터리 섹션에 시간 대신 현재 날짜 (예: '1월 29일')를 표시"
-
-msgid "Show battery consumption rate"
-msgstr "배터리 소모율 표시"
-
-msgid ""
-"Display battery drain percentage per hour based on recent usage or manual "
-"input (see advanced menu)"
-msgstr ""
-"최근 사용 또는 수동 입력을 기반으로 한 시간당 배터리 소모율 표시 "
-"(고급 설정 메뉴 참조)"
-
-msgid "Show battery time remaining"
-msgstr "남은 배터리 시간 표시"
-
-msgid ""
-"Estimated hours and minutes until battery is depleted, based on current "
-"drain rate."
-msgstr ""
-"현재 소모율을 기반으로 한 배터리가 완전히 방전될 때까지 예상 시간 (시간, 분)."
-
-msgid "Use a separate custom message just for Customisable Sleep Screen"
-msgstr "맞춤형 절전 화면 전용 사용자 정의 메시지 사용"
-
-msgid "Book highlights"
-msgstr "책 하이라이트"
-
-msgid "Show a random highlight from the current book"
-msgstr "현재 책에서 무작위 하이라이트 표시"
-
-msgid "KOReader sleep message"
-msgstr "KOReader 절전 메시지"
-
-msgid ""
-"Uses KOReaders own sleep screen message function. Enable 'Add custom message "
-"to sleep screen' to use this (Settings → Screen → Sleep screen → Sleep "
-"screen message)."
-msgstr ""
-"KOReader 자체 절전 화면 메시지 기능을 사용합니다. "
-"'절전 화면에 사용자 정의 메시지 추가'를 활성화하여 사용하세요 "
-"(설정 → 화면 → 절전 화면 → 절전 화면 메시지)."
-
-msgid "Message header"
-msgstr "메시지 헤더"
-
-msgid ""
-"Custom header text displayed above the message. Supports variables: %d, %y, "
-"%t, %b, %r."
-msgstr ""
-"메시지 위에 표시되는 사용자 정의 헤더 텍스트. "
-"지원 변수: %d, %y, %t, %b, %r."
-
-msgid "Change custom message header"
-msgstr "사용자 정의 메시지 헤더 변경"
-
-msgid "Edit custom message"
-msgstr "사용자 정의 메시지 편집"
-
-msgid ""
-"Write your custom message text. Only active when 'Custom message' is "
-"selected. Supports variables: %d, %y, %t, %b, %r."
-msgstr ""
-"사용자 정의 메시지 텍스트를 입력합니다. '사용자 정의 메시지' 선택 시에만 활성화됩니다. "
-"지원 변수: %d, %y, %t, %b, %r."
-
-msgid "Custom Customisable Sleep Screen message"
-msgstr "맞춤형 절전 화면 사용자 정의 메시지"
-
-msgid "Book highlight maximum length"
-msgstr "책 하이라이트 최대 길이"
-
-msgid "Maximum characters to display for highlights (0 = no limit)."
-msgstr "하이라이트에 표시할 최대 글자 수 (0 = 무제한)."
-
-msgid "Maximum highlight length"
-msgstr "최대 하이라이트 길이"
-
-msgid "Set to 0 for no limit"
-msgstr "무제한으로 설정하려면 0으로 설정"
-
-msgid "Add quotation marks to highlights"
-msgstr "하이라이트에 인용 부호 추가"
-
-msgid ""
-"Wraps all highlights in curly double quotes, removing any pre-existing "
-"quotation marks."
-msgstr ""
-"모든 하이라이트를 물결 모양의 큰따옴표로 감싸고 기존 인용 부호를 제거합니다."
-
-msgid "Show highlight location"
-msgstr "하이라이트 위치 표시"
-
-msgid ""
-"Display the chapter title and page number where the highlight is found, "
-"shown below the highlight text."
-msgstr ""
-"하이라이트가 있는 챕터 제목과 페이지 번호를 "
-"하이라이트 텍스트 아래에 표시합니다."
-
-msgid "Show titles (top line)"
-msgstr "제목 표시 (상단 줄)"
-
-msgid ""
-"Display the main heading text in each section. At least one of titles or "
-"subtitles must be visible."
-msgstr ""
-"각 섹션의 주 제목 텍스트를 표시합니다. "
-"제목 또는 부제목 중 하나는 표시되어야 합니다."
-
-msgid "Cannot hide both titles and subtitles. At least one must be visible."
-msgstr "제목과 부제목을 모두 숨길 수 없습니다. 최소 하나는 표시되어야 합니다."
-
-msgid "Show subtitles (bottom lines)"
-msgstr "부제목 표시 (하단 줄)"
-
-msgid ""
-"Display information below main heading text in each section. At least one of "
-"titles or subtitles must be visible."
-msgstr ""
-"각 섹션의 주 제목 텍스트 아래에 정보를 표시합니다. "
-"제목 또는 부제목 중 하나는 표시되어야 합니다."
-
-msgid "Displayed sections"
-msgstr "표시 섹션"
-
-msgid ""
-"Toggle which sections show on the sleep screen. At least one must be visible."
-msgstr ""
-"절전 화면에 표시할 섹션을 켜고 끕니다. 최소 하나는 표시되어야 합니다."
-
-msgid "[ Section Content ]"
-msgstr "[ 섹션 콘텐츠 ]"
-
-msgid "Configure book-specific details."
-msgstr "책 관련 세부 설정을 구성합니다."
-
-msgid "Configure chapter-specific details"
-msgstr "챕터 관련 세부 설정을 구성"
-
-msgid "Configure reading goal details"
-msgstr "독서 목표 세부 설정을 구성"
-
-msgid "Battery & time/date section"
-msgstr "배터리 및 시간/날짜 섹션"
-
-msgid "Configure battery & time/date details"
-msgstr "배터리 및 시간/날짜 세부 설정을 구성"
-
-msgid "Configure message-specific details"
-msgstr "메시지 관련 세부 설정을 구성"

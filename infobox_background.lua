@@ -2,11 +2,11 @@
 
 local _plugin_dir = (debug.getinfo(1, "S").source:match("^@(.+)/[^/]+$") or ".") .. "/"
 
-local ffi         = require("ffi")
-local Blitbuffer  = require("ffi/blitbuffer")
-local util        = require("util")
-local Device      = require("device")
-local RenderImage = require("ui/renderimage")
+local ffi            = require("ffi")
+local Blitbuffer     = require("ffi/blitbuffer")
+local util           = require("util")
+local Device         = require("device")
+local RenderImage    = require("ui/renderimage")
 local HorizontalSpan = require("ui/widget/horizontalspan")
 local ImageWidget    = require("ui/widget/imagewidget")
 
@@ -31,10 +31,13 @@ local function freeTrackedBBs()
     _active_blitbuffers = {}
 end
 
-local function scaleImageToFit(bb, target_w, target_h, stretch, fill_color)
+local function scaleImageToFit(bb, target_w, target_h, stretch, fill_color, align)
     if not bb then return nil end
     local src_w, src_h = bb:getWidth(), bb:getHeight()
-    if src_w <= 0 or src_h <= 0 then return nil end
+    if src_w <= 0 or src_h <= 0 then
+        if bb.free then pcall(bb.free, bb) end
+        return nil
+    end
 
     if src_w == target_w and src_h == target_h then
         return trackBB(bb)
@@ -50,12 +53,26 @@ local function scaleImageToFit(bb, target_w, target_h, stretch, fill_color)
         local scaled_h = math.floor(src_h * scale)
         local scaled   = RenderImage:scaleBlitBuffer(bb, scaled_w, scaled_h, false)
 
-        fill_color = fill_color or "black"
-        local bg_color = (fill_color == "white") and Blitbuffer.COLOR_WHITE or Blitbuffer.COLOR_BLACK
+        fill_color = fill_color or "#000000"
+        if fill_color == "black" then fill_color = "#000000" end
+        if fill_color == "white" then fill_color = "#ffffff" end
+        local r = tonumber(fill_color:sub(2, 3), 16) or 0
+        local g = tonumber(fill_color:sub(4, 5), 16) or 0
+        local b = tonumber(fill_color:sub(6, 7), 16) or 0
+        local tiny_bb = Blitbuffer.new(1, 1, Blitbuffer.TYPE_BBRGB24)
+        local color = ffi.new("ColorRGB24", r, g, b)
+        tiny_bb:setPixel(0, 0, color)
+        local canvas = RenderImage:scaleBlitBuffer(tiny_bb, target_w, target_h, true)
+        tiny_bb:free()
 
-        local canvas = Blitbuffer.new(target_w, target_h, bb:getType())
-        canvas:fill(bg_color)
-        local x_off = math.floor((target_w - scaled_w) / 2)
+        local x_off
+        if align == "left" then
+            x_off = 0
+        elseif align == "right" then
+            x_off = target_w - scaled_w
+        else
+            x_off = math.floor((target_w - scaled_w) / 2)
+        end
         local y_off = math.floor((target_h - scaled_h) / 2)
         canvas:blitFrom(scaled, x_off, y_off, 0, 0, scaled_w, scaled_h)
         if scaled ~= bb and scaled.free then pcall(scaled.free, scaled) end
@@ -79,8 +96,8 @@ local function buildBackground(ui)
     if not (ok and cover_bb) then return nil end
     local stretch    = getSetting("BG_STRETCH")
     local fill_color = getSetting("BG_COVER_FILL_COLOR")
-    local scaled_bb  = scaleImageToFit(cover_bb, screen_size.w, screen_size.h, stretch, fill_color)
-    pcall(cover_bb.free, cover_bb)
+    local align      = getSetting("BG_COVER_ALIGN")
+    local scaled_bb  = scaleImageToFit(cover_bb, screen_size.w, screen_size.h, stretch, fill_color, align)
     if not scaled_bb then return nil end
     return ImageWidget:new {
         image  = scaled_bb,
@@ -153,8 +170,8 @@ local function getRandomImageFromFolder(folder)
         if ok and image_bb then
             local stretch    = getSetting("BG_STRETCH")
             local fill_color = getSetting("BG_COVER_FILL_COLOR")
-            local scaled_bb  = scaleImageToFit(image_bb, screen_size.w, screen_size.h, stretch, fill_color)
-            pcall(image_bb.free, image_bb)
+            local align      = getSetting("BG_COVER_ALIGN")
+            local scaled_bb  = scaleImageToFit(image_bb, screen_size.w, screen_size.h, stretch, fill_color, align)
             if not scaled_bb then return nil end
             return ImageWidget:new {
                 image  = scaled_bb,
@@ -223,7 +240,8 @@ local function buildBackgroundWidget(ui, book_data)
             if ok and cover_bb then
                 local stretch    = getSetting("BG_STRETCH")
                 local fill_color = getSetting("BG_COVER_FILL_COLOR")
-                local scaled_bb  = scaleImageToFit(cover_bb, screen_size.w, screen_size.h, stretch, fill_color)
+                local align      = getSetting("BG_COVER_ALIGN")
+                local scaled_bb  = scaleImageToFit(cover_bb, screen_size.w, screen_size.h, stretch, fill_color, align)
                 return ImageWidget:new {
                     image  = scaled_bb,
                     width  = screen_size.w,

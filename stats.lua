@@ -11,7 +11,7 @@ local function getDbPath()
     return DataStorage:getSettingsDir() .. "/statistics.sqlite3"
 end
 
-local function getAllStats(book_id, today_pages_override)
+local function getAllStats(book_id, today_pages_override, goal_type, daily_goal_minutes)
     local result = {
         duration     = 0,
         pages        = 0,
@@ -87,54 +87,103 @@ local function getAllStats(book_id, today_pages_override)
         end
     end
 
-    local daily_goal = tonumber(getSetting("DAILY_GOAL")) or 0
-    if daily_goal > 0 then
-        local days_since_monday = (now_t.wday == 1) and 6 or (now_t.wday - 2)
-        local start_of_week_t   = os.date("*t", now - (days_since_monday * 86400))
-        start_of_week_t.hour, start_of_week_t.min, start_of_week_t.sec = 0, 0, 0
-        local start_of_week = os.time(start_of_week_t)
+    local daily_goal      = tonumber(getSetting("DAILY_GOAL")) or 0
+    local goal_type_local = goal_type or getSetting("GOAL_TYPE") or "pages"
 
-        result.days_in_week = days_since_monday + 1
+    if goal_type_local == "time" then
+        local goal_mins    = daily_goal_minutes or getSetting("DAILY_GOAL_MINUTES") or 30
+        local goal_seconds = goal_mins * 60
 
-        local day_seen = {}
-        local ok_week = pcall(function()
-            local sql = string.format([[
-                SELECT date(start_time, 'unixepoch', 'localtime') AS read_date,
-                       id_book, page
-                FROM page_stat_data
-                WHERE start_time >= %d
-                ORDER BY read_date ASC
-            ]], start_of_week)
-            local stmt = conn:prepare(sql)
-            if not stmt then error("prepare failed") end
-            local row = stmt:step()
-            while row do
-                local date_str = tostring(row[1])
-                local key      = tostring(row[2]) .. "-" .. tostring(row[3])
-                if not day_seen[date_str] then day_seen[date_str] = {} end
-                day_seen[date_str][key] = true
-                row = stmt:step()
+        if goal_seconds > 0 then
+            local days_since_monday = (now_t.wday == 1) and 6 or (now_t.wday - 2)
+            local start_of_week_t   = os.date("*t", now - (days_since_monday * 86400))
+            start_of_week_t.hour, start_of_week_t.min, start_of_week_t.sec = 0, 0, 0
+            local start_of_week = os.time(start_of_week_t)
+
+            result.days_in_week = days_since_monday + 1
+
+            local day_durations = {}
+            local ok_week = pcall(function()
+                local sql = string.format([[
+                    SELECT date(start_time, 'unixepoch', 'localtime') AS read_date,
+                           SUM(duration) AS day_total
+                    FROM page_stat_data
+                    WHERE start_time >= %d
+                    GROUP BY read_date
+                    ORDER BY read_date ASC
+                ]], start_of_week)
+                local stmt = conn:prepare(sql)
+                if not stmt then error("prepare failed") end
+                for row in stmt:rows() do
+                    day_durations[tostring(row[1])] = tonumber(row[2]) or 0
+                end
+                stmt:close()
+            end)
+
+            if ok_week then
+                local today_dur = result.duration
+                if today_dur > 0 then
+                    day_durations[today_str] = math.max(today_dur, day_durations[today_str] or 0)
+                end
+
+                for i = 0, days_since_monday do
+                    local date_str = os.date("%Y-%m-%d", now - ((days_since_monday - i) * 86400))
+                    if (day_durations[date_str] or 0) >= goal_seconds then
+                        result.days_met = result.days_met + 1
+                    end
+                end
             end
-            stmt:close()
-        end)
+        end
 
-        if ok_week then
-            local day_pages = {}
-            for date_str, pages in pairs(day_seen) do
-                local count = 0
-                for _ in pairs(pages) do count = count + 1 end
-                day_pages[date_str] = count
-            end
+    else
+        if daily_goal > 0 then
+            local days_since_monday = (now_t.wday == 1) and 6 or (now_t.wday - 2)
+            local start_of_week_t   = os.date("*t", now - (days_since_monday * 86400))
+            start_of_week_t.hour, start_of_week_t.min, start_of_week_t.sec = 0, 0, 0
+            local start_of_week = os.time(start_of_week_t)
 
-            local effective_today_pages = today_pages_override or result.pages
-            if effective_today_pages > 0 then
-                day_pages[today_str] = math.max(effective_today_pages, day_pages[today_str] or 0)
-            end
+            result.days_in_week = days_since_monday + 1
 
-            for i = 0, days_since_monday do
-                local date_str = os.date("%Y-%m-%d", now - ((days_since_monday - i) * 86400))
-                if (day_pages[date_str] or 0) >= daily_goal then
-                    result.days_met = result.days_met + 1
+            local day_seen = {}
+            local ok_week = pcall(function()
+                local sql = string.format([[
+                    SELECT date(start_time, 'unixepoch', 'localtime') AS read_date,
+                           id_book, page
+                    FROM page_stat_data
+                    WHERE start_time >= %d
+                    ORDER BY read_date ASC
+                ]], start_of_week)
+                local stmt = conn:prepare(sql)
+                if not stmt then error("prepare failed") end
+                local row = stmt:step()
+                while row do
+                    local date_str = tostring(row[1])
+                    local key      = tostring(row[2]) .. "-" .. tostring(row[3])
+                    if not day_seen[date_str] then day_seen[date_str] = {} end
+                    day_seen[date_str][key] = true
+                    row = stmt:step()
+                end
+                stmt:close()
+            end)
+
+            if ok_week then
+                local day_pages = {}
+                for date_str, pages in pairs(day_seen) do
+                    local count = 0
+                    for _ in pairs(pages) do count = count + 1 end
+                    day_pages[date_str] = count
+                end
+
+                local effective_today_pages = today_pages_override or result.pages
+                if effective_today_pages > 0 then
+                    day_pages[today_str] = math.max(effective_today_pages, day_pages[today_str] or 0)
+                end
+
+                for i = 0, days_since_monday do
+                    local date_str = os.date("%Y-%m-%d", now - ((days_since_monday - i) * 86400))
+                    if (day_pages[date_str] or 0) >= daily_goal then
+                        result.days_met = result.days_met + 1
+                    end
                 end
             end
         end
@@ -164,10 +213,18 @@ local function getCurrentDailyStreak()
 end
 
 local function getWeeklyGoalAchievement(today_pages_override)
-    local daily_goal = tonumber(getSetting("DAILY_GOAL")) or 0
-    if daily_goal <= 0 then return 0, 0 end
-    local r = getAllStats(nil, today_pages_override)
-    return r.days_met, r.days_in_week
+    local goal_type = getSetting("GOAL_TYPE") or "pages"
+    if goal_type == "time" then
+        local goal_mins = getSetting("DAILY_GOAL_MINUTES") or 30
+        if goal_mins <= 0 then return 0, 0 end
+        local r = getAllStats(nil, nil, "time", goal_mins)
+        return r.days_met, r.days_in_week
+    else
+        local daily_goal = tonumber(getSetting("DAILY_GOAL")) or 0
+        if daily_goal <= 0 then return 0, 0 end
+        local r = getAllStats(nil, today_pages_override)
+        return r.days_met, r.days_in_week
+    end
 end
 
 local function getBatteryConsumptionRate()

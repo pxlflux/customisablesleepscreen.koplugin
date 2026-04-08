@@ -19,11 +19,9 @@ local _           = require("plugin_gettext")
 local config      = require("config")
 local USER_CONFIG = config.USER_CONFIG
 local SETTINGS    = config.SETTINGS
-local meta        = require("_meta")
 
-if not package.loaded["customisablesleepscreen/_meta"] then
-    package.loaded["customisablesleepscreen/_meta"] = meta
-end
+local meta = (loadfile(_plugin_dir .. "_meta.lua") or function() return {} end)()
+package.loaded["customisablesleepscreen/_meta"] = meta
 
 local PATCH_VERSION = meta.version
 local Screen        = Device.screen
@@ -43,6 +41,7 @@ end
 local CustomisableSleepScreen = WidgetContainer:extend {
     name             = "customisablesleepscreen",
     _hooks_installed = false,
+    _saved_rotation  = nil,
 }
 
 local function parseVersion(v)
@@ -59,7 +58,7 @@ local function versionLessThan(v, major, minor, patch)
 end
 
 local function runMigrations(saved_version)
-    if saved_version == nil or versionLessThan(saved_version, 2, 0, 0) then
+    if saved_version == nil or versionLessThan(saved_version, 2, 1, 0) then
         G_reader_settings:saveSetting(SETTINGS.MESSAGE_SOURCE,     USER_CONFIG.MESSAGE_SOURCE)
         G_reader_settings:saveSetting(SETTINGS.MSG_HEADER,         USER_CONFIG.MSG_HEADER)
         G_reader_settings:saveSetting(SETTINGS.ICON_SET,           USER_CONFIG.ICON_SET)
@@ -78,6 +77,7 @@ local function runMigrations(saved_version)
 end
 
 function CustomisableSleepScreen:init()
+    logger.info(string.format("[Customisable Sleep Screen] v%s initialised", PATCH_VERSION))
     local saved_version = G_reader_settings:readSetting(SETTINGS.VERSION)
     if saved_version ~= PATCH_VERSION then
         runMigrations(saved_version)
@@ -88,6 +88,8 @@ function CustomisableSleepScreen:init()
             "FONT_SIZE_SUBTITLE", "BATT_STAT_TYPE", "TEXT_ALIGN", "MSG_SHOW_FULL_BAR",
             "OPACITY", "MARGIN", "GOAL_STAT_SCOPE", "POS", "BG_TYPE",
             "MESSAGE_SOURCE", "BG_COVER_FILL_COLOR",
+            "GOAL_TYPE", "DAILY_GOAL_MINUTES", "GOAL_TITLE_TYPE",
+            "SHOW_QUOTE_ATTRIBUTION", "SLEEP_ORIENTATION",
         }
         for _, key in ipairs(settings_to_init_if_missing) do
             if not G_reader_settings:readSetting(SETTINGS[key]) then
@@ -185,7 +187,6 @@ function CustomisableSleepScreen:init()
         if ok_fl and FontList then
             FontList.font_list = nil
         end
-
     end
     pcall(installBundledFonts)
 
@@ -217,10 +218,77 @@ function CustomisableSleepScreen:init()
         CustomisableSleepScreen._hooks_installed = true
     end
 
+    self.onCloseDocument = function()
+        pcall(function()
+            local ReaderUI = getReaderUI()
+            local ui = ReaderUI and ReaderUI.instance
+            if not (ui and ui.document) then return end
+
+            if ui.statistics and ui.statistics.id_curr_book then
+                local avg_time_before = ui.statistics.avg_time
+                pcall(function() ui.statistics:insertDB(ui.statistics.id_curr_book) end)
+                ui.statistics.avg_time = avg_time_before
+            end
+
+            local state     = ui.view and ui.view.state
+            local ib        = getInfobox()
+            local book_data = ib.collectBookData(ui, state)
+            if book_data then
+                ib.saveLastBookData(book_data)
+            end
+        end)
+    end
+
     local self_ref = self
     self.onShowCustomisableSleepScreenSettings = function() return self_ref:_onShowSettings() end
     self.onShowCustomisableSleepScreenPresets  = function() return self_ref:_onShowPresets()  end
     self.onCycleCustomisableSleepScreenPresets = function() return self_ref:_onCyclePresets() end
+    self.onPowerOff = function()
+        return self_ref:_onPowerOff()
+    end
+end
+
+function CustomisableSleepScreen:_onPowerOff()
+    if G_reader_settings:readSetting(SETTINGS.TYPE) ~= "customisable_ss" then return end
+    
+    pcall(function()
+        local ib  = getInfobox()
+        local ReaderUI = getReaderUI()
+        local ui       = ReaderUI and ReaderUI.instance
+        local widget   = nil
+
+        if ui and ui.document then
+            if ui.statistics and ui.statistics.id_curr_book then
+                local avg_time_before = ui.statistics.avg_time
+                pcall(function() ui.statistics:insertDB(ui.statistics.id_curr_book) end)
+                ui.statistics.avg_time = avg_time_before
+            end
+            local state     = ui.view and ui.view.state
+            local book_data = ib.collectBookData(ui, state)
+            if book_data then
+                ib.saveLastBookData(book_data)
+                widget = ib.buildInfoBox(ui, state, book_data)
+            end
+        else
+            local book_data = ib.loadLastBookData()
+            if book_data then
+                widget = ib.buildInfoBox(nil, nil, book_data)
+            end
+        end
+
+        if not widget then return end
+
+        local FrameContainer = require("ui/widget/container/framecontainer")
+        local wrapped = FrameContainer:new {
+            bordersize = 0,
+            padding    = 0,
+            widget,
+        }
+        wrapped:paintTo(Screen.bb, 0, 0)
+        Screen:refreshFull()
+        ib.freeTrackedBBs()
+        ib.restorePatches()
+    end)
 end
 
 function CustomisableSleepScreen:addToMainMenu(menu_items)
@@ -268,36 +336,67 @@ function CustomisableSleepScreen:addToMainMenu(menu_items)
 end
 
 function CustomisableSleepScreen:onCloseWidget()
+    if UIManager._entered_poweroff_stage then
+        pcall(function() G_reader_settings:flush() end)
+        return
+    end
+
     if CustomisableSleepScreen._hooks_installed then
-        self._screensaver_hook:revert()
+        pcall(function() self._screensaver_hook:revert() end)
+        pcall(function() self._screensaver_close_hook:revert() end)
         CustomisableSleepScreen._hooks_installed = false
     end
 
-    local ok, ib = pcall(require, "infobox")
-    if ok then
-        ib.freeTrackedBBs()
-        ib.restorePatches()
-    end
+    pcall(function()
+        local ok, ib = pcall(require, "infobox")
+        if ok then
+            ib.freeTrackedBBs()
+            ib.restorePatches()
+        end
+    end)
 
-    G_reader_settings:flush()
+    pcall(function() G_reader_settings:flush() end)
 end
 
 function CustomisableSleepScreen:onSuspend()
-    G_reader_settings:flush()
+    pcall(function() G_reader_settings:flush() end)
 end
 
 function CustomisableSleepScreen:_installScreensaverHook()
-    self._screensaver_hook = util.wrapMethod(Screensaver, "show", function(ss_self)
+    local css = self
 
-        if ss_self.prefix and ss_self.prefix ~= "" then
-            ss_self.screensaver_type = "message"
-            ss_self.show_message = true
-            return self._screensaver_hook:raw_call(ss_self)
+    self._screensaver_close_hook = util.wrapMethod(Screensaver, "close", function(ss_self)
+        if css._saved_rotation ~= nil then
+            Screen:setRotationMode(css._saved_rotation)
+            css._saved_rotation = nil
         end
+        return css._screensaver_close_hook:raw_call(ss_self)
+    end)
 
+    self._screensaver_hook = util.wrapMethod(Screensaver, "show", function(ss_self)
         local screensaver_type = G_reader_settings:readSetting("screensaver_type")
         if screensaver_type ~= "customisable_ss" then
-            return self._screensaver_hook:raw_call(ss_self)
+            return css._screensaver_hook:raw_call(ss_self)
+        end
+        if not Device.screen_saver_mode then
+            css._saved_rotation = nil
+        end
+        local orientation_setting = G_reader_settings:readSetting(SETTINGS.SLEEP_ORIENTATION) or "auto"
+        if orientation_setting ~= "auto" then
+            if css._saved_rotation == nil then
+                css._saved_rotation = Screen:getRotationMode()
+            end
+            if orientation_setting == "portrait" then
+                Screen:setRotationMode(0)
+            elseif orientation_setting == "landscape" then
+                Screen:setRotationMode(1)
+            elseif orientation_setting == "uportrait" then
+                Screen:setRotationMode(2)
+            elseif orientation_setting == "ulandscape" then
+                Screen:setRotationMode(3)
+            end
+        else
+            css._saved_rotation = nil
         end
 
         local ib = getInfobox()
@@ -336,15 +435,21 @@ function CustomisableSleepScreen:_installScreensaverHook()
             local render_ref = require("infobox_render")
             local show_in_fm = render_ref.getSetting("SHOW_IN_FILEMANAGER")
             if not show_in_fm then
-                return self._screensaver_hook:raw_call(ss_self)
+                return css._screensaver_hook:raw_call(ss_self)
             end
             local book_data = ib.loadLastBookData()
             if book_data then
                 widget = ib.buildInfoBox(nil, nil, book_data)
+            else
+                UIManager:show(require("ui/widget/infomessage"):new {
+                    text    = _("Customisable Sleep Screen: no book data found.\n\nOpen a book and trigger the sleep screen at least once before it will work in the file manager."),
+                })
             end
         end
 
-        if not widget then return self._screensaver_hook:raw_call(ss_self) end
+        if not widget then return css._screensaver_hook:raw_call(ss_self) end
+
+        logger.info("[Customisable Sleep Screen] Sleep screen built successfully")
 
         Device.screen_saver_mode = true
         UIManager:setIgnoreTouchInput(false)
@@ -353,6 +458,7 @@ function CustomisableSleepScreen:_installScreensaverHook()
             widget            = widget,
             covers_fullscreen = true,
         }
+
         ss_self.screensaver_widget.modal    = true
         ss_self.screensaver_widget.dithered = true
         UIManager:show(ss_self.screensaver_widget, "full")
@@ -360,7 +466,15 @@ function CustomisableSleepScreen:_installScreensaverHook()
         local screensaver_delay = G_reader_settings:readSetting("screensaver_delay")
         if screensaver_delay == "gesture" and ui then
             local ScreenSaverLockWidget = require("ui/widget/screensaverlockwidget")
-            ss_self.screensaver_lock_widget = ScreenSaverLockWidget:new { ui = ui }
+            ss_self.screensaver_lock_widget = ScreenSaverLockWidget:new {
+                ui = ui,
+                onCloseWidget = function()
+                    if ss_self.screensaver_widget then
+                        UIManager:close(ss_self.screensaver_widget)
+                        ss_self.screensaver_widget = nil
+                    end
+                end
+            }
             ss_self.screensaver_lock_widget.showWaitForGestureMessage = function(this)
                 this.is_infomessage_visible = true
             end

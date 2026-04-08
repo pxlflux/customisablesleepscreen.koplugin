@@ -7,114 +7,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"\n"
 
 #. ---- Display sleep screen strings ----
+
+msgid "No Chapter"
+msgstr "Geen hoofdstuk"
 
 msgid "Untitled"
 msgstr "Zonder titel"
 
 msgid "Unknown Author"
 msgstr "Onbekende auteur"
-
-#, lua-format
-msgid "Page %d of %d"
-msgstr "Pagina %d van %d"
-
-#, lua-format
-msgid "%s left"
-msgstr "%s over"
-
-msgid "No Chapter"
-msgstr "Geen hoofdstuk"
-
-#, lua-format
-msgid "Chapter %d of %d"
-msgstr "Hoofdstuk %d van %d"
-
-#, lua-format
-msgid "%s read today"
-msgstr "%s vandaag gelezen"
-
-#, lua-format
-msgid "%d days read in a row"
-msgstr "%d dagen achter elkaar gelezen"
-
-#, lua-format
-msgid "Met goal %d/%d days this week"
-msgstr "Doel behaald %d/%d dagen deze week"
-
-#, lua-format
-msgid "%d/%d page goal"
-msgstr "%d/%d pagina doel"
-
-msgid "Achieved!"
-msgstr "Behaald!"
-
-msgid "Goal achieved!"
-msgstr "Doel behaald!"
-
-#, lua-format
-msgid "%d%% of goal"
-msgstr "%d%% van doel"
-
-msgid "0 mins"
-msgstr "0 min"
-
-#, lua-format
-msgid "Approx. %d %s left"
-msgstr "Ong. %d %s over"
-
-msgid "Approx. <1 hr left"
-msgstr "Ong. <1 uur over"
-
-msgid "hr"
-msgid_plural "hrs"
-msgstr[0] "uur"
-msgstr[1] "uur"
-
-#, lua-format
-msgid "~%.1f%% per hour"
-msgstr "~%.1f%% per uur"
-
-msgid "Rate unavailable"
-msgstr "Snelheid niet beschikbaar"
-
-msgid "No message set"
-msgstr "Geen bericht ingesteld"
-
-msgid "No highlights found"
-msgstr "Geen markeringen gevonden"
-
-msgid "Message header is empty"
-msgstr "Berichtkop is leeg"
-
-#, lua-format
-msgid "pg. %s"
-msgstr "pag. %s"
-
-msgid "min"
-msgid_plural "mins"
-msgstr[0] "min"
-msgstr[1] "min"
-
-msgid "< 1 min"
-msgstr "< 1 min"
-
-#. Ordinal date suffix for 1 (e.g. "1st January"). Return "" if your language does not use suffixes.
-msgid "st"
-msgstr "e"
-
-#. Ordinal date suffix for 2 (e.g. "2nd January"). Return "" if your language does not use suffixes.
-msgid "nd"
-msgstr "e"
-
-#. Ordinal date suffix for 3 (e.g. "3rd January"). Return "" if your language does not use suffixes.
-msgid "rd"
-msgstr "e"
-
-#. Ordinal date suffix for 4 and above (e.g. "4th January"). Return "" if your language does not use suffixes.
-msgid "th"
-msgstr "e"
 
 msgid "January"
 msgstr "Januari"
@@ -152,52 +56,298 @@ msgstr "November"
 msgid "December"
 msgstr "December"
 
-#. ---- All other strings (menu items, help text, headers, buttons) ----
+msgid "st"
+msgstr "e"
 
-msgid "Pick a colour"
-msgstr "Kies een kleur"
+msgid "nd"
+msgstr "e"
 
-msgid "Cancel"
-msgstr "Annuleren"
+msgid "rd"
+msgstr "e"
 
-msgid "Apply"
-msgstr "Toepassen"
+msgid "th"
+msgstr "e"
+
+msgid "< 1 min"
+msgstr "< 1 min"
 
 #, lua-format
-msgid "Brightness: %d%%"
-msgstr "Helderheid: %d%%"
+msgid "~%d %s left"
+msgstr "~%d %s over"
 
-msgid "Enter hex"
-msgstr "Voer hex in"
+msgid "~<1 hr left"
+msgstr "~<1 uur over"
 
-msgid "Enter hex colour code"
-msgstr "Voer hexadecimale kleurcode in"
+#, lua-format
+msgid "%s left"
+msgstr "%s over"
 
-msgid "Invalid hex code. Use format: #RRGGBB"
-msgstr "Ongeldige hexcode. Gebruik formaat: #RRGGBB"
+#, lua-format
+msgid "Page %d of %d"
+msgstr "Pagina %d van %d"
 
-msgid "Delete all custom presets"
-msgstr "Alle aangepaste presets verwijderen"
+#, lua-format
+msgid "Chapter %d of %d"
+msgstr "Hoofdstuk %d van %d"
 
-msgid ""
-"Permanently removes all custom presets you've created. The built-in "
-"'Default' preset will remain. This cannot be undone."
-msgstr ""
-"Verwijdert permanent alle door u gemaakte aangepaste presets. De ingebouwde "
-"'Standaard' preset blijft behouden. Dit kan niet ongedaan worden gemaakt."
+msgid "0 mins"
+msgstr "0 min"
 
-msgid ""
-"Are you sure you want to delete all custom presets? (built-in presets will "
-"remain)"
-msgstr ""
-"Weet u zeker dat u alle aangepaste presets wilt verwijderen? "
-"(ingebouwde presets blijven behouden)"
+#, lua-format
+msgid "%s %s read today"
+msgstr "%s %s vandaag gelezen"
+
+msgid "pg"
+msgstr "pag."
+
+msgid "pgs"
+msgstr "pag."
+
+#, lua-format
+msgid "%s %s & %s read today"
+msgstr "%s %s & %s vandaag gelezen"
+
+#, lua-format
+msgid "%s read today"
+msgstr "%s vandaag gelezen"
+
+#, lua-format
+msgid "%d day streak"
+msgstr "%d dagen op rij"
+
+#, lua-format
+msgid "%d/%d days met this week"
+msgstr "%d/%d dagen doel behaald deze week"
+
+msgid "Achieved!"
+msgstr "Behaald!"
+
+msgid "goal"
+msgstr "doel"
+
+msgid "Goal achieved!"
+msgstr "Doel behaald!"
+
+#, lua-format
+msgid "%d%% of goal"
+msgstr "%d%% van doel"
+
+#, lua-format
+msgid "%d page goal"
+msgstr "%d pagina doel"
+
+#, lua-format
+msgid "~%.1f%%/hour"
+msgstr "~%.1f%%/uur"
+
+msgid "Rate unavailable"
+msgstr "Snelheid niet beschikbaar"
+
+msgid "No message set"
+msgstr "Geen bericht ingesteld"
+
+msgid "No custom quotes found. Add quotes to custom_quotes.lua."
+msgstr "Geen aangepaste citaten gevonden. Voeg citaten toe aan custom_quotes.lua."
+
+#, lua-format
+msgid "pg. %s"
+msgstr "pag. %s"
+
+msgid "No highlights found"
+msgstr "Geen markeringen gevonden"
+
+msgid "Sleeping"
+msgstr "Slaapstand"
+
+msgid "Highlights"
+msgstr "Markeringen"
+
+msgid "Quotations"
+msgstr "Citaten"
+
+msgid "Message"
+msgstr "Bericht"
+
+#. ---- All other strings (menu items, help text, headers, buttons) ----
+
+msgid "None"
+msgstr "Geen"
+
+msgid "Active preset: "
+msgstr "Actieve preset: "
+
+msgid "Save current settings as new preset"
+msgstr "Huidige instellingen opslaan als nieuwe preset"
+
+#, lua-format
+msgid "What would you like to do with preset '%s'?"
+msgstr "Wat wilt u doen met preset '%s'?"
+
+msgid "Update"
+msgstr "Bijwerken"
+
+#, lua-format
+msgid "Are you sure you want to overwrite preset '%s' with current settings?"
+msgstr "Weet u zeker dat u preset '%s' wilt overschrijven met de huidige instellingen?"
+
+#, lua-format
+msgid "Preset '%s' was updated with current settings"
+msgstr "Preset '%s' is bijgewerkt met de huidige instellingen"
 
 msgid "Delete"
 msgstr "Verwijderen"
 
+#, lua-format
+msgid "Are you sure you want to delete preset '%s'?"
+msgstr "Weet u zeker dat u preset '%s' wilt verwijderen?"
+
+msgid "Rename"
+msgstr "Hernoemen"
+
+msgid "Enter new preset name"
+msgstr "Voer een nieuwe presetnaam in"
+
+msgid "[ Built-in Presets ]"
+msgstr "[ Ingebouwde presets ]"
+
+msgid "[ Your Custom Presets ]"
+msgstr "[ Uw aangepaste presets ]"
+
+msgid "Customisable sleep screen settings"
+msgstr "Instellingen configureerbaar slaapscherm"
+
+msgid "Customisable sleep screen presets"
+msgstr "Presets configureerbaar slaapscherm"
+
+msgid "Cycle through customisable sleep screen presets"
+msgstr "Doorloop presets van het configureerbare slaapscherm"
+
+msgid "Customisable sleep screen"
+msgstr "Configureerbaar slaapscherm"
+
+msgid "Enable customisable sleep screen"
+msgstr "Configureerbaar slaapscherm inschakelen"
+
+msgid ""
+"Customisable Sleep Screen: no book data found.\n"
+"\n"
+"Open a book and trigger the sleep screen at least once before it will work in the file manager."
+msgstr ""
+"Configureerbaar slaapscherm: geen boekgegevens gevonden.\n"
+"\n"
+"Open een boek en activeer het slaapscherm minstens één keer voordat het werkt in de bestandsbeheerder."
+
+msgid "Reset layout & spacing settings to default"
+msgstr "Indeling en ruimte-instellingen terugzetten naar standaard"
+
+msgid "Are you sure you want to reset layout & spacing settings?"
+msgstr "Weet u zeker dat u de indeling en ruimte-instellingen wilt terugzetten?"
+
+msgid "Layout & spacing settings reset to defaults"
+msgstr "Indeling en ruimte-instellingen teruggezet naar standaard"
+
+msgid "Reset contents settings to default"
+msgstr "Inhoudinstellingen terugzetten naar standaard"
+
+msgid "Are you sure you want to reset contents settings?"
+msgstr "Weet u zeker dat u de inhoudinstellingen wilt terugzetten?"
+
+msgid "Contents settings reset to defaults"
+msgstr "Inhoudinstellingen teruggezet naar standaard"
+
+msgid "Reset colours, icons & bars settings to default"
+msgstr "Kleuren, iconen en balken-instellingen terugzetten naar standaard"
+
+msgid "Are you sure you want to reset colours, icons & bars settings?"
+msgstr "Weet u zeker dat u de kleuren, iconen en balken-instellingen wilt terugzetten?"
+
+msgid "Colours, icons & bars settings reset to defaults"
+msgstr "Kleuren, iconen en balken-instellingen teruggezet naar standaard"
+
+msgid "Reset fonts & text settings to default"
+msgstr "Lettertype en tekst-instellingen terugzetten naar standaard"
+
+msgid "Are you sure you want to reset fonts & text settings?"
+msgstr "Weet u zeker dat u de lettertype en tekst-instellingen wilt terugzetten?"
+
+msgid "Fonts & text settings reset to defaults"
+msgstr "Lettertype en tekst-instellingen teruggezet naar standaard"
+
+msgid "Reset background settings to default"
+msgstr "Achtergrondinstellingen terugzetten naar standaard"
+
+msgid "Are you sure you want to reset background settings?"
+msgstr "Weet u zeker dat u de achtergrondinstellingen wilt terugzetten?"
+
+msgid "Background settings reset to defaults"
+msgstr "Achtergrondinstellingen teruggezet naar standaard"
+
+msgid "Reset the settings in this part of the menu to their defaults."
+msgstr "Zet de instellingen in dit deel van het menu terug naar de standaardwaarden."
+
+msgid "factory defaults"
+msgstr "fabrieksstandaarden"
+
+#, lua-format
+msgid "Values will be restored from: %s"
+msgstr "Waarden worden hersteld van: %s"
+
+msgid "Reset"
+msgstr "Terugzetten"
+
+msgid "Cancel"
+msgstr "Annuleren"
+
+msgid "Save"
+msgstr "Opslaan"
+
+msgid "Delete all custom presets"
+msgstr "Alle aangepaste presets verwijderen"
+
+msgid "Permanently removes all custom presets you've created. The built-in 'Default' preset will remain. This cannot be undone."
+msgstr "Verwijdert permanent alle door u gemaakte aangepaste presets. De ingebouwde 'Standaard' preset blijft behouden. Dit kan niet ongedaan worden gemaakt."
+
+msgid "Are you sure you want to delete all custom presets? (built-in presets will remain)"
+msgstr "Weet u zeker dat u alle aangepaste presets wilt verwijderen? (ingebouwde presets blijven behouden)"
+
 msgid "All custom presets deleted. Built-in presets remain."
 msgstr "Alle aangepaste presets verwijderd. Ingebouwde presets blijven behouden."
+
+msgid "Sleep screen orientation"
+msgstr "Oriëntatie slaapscherm"
+
+msgid "Force the sleep screen to display in a specific orientation, regardless of how the device is held."
+msgstr "Dwingt het slaapscherm om in een bepaalde oriëntatie weer te geven, ongeacht hoe het apparaat wordt vastgehouden."
+
+msgid "Auto (follow device)"
+msgstr "Automatisch (apparaat volgen)"
+
+msgid "Use whatever orientation the device is currently in."
+msgstr "Gebruik de huidige oriëntatie van het apparaat."
+
+msgid "Force portrait"
+msgstr "Portret afdwingen"
+
+msgid "Always display the sleep screen in portrait mode."
+msgstr "Altijd het slaapscherm in portretmodus weergeven."
+
+msgid "Force landscape"
+msgstr "Landschap afdwingen"
+
+msgid "Always display the sleep screen in landscape mode."
+msgstr "Altijd het slaapscherm in landschapsmodus weergeven."
+
+msgid "Force upside-down portrait"
+msgstr "Omgekeerd portret afdwingen"
+
+msgid "Always display the sleep screen in inverted portrait mode."
+msgstr "Altijd het slaapscherm in omgekeerde portretmodus weergeven."
+
+msgid "Force upside-down landscape"
+msgstr "Omgekeerd landschap afdwingen"
+
+msgid "Always display the sleep screen in inverted landscape mode."
+msgstr "Altijd het slaapscherm in omgekeerde landschapsmodus weergeven."
 
 msgid "Battery time calculation"
 msgstr "Berekening batterijduur"
@@ -241,10 +391,7 @@ msgstr "Typische apparaten verbruiken 1–5% per uur tijdens het lezen"
 msgid "Daily statistics scope"
 msgstr "Bereik dagelijkse statistieken"
 
-msgid ""
-"Controls whether today's reading time and page count applies to the current "
-"book only, or all books read today. Note: reading streak and weekly goal "
-"achievement always reflect all books regardless of this setting."
+msgid "Controls whether today's reading time and page count applies to the current book only, or all books read today. Note: reading streak and weekly goal achievement always reflect all books regardless of this setting."
 msgstr "Bepaalt of de leestijd en het aantal pagina's van vandaag alleen voor het huidige boek gelden, of voor alle vandaag gelezen boeken. Opmerking: leesreeks en wekelijkse doelbereiking weerspiegelen altijd alle boeken, ongeacht deze instelling."
 
 msgid "All books"
@@ -262,22 +409,14 @@ msgstr "Leestijd en aantal pagina's van vandaag alleen voor het huidige boek"
 msgid "Show in file manager (outside of book)"
 msgstr "Tonen in bestandsbeheer (buiten boek)"
 
-msgid ""
-"When enabled, the customisable sleep screen will display in file manager "
-"using the last saved book data."
-msgstr ""
-"Indien ingeschakeld wordt het configureerbare slaapscherm weergegeven in het "
-"bestandsbeheer met de laatst opgeslagen boekgegevens."
+msgid "When enabled, the customisable sleep screen will display in file manager using the last saved book data."
+msgstr "Indien ingeschakeld wordt het configureerbare slaapscherm weergegeven in het bestandsbeheer met de laatst opgeslagen boekgegevens."
 
 msgid "Hide built-in presets (except Default)"
 msgstr "Ingebouwde presets verbergen (behalve Standaard)"
 
-msgid ""
-"Hide the built-in presets from the preset list, keeping only the Default "
-"preset and your custom presets visible."
-msgstr ""
-"Verbergt de ingebouwde presets uit de presetlijst, zodat alleen de Standaard "
-"preset en uw aangepaste presets zichtbaar zijn."
+msgid "Hide the built-in presets from the preset list, keeping only the Default preset and your custom presets visible."
+msgstr "Verbergt de ingebouwde presets uit de presetlijst, zodat alleen de Standaard preset en uw aangepaste presets zichtbaar zijn."
 
 msgid "Setting saved. Preset list will update when you reopen this menu."
 msgstr "Instelling opgeslagen. De presetlijst wordt bijgewerkt wanneer u dit menu opnieuw opent."
@@ -347,20 +486,318 @@ msgstr ""
 "Voor updates en problemen:\n"
 "github.com/%s"
 
-msgid "Customisable sleep screen settings"
-msgstr "Instellingen configureerbaar slaapscherm"
+msgid "Pick a colour"
+msgstr "Kies een kleur"
 
-msgid "Customisable sleep screen presets"
-msgstr "Presets configureerbaar slaapscherm"
+msgid "Apply"
+msgstr "Toepassen"
 
-msgid "Cycle through customisable sleep screen presets"
-msgstr "Doorloop presets van het configureerbare slaapscherm"
+#, lua-format
+msgid "Brightness: %d%%"
+msgstr "Helderheid: %d%%"
 
-msgid "Customisable sleep screen"
-msgstr "Configureerbaar slaapscherm"
+msgid "Enter hex"
+msgstr "Voer hex in"
 
-msgid "Enable customisable sleep screen"
-msgstr "Configureerbaar slaapscherm inschakelen"
+msgid "Enter hex colour code"
+msgstr "Voer hexadecimale kleurcode in"
+
+msgid "Invalid hex code. Use format: #RRGGBB"
+msgstr "Ongeldige hexcode. Gebruik formaat: #RRGGBB"
+
+msgid "Book info"
+msgstr "Boekinformatie"
+
+msgid "Chapter info"
+msgstr "Hoofdstukinformatie"
+
+msgid "Daily info"
+msgstr "Dagelijkse informatie"
+
+msgid "Battery info"
+msgstr "Batterijinformatie"
+
+msgid "Message info"
+msgstr "Berichtinformatie"
+
+msgid "Reorder sections"
+msgstr "Secties herordenen"
+
+msgid "Section order"
+msgstr "Sectievolgorde"
+
+msgid "At least one section must remain visible."
+msgstr "Minstens één sectie moet zichtbaar blijven."
+
+msgid "Show book author"
+msgstr "Boekauteur tonen"
+
+msgid "Display the author name below the book title."
+msgstr "Toont de naam van de auteur onder de boektitel."
+
+msgid "Show series name"
+msgstr "Serienaam tonen"
+
+msgid "Display the book's series name and index below the title."
+msgstr "Toont de serienaam en het serienummer van het boek onder de titel."
+
+msgid "Show book pages (pg x of x)"
+msgstr "Boekpagina's tonen (pag. x van x)"
+
+msgid "Display total page count for the entire book."
+msgstr "Toont het totale aantal pagina's van het hele boek."
+
+msgid "Show book time remaining"
+msgstr "Resterende leestijd boek tonen"
+
+msgid "Estimated reading time left to finish the book, based on your average reading speed."
+msgstr "Geschatte resterende leestijd om het boek te voltooien, gebaseerd op uw gemiddelde leessnelheid."
+
+msgid "Show chapter count (ch x of x)"
+msgstr "Aantal hoofdstukken tonen (hfst. x van x)"
+
+msgid "Display current chapter number and total chapters (e.g., 'Chapter 5 of 12')."
+msgstr "Toont het huidige hoofdstuknummer en het totale aantal hoofdstukken (bijv. 'Hoofdstuk 5 van 12')."
+
+msgid "Show chapter pages (pg x of x)"
+msgstr "Hoofdstukpagina's tonen (pag. x van x)"
+
+msgid "Display the number of pages in the current chapter."
+msgstr "Toont het aantal pagina's in het huidige hoofdstuk."
+
+msgid "Show chapter time remaining"
+msgstr "Resterende leestijd hoofdstuk tonen"
+
+msgid "Estimated time to finish the current chapter, based on your reading speed."
+msgstr "Geschatte tijd om het huidige hoofdstuk te voltooien, gebaseerd op uw leessnelheid."
+
+msgid "Title Line"
+msgstr "Titelregel"
+
+msgid "Choose what the top line of the daily info section displays."
+msgstr "Kies wat de bovenste regel van de dagelijkse infosectie toont."
+
+msgid "Pages read today"
+msgstr "Vandaag gelezen pagina's"
+
+msgid "e.g. '35 pages read today'"
+msgstr "bijv. '35 pagina's vandaag gelezen'"
+
+msgid "Time read today"
+msgstr "Vandaag gelezen tijd"
+
+msgid "e.g. '42 mins read today'"
+msgstr "bijv. '42 min vandaag gelezen'"
+
+msgid "Pages and time read today"
+msgstr "Vandaag gelezen pagina's en tijd"
+
+msgid "e.g. '35 pgs & 42 mins read today'"
+msgstr "bijv. '35 pag. & 42 min vandaag gelezen'"
+
+msgid "Goal type"
+msgstr "Doeltype"
+
+msgid "Choose whether your daily goal tracks pages read or time spent reading."
+msgstr "Kies of uw dagelijks doel gelezen pagina's of bestede leestijd bijhoudt."
+
+msgid "Page goal"
+msgstr "Paginadoel"
+
+msgid "Track daily progress by number of pages read."
+msgstr "Dagelijkse voortgang bijhouden via het aantal gelezen pagina's."
+
+msgid "Time goal"
+msgstr "Tijdsdoel"
+
+msgid "Track daily progress by minutes spent reading."
+msgstr "Dagelijkse voortgang bijhouden via bestede leesminuten."
+
+msgid "Daily page goal"
+msgstr "Dagelijks paginadoel"
+
+msgid "Set how many pages you aim to read each day."
+msgstr "Stel in hoeveel pagina's u elke dag wilt lezen."
+
+msgid "Daily time goal"
+msgstr "Dagelijks tijdsdoel"
+
+msgid "Set how many minutes you aim to read each day."
+msgstr "Stel in hoeveel minuten u elke dag wilt lezen."
+
+msgid "Daily time goal (minutes)"
+msgstr "Dagelijks tijdsdoel (minuten)"
+
+msgid "Show current reading streak"
+msgstr "Huidige leestreeks tonen"
+
+msgid "Display consecutive days you've met your reading goal."
+msgstr "Toont opeenvolgende dagen waarop u uw leesdoel hebt gehaald."
+
+msgid "Show weekly progress"
+msgstr "Wekelijkse voortgang tonen"
+
+msgid "Days this week you have met your reading goal, shown as completed days out of the current weekday (Monday = 1... Sunday = 7). For example: Thursday with goals met on Monday and Tuesday will show 2/4."
+msgstr "Dagen deze week waarop u uw leesdoel heeft gehaald, weergegeven als voltooide dagen van de huidige weekdag (maandag = 1... zondag = 7). Bijvoorbeeld: donderdag met doelen gehaald op maandag en dinsdag toont 2/4."
+
+msgid "Show daily goal"
+msgstr "Dagelijks doel tonen"
+
+msgid "Target page mode: e.g. 50 page goal. Target time mode: e.g. 1hr 15min time goal."
+msgstr "Paginadoel modus: bijv. 50 pagina doel. Tijdsdoel modus: bijv. 1u 15min tijdsdoel."
+
+msgid "Show current time/date on separate line"
+msgstr "Huidige tijd/datum op aparte regel tonen"
+
+msgid "Display time/date on its own line below battery percentage instead of inline."
+msgstr "Toont tijd/datum op een eigen regel onder het batterijpercentage in plaats van inline."
+
+msgid "Enable 'Show battery time remaining' to use this option"
+msgstr "Schakel 'Resterende batterijduur tonen' in om deze optie te gebruiken"
+
+msgid "Show date instead of time"
+msgstr "Datum tonen in plaats van tijd"
+
+msgid "Display current date (e.g. '29th Jan') instead of time in battery section"
+msgstr "Toont de huidige datum (bijv. '29 jan') in plaats van de tijd in de batterijsectie"
+
+msgid "Show battery consumption rate"
+msgstr "Batterijverbruikssnelheid tonen"
+
+msgid "Display battery drain percentage per hour based on recent usage or manual input (see advanced menu)"
+msgstr "Toont het batterijverbruikspercentage per uur op basis van recent gebruik of handmatige invoer (zie geavanceerd menu)"
+
+msgid "Show battery time remaining"
+msgstr "Resterende batterijduur tonen"
+
+msgid "Estimated hours and minutes until battery is depleted, based on current drain rate."
+msgstr "Geschatte uren en minuten tot de batterij leeg is, gebaseerd op de huidige verbruikssnelheid."
+
+msgid "Custom message"
+msgstr "Aangepast bericht"
+
+msgid "Use a separate custom message just for Customisable Sleep Screen"
+msgstr "Een apart aangepast bericht gebruiken alleen voor het configureerbare slaapscherm"
+
+msgid "Book highlights"
+msgstr "Boekaantekeningen"
+
+msgid "Show a random highlight from the current book"
+msgstr "Een willekeurige markering uit het huidige boek tonen"
+
+msgid "Custom quotes"
+msgstr "Aangepaste citaten"
+
+msgid "Show a random quote from the custom_quotes.lua file in the plugin folder."
+msgstr "Toont een willekeurig citaat uit het bestand custom_quotes.lua in de pluginmap."
+
+msgid "KOReader sleep message"
+msgstr "KOReader slaapschermbericht"
+
+msgid "Uses KOReaders own sleep screen message function. Enable 'Add custom message to sleep screen' to use this (Settings → Screen → Sleep screen → Sleep screen message)."
+msgstr "Gebruikt de eigen berichtfunctie van het KOReader slaapscherm. Schakel 'Aangepast bericht toevoegen aan slaapscherm' in om dit te gebruiken (Instellingen → Scherm → Slaapscherm → Slaapschermbericht)."
+
+msgid "Message header"
+msgstr "Berichtkop"
+
+msgid "Custom header text displayed above the message. Supports variables: %d, %y, %t, %b, %r."
+msgstr "Aangepaste koptekst weergegeven boven het bericht. Ondersteunt variabelen: %d, %y, %t, %b, %r."
+
+msgid "Change custom message header"
+msgstr "Aangepaste berichtkop wijzigen"
+
+msgid "Edit custom message"
+msgstr "Aangepast bericht bewerken"
+
+msgid "Write your custom message text. Only active when 'Custom message' is selected. Supports variables: %d, %y, %t, %b, %r."
+msgstr "Schrijf uw aangepaste berichttekst. Alleen actief wanneer 'Aangepast bericht' is geselecteerd. Ondersteunt variabelen: %d, %y, %t, %b, %r."
+
+msgid "Custom Customisable Sleep Screen message"
+msgstr "Aangepast bericht configureerbaar slaapscherm"
+
+msgid "Book highlight maximum length"
+msgstr "Maximale lengte boekmarkering"
+
+msgid "Maximum characters to display for highlights (0 = no limit)."
+msgstr "Maximaal aantal tekens voor markeringen (0 = geen limiet)."
+
+msgid "Maximum highlight length"
+msgstr "Maximale markeringslengte"
+
+msgid "Set to 0 for no limit"
+msgstr "Stel in op 0 voor geen limiet"
+
+msgid "Add quotation marks to highlights"
+msgstr "Aanhalingstekens toevoegen aan markeringen"
+
+msgid "Wraps all highlights in curly double quotes, removing any pre-existing quotation marks."
+msgstr "Omsluit alle markeringen met krullende dubbele aanhalingstekens en verwijdert bestaande aanhalingstekens."
+
+msgid "Show highlight location"
+msgstr "Markeringslocatie tonen"
+
+msgid "Display the chapter title and page number where the highlight is found, shown below the highlight text."
+msgstr "Toont de hoofdstuktitel en het paginanummer waar de markering zich bevindt, weergegeven onder de markeringstekst."
+
+msgid "Show quote attribution"
+msgstr "Bronvermelding citaat tonen"
+
+msgid "Display the author and book name below the quote, if provided in custom_quotes.lua."
+msgstr "Toont de auteur en boektitel onder het citaat, indien opgegeven in custom_quotes.lua."
+
+msgid "Show titles (top line)"
+msgstr "Titels tonen (bovenste regel)"
+
+msgid "Display the main heading text in each section. At least one of titles or subtitles must be visible."
+msgstr "Toont de hoofdkopregel in elke sectie. Minimaal één van titels of ondertitels moet zichtbaar zijn."
+
+msgid "Cannot hide both titles and subtitles. At least one must be visible."
+msgstr "Kan titels en ondertitels niet beide verbergen. Minstens één moet zichtbaar zijn."
+
+msgid "Show subtitles (bottom lines)"
+msgstr "Ondertitels tonen (onderste regels)"
+
+msgid "Display information below main heading text in each section. At least one of titles or subtitles must be visible."
+msgstr "Toont informatie onder de hoofdkopregel in elke sectie. Minimaal één van titels of ondertitels moet zichtbaar zijn."
+
+msgid "Displayed sections"
+msgstr "Weergegeven secties"
+
+msgid "Toggle which sections show on the sleep screen. At least one must be visible."
+msgstr "Schakelt in welke secties op het slaapscherm worden getoond. Minstens één moet zichtbaar zijn."
+
+msgid "[ Section Content ]"
+msgstr "[ Sectie-inhoud ]"
+
+msgid "Book section"
+msgstr "Boeksectie"
+
+msgid "Configure book-specific details."
+msgstr "Configureert boekspecifieke details."
+
+msgid "Chapter section"
+msgstr "Hoofdstuksectie"
+
+msgid "Configure chapter-specific details"
+msgstr "Configureert hoofdstukspecifieke details"
+
+msgid "Daily goal section"
+msgstr "Dagelijks doelsectie"
+
+msgid "Configure reading goal details"
+msgstr "Configureert details van het leesdoel"
+
+msgid "Battery section"
+msgstr "Batterijsectie"
+
+msgid "Configure battery & time/date details"
+msgstr "Configureert batterij en tijd/datum details"
+
+msgid "Message section"
+msgstr "Berichtsectie"
+
+msgid "Configure message-specific details"
+msgstr "Configureert berichtspecifieke details"
 
 msgid "Hairline"
 msgstr "Haarlijn"
@@ -482,34 +919,23 @@ msgstr "Rechtsonder"
 msgid "Dark mode"
 msgstr "Donkere modus"
 
-msgid ""
-"Inverts the colour scheme. Text becomes white and backgrounds becomes black. "
-"Useful for reading in low-light conditions. Can be combined with monochrome "
-"mode."
-msgstr ""
-"Keert het kleurenschema om. Tekst wordt wit en achtergronden worden zwart. "
-"Handig voor lezen bij weinig licht. Kan worden gecombineerd met monochrome modus."
+msgid "Inverts the colour scheme. Text becomes white and backgrounds becomes black. Useful for reading in low-light conditions. Can be combined with monochrome mode."
+msgstr "Keert het kleurenschema om. Tekst wordt wit en achtergronden worden zwart. Handig voor lezen bij weinig licht. Kan worden gecombineerd met monochrome modus."
 
 msgid "Monochrome mode"
 msgstr "Monochrome modus"
 
-msgid ""
-"Suitable for B&W e-readers. Assigns one colour to all sections using "
-"monochrome light or monochrome dark hex values. Overwrites individual "
-"assigned section colours. Can be combined with dark mode."
-msgstr ""
-"Geschikt voor zwart-wit e-readers. Kent één kleur toe aan alle secties met "
-"lichte of donkere monochrome hexwaarden. Overschrijft individueel toegewezen "
-"sectiekleuren. Kan worden gecombineerd met donkere modus."
+msgid "Suitable for B&W e-readers. Assigns one colour to all sections using monochrome light or monochrome dark hex values. Overwrites individual assigned section colours. Can be combined with dark mode."
+msgstr "Geschikt voor zwart-wit e-readers. Kent één kleur toe aan alle secties met lichte of donkere monochrome hexwaarden. Overschrijft individueel toegewezen sectiekleuren. Kan worden gecombineerd met donkere modus."
+
+msgid "Section gaps"
+msgstr "Ruimte tussen secties"
+
+msgid "Add transparent gaps between sections to make each appear as a separate box"
+msgstr "Voegt transparante ruimte toe tussen secties zodat elke sectie als een apart paneel verschijnt"
 
 msgid "Enable section gaps"
 msgstr "Ruimte tussen secties inschakelen"
-
-msgid ""
-"Add transparent gaps between sections to make each appear as a separate box"
-msgstr ""
-"Voegt transparante ruimte toe tussen secties zodat elke sectie als een "
-"apart paneel verschijnt"
 
 msgid "Section gap size"
 msgstr "Grootte ruimte tussen secties"
@@ -529,10 +955,8 @@ msgstr "Schermlocatie waar het informatiepaneel verschijnt."
 msgid "Width"
 msgstr "Breedte"
 
-msgid ""
-"Horizontal width of the information box as a percentage of screen width."
-msgstr ""
-"Horizontale breedte van het informatiepaneel als percentage van de schermbreedte."
+msgid "Horizontal width of the information box as a percentage of screen width."
+msgstr "Horizontale breedte van het informatiepaneel als percentage van de schermbreedte."
 
 msgid "Opacity"
 msgstr "Dekking"
@@ -567,12 +991,8 @@ msgstr "Horizontale afstand tussen sectie-iconen en de bijbehorende tekst."
 msgid "Y-axis margin (top/bottom left/right pos)"
 msgstr "Y-as marge (positie boven/onder links/rechts)"
 
-msgid ""
-"Vertical offset from the top or bottom edge when positioned at the top "
-"centre, bottom centre, top left, bottom left, top right or bottom right."
-msgstr ""
-"Verticale verschuiving van de boven- of onderkant bij positionering boven "
-"midden, onder midden, linksboven, linksonder, rechtsboven of rechtsonder."
+msgid "Vertical offset from the top or bottom edge when positioned at the top centre, bottom centre, top left, bottom left, top right or bottom right."
+msgstr "Verticale verschuiving van de boven- of onderkant bij positionering boven midden, onder midden, linksboven, linksonder, rechtsboven of rechtsonder."
 
 msgid "No icon sets found in customisablesleepscreen.koplugin/icons/"
 msgstr "Geen icoonsets gevonden in customisablesleepscreen.koplugin/icons/"
@@ -592,35 +1012,11 @@ msgstr "Kleuren (voortgangsbalken)"
 msgid "Set the progress bar colours for each section."
 msgstr "Stelt de kleuren van de voortgangsbalk in voor elke sectie."
 
-msgid "Colours (modes)"
-msgstr "Kleuren (modi)"
-
-msgid ""
-"Configure colours for monochrome mode, infobox background, and text. "
-"Light and dark correspond to the current dark mode setting. "
-"Monochrome replaces all colours with that single chosen color."
-msgstr ""
-"Configureer kleuren voor de monochrome modus, de achtergrond van het "
-"informatievak en tekst. Licht en donker komen overeen met de huidige "
-"instelling van de donkere modus. Monochroom vervangt alle kleuren door die "
-"ene gekozen kleur."
-
 msgid "Use saved colours for icon fill"
 msgstr "Opgeslagen kleuren gebruiken voor icoonvulling"
 
-msgid ""
-"When enabled, icons will match the colour of their section's progress bar."
-msgstr ""
-"Indien ingeschakeld komen iconen overeen met de kleur van de voortgangsbalk van hun sectie."
-
-msgid "Book section"
-msgstr "Boeksectie"
-
-msgid "Chapter section"
-msgstr "Hoofdstuksectie"
-
-msgid "Reading goal section"
-msgstr "Sectie leesdoel"
+msgid "When enabled, icons will match the colour of their section's progress bar."
+msgstr "Indien ingeschakeld komen iconen overeen met de kleur van de voortgangsbalk van hun sectie."
 
 msgid "Battery section (High)"
 msgstr "Batterijsectie (Hoog)"
@@ -634,8 +1030,11 @@ msgstr "Batterijsectie (Laag)"
 msgid "Battery section (Charging)"
 msgstr "Batterijsectie (Laden)"
 
-msgid "Message section"
-msgstr "Berichtsectie"
+msgid "Colours (modes)"
+msgstr "Kleuren (modi)"
+
+msgid "Configure colours for monochrome mode, infobox background, and text. Light and dark correspond to the current dark mode setting. Monochrome replaces all colours with that single chosen color."
+msgstr "Configureer kleuren voor de monochrome modus, de achtergrond van het informatievak en tekst. Licht en donker komen overeen met de huidige instelling van de donkere modus. Monochroom vervangt alle kleuren door die ene gekozen kleur."
 
 msgid "Monochrome mode (light)"
 msgstr "Monochrome modus (licht)"
@@ -688,9 +1087,7 @@ msgstr "Toont horizontale voortgangsbalken met het voltooiingspercentage."
 msgid "Show decorative bar on message section"
 msgstr "Decoratiebalk weergeven in berichtsectie"
 
-msgid ""
-"Displays a purely decorative progress bar under the message section, "
-"matching the message section colour and the progress bars in other sections."
+msgid "Displays a purely decorative progress bar under the message section, matching the message section colour and the progress bars in other sections."
 msgstr "Toont een puur decoratieve voortgangsbalk onder de berichtensectie, passend bij de kleur van de berichtensectie en de voortgangsbalken in andere secties."
 
 msgid "Title font face"
@@ -732,31 +1129,20 @@ msgstr "Rechts"
 msgid "Book multiline titles"
 msgstr "Meerdere regels voor boektitels"
 
-msgid ""
-"If deselected book titles will be truncated to a single line with an ellipsis"
-msgstr ""
-"Als uitgeschakeld worden boektitels afgekapt tot één regel met een beletselteken"
+msgid "If deselected book titles will be truncated to a single line with an ellipsis"
+msgstr "Als uitgeschakeld worden boektitels afgekapt tot één regel met een beletselteken"
 
 msgid "Chapter multiline titles"
 msgstr "Meerdere regels voor hoofdstuktitels"
 
-msgid ""
-"If deselected chapter titles will be truncated to a single line with an "
-"ellipsis"
-msgstr ""
-"Als uitgeschakeld worden hoofdstuktitels afgekapt tot één regel met een beletselteken"
+msgid "If deselected chapter titles will be truncated to a single line with an ellipsis"
+msgstr "Als uitgeschakeld worden hoofdstuktitels afgekapt tot één regel met een beletselteken"
 
 msgid "Clean chapter titles"
 msgstr "Hoofdstuktitels opschonen"
 
-msgid ""
-"Removes structural prefixes like 'Chapter 5:' or 'Part II' from chapter "
-"titles and normalises capitalisation. Only works correctly with English "
-"chapter titles - disable for non-English books."
-msgstr ""
-"Verwijdert structurele voorvoegsels zoals 'Hoofdstuk 5:' of 'Deel II' uit "
-"hoofdstuktitels en normaliseert het gebruik van hoofdletters. Werkt alleen "
-"correct met Engelstalige hoofdstuktitels — uitschakelen voor niet-Engelstalige boeken."
+msgid "Removes structural prefixes like 'Chapter 5:' or 'Part II' from chapter titles and normalises capitalisation. Only works correctly with English chapter titles - disable for non-English books."
+msgstr "Verwijdert structurele voorvoegsels zoals 'Hoofdstuk 5:' of 'Deel II' uit hoofdstuktitels en normaliseert het gebruik van hoofdletters. Werkt alleen correct met Engelstalige hoofdstuktitels — uitschakelen voor niet-Engelstalige boeken."
 
 msgid "Make book title bold"
 msgstr "Boektitel vetgedrukt maken"
@@ -779,12 +1165,8 @@ msgstr "Willekeurige afbeelding uit map"
 msgid "Stretch book cover to fill"
 msgstr "Boekomslag uitrekken om te vullen"
 
-msgid ""
-"When disabled, book cover will be scaled to fit within the screen while "
-"preserving aspect ratio."
-msgstr ""
-"Wanneer uitgeschakeld wordt het boekomslag geschaald om op het scherm te "
-"passen met behoud van beeldverhouding."
+msgid "When disabled, book cover will be scaled to fit within the screen while preserving aspect ratio."
+msgstr "Wanneer uitgeschakeld wordt het boekomslag geschaald om op het scherm te passen met behoud van beeldverhouding."
 
 msgid "Cover fill colour"
 msgstr "Vulkleur omslag"
@@ -792,11 +1174,14 @@ msgstr "Vulkleur omslag"
 msgid "Background colour for non-stretched covers."
 msgstr "Achtergrondkleur voor niet-uitgestrekte omslagen."
 
-msgid "Black"
-msgstr "Zwart"
+msgid "Pick cover fill colour"
+msgstr "Vulkleur omslag kiezen"
 
-msgid "White"
-msgstr "Wit"
+msgid "Cover alignment"
+msgstr "Uitlijning omslag"
+
+msgid "Horizontal alignment of the cover image when not stretched."
+msgstr "Horizontale uitlijning van de omslagafbeelding wanneer niet uitgerekt."
 
 msgid "Solid background colour"
 msgstr "Effen achtergrondkleur"
@@ -818,372 +1203,3 @@ msgstr "Achtergrondoverlay"
 
 msgid "Add a colour layer over the background to reduce contrast."
 msgstr "Voegt een kleurlaag over de achtergrond toe om het contrast te verminderen."
-
-msgid "Reset layout & spacing settings to default"
-msgstr "Indeling en ruimte-instellingen terugzetten naar standaard"
-
-msgid "Are you sure you want to reset layout & spacing settings?"
-msgstr "Weet u zeker dat u de indeling en ruimte-instellingen wilt terugzetten?"
-
-msgid "Layout & spacing settings reset to defaults"
-msgstr "Indeling en ruimte-instellingen teruggezet naar standaard"
-
-msgid "Reset contents settings to default"
-msgstr "Inhoudinstellingen terugzetten naar standaard"
-
-msgid "Are you sure you want to reset contents settings?"
-msgstr "Weet u zeker dat u de inhoudinstellingen wilt terugzetten?"
-
-msgid "Contents settings reset to defaults"
-msgstr "Inhoudinstellingen teruggezet naar standaard"
-
-msgid "Reset colours, icons & bars settings to default"
-msgstr "Kleuren, iconen en balken-instellingen terugzetten naar standaard"
-
-msgid "Are you sure you want to reset colours, icons & bars settings?"
-msgstr "Weet u zeker dat u de kleuren, iconen en balken-instellingen wilt terugzetten?"
-
-msgid "Colours, icons & bars settings reset to defaults"
-msgstr "Kleuren, iconen en balken-instellingen teruggezet naar standaard"
-
-msgid "Reset fonts & text settings to default"
-msgstr "Lettertype en tekst-instellingen terugzetten naar standaard"
-
-msgid "Are you sure you want to reset fonts & text settings?"
-msgstr "Weet u zeker dat u de lettertype en tekst-instellingen wilt terugzetten?"
-
-msgid "Fonts & text settings reset to defaults"
-msgstr "Lettertype en tekst-instellingen teruggezet naar standaard"
-
-msgid "Reset background settings to default"
-msgstr "Achtergrondinstellingen terugzetten naar standaard"
-
-msgid "Are you sure you want to reset background settings?"
-msgstr "Weet u zeker dat u de achtergrondinstellingen wilt terugzetten?"
-
-msgid "Background settings reset to defaults"
-msgstr "Achtergrondinstellingen teruggezet naar standaard"
-
-msgid "Reset the settings in this part of the menu to their defaults."
-msgstr "Zet de instellingen in dit deel van het menu terug naar de standaardwaarden."
-
-msgid "factory defaults"
-msgstr "fabrieksstandaarden"
-
-#, lua-format
-msgid "Values will be restored from: %s"
-msgstr "Waarden worden hersteld van: %s"
-
-msgid "Reset"
-msgstr "Terugzetten"
-
-msgid "Save"
-msgstr "Opslaan"
-
-msgid "None"
-msgstr "Geen"
-
-msgid "Active preset: "
-msgstr "Actieve preset: "
-
-msgid "Save current settings as new preset"
-msgstr "Huidige instellingen opslaan als nieuwe preset"
-
-#, lua-format
-msgid "What would you like to do with preset '%s'?"
-msgstr "Wat wilt u doen met preset '%s'?"
-
-msgid "Update"
-msgstr "Bijwerken"
-
-#, lua-format
-msgid "Are you sure you want to overwrite preset '%s' with current settings?"
-msgstr "Weet u zeker dat u preset '%s' wilt overschrijven met de huidige instellingen?"
-
-#, lua-format
-msgid "Preset '%s' was updated with current settings"
-msgstr "Preset '%s' is bijgewerkt met de huidige instellingen"
-
-#, lua-format
-msgid "Are you sure you want to delete preset '%s'?"
-msgstr "Weet u zeker dat u preset '%s' wilt verwijderen?"
-
-msgid "Rename"
-msgstr "Hernoemen"
-
-msgid "Enter new preset name"
-msgstr "Voer een nieuwe presetnaam in"
-
-msgid "[ Built-in Presets ]"
-msgstr "[ Ingebouwde presets ]"
-
-msgid "[ Your Custom Presets ]"
-msgstr "[ Uw aangepaste presets ]"
-
-msgid "Book info"
-msgstr "Boekinformatie"
-
-msgid "Chapter info"
-msgstr "Hoofdstukinformatie"
-
-msgid "Daily info"
-msgstr "Dagelijkse informatie"
-
-msgid "Device info"
-msgstr "Apparaatinformatie"
-
-msgid "Custom message"
-msgstr "Aangepast bericht"
-
-msgid "Reorder sections"
-msgstr "Secties herordenen"
-
-msgid "Section order"
-msgstr "Sectievolgorde"
-
-msgid "At least one section must remain visible."
-msgstr "Minstens één sectie moet zichtbaar blijven."
-
-msgid "Show book author"
-msgstr "Boekauteur tonen"
-
-msgid "Display the author name below the book title."
-msgstr "Toont de naam van de auteur onder de boektitel."
-
-msgid "Show book pages (pg x of x)"
-msgstr "Boekpagina's tonen (pag. x van x)"
-
-msgid "Display total page count for the entire book."
-msgstr "Toont het totale aantal pagina's van het hele boek."
-
-msgid "Show book time remaining"
-msgstr "Resterende leestijd boek tonen"
-
-msgid ""
-"Estimated reading time left to finish the book, based on your average "
-"reading speed."
-msgstr ""
-"Geschatte resterende leestijd om het boek te voltooien, gebaseerd op uw "
-"gemiddelde leessnelheid."
-
-msgid "Show chapter count (ch x of x)"
-msgstr "Aantal hoofdstukken tonen (hfst. x van x)"
-
-msgid ""
-"Display current chapter number and total chapters (e.g., 'Chapter 5 of 12')."
-msgstr ""
-"Toont het huidige hoofdstuknummer en het totale aantal hoofdstukken "
-"(bijv. 'Hoofdstuk 5 van 12')."
-
-msgid "Show chapter pages (pg x of x)"
-msgstr "Hoofdstukpagina's tonen (pag. x van x)"
-
-msgid "Display the number of pages in the current chapter."
-msgstr "Toont het aantal pagina's in het huidige hoofdstuk."
-
-msgid "Show chapter time remaining"
-msgstr "Resterende leestijd hoofdstuk tonen"
-
-msgid ""
-"Estimated time to finish the current chapter, based on your reading speed."
-msgstr ""
-"Geschatte tijd om het huidige hoofdstuk te voltooien, gebaseerd op uw leessnelheid."
-
-msgid "Daily page goal"
-msgstr "Dagelijks paginadoel"
-
-msgid ""
-"Set how many pages you aim to read each day. Progress shown in the goal "
-"section."
-msgstr ""
-"Stelt in hoeveel pagina's u elke dag wilt lezen. De voortgang wordt getoond "
-"in de doelsectie."
-
-msgid "Show current reading streak"
-msgstr "Huidige leestreeks tonen"
-
-msgid "Display consecutive days you've met your reading goal."
-msgstr "Toont opeenvolgende dagen waarop u uw leesdoel hebt gehaald."
-
-msgid "Show weekly goal achievement"
-msgstr "Wekelijkse doelbereiking tonen"
-
-msgid "Number of days this week you've met your daily reading goal."
-msgstr "Aantal dagen deze week waarop u uw dagelijks leesdoel hebt gehaald."
-
-msgid "Show pages read out of daily goal"
-msgstr "Gelezen pagina's ten opzichte van dagdoel tonen"
-
-msgid ""
-"Display pages read today compared to your daily target (e.g. '35/50 pages')."
-msgstr ""
-"Toont vandaag gelezen pagina's vergeleken met uw dagdoel (bijv. '35/50 pagina's')."
-
-msgid "Show current time/date on separate line"
-msgstr "Huidige tijd/datum op aparte regel tonen"
-
-msgid ""
-"Display time/date on its own line below battery percentage instead of inline."
-msgstr ""
-"Toont tijd/datum op een eigen regel onder het batterijpercentage in plaats van inline."
-
-msgid "Enable 'Show battery time remaining' to use this option"
-msgstr "Schakel 'Resterende batterijduur tonen' in om deze optie te gebruiken"
-
-msgid "Show date instead of time"
-msgstr "Datum tonen in plaats van tijd"
-
-msgid ""
-"Display current date (e.g. '29th Jan') instead of time in battery section"
-msgstr ""
-"Toont de huidige datum (bijv. '29 jan') in plaats van de tijd in de batterijsectie"
-
-msgid "Show battery consumption rate"
-msgstr "Batterijverbruikssnelheid tonen"
-
-msgid ""
-"Display battery drain percentage per hour based on recent usage or manual "
-"input (see advanced menu)"
-msgstr ""
-"Toont het batterijverbruikspercentage per uur op basis van recent gebruik of "
-"handmatige invoer (zie geavanceerd menu)"
-
-msgid "Show battery time remaining"
-msgstr "Resterende batterijduur tonen"
-
-msgid ""
-"Estimated hours and minutes until battery is depleted, based on current "
-"drain rate."
-msgstr ""
-"Geschatte uren en minuten tot de batterij leeg is, gebaseerd op de huidige verbruikssnelheid."
-
-msgid "Use a separate custom message just for Customisable Sleep Screen"
-msgstr "Een apart aangepast bericht gebruiken alleen voor het configureerbare slaapscherm"
-
-msgid "Book highlights"
-msgstr "Boekaantekeningen"
-
-msgid "Show a random highlight from the current book"
-msgstr "Een willekeurige markering uit het huidige boek tonen"
-
-msgid "KOReader sleep message"
-msgstr "KOReader slaapschermbericht"
-
-msgid ""
-"Uses KOReaders own sleep screen message function. Enable 'Add custom message "
-"to sleep screen' to use this (Settings → Screen → Sleep screen → Sleep "
-"screen message)."
-msgstr ""
-"Gebruikt de eigen berichtfunctie van het KOReader slaapscherm. Schakel "
-"'Aangepast bericht toevoegen aan slaapscherm' in om dit te gebruiken "
-"(Instellingen → Scherm → Slaapscherm → Slaapschermbericht)."
-
-msgid "Message header"
-msgstr "Berichtkop"
-
-msgid ""
-"Custom header text displayed above the message. Supports variables: %d, %y, "
-"%t, %b, %r."
-msgstr ""
-"Aangepaste koptekst weergegeven boven het bericht. Ondersteunt variabelen: "
-"%d, %y, %t, %b, %r."
-
-msgid "Change custom message header"
-msgstr "Aangepaste berichtkop wijzigen"
-
-msgid "Edit custom message"
-msgstr "Aangepast bericht bewerken"
-
-msgid ""
-"Write your custom message text. Only active when 'Custom message' is "
-"selected. Supports variables: %d, %y, %t, %b, %r."
-msgstr ""
-"Schrijf uw aangepaste berichttekst. Alleen actief wanneer 'Aangepast bericht' "
-"is geselecteerd. Ondersteunt variabelen: %d, %y, %t, %b, %r."
-
-msgid "Custom Customisable Sleep Screen message"
-msgstr "Aangepast bericht configureerbaar slaapscherm"
-
-msgid "Book highlight maximum length"
-msgstr "Maximale lengte boekmarkering"
-
-msgid "Maximum characters to display for highlights (0 = no limit)."
-msgstr "Maximaal aantal tekens voor markeringen (0 = geen limiet)."
-
-msgid "Maximum highlight length"
-msgstr "Maximale markeringslengte"
-
-msgid "Set to 0 for no limit"
-msgstr "Stel in op 0 voor geen limiet"
-
-msgid "Add quotation marks to highlights"
-msgstr "Aanhalingstekens toevoegen aan markeringen"
-
-msgid ""
-"Wraps all highlights in curly double quotes, removing any pre-existing "
-"quotation marks."
-msgstr ""
-"Omsluit alle markeringen met krullende dubbele aanhalingstekens en verwijdert "
-"bestaande aanhalingstekens."
-
-msgid "Show highlight location"
-msgstr "Markeringslocatie tonen"
-
-msgid ""
-"Display the chapter title and page number where the highlight is found, "
-"shown below the highlight text."
-msgstr ""
-"Toont de hoofdstuktitel en het paginanummer waar de markering zich bevindt, "
-"weergegeven onder de markeringstekst."
-
-msgid "Show titles (top line)"
-msgstr "Titels tonen (bovenste regel)"
-
-msgid ""
-"Display the main heading text in each section. At least one of titles or "
-"subtitles must be visible."
-msgstr ""
-"Toont de hoofdkopregel in elke sectie. Minimaal één van titels of "
-"ondertitels moet zichtbaar zijn."
-
-msgid "Cannot hide both titles and subtitles. At least one must be visible."
-msgstr "Kan titels en ondertitels niet beide verbergen. Minstens één moet zichtbaar zijn."
-
-msgid "Show subtitles (bottom lines)"
-msgstr "Ondertitels tonen (onderste regels)"
-
-msgid ""
-"Display information below main heading text in each section. At least one of "
-"titles or subtitles must be visible."
-msgstr ""
-"Toont informatie onder de hoofdkopregel in elke sectie. Minimaal één van "
-"titels of ondertitels moet zichtbaar zijn."
-
-msgid "Displayed sections"
-msgstr "Weergegeven secties"
-
-msgid ""
-"Toggle which sections show on the sleep screen. At least one must be visible."
-msgstr ""
-"Schakelt in welke secties op het slaapscherm worden getoond. Minstens één moet zichtbaar zijn."
-
-msgid "[ Section Content ]"
-msgstr "[ Sectie-inhoud ]"
-
-msgid "Configure book-specific details."
-msgstr "Configureert boekspecifieke details."
-
-msgid "Configure chapter-specific details"
-msgstr "Configureert hoofdstukspecifieke details"
-
-msgid "Configure reading goal details"
-msgstr "Configureert details van het leesdoel"
-
-msgid "Battery & time/date section"
-msgstr "Sectie batterij en tijd/datum"
-
-msgid "Configure battery & time/date details"
-msgstr "Configureert batterij en tijd/datum details"
-
-msgid "Configure message-specific details"
-msgstr "Configureert berichtspecifieke details"

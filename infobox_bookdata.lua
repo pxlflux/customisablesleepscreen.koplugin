@@ -263,21 +263,75 @@ local function getChapterCount(ui, current_page)
     return cur or 1, #filtered
 end
 
+local function getCurrentPage(ui, state)
+    if ui.document and type(ui.document.getCurrentPage) == "function" then
+        local ok, page = pcall(ui.document.getCurrentPage, ui.document)
+        if ok and type(page) == "number" and page >= 1 then return page end
+    end
+    local page = safeGet(state, "page")
+        or safeGet(ui, "view", "state", "page")
+        or safeGet(ui, "paging", "current_page")
+    if type(page) == "number" and page >= 1 then return page end
+    return 1
+end
+
+local function getDocPages(ui)
+    if ui.document and ui.document.hasHiddenFlows and ui.document:hasHiddenFlows() then
+        local ok, page = pcall(ui.document.getCurrentPage, ui.document)
+        if ok and page then
+            local flow = ui.document:getPageFlow(page)
+            local ok2, total = pcall(ui.document.getTotalPagesInFlow, ui.document, flow)
+            if ok2 and type(total) == "number" and total >= 1 then return total end
+        end
+    end
+    local cached = safeGet(ui, "doc_settings", "data", "doc_pages")
+    if type(cached) == "number" and cached >= 1 then return cached end
+    if ui.document and type(ui.document.getPageCount) == "function" then
+        local ok, n = pcall(ui.document.getPageCount, ui.document)
+        if ok and type(n) == "number" and n >= 1 then return n end
+    end
+    return 1
+end
+
+local function getDisplayPage(ui, state)
+    local page = getCurrentPage(ui, state)
+    if ui and ui.document and ui.document.hasHiddenFlows and ui.document:hasHiddenFlows() then
+        local ok, page_in_flow = pcall(ui.document.getPageNumberInFlow, ui.document, page)
+        if ok and type(page_in_flow) == "number" and page_in_flow >= 1 then
+            return page_in_flow
+        end
+    end
+    return page
+end
+
 local function collectBookData(ui, state)
     if not (ui and ui.document) then return nil end
-    local data      = {}
-    data.title      = util.htmlToPlainTextIfHtml(safeGet(ui, "doc_props", "display_title") or _("Untitled"))
-    data.authors    = safeGet(ui, "doc_props", "authors") or _("Unknown Author")
-    data.page       = (ui.document and ui.document:getCurrentPage()) or safeGet(state, "page") or 1
-    data.doc_pages  = safeGet(ui, "doc_settings", "data", "doc_pages") or 1
-    data.cover_path = safeGet(ui, "document", "file")
+    local data          = {}
+    data.title          = util.htmlToPlainTextIfHtml(safeGet(ui, "doc_props", "display_title") or _("Untitled"))
+    data.authors        = safeGet(ui, "doc_props", "authors") or _("Unknown Author")
+    data.series         = safeGet(ui, "doc_props", "series") or nil
+    data.series_index   = safeGet(ui, "doc_props", "series_index") or nil
+    data.page           = getCurrentPage(ui, state)
+    data.display_page   = getDisplayPage(ui, state)
+    data.doc_pages      = getDocPages(ui)
+    data.cover_path     = safeGet(ui, "document", "file")
     if ui.toc then
-        local raw = util.htmlToPlainTextIfHtml(ui.toc:getTocTitleByPage(data.page) or "")
-        data.chapter              = getSetting("CLEAN_CHAP") and cleanChapterTitle(raw) or raw
-        data.chapter_pages_done   = (ui.toc:getChapterPagesDone(data.page) or 0) + 1
-        data.chapter_pages_total  = ui.toc:getChapterPageCount(data.page) or 1
-        data.chapter_pages_left   = ui.toc:getChapterPagesLeft(data.page) or 0
-        data.current_chapter_num, data.total_chapters = getChapterCount(ui, data.page)
+        local ok_raw, raw = pcall(function()
+            return util.htmlToPlainTextIfHtml(ui.toc:getTocTitleByPage(data.page) or "")
+        end)
+        raw = ok_raw and raw or ""
+        data.chapter = getSetting("CLEAN_CHAP") and cleanChapterTitle(raw) or raw
+        local ok_done, chap_done = pcall(ui.toc.getChapterPagesDone, ui.toc, data.page)
+        data.chapter_pages_done  = (ok_done and chap_done or 0) + 1
+        local ok_tot, chap_tot   = pcall(ui.toc.getChapterPageCount, ui.toc, data.page)
+        data.chapter_pages_total = (ok_tot and chap_tot) or 1
+        local ok_left, chap_left = pcall(ui.toc.getChapterPagesLeft, ui.toc, data.page)
+        data.chapter_pages_left  = (ok_left and chap_left) or 0
+        local ok_cnt, cur_num, tot_num = pcall(getChapterCount, ui, data.page)
+        if ok_cnt then
+            data.current_chapter_num = cur_num
+            data.total_chapters      = tot_num
+        end
     end
     if ui.statistics then
         data.avg_time     = safeGet(ui, "statistics", "avg_time") or 0
@@ -313,6 +367,8 @@ end
 return {
     safeGet              = safeGet,
     cleanChapterTitle    = cleanChapterTitle,
+    getCurrentPage       = getCurrentPage,
+    getDocPages          = getDocPages,
     truncateText         = truncateText,
     addQuotationMarks    = addQuotationMarks,
     getRandomHighlight   = getRandomHighlight,
@@ -320,4 +376,5 @@ return {
     collectBookData      = collectBookData,
     saveLastBookData     = saveLastBookData,
     loadLastBookData     = loadLastBookData,
+    getDisplayPage       = getDisplayPage,
 }

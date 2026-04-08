@@ -19,7 +19,7 @@ local createSpinDialog         = h.createSpinDialog
 local createNumericRadioMenu   = h.createNumericRadioMenu
 local buildNumericMenu         = h.buildNumericMenu
 local hexToHSV                 = h.hexToHSV
-local getColourWheelWidget      = h.getColourWheelWidget
+local getColourWheelWidget     = h.getColourWheelWidget
 
 local cre
 local function getCre()
@@ -138,41 +138,47 @@ local function buildLayoutAndSpacingMenu()
             SETTINGS.SECTION_GAPS_ENABLED, SETTINGS.SECTION_GAP_SIZE,
             SETTINGS.POS, SETTINGS.BOX_WIDTH_PCT, SETTINGS.OPACITY,
             SETTINGS.BORDER_SIZE, SETTINGS.BORDER_SIZE_2,
-            SETTINGS.SECTION_PADDING, SETTINGS.ICON_TEXT_GAP, SETTINGS.MARGIN,
+            SETTINGS.SECTION_PADDING, SETTINGS.ICON_TEXT_GAP, 
+            SETTINGS.MARGIN, SETTINGS.SLEEP_ORIENTATION,
         }),
         {
-            text      = _("Enable section gaps"),
+            text = _("Section gaps"),
             help_text = _("Add transparent gaps between sections to make each appear as a separate box"),
-            checked_func = function() return getSetting("SECTION_GAPS_ENABLED") end,
-            callback = function()
-                G_reader_settings:saveSetting(SETTINGS.SECTION_GAPS_ENABLED,
-                    not getSetting("SECTION_GAPS_ENABLED"))
-            end,
-        },
-        {
-            text      = _("Section gap size"),
-            help_text = _("Spacing between sections when gaps are enabled."),
-            enabled_func   = function() return getSetting("SECTION_GAPS_ENABLED") end,
-            keep_menu_open = true,
+            sub_item_table = {
+                {
+                    text      = _("Enable section gaps"),
+                    checked_func = function() return getSetting("SECTION_GAPS_ENABLED") end,
+                    callback = function()
+                        G_reader_settings:saveSetting(SETTINGS.SECTION_GAPS_ENABLED,
+                            not getSetting("SECTION_GAPS_ENABLED"))
+                    end,
+                },
+                {
+                    text      = _("Section gap size"),
+                    help_text = _("Spacing between sections when gaps are enabled."),
+                    enabled_func   = function() return getSetting("SECTION_GAPS_ENABLED") end,
+                    keep_menu_open = true,
 
-            callback = function()
-                local Device = require("device")
-                local enabled_sections = 0
-                for _, key in ipairs({ "SHOW_BOOK", "SHOW_CHAP", "SHOW_GOAL", "SHOW_BATT", "SHOW_MSG" }) do
-                    if getSetting(key) ~= false then enabled_sections = enabled_sections + 1 end
-                end
-                local gaps_between = math.max(enabled_sections - 1, 1)
-                local section_height_estimate = 250
-                local usable_height = Device.screen:getHeight() - (enabled_sections * section_height_estimate)
-                local max_gap = math.floor(math.max(usable_height, 100) / gaps_between)
+                    callback = function()
+                        local Device = require("device")
+                        local enabled_sections = 0
+                        for _, key in ipairs({ "SHOW_BOOK", "SHOW_CHAP", "SHOW_GOAL", "SHOW_BATT", "SHOW_MSG" }) do
+                            if getSetting(key) ~= false then enabled_sections = enabled_sections + 1 end
+                        end
+                        local gaps_between = math.max(enabled_sections - 1, 1)
+                        local section_height_estimate = 250
+                        local usable_height = Device.screen:getHeight() - (enabled_sections * section_height_estimate)
+                        local max_gap = math.floor(math.max(usable_height, 100) / gaps_between)
 
-                createSpinDialog(
-                    _("Section gap size (pixels)"),
-                    getSetting("SECTION_GAP_SIZE") or USER_CONFIG.SECTION_GAP_SIZE,
-                    0, max_gap, 5,
-                    function(val) G_reader_settings:saveSetting(SETTINGS.SECTION_GAP_SIZE, val) end
-                )
-            end,
+                        createSpinDialog(
+                            _("Section gap size (pixels)"),
+                            getSetting("SECTION_GAP_SIZE") or USER_CONFIG.SECTION_GAP_SIZE,
+                            0, max_gap, 5,
+                            function(val) G_reader_settings:saveSetting(SETTINGS.SECTION_GAP_SIZE, val) end
+                        )
+                    end,
+                },
+            }
         },
         { text = _("Position"),       sub_item_table = buildPositionMenu(),    help_text = _("Screen location where the information box appears.") },
         { text = _("Width"),          sub_item_table = createNumericRadioMenu(SETTINGS.BOX_WIDTH_PCT, 40, 100, 5, "%"),
@@ -261,7 +267,7 @@ local function buildColorsIconsBarsMenu()
                 local color_items = {
                     { _("Book section"),                 SETTINGS.COLOR_BOOK_FILL,     USER_CONFIG.COLOR_BOOK_FILL     },
                     { _("Chapter section"),              SETTINGS.COLOR_CHAPTER_FILL,  USER_CONFIG.COLOR_CHAPTER_FILL  },
-                    { _("Reading goal section"),         SETTINGS.COLOR_GOAL_FILL,     USER_CONFIG.COLOR_GOAL_FILL     },
+                    { _("Daily goal section"),           SETTINGS.COLOR_GOAL_FILL,     USER_CONFIG.COLOR_GOAL_FILL     },
                     { _("Battery section (High)"),       SETTINGS.BATT_HIGH_COLOR,     USER_CONFIG.BATT_HIGH_COLOR     },
                     { _("Battery section (Med)"),        SETTINGS.BATT_MED_COLOR,      USER_CONFIG.BATT_MED_COLOR      },
                     { _("Battery section (Low)"),        SETTINGS.BATT_LOW_COLOR,      USER_CONFIG.BATT_LOW_COLOR      },
@@ -455,13 +461,38 @@ local function buildBackgroundTypeMenu()
             local stretch = getSetting("BG_STRETCH")
             return (bg_type == "cover" or bg_type == "folder" or bg_type == nil) and not stretch
         end,
+        keep_menu_open = true,
+        callback = function()
+            local current_color = getSetting("BG_COVER_FILL_COLOR")
+            if current_color == "black" then current_color = "#000000"
+            elseif current_color == "white" then current_color = "#ffffff"
+            end
+            local h, s, v = hexToHSV(current_color)
+            local wheel = getColourWheelWidget():new({
+                title_text = _("Pick cover fill colour"),
+                hue = h, saturation = s, value = v,
+                callback = function(hex)
+                    G_reader_settings:saveSetting(SETTINGS.BG_COVER_FILL_COLOR, hex)
+                    UIManager:setDirty(nil, "ui")
+                end,
+                cancel_callback = function() UIManager:setDirty(nil, "ui") end,
+            })
+            UIManager:show(wheel)
+        end,
+    }
+
+    sub_menu[#sub_menu + 1] = {
+        text      = _("Cover alignment"),
+        help_text = _("Horizontal alignment of the cover image when not stretched."),
+        enabled_func = function()
+            local bg_type = getSetting("BG_TYPE")
+            local stretch = getSetting("BG_STRETCH")
+            return (bg_type == "cover" or bg_type == "folder" or bg_type == nil) and not stretch
+        end,
         sub_item_table = {
-            { text = _("Black"), radio = true,
-              checked_func = function() return (getSetting("BG_COVER_FILL_COLOR") or USER_CONFIG.BG_COVER_FILL_COLOR) == "black" end,
-              callback     = function() G_reader_settings:saveSetting(SETTINGS.BG_COVER_FILL_COLOR, "black") end },
-            { text = _("White"), radio = true,
-              checked_func = function() return getSetting("BG_COVER_FILL_COLOR") == "white" end,
-              callback     = function() G_reader_settings:saveSetting(SETTINGS.BG_COVER_FILL_COLOR, "white") end },
+            createRadioItem(_("Left"),   nil, SETTINGS.BG_COVER_ALIGN, "left"),
+            createRadioItem(_("Centre"), nil, SETTINGS.BG_COVER_ALIGN, "center"),
+            createRadioItem(_("Right"),  nil, SETTINGS.BG_COVER_ALIGN, "right"),
         },
     }
 
@@ -536,7 +567,7 @@ local function buildBackgroundMenu()
             SETTINGS.BG_DIMMING, SETTINGS.BG_DIMMING_COLOR,
             SETTINGS.BG_TYPE,    SETTINGS.BG_FOLDER,
             SETTINGS.BG_STRETCH, SETTINGS.BG_COVER_FILL_COLOR,
-            SETTINGS.BG_SOLID_COLOR,
+            SETTINGS.BG_SOLID_COLOR, SETTINGS.BG_COVER_ALIGN,
         }),
         { text = _("Background type"),    sub_item_table = buildBackgroundTypeMenu(), help_text = _("Choose what appears behind the information box.") },
         { text = _("Background overlay"), sub_item_table = buildDimmingMenu(),        help_text = _("Add a colour layer over the background to reduce contrast.") },

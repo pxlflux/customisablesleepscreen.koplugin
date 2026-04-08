@@ -1,10 +1,10 @@
 -- Shared rendering utilities: fonts, colours, text layout, and the progress bar patch.
 
-local Blitbuffer  = require("ffi/blitbuffer")
-local logger      = require("logger")
-local util        = require("util")
-local Device      = require("device")
-local Font        = require("ui/font")
+local Blitbuffer         = require("ffi/blitbuffer")
+local logger             = require("logger")
+local util               = require("util")
+local Device             = require("device")
+local Font               = require("ui/font")
 local ProgressWidget     = require("ui/widget/progresswidget")
 local TextWidget         = require("ui/widget/textwidget")
 local TextWidget_paintTo = TextWidget.paintTo

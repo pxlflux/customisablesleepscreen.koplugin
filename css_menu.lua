@@ -6,6 +6,7 @@ local _               = require("plugin_gettext")
 local config          = require("config")
 local SETTINGS        = config.SETTINGS
 local USER_CONFIG     = config.USER_CONFIG
+
 local meta            = package.loaded["customisablesleepscreen/_meta"] or require("_meta")
 local PATCH_VERSION   = meta.version
 local PATCH_NAME      = meta.fullname
@@ -69,6 +70,37 @@ local function buildAdvancedMenu()
                 }
                 UIManager:show(box)
             end,
+        },
+        {
+            text      = _("Sleep screen orientation"),
+            help_text = _("Force the sleep screen to display in a specific orientation, regardless of how the device is held."),
+            sub_item_table = {
+                createRadioItem(
+                    _("Auto (follow device)"),
+                    _("Use whatever orientation the device is currently in."),
+                    SETTINGS.SLEEP_ORIENTATION, "auto"
+                ),
+                createRadioItem(
+                    _("Force portrait"),
+                    _("Always display the sleep screen in portrait mode."),
+                    SETTINGS.SLEEP_ORIENTATION, "portrait"
+                ),
+                createRadioItem(
+                    _("Force landscape"),
+                    _("Always display the sleep screen in landscape mode."),
+                    SETTINGS.SLEEP_ORIENTATION, "landscape"
+                ),
+                createRadioItem(
+                    _("Force upside-down portrait"),
+                    _("Always display the sleep screen in inverted portrait mode."),
+                    SETTINGS.SLEEP_ORIENTATION, "uportrait"
+                ),
+                createRadioItem(
+                    _("Force upside-down landscape"),
+                    _("Always display the sleep screen in inverted landscape mode."),
+                    SETTINGS.SLEEP_ORIENTATION, "ulandscape"
+                ),
+            },
         },
         {
             text      = _("Battery time calculation"),
