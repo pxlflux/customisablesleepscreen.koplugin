@@ -7,7 +7,7 @@ local _        = require("plugin_gettext")
 local config   = require("config")
 local SETTINGS = config.SETTINGS
 
-local stats_mod  = require("stats")
+local stats_mod  = require("css_stats")
 local getAllStats = stats_mod.getAllStats
 
 local render     = require("infobox_render")

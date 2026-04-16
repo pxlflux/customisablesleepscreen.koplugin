@@ -1,6 +1,5 @@
 -- Reads reading statistics from KOReader's SQLite database.
 
-local logger      = require("logger")
 local SQ3         = require("lua-ljsqlite3/init")
 local DataStorage = require("datastorage")
 
@@ -28,9 +27,16 @@ local function getAllStats(book_id, today_pages_override, goal_type, daily_goal_
     local today_str   = os.date("%Y-%m-%d", now)
     local yesterday   = os.date("%Y-%m-%d", now - 86400)
 
+    local stats_settings   = G_reader_settings:readSetting("statistics") or {}
+    local day_start_offset = (stats_settings.calendar_day_start_hour   or 0) * 3600
+                           + (stats_settings.calendar_day_start_minute or 0) * 60
     local start_today_t = os.date("*t", now)
     start_today_t.hour, start_today_t.min, start_today_t.sec = 0, 0, 0
-    local start_today = os.time(start_today_t)
+    local start_today = os.time(start_today_t) + day_start_offset
+
+    if now < start_today then
+        start_today = start_today - 86400
+    end
 
     pcall(function()
         local sql
@@ -95,12 +101,13 @@ local function getAllStats(book_id, today_pages_override, goal_type, daily_goal_
         local goal_seconds = goal_mins * 60
 
         if goal_seconds > 0 then
-            local days_since_monday = (now_t.wday == 1) and 6 or (now_t.wday - 2)
-            local start_of_week_t   = os.date("*t", now - (days_since_monday * 86400))
+            local week_start_day = (stats_settings.calendar_start_day_of_week or 2)
+            local days_since_week_start = (now_t.wday - week_start_day) % 7
+            local start_of_week_t   = os.date("*t", now - (days_since_week_start * 86400))
             start_of_week_t.hour, start_of_week_t.min, start_of_week_t.sec = 0, 0, 0
-            local start_of_week = os.time(start_of_week_t)
+            local start_of_week = os.time(start_of_week_t) + day_start_offset
 
-            result.days_in_week = days_since_monday + 1
+            result.days_in_week = days_since_week_start + 1
 
             local day_durations = {}
             local ok_week = pcall(function()
@@ -126,8 +133,8 @@ local function getAllStats(book_id, today_pages_override, goal_type, daily_goal_
                     day_durations[today_str] = math.max(today_dur, day_durations[today_str] or 0)
                 end
 
-                for i = 0, days_since_monday do
-                    local date_str = os.date("%Y-%m-%d", now - ((days_since_monday - i) * 86400))
+                for i = 0, days_since_week_start do
+                    local date_str = os.date("%Y-%m-%d", now - ((days_since_week_start - i) * 86400))
                     if (day_durations[date_str] or 0) >= goal_seconds then
                         result.days_met = result.days_met + 1
                     end
@@ -137,12 +144,13 @@ local function getAllStats(book_id, today_pages_override, goal_type, daily_goal_
 
     else
         if daily_goal > 0 then
-            local days_since_monday = (now_t.wday == 1) and 6 or (now_t.wday - 2)
-            local start_of_week_t   = os.date("*t", now - (days_since_monday * 86400))
+            local week_start_day = (stats_settings.calendar_start_day_of_week or 2)
+            local days_since_week_start = (now_t.wday - week_start_day) % 7
+            local start_of_week_t   = os.date("*t", now - (days_since_week_start * 86400))
             start_of_week_t.hour, start_of_week_t.min, start_of_week_t.sec = 0, 0, 0
-            local start_of_week = os.time(start_of_week_t)
+            local start_of_week = os.time(start_of_week_t) + day_start_offset
 
-            result.days_in_week = days_since_monday + 1
+            result.days_in_week = days_since_week_start + 1
 
             local day_seen = {}
             local ok_week = pcall(function()
@@ -179,8 +187,8 @@ local function getAllStats(book_id, today_pages_override, goal_type, daily_goal_
                     day_pages[today_str] = math.max(effective_today_pages, day_pages[today_str] or 0)
                 end
 
-                for i = 0, days_since_monday do
-                    local date_str = os.date("%Y-%m-%d", now - ((days_since_monday - i) * 86400))
+                for i = 0, days_since_week_start do
+                    local date_str = os.date("%Y-%m-%d", now - ((days_since_week_start - i) * 86400))
                     if (day_pages[date_str] or 0) >= daily_goal then
                         result.days_met = result.days_met + 1
                     end

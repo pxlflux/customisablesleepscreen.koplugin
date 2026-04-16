@@ -636,7 +636,7 @@ local function buildGoalSection(ui, state, book_data, has_ui, total_width, color
         days_met        = book_data.days_met or 0
         days_in_week    = book_data.days_in_week or 1
     else
-        local stats_mod    = require("stats")
+        local stats_mod    = require("css_stats")
         day_dur, day_pages = stats_mod.getDailyStats(has_ui and ui.statistics or nil, book_id)
         day_pages          = day_pages or 0
         if show_streak then
@@ -774,7 +774,7 @@ local function buildBatterySection(ui, state, book_data, has_ui, total_width, co
         battery_top_line = string.format("%d%% %s", batt_perc, charging_symbol)
         table.insert(subtitle_lines, current_display)
         if show_rate then
-            local consumption_rate = require("stats").getBatteryConsumptionRate()
+            local consumption_rate = require("css_stats").getBatteryConsumptionRate()
             if consumption_rate and consumption_rate > 0 then
                 table.insert(subtitle_lines, string.format(_("~%.1f%%/hour"), consumption_rate))
             else
@@ -788,7 +788,7 @@ local function buildBatterySection(ui, state, book_data, has_ui, total_width, co
         if show_batt_time then
             battery_top_line = string.format("%d%% %s · %s", batt_perc, charging_symbol, current_display)
             if show_rate then
-                local consumption_rate = require("stats").getBatteryConsumptionRate()
+                local consumption_rate = require("css_stats").getBatteryConsumptionRate()
                 if consumption_rate and consumption_rate > 0 then
                     table.insert(subtitle_lines, string.format(_("~%.1f%%/hour"), consumption_rate))
                 else
@@ -800,7 +800,7 @@ local function buildBatterySection(ui, state, book_data, has_ui, total_width, co
             battery_top_line = string.format("%d%% %s", batt_perc, charging_symbol)
             table.insert(subtitle_lines, current_display)
             if show_rate then
-                local consumption_rate = require("stats").getBatteryConsumptionRate()
+                local consumption_rate = require("css_stats").getBatteryConsumptionRate()
                 if consumption_rate and consumption_rate > 0 then
                     table.insert(subtitle_lines, string.format(_("~%.1f%%/hour"), consumption_rate))
                 else
