@@ -6,6 +6,8 @@ if not package.path:find(_plugin_dir, 1, true) then
     package.path = _plugin_dir .. "?.lua;" .. package.path
 end
 
+require("css_l10n").install()
+
 local logger                = require("logger")
 local util                  = require("util")
 local Device                = require("device")
@@ -15,10 +17,12 @@ local UIManager             = require("ui/uimanager")
 local ScreenSaverWidget     = require("ui/widget/screensaverwidget")
 local WidgetContainer       = require("ui/widget/container/widgetcontainer")
 
-local _           = require("plugin_gettext")
-local config      = require("config")
+local _           = require("gettext")
+local config      = require("css_config")
 local USER_CONFIG = config.USER_CONFIG
 local SETTINGS    = config.SETTINGS
+
+local css_settings = require("css_settings")
 
 local meta = (loadfile(_plugin_dir .. "_meta.lua") or function() return {} end)()
 package.loaded["customisablesleepscreen/_meta"] = meta
@@ -31,7 +35,7 @@ local function getReaderUI()
 end
 
 local function getInfobox()
-    return require("infobox")
+    return require("css_infobox")
 end
 
 local function getMenu()
@@ -57,46 +61,105 @@ local function versionLessThan(v, major, minor, patch)
     return c < patch
 end
 
-local function runMigrations(saved_version)
-    if saved_version == nil or versionLessThan(saved_version, 2, 1, 0) then
-        G_reader_settings:saveSetting(SETTINGS.MESSAGE_SOURCE,     USER_CONFIG.MESSAGE_SOURCE)
-        G_reader_settings:saveSetting(SETTINGS.MSG_HEADER,         USER_CONFIG.MSG_HEADER)
-        G_reader_settings:saveSetting(SETTINGS.ICON_SET,           USER_CONFIG.ICON_SET)
-        G_reader_settings:saveSetting(SETTINGS.FONT_FACE_TITLE,    USER_CONFIG.FONT_FACE_TITLE)
-        G_reader_settings:saveSetting(SETTINGS.FONT_FACE_SUBTITLE, USER_CONFIG.FONT_FACE_SUBTITLE)
+local KOREADER_OWNED_KEYS = {
+    [SETTINGS.TYPE]          = true,
+    [SETTINGS.SHOW_MSG_GLOBAL] = true,
+    [SETTINGS.MSG_TEXT]      = true,
+}
 
-        local presets_mod    = require("presets")
-        local stored_presets = G_reader_settings:readSetting(SETTINGS.PRESETS) or {}
-        stored_presets["Default"] = presets_mod.getDefaultSettings()
-        G_reader_settings:saveSetting(SETTINGS.PRESETS, stored_presets)
-        local cached = require("presets").getPresetObj()
-        if cached then
-            cached.presets["Default"] = presets_mod.getDefaultSettings()
+local PRESET_STORE_KEYS = {
+    [SETTINGS.PRESETS]           = true,
+    [SETTINGS.CYCLE_INDEX]       = true,
+    [SETTINGS.LAST_LOADED_PRESET] = true,
+}
+
+local function migrateFromGlobalSettings()
+    local needs_migration = false
+    for raw_key in pairs(G_reader_settings.data) do
+        if type(raw_key) == "string"
+            and raw_key:match("^customisable_ss_")
+            and not KOREADER_OWNED_KEYS[raw_key] then
+            needs_migration = true
+            break
+        end
+    end
+    if not needs_migration then return end
+
+    local plugin_store = css_settings.plugin()
+    local preset_store = css_settings.presets()
+
+    for key_name, raw_key in pairs(SETTINGS) do
+        if not KOREADER_OWNED_KEYS[raw_key] then
+            local val = G_reader_settings:readSetting(raw_key)
+            if val ~= nil then
+                if PRESET_STORE_KEYS[raw_key] then
+                    preset_store:saveSetting(raw_key, val)
+                else
+                    plugin_store:saveSetting(raw_key, val)
+                end
+                G_reader_settings:delSetting(raw_key)
+            end
+        end
+    end
+
+    local orphans = {}
+    for raw_key in pairs(G_reader_settings.data) do
+        if type(raw_key) == "string"
+            and raw_key:match("^customisable_ss_")
+            and not KOREADER_OWNED_KEYS[raw_key] then
+            table.insert(orphans, raw_key)
+        end
+    end
+    for _, raw_key in ipairs(orphans) do
+        G_reader_settings:delSetting(raw_key)
+    end
+
+    G_reader_settings:delSetting("customisable_ss_presets_migrated")
+
+    css_settings.flush()
+    G_reader_settings:flush()
+end
+
+local function runMigrations(saved_version)
+    local plugin_store = css_settings.plugin()
+    local preset_store = css_settings.presets()
+
+    if saved_version == nil then return end
+
+    if versionLessThan(saved_version, 2, 2, 0) then
+        local old_bold = plugin_store:readSetting("customisable_ss_book_title_bold")
+        if old_bold ~= nil then
+            plugin_store:saveSetting(SETTINGS.ALL_TITLES_BOLD, old_bold)
+            plugin_store:delSetting("customisable_ss_book_title_bold")
         end
     end
 end
 
 function CustomisableSleepScreen:init()
     logger.info(string.format("[Customisable Sleep Screen] v%s initialised", PATCH_VERSION))
-    local saved_version = G_reader_settings:readSetting(SETTINGS.VERSION)
+
+    migrateFromGlobalSettings()
+
+    local plugin_store  = css_settings.plugin()
+    local saved_version = plugin_store:readSetting(SETTINGS.VERSION)
     if saved_version ~= PATCH_VERSION then
         runMigrations(saved_version)
-        G_reader_settings:saveSetting(SETTINGS.VERSION, PATCH_VERSION)
+        plugin_store:saveSetting(SETTINGS.VERSION, PATCH_VERSION)
 
         local settings_to_init_if_missing = {
             "FONT_FACE_TITLE", "FONT_FACE_SUBTITLE", "FONT_SIZE_TITLE",
             "FONT_SIZE_SUBTITLE", "BATT_STAT_TYPE", "TEXT_ALIGN", "MSG_SHOW_FULL_BAR",
-            "OPACITY", "MARGIN", "GOAL_STAT_SCOPE", "POS", "BG_TYPE",
+            "OPACITY", "GOAL_STAT_SCOPE", "POS", "BG_TYPE",
             "MESSAGE_SOURCE", "BG_COVER_FILL_COLOR",
             "GOAL_TYPE", "DAILY_GOAL_MINUTES", "GOAL_TITLE_TYPE",
             "SHOW_QUOTE_ATTRIBUTION", "SLEEP_ORIENTATION",
         }
         for _, key in ipairs(settings_to_init_if_missing) do
-            if not G_reader_settings:readSetting(SETTINGS[key]) then
-                G_reader_settings:saveSetting(SETTINGS[key], USER_CONFIG[key])
+            if plugin_store:readSetting(SETTINGS[key]) == nil then
+                plugin_store:saveSetting(SETTINGS[key], USER_CONFIG[key])
             end
         end
-        G_reader_settings:flush()
+        css_settings.flush()
     end
 
     local function installBundledFonts()
@@ -230,11 +293,16 @@ function CustomisableSleepScreen:init()
                 ui.statistics.avg_time = avg_time_before
             end
 
+            if ui.doc_settings then
+                pcall(function() ui.doc_settings:flush() end)
+            end
+
             local state     = ui.view and ui.view.state
             local ib        = getInfobox()
             local book_data = ib.collectBookData(ui, state)
             if book_data then
                 ib.saveLastBookData(book_data)
+                pcall(function() CustomisableSleepScreen:_exportToCoverImage(ui, state, book_data) end)
             end
         end)
     end
@@ -246,6 +314,45 @@ function CustomisableSleepScreen:init()
     self.onPowerOff = function()
         return self_ref:_onPowerOff()
     end
+end
+
+function CustomisableSleepScreen:_exportToCoverImage(ui, state, book_data)
+
+    if G_reader_settings:readSetting(SETTINGS.TYPE) ~= "customisable_ss" then
+        return
+    end
+
+    local plugin_store = css_settings.plugin()
+    if not plugin_store:isTrue(SETTINGS.EXPORT_ENABLED) then return end
+    local export_path = plugin_store:readSetting(SETTINGS.EXPORT_PATH)
+    if not export_path or export_path == "" then return end
+
+    local ib     = getInfobox()
+    local widget = ib.buildInfoBox(ui, state, book_data)
+
+    if not widget then return end
+
+    local Blitbuffer     = require("ffi/blitbuffer")
+    local FrameContainer = require("ui/widget/container/framecontainer")
+
+    local w  = Screen:getWidth()
+    local h  = Screen:getHeight()
+
+    local ok_bb, bb = pcall(Blitbuffer.new, w, h, Blitbuffer.TYPE_BBRGB32)
+    if not ok_bb then return end
+
+    local wrapped = FrameContainer:new {
+        bordersize = 0,
+        padding    = 0,
+        widget,
+    }
+    wrapped:paintTo(bb, 0, 0)
+
+    export_path = export_path:gsub("/$", "") .. "/screensaver.png"
+    local ok = bb:writeToFile(export_path, "png", 90)
+    bb:free()
+
+    ib.freeTrackedBBs()
 end
 
 function CustomisableSleepScreen:_onPowerOff()
@@ -302,7 +409,7 @@ function CustomisableSleepScreen:addToMainMenu(menu_items)
             local ok, menu_mod = pcall(require, "css_menu")
             local settings_items = (ok and type(menu_mod) == "table")
                 and (function()
-                    local ok2, items = pcall(menu_mod.getCustomisableSleepScreenSettingsMenu)
+                    local ok2, items = pcall(menu_mod.getCustomisableSleepScreenSettingsMenu, false)
                     if not ok2 then
                         logger.warn("[CSS] addToMainMenu: settings build failed: " .. tostring(items))
                     end
@@ -337,6 +444,7 @@ end
 
 function CustomisableSleepScreen:onCloseWidget()
     if UIManager._entered_poweroff_stage then
+        pcall(function() css_settings.flush() end)
         pcall(function() G_reader_settings:flush() end)
         return
     end
@@ -348,21 +456,28 @@ function CustomisableSleepScreen:onCloseWidget()
     end
 
     pcall(function()
-        local ok, ib = pcall(require, "infobox")
+        local ok, ib = pcall(require, "css_infobox")
         if ok then
             ib.freeTrackedBBs()
             ib.restorePatches()
         end
     end)
 
+    pcall(function() css_settings.flush() end)
     pcall(function() G_reader_settings:flush() end)
 end
 
 function CustomisableSleepScreen:onSuspend()
+    pcall(function() css_settings.flush() end)
     pcall(function() G_reader_settings:flush() end)
 end
 
 function CustomisableSleepScreen:_installScreensaverHook()
+    if not util.wrapMethod then
+        logger.warn("[CSS] util.wrapMethod not available — screensaver hook cannot be installed")
+        return
+    end
+
     local css = self
 
     self._screensaver_close_hook = util.wrapMethod(Screensaver, "close", function(ss_self)
@@ -381,7 +496,7 @@ function CustomisableSleepScreen:_installScreensaverHook()
         if not Device.screen_saver_mode then
             css._saved_rotation = nil
         end
-        local orientation_setting = G_reader_settings:readSetting(SETTINGS.SLEEP_ORIENTATION) or "auto"
+        local orientation_setting = css_settings.plugin():readSetting(SETTINGS.SLEEP_ORIENTATION) or "auto"
         if orientation_setting ~= "auto" then
             if css._saved_rotation == nil then
                 css._saved_rotation = Screen:getRotationMode()
@@ -432,7 +547,7 @@ function CustomisableSleepScreen:_installScreensaverHook()
                 widget = ib.buildInfoBox(ui, state, book_data)
             end
         else
-            local render_ref = require("infobox_render")
+            local render_ref = require("css_infobox_render")
             local show_in_fm = render_ref.getSetting("SHOW_IN_FILEMANAGER")
             if not show_in_fm then
                 return css._screensaver_hook:raw_call(ss_self)
@@ -532,7 +647,20 @@ end
 
 function CustomisableSleepScreen:_onCyclePresets()
     local Presets = require("ui/presets")
-    return Presets.cycleThroughPresets(require("presets").getPresetObj(), true)
+    return Presets.cycleThroughPresets(require("css_presets").getPresetObj(), true)
+end
+
+function CustomisableSleepScreen:deletePluginSettings()
+    local DataStorage  = require("datastorage")
+    local settings_dir = DataStorage:getSettingsDir()
+
+    if G_reader_settings:readSetting(SETTINGS.TYPE) == "customisable_ss" then
+        G_reader_settings:saveSetting(SETTINGS.TYPE, "disable")
+    end
+    pcall(function() G_reader_settings:flush() end)
+    pcall(function() css_settings.reset() end)
+    os.remove(settings_dir .. "/customisablesleepscreen.lua")
+    os.remove(settings_dir .. "/customisablesleepscreen_presets.lua")
 end
 
 return CustomisableSleepScreen

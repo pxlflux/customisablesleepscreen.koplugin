@@ -3,7 +3,7 @@
 local SQ3         = require("lua-ljsqlite3/init")
 local DataStorage = require("datastorage")
 
-local render     = require("infobox_render")
+local render     = require("css_infobox_render")
 local getSetting = render.getSetting
 
 local function getDbPath()

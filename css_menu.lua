@@ -2,8 +2,8 @@
 
 local UIManager = require("ui/uimanager")
 
-local _               = require("plugin_gettext")
-local config          = require("config")
+local _               = require("gettext")
+local config          = require("css_config")
 local SETTINGS        = config.SETTINGS
 local USER_CONFIG     = config.USER_CONFIG
 
@@ -12,22 +12,27 @@ local PATCH_VERSION   = meta.version
 local PATCH_NAME      = meta.fullname
 local GITHUB_REPO     = meta.github
 
-local presets_data_mod       = require("presets")
+local presets_data_mod       = require("css_presets")
 local initializePresetSystem = presets_data_mod.getPresetObj
 local PRELOADED_PRESETS      = presets_data_mod.PRELOADED_PRESETS
+local saveUserPresets        = presets_data_mod.saveUserPresets
 
-local h                = require("menu_helpers")
+local css_settings = require("css_settings")
+local PluginStore  = css_settings.plugin()
+local PresetStore  = css_settings.presets()
+
+local h                = require("css_menu_helpers")
 local getSetting       = h.getSetting
 local createRadioItem  = h.createRadioItem
 local createSpinDialog = h.createSpinDialog
 
-local presets_mod               = require("menu_presets")
+local presets_mod               = require("css_menu_presets")
 local buildPresetManagementMenu = presets_mod.buildPresetManagementMenu
 
-local sections_mod      = require("menu_sections")
+local sections_mod      = require("css_menu_sections")
 local buildContentsMenu = sections_mod.buildContentsMenu
 
-local appearance_mod            = require("menu_appearance")
+local appearance_mod            = require("css_menu_appearance")
 local buildDisplayModesMenu     = appearance_mod.buildDisplayModesMenu
 local buildLayoutAndSpacingMenu = appearance_mod.buildLayoutAndSpacingMenu
 local buildColorsIconsBarsMenu  = appearance_mod.buildColorsIconsBarsMenu
@@ -49,17 +54,18 @@ local function buildAdvancedMenu()
                     ok_text     = _("Delete"),
                     cancel_text = _("Cancel"),
                     ok_callback = function()
-                        local preset_obj       = initializePresetSystem()
-                        local filtered_presets = {}
-                        for preset_name, preset_data in pairs(PRELOADED_PRESETS) do
-                            filtered_presets[preset_name] = preset_data
+                        local preset_obj = initializePresetSystem()
+                        saveUserPresets({})
+                        if preset_obj then
+                            preset_obj.presets = {}
+                            for name, data in pairs(PRELOADED_PRESETS) do
+                                preset_obj.presets[name] = data
+                            end
                         end
-                        G_reader_settings:saveSetting(SETTINGS.PRESETS, filtered_presets)
-                        if preset_obj then preset_obj.presets = filtered_presets end
-                        local last = G_reader_settings:readSetting(SETTINGS.LAST_LOADED_PRESET)
-                        if last and not filtered_presets[last] then
+                        local last = PresetStore:readSetting(SETTINGS.LAST_LOADED_PRESET)
+                        if last and not PRELOADED_PRESETS[last] then
                             if preset_obj then
-                                preset_obj.loadPreset(filtered_presets["Default"], "Default")
+                                preset_obj.loadPreset(PRELOADED_PRESETS["Default"], "Default")
                             end
                         end
                         UIManager:show(InfoMessage:new {
@@ -137,8 +143,8 @@ local function buildAdvancedMenu()
                             _("Battery drain rate (% per hour)"),
                             getSetting("BATT_MANUAL_RATE") or USER_CONFIG.BATT_MANUAL_RATE,
                             1, 10, 0.5,
-                            function(val) G_reader_settings:saveSetting(SETTINGS.BATT_MANUAL_RATE, val) end,
-                            _("Typical devices drain 1-5% per hour while reading"),
+                            function(val) PluginStore:saveSetting(SETTINGS.BATT_MANUAL_RATE, val) end,
+                            _("Typical devices drain 1-5% per hour while reading."),
                             "%.1f"
                         )
                     end,
@@ -166,27 +172,118 @@ local function buildAdvancedMenu()
             text      = _("Show in file manager (outside of book)"),
             help_text = _("When enabled, the customisable sleep screen will display in file manager using the last saved book data."),
             checked_func = function()
-                local val = G_reader_settings:readSetting(SETTINGS.SHOW_IN_FILEMANAGER)
+                local val = PluginStore:readSetting(SETTINGS.SHOW_IN_FILEMANAGER)
                 return val == nil or val == true
             end,
             callback = function()
-                G_reader_settings:flipNilOrTrue(SETTINGS.SHOW_IN_FILEMANAGER)
+                PluginStore:flipNilOrTrue(SETTINGS.SHOW_IN_FILEMANAGER)
             end,
         },
         {
             text      = _("Hide built-in presets (except Default)"),
             help_text = _("Hide the built-in presets from the preset list, keeping only the Default preset and your custom presets visible."),
             checked_func = function()
-                return G_reader_settings:isTrue(SETTINGS.HIDE_PRELOADED_PRESETS)
+                return PluginStore:isTrue(SETTINGS.HIDE_PRELOADED_PRESETS)
             end,
             callback = function()
-                G_reader_settings:saveSetting(
+                PluginStore:saveSetting(
                     SETTINGS.HIDE_PRELOADED_PRESETS,
-                    not G_reader_settings:isTrue(SETTINGS.HIDE_PRELOADED_PRESETS)
+                    not PluginStore:isTrue(SETTINGS.HIDE_PRELOADED_PRESETS)
                 )
                 UIManager:show(require("ui/widget/infomessage"):new {
                     text    = _("Setting saved. Preset list will update when you reopen this menu."),
                     timeout = 2,
+                })
+            end,
+        },
+        {
+            text      = _("Export sleep screen to file"),
+            help_text = _("When enabled, a screenshot of the sleep screen will be saved as 'screensaver.png' in the selected export folder each time a book is closed."),
+            keep_menu_open = true,
+            checked_func = function()
+                return PluginStore:isTrue(SETTINGS.EXPORT_ENABLED)
+            end,
+            callback = function(touchmenu_instance)
+                if PluginStore:isTrue(SETTINGS.EXPORT_ENABLED) then
+                    PluginStore:saveSetting(SETTINGS.EXPORT_ENABLED, false)
+                    UIManager:show(require("ui/widget/infomessage"):new {
+                        text    = _("Sleep screen export disabled."),
+                        timeout = 2,
+                    })
+                else
+                    local path = PluginStore:readSetting(SETTINGS.EXPORT_PATH)
+                    if not path or path == "" then
+                        UIManager:show(require("ui/widget/infomessage"):new {
+                            text    = _("No export folder set. Please set an export folder first."),
+                            timeout = 3,
+                        })
+                    else
+                        PluginStore:saveSetting(SETTINGS.EXPORT_ENABLED, true)
+                        UIManager:show(require("ui/widget/infomessage"):new {
+                            text    = string.format(
+                                _("Sleep screen will be exported to:\n%s/screensaver.png"),
+                                path),
+                            timeout = 3,
+                        })
+                    end
+                end
+                if touchmenu_instance then touchmenu_instance:updateItems() end
+            end,
+        },
+        {
+            text      = _("Set export folder"),
+            help_text = _("Choose the folder where screensaver.png will be saved."),
+            keep_menu_open = true,
+            callback = function(touchmenu_instance)
+                local PathChooser = require("ui/widget/pathchooser")
+                local FileChooser = require("ui/widget/filechooser")
+                local Menu_orig   = require("ui/widget/menu")
+
+                local was_hidden             = FileChooser.show_hidden
+                local was_lock_home          = G_reader_settings:readSetting("lock_home_folder")
+                local was_updateItems        = FileChooser.updateItems
+                local was_recalculateDimen   = FileChooser._recalculateDimen
+                local was_updateItemsBuildUI = FileChooser._updateItemsBuildUI
+                local was_onCloseWidget      = FileChooser.onCloseWidget
+
+                FileChooser.show_hidden         = true
+                FileChooser.updateItems         = Menu_orig.updateItems
+                FileChooser._recalculateDimen   = Menu_orig._recalculateDimen
+                FileChooser._updateItemsBuildUI = Menu_orig._updateItemsBuildUI
+                FileChooser.onCloseWidget       = Menu_orig.onCloseWidget
+                G_reader_settings:saveSetting("lock_home_folder", false)
+
+                local restored = false
+                local function restoreOnce()
+                    if restored then return end
+                    restored = true
+                    FileChooser.show_hidden         = was_hidden
+                    FileChooser.updateItems         = was_updateItems
+                    FileChooser._recalculateDimen   = was_recalculateDimen
+                    FileChooser._updateItemsBuildUI = was_updateItemsBuildUI
+                    FileChooser.onCloseWidget       = was_onCloseWidget
+                    G_reader_settings:saveSetting("lock_home_folder", was_lock_home)
+                end
+
+                UIManager:show(PathChooser:new {
+                    select_directory = true,
+                    select_file      = false,
+                    show_files       = false,
+                    path             = PluginStore:readSetting(SETTINGS.EXPORT_PATH) or "/",
+                    onConfirm = function(dir_path)
+                        restoreOnce()
+                        PluginStore:saveSetting(SETTINGS.EXPORT_PATH, dir_path)
+                        if touchmenu_instance then touchmenu_instance:updateItems() end
+                        UIManager:show(require("ui/widget/infomessage"):new {
+                            text    = string.format(
+                                _("Export folder set to:\n%s"),
+                                dir_path),
+                            timeout = 3,
+                        })
+                    end,
+                    onCancel = function()
+                        restoreOnce()
+                    end,
                 })
             end,
         },
@@ -213,17 +310,19 @@ local function getCustomisableSleepScreenSettingsMenu(hide_presets)
     menu_table[#menu_table + 1] = { text = _("Colours, Icons & Bars"), help_text = _("Customise section colours, icon appearance, and progress bar styling."), sub_item_table = buildColorsIconsBarsMenu()  }
     menu_table[#menu_table + 1] = { text = _("Fonts & Text"),          help_text = _("Configure text appearance."),                                            sub_item_table = buildFontsAndTextMenu()     }
     menu_table[#menu_table + 1] = { text = _("Background"),            help_text = _("Choose what appears behind the information box."),                       sub_item_table = buildBackgroundMenu()       }
-    menu_table[#menu_table + 1] = { text = _("Advanced"),              help_text = _("Advanced configuration options."),                                       sub_item_table = buildAdvancedMenu()         }
+    menu_table[#menu_table + 1] = { text = _("Advanced"),              help_text = _("Advanced configuration options."),                                       sub_item_table = buildAdvancedMenu()           }
 
     menu_table[#menu_table + 1] = {
         text           = _("About"),
         keep_menu_open = true,
         callback = function()
+            local DeviceAbout = require("device")
             UIManager:show(require("ui/widget/infomessage"):new {
                 text = string.format(
                     _("%s\nVersion: %s\n\nFor updates and issues:\ngithub.com/%s"),
                     PATCH_NAME, PATCH_VERSION, GITHUB_REPO
                 ),
+                width = math.floor(DeviceAbout.screen:getWidth() * 0.85),
                 timeout = 5,
             })
         end,

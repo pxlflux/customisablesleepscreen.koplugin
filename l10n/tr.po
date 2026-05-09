@@ -1,0 +1,1608 @@
+# CUSTOMISABLE SLEEP SCREEN
+# Copyright (C) 2026
+# This file is distributed under the same license as the KOReader package.
+# pxlflux
+#
+msgid ""
+msgstr ""
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. ---- Display sleep screen strings ----
+
+msgid "No Chapter"
+msgstr "Bölüm Yok"
+
+msgid "Untitled"
+msgstr "Başlıksız"
+
+msgid "Unknown Author"
+msgstr "Yazar Bilinmiyor"
+
+msgid "January"
+msgstr "Ocak"
+
+msgid "February"
+msgstr "Şubat"
+
+msgid "March"
+msgstr "Mart"
+
+msgid "April"
+msgstr "Nisan"
+
+msgid "May"
+msgstr "Mayıs"
+
+msgid "June"
+msgstr "Haziran"
+
+msgid "July"
+msgstr "Temmuz"
+
+msgid "August"
+msgstr "Ağustos"
+
+msgid "September"
+msgstr "Eylül"
+
+msgid "October"
+msgstr "Ekim"
+
+msgid "November"
+msgstr "Kasım"
+
+msgid "December"
+msgstr "Aralık"
+
+msgid "st"
+msgstr "."
+
+msgid "nd"
+msgstr "."
+
+msgid "rd"
+msgstr "."
+
+msgid "th"
+msgstr "."
+
+msgid "< 1 min"
+msgstr "< 1 dk"
+
+#, lua-format
+msgid "~%d %s left"
+msgstr "~%d %s kaldı"
+
+msgid "~<1 hr left"
+msgstr "~<1 sa kaldı"
+
+#, lua-format
+msgid "%s left"
+msgstr "%s kaldı"
+
+#, lua-format
+msgid "Page %d of %d"
+msgstr "Sayfa %d / %d"
+
+#, lua-format
+msgid "Chapter %d of %d"
+msgstr "Bölüm %d / %d"
+
+msgid "0 mins"
+msgstr "0 dk"
+
+#, lua-format
+msgid "%s %s read today"
+msgstr "Bugün %s %s okundu"
+
+msgid "pg"
+msgstr "sy."
+
+msgid "pgs"
+msgstr "sy."
+
+#, lua-format
+msgid "%s %s & %s read today"
+msgstr "Bugün %s %s ve %s okundu"
+
+#, lua-format
+msgid "%s read today"
+msgstr "Bugün %s okundu"
+
+#, lua-format
+msgid "%d day streak"
+msgstr "%d günlük seri"
+
+#, lua-format
+msgid "%d/%d days met this week"
+msgstr "Bu hafta %d/%d gün hedef tutturuldu"
+
+msgid "Achieved!"
+msgstr "Başarıldı!"
+
+msgid "goal"
+msgstr "hedef"
+
+msgid "Goal achieved!"
+msgstr "Hedef başarıldı!"
+
+#, lua-format
+msgid "%d%% of goal"
+msgstr "Hedefin %d%%'i"
+
+#, lua-format
+msgid "%d page goal"
+msgstr "%d sayfa hedefi"
+
+#, lua-format
+msgid "~%.1f%%/hour"
+msgstr "~%.1f%%/sa"
+
+msgid "Rate unavailable"
+msgstr "Hız bilgisi yok"
+
+msgid "No message set"
+msgstr "Mesaj ayarlanmadı"
+
+msgid "No custom quotes found. Add quotes to custom_quotes.lua."
+msgstr "Özel alıntı bulunamadı. custom_quotes.lua dosyasına alıntı ekleyin."
+
+#, lua-format
+msgid "pg. %s"
+msgstr "sy. %s"
+
+msgid "No highlights found"
+msgstr "Vurgu bulunamadı"
+
+msgid "Sleeping"
+msgstr "Uyku modunda"
+
+msgid "Highlights"
+msgstr "Vurgular"
+
+msgid "Quotations"
+msgstr "Alıntılar"
+
+msgid "Message"
+msgstr "Mesaj"
+
+#. ---- All other strings (menu items, help text, headers, buttons) ----
+
+msgid "Pick a colour"
+msgstr "Renk seç"
+
+msgid "Cancel"
+msgstr "İptal"
+
+msgid "Apply"
+msgstr "Uygula"
+
+#, lua-format
+msgid "Brightness: %d%%"
+msgstr "Parlaklık: %d%%"
+
+msgid "Enter hex"
+msgstr "Hex gir"
+
+msgid "Enter hex colour code"
+msgstr "Hex renk kodu girin"
+
+msgid "Invalid hex code. Use format: #RRGGBB"
+msgstr "Geçersiz hex kodu. Biçim: #RRGGBB"
+
+msgid "Delete all custom presets"
+msgstr "Tüm özel önayarları sil"
+
+msgid ""
+"Permanently removes all custom presets you've created. The built-in\n"
+"'Default' preset will remain. This cannot be undone."
+msgstr ""
+"Oluşturduğunuz tüm özel önayarları kalıcı olarak siler. Yerleşik\n"
+"'Varsayılan' önayar korunur. Bu işlem geri alınamaz."
+
+msgid ""
+"Are you sure you want to delete all custom presets? (built-in presets\n"
+"will remain)"
+msgstr ""
+"Tüm özel önayarları silmek istediğinize emin misiniz?\n"
+"(Yerleşik önayarlar korunacak)"
+
+msgid "Delete"
+msgstr "Sil"
+
+msgid "All custom presets deleted. Built-in presets remain."
+msgstr "Tüm özel önayarlar silindi. Yerleşik önayarlar korundu."
+
+msgid "Sleep screen orientation"
+msgstr "Uyku ekranı yönü"
+
+msgid ""
+"Force the sleep screen to display in a specific orientation, regardless\n"
+"of how the device is held."
+msgstr ""
+"Cihazın tutulma biçiminden bağımsız olarak uyku ekranını belirli bir\n"
+"yönde görüntülemeye zorlar."
+
+msgid "Auto (follow device)"
+msgstr "Otomatik (cihazı takip et)"
+
+msgid "Use whatever orientation the device is currently in."
+msgstr "Cihazın mevcut yönünü kullanır."
+
+msgid "Force portrait"
+msgstr "Dikey modu zorla"
+
+msgid "Always display the sleep screen in portrait mode."
+msgstr "Uyku ekranını her zaman dikey modda gösterir."
+
+msgid "Force landscape"
+msgstr "Yatay modu zorla"
+
+msgid "Always display the sleep screen in landscape mode."
+msgstr "Uyku ekranını her zaman yatay modda gösterir."
+
+msgid "Force upside-down portrait"
+msgstr "Ters dikey modu zorla"
+
+msgid "Always display the sleep screen in inverted portrait mode."
+msgstr "Uyku ekranını her zaman ters dikey modda gösterir."
+
+msgid "Force upside-down landscape"
+msgstr "Ters yatay modu zorla"
+
+msgid "Always display the sleep screen in inverted landscape mode."
+msgstr "Uyku ekranını her zaman ters yatay modda gösterir."
+
+msgid "Battery time calculation"
+msgstr "Pil süresi hesaplama"
+
+msgid "Method used to estimate remaining battery life."
+msgstr "Kalan pil ömrünü tahmin etmek için kullanılan yöntem."
+
+msgid "Since last charge"
+msgstr "Son şarjdan bu yana"
+
+msgid "Uses combined awake and sleeping battery drain since last charge"
+msgstr "Son şarjdan bu yana aktif ve uyku modundaki toplam pil tüketimini kullanır"
+
+msgid "Awake since last charge"
+msgstr "Son şarjdan bu yana aktif süre"
+
+msgid "Uses only active reading battery drain (more conservative estimate)"
+msgstr "Yalnızca aktif okuma sırasındaki pil tüketimini kullanır (daha ihtiyatlı tahmin)"
+
+msgid "Sleeping since last charge"
+msgstr "Son şarjdan bu yana uyku süresi"
+
+msgid "Uses only sleep mode battery drain"
+msgstr "Yalnızca uyku modundaki pil tüketimini kullanır"
+
+msgid "Manual calculation"
+msgstr "Manuel hesaplama"
+
+msgid "Use a custom battery drain rate (1-10% per hour)"
+msgstr "Özel pil tüketim hızı kullan (saatte 1-10%)"
+
+msgid "Set manual drain rate"
+msgstr "Manuel tüketim hızı ayarla"
+
+msgid "Battery drain rate (% per hour)"
+msgstr "Pil tüketim hızı (% / saat)"
+
+msgid "Typical devices drain 1-5% per hour while reading."
+msgstr "Tipik cihazlar okurken saatte 1-5% pil tüketir."
+
+msgid "Daily statistics scope"
+msgstr "Günlük istatistik kapsamı"
+
+msgid ""
+"Controls whether today's reading time and page count applies to the\n"
+"current book only, or all books read today. Note: reading streak and\n"
+"weekly goal achievement always reflect all books regardless of this\n"
+"setting."
+msgstr ""
+"Bugünkü okuma süresi ve sayfa sayısının yalnızca mevcut kitaba mı yoksa\n"
+"bugün okunan tüm kitaplara mı uygulanacağını belirler. Not: okuma serisi\n"
+"ve haftalık hedef başarımı bu ayardan bağımsız olarak hep tüm kitapları\n"
+"yansıtır."
+
+msgid "All books"
+msgstr "Tüm kitaplar"
+
+msgid "Today's reading time and page count across all books read today"
+msgstr "Bugün okunan tüm kitaplar için okuma süresi ve sayfa sayısı"
+
+msgid "Current book only"
+msgstr "Yalnızca mevcut kitap"
+
+msgid "Today's reading time and page count for the current book only"
+msgstr "Yalnızca mevcut kitap için bugünkü okuma süresi ve sayfa sayısı"
+
+msgid "Show in file manager (outside of book)"
+msgstr "Dosya yöneticisinde göster (kitap dışında)"
+
+msgid ""
+"When enabled, the customisable sleep screen will display in file manager\n"
+"using the last saved book data."
+msgstr ""
+"Etkinleştirildiğinde, özelleştirilebilir uyku ekranı dosya yöneticisinde\n"
+"son kaydedilen kitap verileriyle görüntülenir."
+
+msgid "Hide built-in presets (except Default)"
+msgstr "Yerleşik önayarları gizle (Varsayılan hariç)"
+
+msgid ""
+"Hide the built-in presets from the preset list, keeping only the Default\n"
+"preset and your custom presets visible."
+msgstr ""
+"Önayar listesinden yerleşik önayarları gizler; yalnızca Varsayılan önayar\n"
+"ve özel önayarlarınız görünür kalır."
+
+msgid "Setting saved. Preset list will update when you reopen this menu."
+msgstr "Ayar kaydedildi. Önayar listesi bu menüyü tekrar açtığınızda güncellenecek."
+
+msgid "Export sleep screen to file"
+msgstr "Uyku ekranını dosyaya aktar"
+
+msgid ""
+"When enabled, a screenshot of the sleep screen will be saved as\n"
+"'screensaver.png' in the selected export folder each time a book is\n"
+"closed."
+msgstr ""
+"Etkinleştirildiğinde, her kitap kapatıldığında uyku ekranının ekran\n"
+"görüntüsü seçilen dışa aktarma klasörüne 'screensaver.png' olarak kaydedilir."
+
+msgid "Sleep screen export disabled."
+msgstr "Uyku ekranı dışa aktarımı devre dışı."
+
+msgid "No export folder set. Please set an export folder first."
+msgstr "Dışa aktarma klasörü ayarlanmadı. Lütfen önce bir klasör belirleyin."
+
+#, lua-format
+msgid ""
+"Sleep screen will be exported to:\n"
+"%s/screensaver.png"
+msgstr ""
+"Uyku ekranı şuraya aktarılacak:\n"
+"%s/screensaver.png"
+
+msgid "Set export folder"
+msgstr "Dışa aktarma klasörünü ayarla"
+
+msgid "Choose the folder where screensaver.png will be saved."
+msgstr "screensaver.png dosyasının kaydedileceği klasörü seçin."
+
+#, lua-format
+msgid ""
+"Export folder set to:\n"
+"%s"
+msgstr ""
+"Dışa aktarma klasörü ayarlandı:\n"
+"%s"
+
+msgid "Presets"
+msgstr "Önayarlar"
+
+msgid "Save, load, and manage presets."
+msgstr "Önayarları kaydet, yükle ve yönet."
+
+msgid "Display modes"
+msgstr "Görüntüleme modları"
+
+msgid "Global appearance settings."
+msgstr "Genel görünüm ayarları."
+
+msgid "Contents"
+msgstr "İçerik"
+
+msgid "Control which sections appear and what information they display."
+msgstr "Hangi bölümlerin görüneceğini ve hangi bilgileri göstereceğini belirler."
+
+msgid "Layout & Spacing"
+msgstr "Düzen ve Boşluk"
+
+msgid "Adjust the spatial settings of the information box."
+msgstr "Bilgi kutusunun mekansal ayarlarını düzenler."
+
+msgid "Colours, Icons & Bars"
+msgstr "Renkler, Simgeler ve Çubuklar"
+
+msgid ""
+"Customise section colours, icon appearance, and progress bar styling."
+msgstr "Bölüm renklerini, simge görünümünü ve ilerleme çubuğu stilini özelleştirin."
+
+msgid "Fonts & Text"
+msgstr "Yazı Tipleri ve Metin"
+
+msgid "Configure text appearance."
+msgstr "Metin görünümünü yapılandırın."
+
+msgid "Background"
+msgstr "Arka Plan"
+
+msgid "Choose what appears behind the information box."
+msgstr "Bilgi kutusunun arkasında ne görüneceğini seçin."
+
+msgid "Advanced"
+msgstr "Gelişmiş"
+
+msgid "Advanced configuration options."
+msgstr "Gelişmiş yapılandırma seçenekleri."
+
+msgid "About"
+msgstr "Hakkında"
+
+#, lua-format
+msgid ""
+"%s\n"
+"Version: %s\n"
+"\n"
+"For updates and issues:\n"
+"github.com/%s"
+msgstr ""
+"%s\n"
+"Sürüm: %s\n"
+"\n"
+"Güncellemeler ve sorunlar için:\n"
+"github.com/%s"
+
+msgid "Top left"
+msgstr "Sol üst"
+
+msgid "Top centre"
+msgstr "Üst merkez"
+
+msgid "Top right"
+msgstr "Sağ üst"
+
+msgid "Middle left"
+msgstr "Sol orta"
+
+msgid "Centre"
+msgstr "Merkez"
+
+msgid "Middle right"
+msgstr "Sağ orta"
+
+msgid "Bottom left"
+msgstr "Sol alt"
+
+msgid "Bottom centre"
+msgstr "Alt merkez"
+
+msgid "Bottom right"
+msgstr "Sağ alt"
+
+msgid "Dark mode"
+msgstr "Karanlık mod"
+
+msgid ""
+"Inverts the colour scheme. Text becomes white and backgrounds becomes\n"
+"black. Useful for reading in low-light conditions. Can be combined with\n"
+"monochrome mode."
+msgstr ""
+"Renk düzenini tersine çevirir. Metin beyaz, arka plan siyah olur. Düşük\n"
+"ışıklı ortamlarda okumak için kullanışlıdır. Tek renkli modla birlikte\n"
+"kullanılabilir."
+
+msgid "Monochrome mode"
+msgstr "Tek renkli mod"
+
+msgid ""
+"Suitable for B&W e-readers. Assigns one colour to all sections using\n"
+"monochrome light or monochrome dark hex values. Overwrites individual\n"
+"assigned section colours. Can be combined with dark mode."
+msgstr ""
+"Siyah-beyaz e-okuyucular için uygundur. Tek renkli açık veya koyu hex\n"
+"değerleri kullanarak tüm bölümlere tek bir renk atar. Bireysel bölüm\n"
+"renklerinin üzerine yazar. Karanlık modla birlikte kullanılabilir."
+
+msgid "Section gaps"
+msgstr "Bölüm boşlukları"
+
+msgid ""
+"Add transparent gaps between sections to make each appear as a separate\n"
+"box"
+msgstr ""
+"Bölümler arasına şeffaf boşluklar ekleyerek her birini ayrı bir kutu\n"
+"gibi gösterir"
+
+msgid "Enable section gaps"
+msgstr "Bölüm boşluklarını etkinleştir"
+
+msgid "Section gap size"
+msgstr "Bölüm boşluk boyutu"
+
+msgid "Spacing between sections when gaps are enabled."
+msgstr "Boşluklar etkinleştirildiğinde bölümler arasındaki mesafe."
+
+msgid "Section gap size (pixels)"
+msgstr "Bölüm boşluk boyutu (piksel)"
+
+msgid ""
+"10–20px gives a subtle separation. 30–50px makes sections feel like\n"
+"distinct cards."
+msgstr ""
+"10–20px ince bir ayrım sağlar. 30–50px bölümleri ayrı kartlar gibi\ngösterir."
+
+msgid "Position"
+msgstr "Konum"
+
+msgid "Screen location where the information box appears."
+msgstr "Bilgi kutusunun ekranda görüneceği konum."
+
+msgid "Position offset"
+msgstr "Konum kaydırma"
+
+msgid ""
+"Nudge the box from its anchor position. Useful for pushing rounded\n"
+"corners off-screen."
+msgstr ""
+"Kutuyu bağlantı noktasından kaydırır. Yuvarlatılmış köşeleri ekran\n"
+"dışına itmek için kullanışlıdır."
+
+msgid "Horizontal offset (px)"
+msgstr "Yatay kaydırma (px)"
+
+msgid ""
+"Nudges the box left (-) or right (+) from its anchor. Useful for pushing\n"
+"rounded corners off-screen."
+msgstr ""
+"Kutuyu bağlantı noktasından sola (-) veya sağa (+) kaydırır. Yuvarlatılmış\n"
+"köşeleri ekran dışına itmek için kullanışlıdır."
+
+msgid "Vertical offset (px)"
+msgstr "Dikey kaydırma (px)"
+
+msgid ""
+"Nudges the box up (+) or down (-) from its anchor. Useful for pushing\n"
+"rounded corners off-screen."
+msgstr ""
+"Kutuyu bağlantı noktasından yukarı (+) veya aşağı (-) kaydırır.\n"
+"Yuvarlatılmış köşeleri ekran dışına itmek için kullanışlıdır."
+
+msgid "Width"
+msgstr "Genişlik"
+
+msgid ""
+"Horizontal width of the information box as a percentage of screen width."
+msgstr "Bilgi kutusunun ekran genişliğinin yüzdesi olarak yatay genişliği."
+
+msgid "Box width (%)"
+msgstr "Kutu genişliği (%)"
+
+msgid "60–70% suits portrait screens."
+msgstr "60–70% dikey ekranlar için uygundur."
+
+msgid "Opacity"
+msgstr "Opaklık"
+
+msgid "Transparency of the information box."
+msgstr "Bilgi kutusunun şeffaflığı."
+
+msgid "Opacity (%)"
+msgstr "Opaklık (%)"
+
+msgid "75% is semi-transparent. 100% is fully opaque."
+msgstr "75% yarı saydam. 100% tamamen opak."
+
+msgid "Border size"
+msgstr "Kenarlık boyutu"
+
+msgid "Thickness of the primary border around sections."
+msgstr "Bölümlerin etrafındaki birincil kenarlığın kalınlığı."
+
+msgid "Border size (px)"
+msgstr "Kenarlık boyutu (px)"
+
+msgid "0 for no border. 1–2px is subtle, 4–6px is bold and visible."
+msgstr "0 kenarlık yok. 1–2px ince, 4–6px kalın ve belirgin."
+
+msgid "Border trim size"
+msgstr "Dekoratif kenarlık boyutu"
+
+msgid "Secondary decorative border surrounding the primary border."
+msgstr "Birincil kenarlığı çevreleyen ikincil dekoratif kenarlık."
+
+msgid "Border trim size (px)"
+msgstr "Dekoratif kenarlık boyutu (px)"
+
+msgid ""
+"0 for no trim. 1–2px is subtle, 4–6px is a bold decorative outline\n"
+"around the primary border."
+msgstr ""
+"0 dekoratif kenarlık yok. 1–2px ince, 4–6px birincil kenarlığın etrafında\n"
+"kalın dekoratif bir çerçeve."
+
+msgid "Corner radius"
+msgstr "Köşe yarıçapı"
+
+msgid ""
+"Round the corners of the info box. Also moves progress bars inline with\n"
+"the text when active."
+msgstr ""
+"Bilgi kutusunun köşelerini yuvarlatır. Aktif olduğunda ilerleme çubuklarını\n"
+"da metinle aynı satıra taşır."
+
+msgid "Corner radius (px)"
+msgstr "Köşe yarıçapı (px)"
+
+msgid ""
+"0 for square corners. 15–30px for softly rounded. 150px+ for a\n"
+"pill-shaped box (depending on the section box height)."
+msgstr ""
+"0 keskin köşeler. 15–30px hafif yuvarlatılmış. 150px+ hap şeklinde kutu\n"
+"(bölüm kutu yüksekliğine bağlı)."
+
+msgid "Internal padding"
+msgstr "İç dolgu"
+
+msgid ""
+"Space between section borders and their content, configurable per side."
+msgstr "Bölüm kenarlıkları ile içerik arasındaki boşluk, her kenar için ayrı ayarlanabilir."
+
+msgid "Top"
+msgstr "Üst"
+
+msgid "Internal padding — top (px)"
+msgstr "İç dolgu — üst (px)"
+
+msgid "Space above section content."
+msgstr "Bölüm içeriğinin üzerindeki boşluk."
+
+msgid "Bottom"
+msgstr "Alt"
+
+msgid "Internal padding — bottom (px)"
+msgstr "İç dolgu — alt (px)"
+
+msgid "Space below section content."
+msgstr "Bölüm içeriğinin altındaki boşluk."
+
+msgid "Left"
+msgstr "Sol"
+
+msgid "Internal padding — left (px)"
+msgstr "İç dolgu — sol (px)"
+
+msgid ""
+"Space to the left of section content. Increase when using large corner\n"
+"radii."
+msgstr ""
+"Bölüm içeriğinin solundaki boşluk. Büyük köşe yarıçapları kullanılırken\n"
+"artırın."
+
+msgid "Right"
+msgstr "Sağ"
+
+msgid "Internal padding — right (px)"
+msgstr "İç dolgu — sağ (px)"
+
+msgid ""
+"Space to the right of section content. Increase when using large corner\n"
+"radii."
+msgstr ""
+"Bölüm içeriğinin sağındaki boşluk. Büyük köşe yarıçapları kullanılırken\n"
+"artırın."
+
+msgid "Set all sides equally"
+msgstr "Tüm kenarları eşit ayarla"
+
+msgid "Internal padding — all sides (px)"
+msgstr "İç dolgu — tüm kenarlar (px)"
+
+msgid "Sets top, bottom, left and right padding to the same value in one step."
+msgstr "Üst, alt, sol ve sağ dolguyu tek adımda aynı değere ayarlar."
+
+msgid "Icon to text gap"
+msgstr "Simge-metin aralığı"
+
+msgid ""
+"Horizontal spacing between section icons and their accompanying text."
+msgstr "Bölüm simgeleri ile eşlik eden metin arasındaki yatay boşluk."
+
+msgid "Icon to text gap (px)"
+msgstr "Simge-metin aralığı (px)"
+
+msgid ""
+"8–12px gives comfortable breathing room between icon and text. 0 is\n"
+"flush."
+msgstr ""
+"8–12px simge ile metin arasında rahat bir nefes alanı sağlar. 0 bitişik."
+
+msgid "No icon sets found in customisablesleepscreen.koplugin/icons/"
+msgstr "customisablesleepscreen.koplugin/icons/ içinde simge seti bulunamadı"
+
+msgid "Colours (progress bars)"
+msgstr "Renkler (ilerleme çubukları)"
+
+msgid "Set the progress bar colours for each section."
+msgstr "Her bölüm için ilerleme çubuğu renklerini ayarlar."
+
+msgid "Use saved colours for icon fill"
+msgstr "Simge dolgusu için kayıtlı renkleri kullan"
+
+msgid ""
+"When enabled, icons will match the colour of their section's progress\n"
+"bar."
+msgstr ""
+"Etkinleştirildiğinde, simgeler kendi bölümlerinin ilerleme çubuğu rengiyle\n"
+"eşleşir."
+
+msgid "Book section"
+msgstr "Kitap bölümü"
+
+msgid "Chapter section"
+msgstr "Bölüm kesimi"
+
+msgid "Daily goal section"
+msgstr "Günlük hedef bölümü"
+
+msgid "Battery section (High)"
+msgstr "Pil bölümü (Yüksek)"
+
+msgid "Battery section (Med)"
+msgstr "Pil bölümü (Orta)"
+
+msgid "Battery section (Low)"
+msgstr "Pil bölümü (Düşük)"
+
+msgid "Battery section (Charging)"
+msgstr "Pil bölümü (Şarj oluyor)"
+
+msgid "Message section"
+msgstr "Mesaj bölümü"
+
+msgid "Colours (modes)"
+msgstr "Renkler (modlar)"
+
+msgid ""
+"Configure colours for monochrome mode, infobox background, and text.\n"
+"Light and dark correspond to the current dark mode setting. Monochrome\n"
+"replaces all colours with that single chosen color."
+msgstr ""
+"Tek renkli mod, bilgi kutusu arka planı ve metin için renkleri yapılandırın.\n"
+"Açık ve koyu, mevcut karanlık mod ayarına karşılık gelir. Tek renkli mod\n"
+"tüm renklerin yerine seçilen tek rengi koyar."
+
+msgid "Monochrome mode (light)"
+msgstr "Tek renkli mod (açık)"
+
+msgid "Monochrome mode (dark)"
+msgstr "Tek renkli mod (koyu)"
+
+msgid "Background (light)"
+msgstr "Arka plan (açık)"
+
+msgid "Background (dark)"
+msgstr "Arka plan (koyu)"
+
+msgid "Text (light)"
+msgstr "Metin (açık)"
+
+msgid "Text (dark)"
+msgstr "Metin (koyu)"
+
+msgid "Icon set"
+msgstr "Simge seti"
+
+msgid "Choose from different icon styles."
+msgstr "Farklı simge stillerinden seçin."
+
+msgid "Icon size"
+msgstr "Simge boyutu"
+
+msgid "Size of section icons."
+msgstr "Bölüm simgelerinin boyutu."
+
+msgid "Icon size (px)"
+msgstr "Simge boyutu (px)"
+
+msgid "32–48px suits most layouts."
+msgstr "32–48px çoğu düzen için uygundur."
+
+msgid "Progress bar height"
+msgstr "İlerleme çubuğu yüksekliği"
+
+msgid "Thickness of the horizontal progress bars shown in each section."
+msgstr "Her bölümde gösterilen yatay ilerleme çubuklarının kalınlığı."
+
+msgid "Bar height (px)"
+msgstr "Çubuk yüksekliği (px)"
+
+msgid "4–8px is subtle. 12–16px is standard. 20+px is heavy."
+msgstr "4–8px ince. 12–16px standart. 20px+ kalın."
+
+msgid "Show icons"
+msgstr "Simgeleri göster"
+
+msgid "Display decorative icons at the start of each section."
+msgstr "Her bölümün başında dekoratif simgeler gösterir."
+
+msgid "Show progress bars"
+msgstr "İlerleme çubuklarını göster"
+
+msgid "Display horizontal progress bars showing completion percentage."
+msgstr "Tamamlanma yüzdesini gösteren yatay ilerleme çubuklarını gösterir."
+
+msgid "Show decorative bar on message section"
+msgstr "Mesaj bölümünde dekoratif çubuk göster"
+
+msgid ""
+"Displays a purely decorative progress bar under the message section,\n"
+"matching the message section colour and the progress bars in other\n"
+"sections."
+msgstr ""
+"Mesaj bölümünün altında, mesaj bölümü rengiyle ve diğer bölümlerin\n"
+"ilerleme çubuklarıyla eşleşen tamamen dekoratif bir ilerleme çubuğu\n"
+"gösterir."
+
+msgid "Inline progress bars"
+msgstr "Satır içi ilerleme çubukları"
+
+msgid ""
+"Progress bars sit inside the text area rather than spanning the full\n"
+"section width. Automatically enabled when corner radius > 0."
+msgstr ""
+"İlerleme çubukları tam bölüm genişliği yerine metin alanının içinde yer\n"
+"alır. Köşe yarıçapı > 0 olduğunda otomatik olarak etkinleşir."
+
+msgid "Enable inline bars"
+msgstr "Satır içi çubukları etkinleştir"
+
+msgid "When section gaps are enabled and corner radius > 0, inline bars are automatically enabled."
+msgstr "Bölüm boşlukları etkinleştirildiğinde ve köşe yarıçapı > 0 olduğunda, satır içi çubuklar otomatik olarak etkinleştirilir."
+
+msgid "Inline bars are force-enabled because section gaps and corner radius are both set. Set corner radius to 0 or disable section gaps to toggle inline bars independently."
+msgstr "Bölüm boşlukları ve köşe yarıçapı her ikisi de ayarlı olduğundan satır içi çubuklar zorla etkinleştirildi. Satır içi çubukları bağımsız olarak değiştirmek için köşe yarıçapını 0 yapın veya bölüm boşluklarını devre dışı bırakın."
+
+msgid "Inline bar border size"
+msgstr "Satır içi çubuk kenarlık boyutu"
+
+msgid "Thickness of the border around the inline progress bar."
+msgstr "Satır içi ilerleme çubuğunun etrafındaki kenarlığın kalınlığı."
+
+msgid "Inline bar border size (px)"
+msgstr "Satır içi çubuk kenarlık boyutu (px)"
+
+msgid "0 for no border. 1–2px adds a subtle outline around the bar."
+msgstr "0 kenarlık yok. 1–2px çubuğun etrafına ince bir çerçeve ekler."
+
+msgid "Bar width"
+msgstr "Çubuk genişliği"
+
+msgid ""
+"Width of the inline progress bar as a percentage of the available text\n"
+"column. Alignment follows the text alignment setting."
+msgstr ""
+"Satır içi ilerleme çubuğunun kullanılabilir metin sütununun yüzdesi olarak\n"
+"genişliği. Hizalama metin hizalama ayarını takip eder."
+
+msgid "Inline bar width (%)"
+msgstr "Satır içi çubuk genişliği (%)"
+
+msgid ""
+"100% fills the text column. The bar is aligned to match your text\n"
+"alignment setting."
+msgstr ""
+"100% metin sütununu doldurur. Çubuk metin hizalama ayarınızla eşleşecek\n"
+"şekilde hizalanır."
+
+msgid "Title font face"
+msgstr "Başlık yazı tipi"
+
+msgid "Choose the font face for the main heading text in each section"
+msgstr "Her bölümdeki ana başlık metni için yazı tipini seçin"
+
+msgid "Title font size"
+msgstr "Başlık yazı boyutu"
+
+msgid "Choose the font size for the main heading text in each section."
+msgstr "Her bölümdeki ana başlık metni için yazı boyutunu seçin."
+
+msgid "10–12px works well for most screens."
+msgstr "10–12px çoğu ekran için iyi çalışır."
+
+msgid "Subtitle font face"
+msgstr "Alt başlık yazı tipi"
+
+msgid ""
+"Choose the font face for the information below the main heading text."
+msgstr "Ana başlık metninin altındaki bilgi için yazı tipini seçin."
+
+msgid "Subtitle font size"
+msgstr "Alt başlık yazı boyutu"
+
+msgid ""
+"Choose the font size for the information below the main heading text."
+msgstr "Ana başlık metninin altındaki bilgi için yazı boyutunu seçin."
+
+msgid "9–11px works well for most screens."
+msgstr "9–11px çoğu ekran için iyi çalışır."
+
+msgid "Text alignment"
+msgstr "Metin hizalaması"
+
+msgid "Horizontal alignment of all text within sections."
+msgstr "Bölümler içindeki tüm metnin yatay hizalaması."
+
+msgid "Book multiline titles"
+msgstr "Kitap çok satırlı başlıklar"
+
+msgid ""
+"If deselected book titles will be truncated to a single line with an\n"
+"ellipsis"
+msgstr ""
+"Seçili değilse kitap başlıkları üç nokta ile tek bir satıra kısaltılır"
+
+msgid "Chapter multiline titles"
+msgstr "Bölüm çok satırlı başlıklar"
+
+msgid ""
+"If deselected chapter titles will be truncated to a single line with an\n"
+"ellipsis"
+msgstr ""
+"Seçili değilse bölüm başlıkları üç nokta ile tek bir satıra kısaltılır"
+
+msgid "Clean chapter titles"
+msgstr "Bölüm başlıklarını temizle"
+
+msgid ""
+"Removes structural prefixes like 'Chapter 5:' or 'Part II' from chapter\n"
+"titles and normalises capitalisation. Only works correctly with English\n"
+"chapter titles - disable for non-English books."
+msgstr ""
+"'Bölüm 5:' veya 'Kısım II' gibi yapısal önekleri bölüm başlıklarından\n"
+"kaldırır ve büyük harf kullanımını normalleştirir. Yalnızca İngilizce\n"
+"bölüm başlıklarıyla doğru çalışır — İngilizce olmayan kitaplar için\n"
+"devre dışı bırakın."
+
+msgid "Make titles bold"
+msgstr "Başlıkları kalın yap"
+
+msgid ""
+"Display the section titles in bold font weight for extra emphasis."
+msgstr "Bölüm başlıklarını ek vurgu için kalın yazı ağırlığında gösterir."
+
+msgid "No background"
+msgstr "Arka plan yok"
+
+msgid "Book cover"
+msgstr "Kitap kapağı"
+
+msgid "Solid colour"
+msgstr "Düz renk"
+
+msgid "Random image from folder"
+msgstr "Klasörden rastgele görsel"
+
+msgid "Stretch book cover to fill"
+msgstr "Kitap kapağını dolduracak şekilde uzat"
+
+msgid ""
+"When disabled, book cover will be scaled to fit within the screen while\n"
+"preserving aspect ratio."
+msgstr ""
+"Devre dışı bırakıldığında, kitap kapağı en boy oranı korunarak ekrana\n"
+"sığacak şekilde ölçeklendirilir."
+
+msgid "Cover fill colour"
+msgstr "Kapak dolgu rengi"
+
+msgid "Background colour for non-stretched covers."
+msgstr "Uzatılmamış kapaklar için arka plan rengi."
+
+msgid "Pick cover fill colour"
+msgstr "Kapak dolgu rengi seç"
+
+msgid "Cover alignment"
+msgstr "Kapak hizalaması"
+
+msgid "Horizontal alignment of the cover image when not stretched."
+msgstr "Uzatılmadığında kapak görselinin yatay hizalaması."
+
+msgid "Solid background colour"
+msgstr "Düz arka plan rengi"
+
+msgid "Pick background colour"
+msgstr "Arka plan rengi seç"
+
+msgid "Background folder path"
+msgstr "Arka plan klasör yolu"
+
+msgid ""
+"No images found in the selected folder. No background will be shown."
+msgstr "Seçilen klasörde görsel bulunamadı. Arka plan gösterilmeyecek."
+
+msgid "Background type"
+msgstr "Arka plan türü"
+
+msgid "Background overlay"
+msgstr "Arka plan üst katmanı"
+
+msgid "Add a colour layer over the background to reduce contrast."
+msgstr "Kontrastı azaltmak için arka planın üzerine bir renk katmanı ekler."
+
+msgid "Overlay colour"
+msgstr "Üst katman rengi"
+
+msgid "Background overlay colour"
+msgstr "Arka plan üst katman rengi"
+
+msgid "Overlay opacity"
+msgstr "Üst katman opaklığı"
+
+msgid "Overlay opacity (%)"
+msgstr "Üst katman opaklığı (%)"
+
+msgid "0% is no overlay. 20–40% adds a soft tint. 100% is fully opaque."
+msgstr "0% üst katman yok. 20–40% yumuşak renk tonu ekler. 100% tamamen opak."
+
+msgid "Reset layout & spacing settings to default"
+msgstr "Düzen ve boşluk ayarlarını varsayılana sıfırla"
+
+msgid "Are you sure you want to reset layout & spacing settings?"
+msgstr "Düzen ve boşluk ayarlarını sıfırlamak istediğinize emin misiniz?"
+
+msgid "Layout & spacing settings reset to defaults"
+msgstr "Düzen ve boşluk ayarları varsayılana sıfırlandı"
+
+msgid "Reset contents settings to default"
+msgstr "İçerik ayarlarını varsayılana sıfırla"
+
+msgid "Are you sure you want to reset contents settings?"
+msgstr "İçerik ayarlarını sıfırlamak istediğinize emin misiniz?"
+
+msgid "Contents settings reset to defaults"
+msgstr "İçerik ayarları varsayılana sıfırlandı"
+
+msgid "Reset colours, icons & bars settings to default"
+msgstr "Renk, simge ve çubuk ayarlarını varsayılana sıfırla"
+
+msgid "Are you sure you want to reset colours, icons & bars settings?"
+msgstr "Renk, simge ve çubuk ayarlarını sıfırlamak istediğinize emin misiniz?"
+
+msgid "Colours, icons & bars settings reset to defaults"
+msgstr "Renk, simge ve çubuk ayarları varsayılana sıfırlandı"
+
+msgid "Reset fonts & text settings to default"
+msgstr "Yazı tipi ve metin ayarlarını varsayılana sıfırla"
+
+msgid "Are you sure you want to reset fonts & text settings?"
+msgstr "Yazı tipi ve metin ayarlarını sıfırlamak istediğinize emin misiniz?"
+
+msgid "Fonts & text settings reset to defaults"
+msgstr "Yazı tipi ve metin ayarları varsayılana sıfırlandı"
+
+msgid "Reset background settings to default"
+msgstr "Arka plan ayarlarını varsayılana sıfırla"
+
+msgid "Are you sure you want to reset background settings?"
+msgstr "Arka plan ayarlarını sıfırlamak istediğinize emin misiniz?"
+
+msgid "Background settings reset to defaults"
+msgstr "Arka plan ayarları varsayılana sıfırlandı"
+
+msgid "Reset the settings in this part of the menu to their defaults."
+msgstr "Menünün bu bölümündeki ayarları varsayılanlarına sıfırlar."
+
+msgid "factory defaults"
+msgstr "fabrika varsayılanları"
+
+#, lua-format
+msgid "Values will be restored from: %s"
+msgstr "Değerler şuradan geri yüklenecek: %s"
+
+msgid "Reset"
+msgstr "Sıfırla"
+
+msgid "Save"
+msgstr "Kaydet"
+
+msgid "None"
+msgstr "Yok"
+
+msgid "Active preset: "
+msgstr "Etkin önayar: "
+
+msgid "Save current settings as new preset"
+msgstr "Mevcut ayarları yeni önayar olarak kaydet"
+
+#, lua-format
+msgid "What would you like to do with preset '%s'?"
+msgstr "'%s' önayarıyla ne yapmak istersiniz?"
+
+msgid "Update"
+msgstr "Güncelle"
+
+#, lua-format
+msgid "Are you sure you want to overwrite preset '%s' with current settings?"
+msgstr "Mevcut ayarlarla '%s' önayarının üzerine yazmak istediğinize emin misiniz?"
+
+#, lua-format
+msgid "Preset '%s' was updated with current settings"
+msgstr "'%s' önayarı mevcut ayarlarla güncellendi"
+
+#, lua-format
+msgid "Are you sure you want to delete preset '%s'?"
+msgstr "'%s' önayarını silmek istediğinize emin misiniz?"
+
+msgid "Rename"
+msgstr "Yeniden adlandır"
+
+msgid "Enter new preset name"
+msgstr "Yeni önayar adı girin"
+
+msgid "[ Built-in Presets ]"
+msgstr "[ Yerleşik Önayarlar ]"
+
+msgid "[ Your Custom Presets ]"
+msgstr "[ Özel Önayarlarınız ]"
+
+msgid "Book info"
+msgstr "Kitap bilgisi"
+
+msgid "Chapter info"
+msgstr "Bölüm bilgisi"
+
+msgid "Daily info"
+msgstr "Günlük bilgi"
+
+msgid "Battery info"
+msgstr "Pil bilgisi"
+
+msgid "Message info"
+msgstr "Mesaj bilgisi"
+
+msgid "Reorder sections"
+msgstr "Bölümleri yeniden sırala"
+
+msgid "Section order"
+msgstr "Bölüm sırası"
+
+msgid "At least one section must remain visible."
+msgstr "En az bir bölüm görünür kalmalıdır."
+
+msgid "Show cover image above book info"
+msgstr "Kitap bilgisinin üzerinde kapak görselini göster"
+
+msgid ""
+"Display the book's cover image above the title and progress in the book\n"
+"section."
+msgstr ""
+"Kitap bölümündeki başlık ve ilerlemenin üzerinde kitap kapak görselini\n"
+"gösterir."
+
+msgid "Cover image size"
+msgstr "Kapak görseli boyutu"
+
+msgid "Height limit for the cover image in pixels."
+msgstr "Kapak görselinin piksel cinsinden yükseklik sınırı."
+
+msgid "Cover image size (pixels)"
+msgstr "Kapak görseli boyutu (piksel)"
+
+msgid ""
+"100–150px fits neatly in most layouts. Go up to 250px+ for a prominent\n"
+"cover."
+msgstr ""
+"100–150px çoğu düzene düzgünce sığar. Belirgin bir kapak için 250px+\n"
+"değerine gidin."
+
+msgid "Cover border size"
+msgstr "Kapak kenarlık boyutu"
+
+msgid ""
+"Width of the border drawn around the cover image. Set to 0 for no\n"
+"border."
+msgstr ""
+"Kapak görseli etrafına çizilen kenarlığın genişliği. Kenarlık istemiyorsanız\n"
+"0 girin."
+
+msgid "Cover border size (pixels)"
+msgstr "Kapak kenarlık boyutu (piksel)"
+
+msgid "1–3px for a subtle outline. 0 to disable."
+msgstr "1–3px ince bir çerçeve. 0 devre dışı bırakmak için."
+
+msgid "Align cover to text alignment"
+msgstr "Kapağı metin hizalamasıyla hizala"
+
+msgid ""
+"When enabled, the cover image follows the text alignment setting instead\n"
+"of always being centered."
+msgstr ""
+"Etkinleştirildiğinde, kapak görseli her zaman ortalanmak yerine metin\n"
+"hizalama ayarını takip eder."
+
+msgid "Cover image"
+msgstr "Kapak görseli"
+
+msgid "Configure the book cover image shown above the book section."
+msgstr "Kitap bölümünün üzerinde gösterilen kitap kapak görselini yapılandırın."
+
+msgid "Show book author"
+msgstr "Kitap yazarını göster"
+
+msgid "Display the author name below the book title."
+msgstr "Kitap başlığının altında yazar adını gösterir."
+
+msgid "Show series name"
+msgstr "Seri adını göster"
+
+msgid "Display the book's series name and index below the title."
+msgstr "Başlığın altında kitabın seri adını ve seri numarasını gösterir."
+
+msgid "Show book pages (pg x of x)"
+msgstr "Kitap sayfalarını göster (sy. x / x)"
+
+msgid "Display total page count for the entire book."
+msgstr "Kitabın tamamı için toplam sayfa sayısını gösterir."
+
+msgid "Show book time remaining"
+msgstr "Kalan okuma süresini göster"
+
+msgid ""
+"Estimated reading time left to finish the book, based on your average\n"
+"reading speed."
+msgstr ""
+"Ortalama okuma hızınıza göre kitabı bitirmek için kalan tahmini okuma\n"
+"süresi."
+
+msgid "Show chapter count (ch x of x)"
+msgstr "Bölüm sayısını göster (bl. x / x)"
+
+msgid ""
+"Display current chapter number and total chapters (e.g., 'Chapter 5 of\n"
+"12')."
+msgstr ""
+"Mevcut bölüm numarasını ve toplam bölüm sayısını gösterir\n"
+"(örn. '5. Bölüm / 12')."
+
+msgid "Show chapter pages (pg x of x)"
+msgstr "Bölüm sayfalarını göster (sy. x / x)"
+
+msgid "Display the number of pages in the current chapter."
+msgstr "Mevcut bölümdeki sayfa sayısını gösterir."
+
+msgid "Show chapter time remaining"
+msgstr "Bölümde kalan süreyi göster"
+
+msgid ""
+"Estimated time to finish the current chapter, based on your reading\n"
+"speed."
+msgstr ""
+"Okuma hızınıza göre mevcut bölümü bitirmek için tahmini süre."
+
+msgid "Title Line"
+msgstr "Başlık Satırı"
+
+msgid "Choose what the top line of the daily info section displays."
+msgstr "Günlük bilgi bölümünün üst satırında neyin gösterileceğini seçin."
+
+msgid "Pages read today"
+msgstr "Bugün okunan sayfalar"
+
+msgid "e.g. '35 pages read today'"
+msgstr "örn. 'bugün 35 sayfa okundu'"
+
+msgid "Time read today"
+msgstr "Bugün okuma süresi"
+
+msgid "e.g. '42 mins read today'"
+msgstr "örn. 'bugün 42 dk okundu'"
+
+msgid "Pages and time read today"
+msgstr "Bugün okunan sayfalar ve süre"
+
+msgid "e.g. '35 pgs & 42 mins read today'"
+msgstr "örn. 'bugün 35 sy. ve 42 dk okundu'"
+
+msgid "Goal type"
+msgstr "Hedef türü"
+
+msgid ""
+"Choose whether your daily goal tracks pages read or time spent reading."
+msgstr "Günlük hedefinizin okunan sayfalara mı yoksa okuma süresine mi göre olacağını seçin."
+
+msgid "Page goal"
+msgstr "Sayfa hedefi"
+
+msgid "Track daily progress by number of pages read."
+msgstr "Günlük ilerlemeyi okunan sayfa sayısına göre takip eder."
+
+msgid "Time goal"
+msgstr "Süre hedefi"
+
+msgid "Track daily progress by minutes spent reading."
+msgstr "Günlük ilerlemeyi okumaya harcanan dakikalara göre takip eder."
+
+msgid "Daily page goal"
+msgstr "Günlük sayfa hedefi"
+
+msgid "Set how many pages you aim to read each day."
+msgstr "Her gün okumayı hedeflediğiniz sayfa sayısını ayarlayın."
+
+msgid "Daily page goal (pages)"
+msgstr "Günlük sayfa hedefi (sayfa)"
+
+msgid "20–50 pages for a daily habit. 50–100 for dedicated reading sessions."
+msgstr "Günlük alışkanlık için 20–50 sayfa. Yoğun okuma seansları için 50–100."
+
+msgid "Daily time goal"
+msgstr "Günlük süre hedefi"
+
+msgid "Set how many minutes you aim to read each day."
+msgstr "Her gün okumayı hedeflediğiniz dakika sayısını ayarlayın."
+
+msgid "Daily time goal (minutes)"
+msgstr "Günlük süre hedefi (dakika)"
+
+msgid ""
+"20–30 mins for a daily habit. 60+ mins for dedicated reading sessions."
+msgstr "Günlük alışkanlık için 20–30 dk. Yoğun okuma seansları için 60+ dk."
+
+msgid "Show current reading streak"
+msgstr "Mevcut okuma serisini göster"
+
+msgid "Display consecutive days you've met your reading goal."
+msgstr "Okuma hedefinizi tutturduğunuz ardışık günleri gösterir."
+
+msgid "Show weekly progress"
+msgstr "Haftalık ilerlemeyi göster"
+
+msgid ""
+"Days this week you have met your reading goal, shown as completed days\n"
+"out of the current weekday (Monday = 1... Sunday = 7). For example:\n"
+"Thursday with goals met on Monday and Tuesday will show 2/4."
+msgstr ""
+"Bu hafta okuma hedefinizi tutturduğunuz günler, tamamlanan günler olarak\n"
+"gösterilir (Pazartesi = 1... Pazar = 7). Örnek: Pazartesi ve Salı hedef\n"
+"tutturulmuşsa Perşembe günü 2/4 gösterir."
+
+msgid "Show daily goal"
+msgstr "Günlük hedefi göster"
+
+msgid ""
+"Target page mode: e.g. 50 page goal. Target time mode: e.g. 1hr 15min\n"
+"time goal."
+msgstr ""
+"Hedef sayfa modu: örn. 50 sayfa hedefi. Hedef süre modu: örn. 1sa 15dk\n"
+"süre hedefi."
+
+msgid "Show current time/date on separate line"
+msgstr "Geçerli saat/tarihi ayrı satırda göster"
+
+msgid ""
+"Display time/date on its own line below battery percentage instead of\n"
+"inline."
+msgstr ""
+"Saat/tarihi satır içi yerine pil yüzdesinin altında kendi satırında\n"
+"gösterir."
+
+msgid "Enable 'Show battery time remaining' to use this option"
+msgstr "Bu seçeneği kullanmak için 'Kalan pil süresini göster'i etkinleştirin"
+
+msgid "Show date instead of time"
+msgstr "Saat yerine tarih göster"
+
+msgid ""
+"Display current date (e.g. '29th Jan') instead of time in battery\n"
+"section"
+msgstr ""
+"Pil bölümünde saat yerine geçerli tarihi (örn. '29 Oca') gösterir"
+
+msgid "Show battery consumption rate"
+msgstr "Pil tüketim hızını göster"
+
+msgid ""
+"Display battery drain percentage per hour based on recent usage or\n"
+"manual input (see advanced menu)"
+msgstr ""
+"Son kullanıma veya manuel girişe göre saatlik pil tüketim yüzdesini\n"
+"gösterir (gelişmiş menüye bakın)"
+
+msgid "Show battery time remaining"
+msgstr "Kalan pil süresini göster"
+
+msgid ""
+"Estimated hours and minutes until battery is depleted, based on current\n"
+"drain rate."
+msgstr ""
+"Mevcut tüketim hızına göre pilin bitmesine kalan tahmini saat ve dakika."
+
+msgid "Custom message"
+msgstr "Özel mesaj"
+
+msgid "Use a separate custom message just for Customisable Sleep Screen"
+msgstr "Özelleştirilebilir Uyku Ekranı için ayrı bir özel mesaj kullan"
+
+msgid "Book highlights"
+msgstr "Kitap vurguları"
+
+msgid "Show a random highlight from the current book"
+msgstr "Mevcut kitaptan rastgele bir vurgu gösterir"
+
+msgid "Custom quotes"
+msgstr "Özel alıntılar"
+
+msgid ""
+"Show a random quote from the custom_quotes.lua file in the plugin\n"
+"folder."
+msgstr ""
+"Eklenti klasöründeki custom_quotes.lua dosyasından rastgele bir alıntı\n"
+"gösterir."
+
+msgid "KOReader sleep message"
+msgstr "KOReader uyku mesajı"
+
+msgid ""
+"Uses KOReaders own sleep screen message function. Enable 'Add custom\n"
+"message to sleep screen' to use this (Settings → Screen → Sleep screen\n"
+"→ Sleep screen message)."
+msgstr ""
+"KOReader'ın kendi uyku ekranı mesaj işlevini kullanır. Bunu kullanmak\n"
+"için 'Uyku ekranına özel mesaj ekle'yi etkinleştirin (Ayarlar → Ekran\n"
+"→ Uyku ekranı → Uyku ekranı mesajı)."
+
+msgid "Show message header"
+msgstr "Mesaj başlığını göster"
+
+msgid "Show or hide the header label above the message text."
+msgstr "Mesaj metninin üzerindeki başlık etiketini gösterir veya gizler."
+
+msgid "Message header"
+msgstr "Mesaj başlığı"
+
+msgid ""
+"Custom header text displayed above the message. Supports variables: %d,\n"
+"%y, %t, %b, %r."
+msgstr ""
+"Mesajın üzerinde gösterilen özel başlık metni. Değişkenleri destekler:\n"
+"%d, %y, %t, %b, %r."
+
+msgid "Change custom message header"
+msgstr "Özel mesaj başlığını değiştir"
+
+msgid "Edit custom message"
+msgstr "Özel mesajı düzenle"
+
+msgid ""
+"Write your custom message text. Only active when 'Custom message' is\n"
+"selected. Supports variables: %d, %y, %t, %b, %r."
+msgstr ""
+"Özel mesaj metninizi yazın. Yalnızca 'Özel mesaj' seçildiğinde etkin.\n"
+"Değişkenleri destekler: %d, %y, %t, %b, %r."
+
+msgid "Custom Customisable Sleep Screen message"
+msgstr "Özelleştirilebilir Uyku Ekranı özel mesajı"
+
+msgid "Book highlight maximum length"
+msgstr "Kitap vurgusu maksimum uzunluğu"
+
+msgid "Maximum characters to display for highlights (0 = no limit)."
+msgstr "Vurgular için görüntülenecek maksimum karakter sayısı (0 = sınır yok)."
+
+msgid "Maximum highlight length (characters)"
+msgstr "Maksimum vurgu uzunluğu (karakter)"
+
+msgid ""
+"100–150 chars keeps highlights readable. Set to 0 to show the full\n"
+"highlight."
+msgstr ""
+"100–150 karakter vurguları okunabilir tutar. Tam vurguyu göstermek için\n"
+"0 girin."
+
+msgid "Add quotation marks to highlights"
+msgstr "Vurgulara tırnak işareti ekle"
+
+msgid ""
+"Wraps all highlights in curly double quotes, removing any pre-existing\n"
+"quotation marks."
+msgstr ""
+"Tüm vurguları kıvrık çift tırnakla sarar ve mevcut tırnak işaretlerini\n"
+"kaldırır."
+
+msgid "Show highlight location"
+msgstr "Vurgu konumunu göster"
+
+msgid ""
+"Display the chapter title and page number where the highlight is found,\n"
+"shown below the highlight text."
+msgstr ""
+"Vurgunun bulunduğu bölüm başlığını ve sayfa numarasını vurgu metninin\n"
+"altında gösterir."
+
+msgid "Show quote attribution"
+msgstr "Alıntı kaynağını göster"
+
+msgid ""
+"Display the author and book name below the quote, if provided in\n"
+"custom_quotes.lua."
+msgstr ""
+"custom_quotes.lua dosyasında belirtilmişse alıntının altında yazar ve\n"
+"kitap adını gösterir."
+
+msgid "Show titles (top line)"
+msgstr "Başlıkları göster (üst satır)"
+
+msgid ""
+"Display the main heading text in each section. At least one of titles or\n"
+"subtitles must be visible."
+msgstr ""
+"Her bölümdeki ana başlık metnini gösterir. Başlıklar veya alt başlıklardan\n"
+"en az biri görünür olmalıdır."
+
+msgid "Cannot hide both titles and subtitles. At least one must be visible."
+msgstr "Başlıklar ve alt başlıklar aynı anda gizlenemez. En az biri görünür olmalıdır."
+
+msgid "Show subtitles (bottom lines)"
+msgstr "Alt başlıkları göster (alt satırlar)"
+
+msgid ""
+"Display information below main heading text in each section. At least\n"
+"one of titles or subtitles must be visible."
+msgstr ""
+"Her bölümdeki ana başlık metninin altındaki bilgiyi gösterir. Başlıklar\n"
+"veya alt başlıklardan en az biri görünür olmalıdır."
+
+msgid "Displayed sections"
+msgstr "Gösterilen bölümler"
+
+msgid ""
+"Toggle which sections show on the sleep screen. At least one must be\n"
+"visible."
+msgstr ""
+"Uyku ekranında hangi bölümlerin gösterileceğini açıp kapatır. En az biri\n"
+"görünür olmalıdır."
+
+msgid "[ Section Content ]"
+msgstr "[ Bölüm İçeriği ]"
+
+msgid "Configure book-specific details."
+msgstr "Kitaba özgü ayrıntıları yapılandırın."
+
+msgid "Configure chapter-specific details"
+msgstr "Bölüme özgü ayrıntıları yapılandırın"
+
+msgid "Configure reading goal details"
+msgstr "Okuma hedefi ayrıntılarını yapılandırın"
+
+msgid "Battery section"
+msgstr "Pil bölümü"
+
+msgid "Configure battery & time/date details"
+msgstr "Pil ve saat/tarih ayrıntılarını yapılandırın"
+
+msgid "Configure message-specific details"
+msgstr "Mesaja özgü ayrıntıları yapılandırın"
+
+msgid "Customisable sleep screen settings"
+msgstr "Özelleştirilebilir uyku ekranı ayarları"
+
+msgid "Customisable sleep screen presets"
+msgstr "Özelleştirilebilir uyku ekranı önayarları"
+
+msgid "Cycle through customisable sleep screen presets"
+msgstr "Özelleştirilebilir uyku ekranı önayarları arasında geçiş yap"
+
+msgid "Customisable sleep screen"
+msgstr "Özelleştirilebilir uyku ekranı"
+
+msgid "Enable customisable sleep screen"
+msgstr "Özelleştirilebilir uyku ekranını etkinleştir"
+
+msgid ""
+"Customisable Sleep Screen: no book data found.\n"
+"\n"
+"Open a book and trigger the sleep screen at least once before it will\n"
+"work in the file manager."
+msgstr ""
+"Özelleştirilebilir Uyku Ekranı: kitap verisi bulunamadı.\n"
+"\n"
+"Dosya yöneticisinde çalışması için bir kitap açın ve uyku ekranını en\n"
+"az bir kez tetikleyin."
