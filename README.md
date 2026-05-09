@@ -15,16 +15,18 @@ Originally released as a patch, this project has now been rebuilt as a KOReader 
 - Save and load your own configurations, with 10 built-in presets included
 - Light/dark/monochrome modes (suitable for non-colour e-readers)
 - Background options: book cover (with optional overlay), images from folder, solid colour or transparent
-- Coloured progress bars for percentage stats
+- Coloured progress bars for percentage stats with option to place inline with text
 - Customise info-box background and text colour
 - Dynamic icons for sections, with 7 icon sets included
 - Reorder sections, adjust section spacing, show/hide elements
-- Customise layout, position, opacity, borders, font face/size, text alignment
+- Customise layout, padding, position, opacity, borders, font face/size, text alignment, corner rounding
 - Option to clean chapter title (remove prefixes like "Chapter 5:", leaving chapter names only)
 - Option to show in file manager (displays last book's data)
 - Choose whether daily stats apply to all books or the current book only
 - Quick access through taps and gestures shortcuts
-- Language support for 12 languages: `de`, `es`, `fr`, `it`, `ja`, `ko`, `nl`, `pl`, `pt_BR`, `ru`, `vi`, `zh_CN`
+- Sleep screen orientation lock
+- Export sleep screen as image for use with android screen saver.
+- Language support for 13 languages: `de`, `es`, `fr`, `it`, `ja`, `ko`, `nl`, `pl`, `pt_BR`, `ru`, `tr`, `vi`, `zh_CN`
 
 ## Compatibility:
 
@@ -34,9 +36,9 @@ The following list assumes KOReader’s latest build (2026.03 Snowflake) is inst
 | ---------------------- | --------------- | ----------------------------------------------------------------- |
 | Kobo                   | ✅ Works         | Most supported platform. Tested on Kobo Libra Colour              |
 | Kindle                 | ✅ Works         | Tested on Kindle PW 10^(th) Gen                                   |
+| Android / Desktop      | 🟠 Partial support | KOReader’s Sleep Screen feature is unavailable on these platforms however an image can be exported to use with the devices screensaver. |
 | Cervantes / reMarkable | 🟡 Unverified   | Untested on these devices.                                        |
 | PocketBook             | ❌ Not supported | Device firmware overrides KOReader’s Sleep Screen                 |
-| Android / Desktop      | ❌ Not supported | KOReader’s Sleep Screen feature is unavailable on these platforms |
 
 ## Notes:
 
@@ -52,7 +54,12 @@ The following list assumes KOReader’s latest build (2026.03 Snowflake) is inst
 3. Restart KOReader
 4. Enable the plugin in  'Settings → Screen → Customisable Sleep Screen'
 
-**Upgrading from v1:** If you’re upgrading from the original patch version, delete the old patch files and folders first (`2-customisable-sleep-screen.lua`, `customisable-sleep-screen-fonts` and `customisable-sleep-screen-iconsets`). **Note:** Presets carry over, but any personally added fonts or icon sets will need to be copied into the new plugin folder structure.
+## Language Support:
+
+1. A .pot template file is included in the `l10n` folder. You can use this to create a translation for any language.
+2. Make a copy of the .pot file and rename as a .po with your language locale (e.g. es.po, fr.po, it.po etc.).
+3. Open the file with a text editor or a dedicated program like [Poedit](https://poedit.net/) and fill each msgstr with your translation. For ease, I have split the main display strings (those shown on the sleep screen) into their own section at the top of the file if that's all that's important to you for translation.
+4. Save the .po file in the `l10n/` folder and restart KOReader to see it available as an option in the language menu.
 
 ## Fonts, Icons, Wallpapers & Attribution
 
