@@ -316,7 +316,7 @@ function CustomisableSleepScreen:init()
     end
 end
 
-function CustomisableSleepScreen:_exportToCoverImage(ui, state, book_data)
+function CustomisableSleepScreen:_exportToCoverImage(ui, state, book_data, export_widget)
 
     if G_reader_settings:readSetting(SETTINGS.TYPE) ~= "customisable_ss" then
         return
@@ -327,8 +327,9 @@ function CustomisableSleepScreen:_exportToCoverImage(ui, state, book_data)
     local export_path = plugin_store:readSetting(SETTINGS.EXPORT_PATH)
     if not export_path or export_path == "" then return end
 
-    local ib     = getInfobox()
-    local widget = ib.buildInfoBox(ui, state, book_data)
+    local ib          = getInfobox()
+    local owns_widget = export_widget == nil
+    local widget      = export_widget or ib.buildInfoBox(ui, state, book_data)
 
     if not widget then return end
 
@@ -339,7 +340,10 @@ function CustomisableSleepScreen:_exportToCoverImage(ui, state, book_data)
     local h  = Screen:getHeight()
 
     local ok_bb, bb = pcall(Blitbuffer.new, w, h, Blitbuffer.TYPE_BBRGB32)
-    if not ok_bb then return end
+    if not ok_bb then
+        logger.warn("[Customisable Sleep Screen] export failed: could not create blitbuffer: " .. tostring(bb))
+        return
+    end
 
     local wrapped = FrameContainer:new {
         bordersize = 0,
@@ -350,9 +354,46 @@ function CustomisableSleepScreen:_exportToCoverImage(ui, state, book_data)
 
     export_path = export_path:gsub("/$", "") .. "/screensaver.png"
     local ok = bb:writeToFile(export_path, "png", 90)
+    if not ok then
+        logger.warn("[Customisable Sleep Screen] export failed: could not write " .. tostring(export_path))
+    else
+        logger.info("[Customisable Sleep Screen] exported sleep screen to " .. tostring(export_path))
+    end
     bb:free()
 
-    ib.freeTrackedBBs()
+    if owns_widget then
+        ib.freeTrackedBBs()
+    end
+end
+
+function CustomisableSleepScreen:_exportCurrentBookData()
+    local ReaderUI = getReaderUI()
+    local ui       = ReaderUI and ReaderUI.instance
+    local ib       = getInfobox()
+
+    if ui and ui.document then
+        if ui.statistics and ui.statistics.id_curr_book then
+            local avg_time_before = ui.statistics.avg_time
+            pcall(function() ui.statistics:insertDB(ui.statistics.id_curr_book) end)
+            ui.statistics.avg_time = avg_time_before
+        end
+
+        if ui.doc_settings then
+            pcall(function() ui.doc_settings:flush() end)
+        end
+
+        local state     = ui.view and ui.view.state
+        local book_data = ib.collectBookData(ui, state)
+        if book_data then
+            ib.saveLastBookData(book_data)
+            self:_exportToCoverImage(ui, state, book_data)
+        end
+    else
+        local book_data = ib.loadLastBookData()
+        if book_data then
+            self:_exportToCoverImage(nil, nil, book_data)
+        end
+    end
 end
 
 function CustomisableSleepScreen:_onPowerOff()
@@ -468,6 +509,7 @@ function CustomisableSleepScreen:onCloseWidget()
 end
 
 function CustomisableSleepScreen:onSuspend()
+    pcall(function() self:_exportCurrentBookData() end)
     pcall(function() css_settings.flush() end)
     pcall(function() G_reader_settings:flush() end)
 end
@@ -526,6 +568,7 @@ function CustomisableSleepScreen:_installScreensaverHook()
         local ReaderUI = getReaderUI()
         local ui       = ReaderUI and ReaderUI.instance
         local widget   = nil
+        local export_ui, export_state, export_book_data
 
         if ui and ui.document then
 
@@ -545,6 +588,7 @@ function CustomisableSleepScreen:_installScreensaverHook()
             if book_data then
                 ib.saveLastBookData(book_data)
                 widget = ib.buildInfoBox(ui, state, book_data)
+                export_ui, export_state, export_book_data = ui, state, book_data
             end
         else
             local render_ref = require("css_infobox_render")
@@ -555,6 +599,7 @@ function CustomisableSleepScreen:_installScreensaverHook()
             local book_data = ib.loadLastBookData()
             if book_data then
                 widget = ib.buildInfoBox(nil, nil, book_data)
+                export_book_data = book_data
             else
                 UIManager:show(require("ui/widget/infomessage"):new {
                     text    = _("Customisable Sleep Screen: no book data found.\n\nOpen a book and trigger the sleep screen at least once before it will work in the file manager."),
@@ -577,6 +622,14 @@ function CustomisableSleepScreen:_installScreensaverHook()
         ss_self.screensaver_widget.modal    = true
         ss_self.screensaver_widget.dithered = true
         UIManager:show(ss_self.screensaver_widget, "full")
+
+        if export_book_data then
+            UIManager:scheduleIn(0, function()
+                pcall(function()
+                    css:_exportToCoverImage(export_ui, export_state, export_book_data, widget)
+                end)
+            end)
+        end
 
         local screensaver_delay = G_reader_settings:readSetting("screensaver_delay")
         if screensaver_delay == "gesture" and ui then
