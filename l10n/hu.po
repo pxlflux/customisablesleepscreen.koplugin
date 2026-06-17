@@ -1,0 +1,1621 @@
+# CUSTOMISABLE SLEEP SCREEN – Magyar fordítás
+#
+msgid ""
+msgstr ""
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. ---- Display sleep screen strings ----
+
+msgid "No Chapter"
+msgstr "Nincs fejezet"
+
+msgid "Untitled"
+msgstr "Cím nélkül"
+
+msgid "Unknown Author"
+msgstr "Ismeretlen szerző"
+
+msgid "January"
+msgstr "Január"
+
+msgid "February"
+msgstr "Február"
+
+msgid "March"
+msgstr "Március"
+
+msgid "April"
+msgstr "Április"
+
+msgid "May"
+msgstr "Május"
+
+msgid "June"
+msgstr "Június"
+
+msgid "July"
+msgstr "Július"
+
+msgid "August"
+msgstr "Augusztus"
+
+msgid "September"
+msgstr "Szeptember"
+
+msgid "October"
+msgstr "Október"
+
+msgid "November"
+msgstr "November"
+
+msgid "December"
+msgstr "December"
+
+msgid "st"
+msgstr "."
+
+msgid "nd"
+msgstr "."
+
+msgid "rd"
+msgstr "."
+
+msgid "th"
+msgstr "."
+
+msgid "hr"
+msgid_plural "hrs"
+msgstr[0] "óra"
+msgstr[1] "óra"
+
+msgid "min"
+msgid_plural "mins"
+msgstr[0] "perc"
+msgstr[1] "perc"
+
+msgid "< 1 min"
+msgstr "< 1 perc"
+
+#, lua-format
+msgid "~%d %s left"
+msgstr "~%d %s van hátra"
+
+msgid "~<1 hr left"
+msgstr "~<1 óra van hátra"
+
+#, lua-format
+msgid "%s left"
+msgstr "%s van hátra"
+
+#, lua-format
+msgid "Page %d of %d"
+msgstr "Oldal: %d / %d"
+
+#, lua-format
+msgid "Chapter %d of %d"
+msgstr "%d. fejezet / %d"
+
+msgid "0 mins"
+msgstr "0 perc"
+
+#, lua-format
+msgid "%s %s read today"
+msgstr "Ma olvasva: %s %s"
+
+msgid "pg"
+msgstr "old."
+
+msgid "pgs"
+msgstr "old."
+
+#, lua-format
+msgid "%s %s & %s read today"
+msgstr "Ma olvasva: %s %s és %s"
+
+#, lua-format
+msgid "%s read today"
+msgstr "Ma olvasva: %s"
+
+#, lua-format
+msgid "%d day streak"
+msgstr "%d napos sorozat"
+
+#, lua-format
+msgid "%d/%d days met this week"
+msgstr "%d / %d nap teljesítve ezen a héten"
+
+msgid "Achieved!"
+msgstr "Teljesítve!"
+
+msgid "goal"
+msgstr "cél"
+
+msgid "Goal achieved!"
+msgstr "Cél elérve!"
+
+#, lua-format
+msgid "%d%% of goal"
+msgstr "A cél %d%%‑a"
+
+#, lua-format
+msgid "%d page goal"
+msgstr "%d oldalas cél"
+
+#, lua-format
+msgid "~%.1f%%/hour"
+msgstr "~%.1f%%/óra"
+
+msgid "Rate unavailable"
+msgstr "Az arány nem elérhető"
+
+msgid "No message set"
+msgstr "Nincs üzenet beállítva"
+
+msgid "No custom quotes found. Add quotes to custom_quotes.lua."
+msgstr "Nem találhatók egyéni idézetek. Adj hozzá idézeteket a custom_quotes.lua fájlhoz."
+
+#, lua-format
+msgid "pg. %s"
+msgstr "%s. old."
+
+msgid "No highlights found"
+msgstr "Nem találhatók kiemelések"
+
+msgid "Sleeping"
+msgstr "Alvó üzemmód"
+
+msgid "Highlights"
+msgstr "Kiemelések"
+
+msgid "Quotations"
+msgstr "Idézetek"
+
+msgid "Message"
+msgstr "Üzenet"
+
+#. ---- All other strings (menu items, help text, headers, buttons) ----
+
+msgid "Pick a colour"
+msgstr "Válassz színt"
+
+msgid "Cancel"
+msgstr "Mégse"
+
+msgid "Apply"
+msgstr "Alkalmaz"
+
+#, lua-format
+msgid "Brightness: %d%%"
+msgstr "Fényerő: %d%%"
+
+msgid "Enter hex"
+msgstr "Adja meg a hexkódot"
+
+msgid "Enter hex colour code"
+msgstr "Adja meg a szín hexkódját"
+
+msgid "Invalid hex code. Use format: #RRGGBB"
+msgstr "Érvénytelen hexkód. Használja a következő formátumot: #RRGGBB"
+
+msgid "Delete all custom presets"
+msgstr "Az összes egyéni beállítás törlése"
+
+msgid ""
+"Permanently removes all custom presets you've created. The built-in\n"
+"'Default' preset will remain. This cannot be undone."
+msgstr ""
+"Véglegesen törli az összes általad létrehozott egyéni beállítást. A beépített\n"
+"„Alapértelmezett" beállítás megmarad. Ez a művelet nem vonható vissza."
+
+msgid ""
+"Are you sure you want to delete all custom presets? (built-in presets\n"
+"will remain)"
+msgstr ""
+"Biztosan törölni szeretnéd az összes egyéni beállítást? (A beépített beállítások\n"
+"megmaradnak.)"
+
+msgid "Delete"
+msgstr "Törlés"
+
+msgid "All custom presets deleted. Built-in presets remain."
+msgstr "Az összes egyéni beállítás törölve. A beépített beállítások megmaradtak."
+
+msgid "Sleep screen orientation"
+msgstr "Alvóképernyő tájolása"
+
+msgid ""
+"Force the sleep screen to display in a specific orientation, regardless\n"
+"of how the device is held."
+msgstr ""
+"Az alvóképernyő kényszerítése meghatározott tájolásra,\n"
+"függetlenül attól, hogyan tartják a készüléket."
+
+msgid "Auto (follow device)"
+msgstr "Automatikus (eszközt követi)"
+
+msgid "Use whatever orientation the device is currently in."
+msgstr "Az eszköz aktuális tájolását használja."
+
+msgid "Force portrait"
+msgstr "Álló mód kényszerítése"
+
+msgid "Always display the sleep screen in portrait mode."
+msgstr "Az alvóképernyő mindig álló módban jelenik meg."
+
+msgid "Force landscape"
+msgstr "Fekvő mód kényszerítése"
+
+msgid "Always display the sleep screen in landscape mode."
+msgstr "Az alvóképernyő mindig fekvő módban jelenik meg."
+
+msgid "Force upside-down portrait"
+msgstr "Fejjel lefelé álló mód kényszerítése"
+
+msgid "Always display the sleep screen in inverted portrait mode."
+msgstr "Az alvóképernyő mindig fejjel lefelé álló módban jelenik meg."
+
+msgid "Force upside-down landscape"
+msgstr "Fejjel lefelé fekvő mód kényszerítése"
+
+msgid "Always display the sleep screen in inverted landscape mode."
+msgstr "Az alvóképernyő mindig fejjel lefelé fekvő módban jelenik meg."
+
+msgid "Battery time calculation"
+msgstr "Akkumulátor-idő számítása"
+
+msgid "Method used to estimate remaining battery life."
+msgstr "A fennmaradó akkumulátor-élettartam becsléséhez használt módszer."
+
+msgid "Since last charge"
+msgstr "Utolsó töltés óta"
+
+msgid "Uses combined awake and sleeping battery drain since last charge"
+msgstr "Az utolsó töltés óta eltelt ébren és alvó üzemmódban mért akkumulátor-fogyasztást kombinálja"
+
+msgid "Awake since last charge"
+msgstr "Ébren töltött idő az utolsó töltés óta"
+
+msgid "Uses only active reading battery drain (more conservative estimate)"
+msgstr "Csak az aktív olvasás közbeni akkumulátor-fogyasztást veszi figyelembe (konzervatívabb becslés)"
+
+msgid "Sleeping since last charge"
+msgstr "Alvó üzemmód az utolsó töltés óta"
+
+msgid "Uses only sleep mode battery drain"
+msgstr "Csak az alvó üzemmód akkumulátor-fogyasztását veszi figyelembe"
+
+msgid "Manual calculation"
+msgstr "Kézi számítás"
+
+msgid "Use a custom battery drain rate (1-10% per hour)"
+msgstr "Egyéni akkumulátor-fogyasztási arány beállítása (1–10% óránként)"
+
+msgid "Set manual drain rate"
+msgstr "Kézi fogyasztási arány beállítása"
+
+msgid "Battery drain rate (% per hour)"
+msgstr "Akkumulátor-fogyasztás (% / óra)"
+
+msgid "Typical devices drain 1-5% per hour while reading."
+msgstr "A legtöbb eszköz olvasás közben 1–5%-ot fogyaszt óránként."
+
+msgid "Daily statistics scope"
+msgstr "Napi statisztikák hatóköre"
+
+msgid ""
+"Controls whether today's reading time and page count applies to the\n"
+"current book only, or all books read today. Note: reading streak and\n"
+"weekly goal achievement always reflect all books regardless of this\n"
+"setting."
+msgstr ""
+"Azt szabályozza, hogy a mai olvasási idő és oldalszám csak az aktuális\n"
+"könyvre, vagy az összes ma olvasott könyvre vonatkozzon. Megjegyzés: az olvasási\n"
+"sorozat és a heti cél elérése mindig az összes könyvet tükrözi, ettől a beállítástól\n"
+"függetlenül."
+
+msgid "All books"
+msgstr "Összes könyv"
+
+msgid "Today's reading time and page count across all books read today"
+msgstr "A mai olvasási idő és oldalszám az összes ma olvasott könyvre"
+
+msgid "Current book only"
+msgstr "Csak az aktuális könyv"
+
+msgid "Today's reading time and page count for the current book only"
+msgstr "A mai olvasási idő és oldalszám csak az aktuális könyvre"
+
+msgid "Show in file manager (outside of book)"
+msgstr "Megjelenítés a fájlkezelőben (könyvön kívül)"
+
+msgid ""
+"When enabled, the customisable sleep screen will display in file manager\n"
+"using the last saved book data."
+msgstr ""
+"Ha engedélyezve van, a testreszabható alvóképernyő a fájlkezelőben\n"
+"az utoljára mentett könyvadatokkal jelenik meg."
+
+msgid "Hide built-in presets (except Default)"
+msgstr "Beépített beállítások elrejtése (az Alapértelmezett kivételével)"
+
+msgid ""
+"Hide the built-in presets from the preset list, keeping only the Default\n"
+"preset and your custom presets visible."
+msgstr ""
+"Elrejti a beépített beállításokat a listából, csak az Alapértelmezett\n"
+"beállítás és az egyéni beállítások maradnak láthatók."
+
+msgid "Setting saved. Preset list will update when you reopen this menu."
+msgstr "Beállítás mentve. A beállítások listája a menü újbóli megnyitásakor frissül."
+
+msgid "Export sleep screen to file"
+msgstr "Alvóképernyő exportálása fájlba"
+
+msgid ""
+"When enabled, a screenshot of the sleep screen will be saved as\n"
+"'screensaver.png' in the selected export folder each time a book is\n"
+"closed."
+msgstr ""
+"Ha engedélyezve van, az alvóképernyő képernyőképe\n"
+"„screensaver.png" névvel kerül mentésre a kiválasztott exportálási mappába\n"
+"minden könyvbezáráskor."
+
+msgid "Sleep screen export disabled."
+msgstr "Az alvóképernyő exportálása le van tiltva."
+
+msgid "No export folder set. Please set an export folder first."
+msgstr "Nincs exportálási mappa beállítva. Kérlek, először állíts be egy exportálási mappát."
+
+#, lua-format
+msgid ""
+"Sleep screen will be exported to:\n"
+"%s/screensaver.png"
+msgstr ""
+"Az alvóképernyő exportálási helye:\n"
+"%s/screensaver.png"
+
+msgid "Set export folder"
+msgstr "Exportálási mappa beállítása"
+
+msgid "Choose the folder where screensaver.png will be saved."
+msgstr "Válaszd ki a mappát, ahová a screensaver.png fájl mentésre kerül."
+
+#, lua-format
+msgid ""
+"Export folder set to:\n"
+"%s"
+msgstr ""
+"Exportálási mappa beállítva:\n"
+"%s"
+
+msgid "Presets"
+msgstr "Beállítások"
+
+msgid "Save, load, and manage presets."
+msgstr "Beállítások mentése, betöltése és kezelése."
+
+msgid "Display modes"
+msgstr "Megjelenítési módok"
+
+msgid "Global appearance settings."
+msgstr "Általános megjelenési beállítások."
+
+msgid "Contents"
+msgstr "Tartalom"
+
+msgid "Control which sections appear and what information they display."
+msgstr "Határozd meg, mely szakaszok jelenjenek meg és mit mutassanak."
+
+msgid "Layout & Spacing"
+msgstr "Elrendezés és térközök"
+
+msgid "Adjust the spatial settings of the information box."
+msgstr "Az információs mező térbeli beállításainak módosítása."
+
+msgid "Colours, Icons & Bars"
+msgstr "Színek, ikonok és sávok"
+
+msgid ""
+"Customise section colours, icon appearance, and progress bar styling."
+msgstr ""
+"A szakaszok színeinek, az ikonok megjelenésének és a folyamatjelzők stílusának testreszabása."
+
+msgid "Fonts & Text"
+msgstr "Betűtípusok és szöveg"
+
+msgid "Configure text appearance."
+msgstr "A szöveg megjelenésének beállítása."
+
+msgid "Background"
+msgstr "Háttér"
+
+msgid "Choose what appears behind the information box."
+msgstr "Válaszd ki, mi jelenjen meg az információs mező mögött."
+
+msgid "Advanced"
+msgstr "Speciális"
+
+msgid "Advanced configuration options."
+msgstr "Speciális konfigurációs lehetőségek."
+
+msgid "About"
+msgstr "Névjegy"
+
+#, lua-format
+msgid ""
+"%s\n"
+"Version: %s\n"
+"\n"
+"For updates and issues:\n"
+"github.com/%s"
+msgstr ""
+"%s\n"
+"Verzió: %s\n"
+"\n"
+"Frissítések és hibák:\n"
+"github.com/%s"
+
+msgid "Top left"
+msgstr "Bal felső"
+
+msgid "Top centre"
+msgstr "Felső közép"
+
+msgid "Top right"
+msgstr "Jobb felső"
+
+msgid "Middle left"
+msgstr "Bal középső"
+
+msgid "Centre"
+msgstr "Középső"
+
+msgid "Middle right"
+msgstr "Jobb középső"
+
+msgid "Bottom left"
+msgstr "Bal alsó"
+
+msgid "Bottom centre"
+msgstr "Alsó közép"
+
+msgid "Bottom right"
+msgstr "Jobb alsó"
+
+msgid "Dark mode"
+msgstr "Sötét mód"
+
+msgid ""
+"Inverts the colour scheme. Text becomes white and backgrounds becomes\n"
+"black. Useful for reading in low-light conditions. Can be combined with\n"
+"monochrome mode."
+msgstr ""
+"Megfordítja a színsémát. A szöveg fehér, a háttér fekete lesz.\n"
+"Gyenge megvilágítású körülmények között hasznos. Kombinálható\n"
+"egyszínű módokkal."
+
+msgid "Monochrome mode"
+msgstr "Egyszínű mód"
+
+msgid ""
+"Suitable for B&W e-readers. Assigns one colour to all sections using\n"
+"monochrome light or monochrome dark hex values. Overwrites individual\n"
+"assigned section colours. Can be combined with dark mode."
+msgstr ""
+"Fekete-fehér e-olvasókhoz ajánlott. Egyetlen színt rendel az összes szakaszhoz\n"
+"egyszínű világos vagy sötét hexértékek alapján. Felülírja az egyénileg\n"
+"hozzárendelt szakaszszíneket. Kombinálható sötét móddal."
+
+msgid "Section gaps"
+msgstr "Szakaszok közötti térközök"
+
+msgid ""
+"Add transparent gaps between sections to make each appear as a separate\n"
+"box"
+msgstr ""
+"Átlátszó térközök hozzáadása a szakaszok közé, hogy mindegyik\n"
+"külön dobozként jelenjen meg"
+
+msgid "Enable section gaps"
+msgstr "Szakaszközök engedélyezése"
+
+msgid "Section gap size"
+msgstr "Szakaszköz mérete"
+
+msgid "Spacing between sections when gaps are enabled."
+msgstr "A szakaszok közötti távolság, ha a szakaszközök engedélyezve vannak."
+
+msgid "Section gap size (pixels)"
+msgstr "Szakaszköz mérete (képpont)"
+
+msgid ""
+"10–20px gives a subtle separation. 30–50px makes sections feel like\n"
+"distinct cards."
+msgstr ""
+"10–20 px finom szétválasztást ad. 30–50 px esetén a szakaszok\n"
+"különálló kártyaként jelennek meg."
+
+msgid "Position"
+msgstr "Pozíció"
+
+msgid "Screen location where the information box appears."
+msgstr "A képernyőn az a hely, ahol az információs mező megjelenik."
+
+msgid "Position offset"
+msgstr "Pozícióeltolás"
+
+msgid ""
+"Nudge the box from its anchor position. Useful for pushing rounded\n"
+"corners off-screen."
+msgstr ""
+"A mező eltolása a rögzített pozíciótól. Hasznos a lekerekített\n"
+"sarkok képernyőn kívülre tolásához."
+
+msgid "Horizontal offset (px)"
+msgstr "Vízszintes eltolás (px)"
+
+msgid ""
+"Nudges the box left (-) or right (+) from its anchor. Useful for pushing\n"
+"rounded corners off-screen."
+msgstr ""
+"A mezőt balra (−) vagy jobbra (+) tolja a rögzített pozíciótól.\n"
+"Hasznos a lekerekített sarkok képernyőn kívülre tolásához."
+
+msgid "Vertical offset (px)"
+msgstr "Függőleges eltolás (px)"
+
+msgid ""
+"Nudges the box up (+) or down (-) from its anchor. Useful for pushing\n"
+"rounded corners off-screen."
+msgstr ""
+"A mezőt felfelé (+) vagy lefelé (−) tolja a rögzített pozíciótól.\n"
+"Hasznos a lekerekített sarkok képernyőn kívülre tolásához."
+
+msgid "Width"
+msgstr "Szélesség"
+
+msgid ""
+"Horizontal width of the information box as a percentage of screen width."
+msgstr ""
+"Az információs mező vízszintes szélessége a képernyő szélességének százalékában."
+
+msgid "Box width (%)"
+msgstr "Mező szélessége (%)"
+
+msgid "60–70% suits portrait screens."
+msgstr "60–70% álló képernyőkhöz ideális."
+
+msgid "Opacity"
+msgstr "Átlátszóság"
+
+msgid "Transparency of the information box."
+msgstr "Az információs mező átlátszósága."
+
+msgid "Opacity (%)"
+msgstr "Átlátszóság (%)"
+
+msgid "75% is semi-transparent. 100% is fully opaque."
+msgstr "75% félig átlátszó. 100% teljesen átlátszatlan."
+
+msgid "Border size"
+msgstr "Keret mérete"
+
+msgid "Thickness of the primary border around sections."
+msgstr "A szakaszok körüli elsődleges keret vastagsága."
+
+msgid "Border size (px)"
+msgstr "Keret mérete (px)"
+
+msgid "0 for no border. 1–2px is subtle, 4–6px is bold and visible."
+msgstr "0 = nincs keret. 1–2 px finom, 4–6 px félkövér és látható."
+
+msgid "Border trim size"
+msgstr "Keretdísz mérete"
+
+msgid "Secondary decorative border surrounding the primary border."
+msgstr "Az elsődleges keretet körülvevő másodlagos, díszítő keret."
+
+msgid "Border trim size (px)"
+msgstr "Keretdísz mérete (px)"
+
+msgid ""
+"0 for no trim. 1–2px is subtle, 4–6px is a bold decorative outline\n"
+"around the primary border."
+msgstr ""
+"0 = nincs dísz. 1–2 px finom, 4–6 px félkövér díszítő keret\n"
+"az elsődleges keret körül."
+
+msgid "Corner radius"
+msgstr "Saroklekerekítés"
+
+msgid ""
+"Round the corners of the info box. Also moves progress bars inline with\n"
+"the text when active."
+msgstr ""
+"Az információs mező sarkainak lekerekítése. Ha aktív, a folyamatjelzők\n"
+"a szöveggel egy sorba kerülnek."
+
+msgid "Corner radius (px)"
+msgstr "Saroklekerekítés (px)"
+
+msgid ""
+"0 for square corners. 15–30px for softly rounded. 150px+ for a\n"
+"pill-shaped box (depending on the section box height)."
+msgstr ""
+"0 = éles sarkok. 15–30 px = enyhén lekerekített. 150 px+ = kapszula alakú\n"
+"mező (a szakasz magasságától függően)."
+
+msgid "Internal padding"
+msgstr "Belső margó"
+
+msgid ""
+"Space between section borders and their content, configurable per side."
+msgstr ""
+"A szakaszkeretek és tartalmuk közötti távolság, oldalanként konfigurálható."
+
+msgid "Top"
+msgstr "Felső"
+
+msgid "Internal padding — top (px)"
+msgstr "Belső margó – felső (px)"
+
+msgid "Space above section content."
+msgstr "A szakasz tartalma feletti távolság."
+
+msgid "Bottom"
+msgstr "Alsó"
+
+msgid "Internal padding — bottom (px)"
+msgstr "Belső margó – alsó (px)"
+
+msgid "Space below section content."
+msgstr "A szakasz tartalma alatti távolság."
+
+msgid "Left"
+msgstr "Bal"
+
+msgid "Internal padding — left (px)"
+msgstr "Belső margó – bal (px)"
+
+msgid ""
+"Space to the left of section content. Increase when using large corner\n"
+"radii."
+msgstr ""
+"A szakasz tartalmától balra lévő távolság. Növeld nagy saroklekerekítés esetén."
+
+msgid "Right"
+msgstr "Jobb"
+
+msgid "Internal padding — right (px)"
+msgstr "Belső margó – jobb (px)"
+
+msgid ""
+"Space to the right of section content. Increase when using large corner\n"
+"radii."
+msgstr ""
+"A szakasz tartalmától jobbra lévő távolság. Növeld nagy saroklekerekítés esetén."
+
+msgid "Set all sides equally"
+msgstr "Minden oldal egyenlő beállítása"
+
+msgid "Internal padding — all sides (px)"
+msgstr "Belső margó – minden oldal (px)"
+
+msgid "Sets top, bottom, left and right padding to the same value in one step."
+msgstr "Egy lépésben egyenlő értéket állít be a felső, alsó, bal és jobb margóra."
+
+msgid "Icon to text gap"
+msgstr "Ikon és szöveg közötti rés"
+
+msgid ""
+"Horizontal spacing between section icons and their accompanying text."
+msgstr ""
+"Vízszintes távolság a szakaszikonok és a kísérő szöveg között."
+
+msgid "Icon to text gap (px)"
+msgstr "Ikon–szöveg rés (px)"
+
+msgid ""
+"8–12px gives comfortable breathing room between icon and text. 0 is\n"
+"flush."
+msgstr ""
+"8–12 px kényelmes teret biztosít az ikon és a szöveg között. 0 = illeszkedő."
+
+msgid "No icon sets found in customisablesleepscreen.koplugin/icons/"
+msgstr "Nem találhatók ikoncsomagok a customisablesleepscreen.koplugin/icons/ mappában"
+
+msgid "Colours (progress bars)"
+msgstr "Színek (folyamatjelzők)"
+
+msgid "Set the progress bar colours for each section."
+msgstr "A folyamatjelzők színének beállítása szakaszonként."
+
+msgid "Use saved colours for icon fill"
+msgstr "Mentett színek használata az ikonok kitöltéséhez"
+
+msgid ""
+"When enabled, icons will match the colour of their section's progress\n"
+"bar."
+msgstr ""
+"Ha engedélyezve van, az ikonok a szakasz folyamatjelzőjének\n"
+"színét veszik fel."
+
+msgid "Book section"
+msgstr "Könyv szakasz"
+
+msgid "Chapter section"
+msgstr "Fejezet szakasz"
+
+msgid "Daily goal section"
+msgstr "Napi cél szakasz"
+
+msgid "Battery section (High)"
+msgstr "Akkumulátor szakasz (magas)"
+
+msgid "Battery section (Med)"
+msgstr "Akkumulátor szakasz (közepes)"
+
+msgid "Battery section (Low)"
+msgstr "Akkumulátor szakasz (alacsony)"
+
+msgid "Battery section (Charging)"
+msgstr "Akkumulátor szakasz (töltés)"
+
+msgid "Message section"
+msgstr "Üzenet szakasz"
+
+msgid "Colours (modes)"
+msgstr "Színek (módok)"
+
+msgid ""
+"Configure colours for monochrome mode, infobox background, and text.\n"
+"Light and dark correspond to the current dark mode setting. Monochrome\n"
+"replaces all colours with that single chosen color."
+msgstr ""
+"Színek konfigurálása az egyszínű módhoz, az információs mező hátteréhez és a szöveghez.\n"
+"A világos és sötét az aktuális sötét mód beállításának felel meg. Az egyszínű\n"
+"mód minden színt a kiválasztott egyetlen színre cserél."
+
+msgid "Monochrome mode (light)"
+msgstr "Egyszínű mód (világos)"
+
+msgid "Monochrome mode (dark)"
+msgstr "Egyszínű mód (sötét)"
+
+msgid "Background (light)"
+msgstr "Háttér (világos)"
+
+msgid "Background (dark)"
+msgstr "Háttér (sötét)"
+
+msgid "Text (light)"
+msgstr "Szöveg (világos)"
+
+msgid "Text (dark)"
+msgstr "Szöveg (sötét)"
+
+msgid "Icon set"
+msgstr "Ikonkészlet"
+
+msgid "Choose from different icon styles."
+msgstr "Válassz különböző ikonstílusok közül."
+
+msgid "Icon size"
+msgstr "Ikonméret"
+
+msgid "Size of section icons."
+msgstr "A szakaszikonok mérete."
+
+msgid "Icon size (px)"
+msgstr "Ikonméret (px)"
+
+msgid "32–48px suits most layouts."
+msgstr "32–48 px a legtöbb elrendezéshez megfelelő."
+
+msgid "Progress bar height"
+msgstr "Folyamatjelző magassága"
+
+msgid "Thickness of the horizontal progress bars shown in each section."
+msgstr "Az egyes szakaszokban megjelenő vízszintes folyamatjelzők vastagsága."
+
+msgid "Bar height (px)"
+msgstr "Sáv magassága (px)"
+
+msgid "4–8px is subtle. 12–16px is standard. 20+px is heavy."
+msgstr "4–8 px finom. 12–16 px standard. 20+ px erőteljes."
+
+msgid "Show icons"
+msgstr "Ikonok megjelenítése"
+
+msgid "Display decorative icons at the start of each section."
+msgstr "Díszítő ikonok megjelenítése minden szakasz elején."
+
+msgid "Show progress bars"
+msgstr "Folyamatjelzők megjelenítése"
+
+msgid "Display horizontal progress bars showing completion percentage."
+msgstr "Vízszintes folyamatjelzők megjelenítése a teljesítési százalékkal."
+
+msgid "Show decorative bar on message section"
+msgstr "Díszítő sáv megjelenítése az üzenet szakaszon"
+
+msgid ""
+"Displays a purely decorative progress bar under the message section,\n"
+"matching the message section colour and the progress bars in other\n"
+"sections."
+msgstr ""
+"Kizárólag dekoratív folyamatjelzőt jelenít meg az üzenet szakasz alatt,\n"
+"az üzenet szakasz és a többi szakasz folyamatjelzőjének színével egyezően."
+
+msgid "Inline progress bars"
+msgstr "Beágyazott folyamatjelzők"
+
+msgid ""
+"Progress bars sit inside the text area rather than spanning the full\n"
+"section width. Automatically enabled when corner radius > 0."
+msgstr ""
+"A folyamatjelzők a szövegterületen belül helyezkednek el, nem a teljes\n"
+"szakasz szélességén. Automatikusan engedélyezve, ha a saroklekerekítés > 0."
+
+msgid "Enable inline bars"
+msgstr "Beágyazott sávok engedélyezése"
+
+msgid "When section gaps are enabled and corner radius > 0, inline bars are automatically enabled."
+msgstr "Ha a szakaszközök engedélyezve vannak és a saroklekerekítés > 0, a beágyazott sávok automatikusan engedélyeződnek."
+
+msgid "Inline bars are force-enabled because section gaps and corner radius are both set. Set corner radius to 0 or disable section gaps to toggle inline bars independently."
+msgstr "A beágyazott sávok kényszerítve engedélyezve vannak, mert a szakaszközök és a saroklekerekítés egyaránt be van állítva. A beágyazott sávok független vezérléséhez állítsd a saroklekerekítést 0-ra, vagy tiltsd le a szakaszközöket."
+
+msgid "Inline bar border size"
+msgstr "Beágyazott sáv keretmérete"
+
+msgid "Thickness of the border around the inline progress bar."
+msgstr "A beágyazott folyamatjelző körüli keret vastagsága."
+
+msgid "Inline bar border size (px)"
+msgstr "Beágyazott sáv keretmérete (px)"
+
+msgid "0 for no border. 1–2px adds a subtle outline around the bar."
+msgstr "0 = nincs keret. 1–2 px finom körvonalat ad a sáv körül."
+
+msgid "Bar width"
+msgstr "Sáv szélessége"
+
+msgid ""
+"Width of the inline progress bar as a percentage of the available text\n"
+"column. Alignment follows the text alignment setting."
+msgstr ""
+"A beágyazott folyamatjelző szélessége az elérhető szövegoszlop százalékában.\n"
+"Az igazítás a szövegigazítási beállítást követi."
+
+msgid "Inline bar width (%)"
+msgstr "Beágyazott sáv szélessége (%)"
+
+msgid ""
+"100% fills the text column. The bar is aligned to match your text\n"
+"alignment setting."
+msgstr ""
+"100% kitölti a szövegoszlopot. A sáv igazítása a szövegigazítási\n"
+"beállításnak megfelelő."
+
+msgid "Title font face"
+msgstr "Cím betűtípusa"
+
+msgid "Choose the font face for the main heading text in each section"
+msgstr "Válaszd ki a betűtípust minden szakasz főcímszövegéhez"
+
+msgid "Title font size"
+msgstr "Cím betűmérete"
+
+msgid "Choose the font size for the main heading text in each section."
+msgstr "Válaszd ki a betűméretet minden szakasz főcímszövegéhez."
+
+msgid "10–12px works well for most screens."
+msgstr "10–12 px a legtöbb képernyőn jól működik."
+
+msgid "Subtitle font face"
+msgstr "Alcím betűtípusa"
+
+msgid ""
+"Choose the font face for the information below the main heading text."
+msgstr ""
+"Válaszd ki a betűtípust a főcímszöveg alatti információhoz."
+
+msgid "Subtitle font size"
+msgstr "Alcím betűmérete"
+
+msgid ""
+"Choose the font size for the information below the main heading text."
+msgstr ""
+"Válaszd ki a betűméretet a főcímszöveg alatti információhoz."
+
+msgid "9–11px works well for most screens."
+msgstr "9–11 px a legtöbb képernyőn jól működik."
+
+msgid "Text alignment"
+msgstr "Szövegigazítás"
+
+msgid "Horizontal alignment of all text within sections."
+msgstr "A szakaszokon belüli összes szöveg vízszintes igazítása."
+
+msgid "Book multiline titles"
+msgstr "Könyvcím több sorban"
+
+msgid ""
+"If deselected book titles will be truncated to a single line with an\n"
+"ellipsis"
+msgstr ""
+"Ha nincs kijelölve, a könyvcímek egyetlen sorra rövidülnek, három ponttal jelezve"
+
+msgid "Chapter multiline titles"
+msgstr "Fejezетcím több sorban"
+
+msgid ""
+"If deselected chapter titles will be truncated to a single line with an\n"
+"ellipsis"
+msgstr ""
+"Ha nincs kijelölve, a fejezетcímek egyetlen sorra rövidülnek, három ponttal jelezve"
+
+msgid "Clean chapter titles"
+msgstr "Fejezетcímek tisztítása"
+
+msgid ""
+"Removes structural prefixes like 'Chapter 5:' or 'Part II' from chapter\n"
+"titles and normalises capitalisation. Only works correctly with English\n"
+"chapter titles - disable for non-English books."
+msgstr ""
+"Eltávolítja az olyan szerkezeti előtagokat, mint a „Chapter 5:" vagy „Part II"\n"
+"a fejezетcímekből, és normalizálja a nagybetű-használatot. Csak angol fejezетcímekkel\n"
+"működik helyesen – nem angol könyvek esetén tiltsd le."
+
+msgid "Make titles bold"
+msgstr "Félkövér cím"
+
+msgid ""
+"Display the section titles in bold font weight for extra emphasis."
+msgstr ""
+"A szakaszcímek félkövér betűstílussal jelennek meg a nagyobb hangsúly érdekében."
+
+msgid "No background"
+msgstr "Nincs háttér"
+
+msgid "Book cover"
+msgstr "Könyvborító"
+
+msgid "Solid colour"
+msgstr "Egyszínű"
+
+msgid "Random image from folder"
+msgstr "Véletlenszerű kép a mappából"
+
+msgid "Stretch book cover to fill"
+msgstr "Könyvborító nyújtása kitöltéshez"
+
+msgid ""
+"When disabled, book cover will be scaled to fit within the screen while\n"
+"preserving aspect ratio."
+msgstr ""
+"Ha le van tiltva, a könyvborító a képarány megtartásával méreteződik\n"
+"a képernyőhöz."
+
+msgid "Cover fill colour"
+msgstr "Borító kitöltési színe"
+
+msgid "Background colour for non-stretched covers."
+msgstr "Háttérszín nem nyújtott borítókhoz."
+
+msgid "Pick cover fill colour"
+msgstr "Borító kitöltési színének kiválasztása"
+
+msgid "Cover alignment"
+msgstr "Borító igazítása"
+
+msgid "Horizontal alignment of the cover image when not stretched."
+msgstr "A borítókép vízszintes igazítása, ha nincs nyújtva."
+
+msgid "Solid background colour"
+msgstr "Egyszínű háttérszín"
+
+msgid "Pick background colour"
+msgstr "Háttérszín kiválasztása"
+
+msgid "Background folder path"
+msgstr "Háttérmappa elérési útja"
+
+msgid ""
+"No images found in the selected folder. No background will be shown."
+msgstr ""
+"Nem találhatók képek a kiválasztott mappában. Nem jelenik meg háttér."
+
+msgid "Background type"
+msgstr "Háttér típusa"
+
+msgid "Background overlay"
+msgstr "Háttér fedőrétege"
+
+msgid "Add a colour layer over the background to reduce contrast."
+msgstr "Színréteg hozzáadása a háttér fölé a kontraszt csökkentéséhez."
+
+msgid "Overlay colour"
+msgstr "Fedőréteg színe"
+
+msgid "Background overlay colour"
+msgstr "Háttér fedőrétegének színe"
+
+msgid "Overlay opacity"
+msgstr "Fedőréteg átlátszósága"
+
+msgid "Overlay opacity (%)"
+msgstr "Fedőréteg átlátszósága (%)"
+
+msgid "0% is no overlay. 20–40% adds a soft tint. 100% is fully opaque."
+msgstr "0% = nincs fedőréteg. 20–40% lágy tónust ad. 100% teljesen átlátszatlan."
+
+msgid "Reset layout & spacing settings to default"
+msgstr "Elrendezés és térközök visszaállítása alapértelmezettre"
+
+msgid "Are you sure you want to reset layout & spacing settings?"
+msgstr "Biztosan visszaállítod az elrendezés és térközök beállításait?"
+
+msgid "Layout & spacing settings reset to defaults"
+msgstr "Az elrendezés és térközök beállításai visszaállítva az alapértelmezettre"
+
+msgid "Reset contents settings to default"
+msgstr "Tartalom beállítások visszaállítása alapértelmezettre"
+
+msgid "Are you sure you want to reset contents settings?"
+msgstr "Biztosan visszaállítod a tartalom beállításait?"
+
+msgid "Contents settings reset to defaults"
+msgstr "A tartalom beállításai visszaállítva az alapértelmezettre"
+
+msgid "Reset colours, icons & bars settings to default"
+msgstr "Színek, ikonok és sávok visszaállítása alapértelmezettre"
+
+msgid "Are you sure you want to reset colours, icons & bars settings?"
+msgstr "Biztosan visszaállítod a színek, ikonok és sávok beállításait?"
+
+msgid "Colours, icons & bars settings reset to defaults"
+msgstr "A színek, ikonok és sávok beállításai visszaállítva az alapértelmezettre"
+
+msgid "Reset fonts & text settings to default"
+msgstr "Betűtípusok és szöveg visszaállítása alapértelmezettre"
+
+msgid "Are you sure you want to reset fonts & text settings?"
+msgstr "Biztosan visszaállítod a betűtípusok és szöveg beállításait?"
+
+msgid "Fonts & text settings reset to defaults"
+msgstr "A betűtípusok és szöveg beállításai visszaállítva az alapértelmezettre"
+
+msgid "Reset background settings to default"
+msgstr "Háttér beállítások visszaállítása alapértelmezettre"
+
+msgid "Are you sure you want to reset background settings?"
+msgstr "Biztosan visszaállítod a háttér beállításait?"
+
+msgid "Background settings reset to defaults"
+msgstr "A háttér beállításai visszaállítva az alapértelmezettre"
+
+msgid "Reset the settings in this part of the menu to their defaults."
+msgstr "A menü ezen részének beállításait visszaállítja az alapértelmezettekre."
+
+msgid "factory defaults"
+msgstr "gyári alapértelmezések"
+
+#, lua-format
+msgid "Values will be restored from: %s"
+msgstr "Értékek visszaállítása innen: %s"
+
+msgid "Reset"
+msgstr "Visszaállítás"
+
+msgid "Save"
+msgstr "Mentés"
+
+msgid "None"
+msgstr "Nincs"
+
+msgid "Active preset: "
+msgstr "Aktív beállítás: "
+
+msgid "Save current settings as new preset"
+msgstr "Jelenlegi beállítások mentése új beállításként"
+
+#, lua-format
+msgid "What would you like to do with preset '%s'?"
+msgstr "Mit szeretnél tenni a(z) „%s" beállítással?"
+
+msgid "Update"
+msgstr "Frissítés"
+
+#, lua-format
+msgid "Are you sure you want to overwrite preset '%s' with current settings?"
+msgstr "Biztosan felülírod a(z) „%s" beállítást a jelenlegi beállításokkal?"
+
+#, lua-format
+msgid "Preset '%s' was updated with current settings"
+msgstr "A(z) „%s" beállítás frissítve a jelenlegi beállításokkal"
+
+#, lua-format
+msgid "Are you sure you want to delete preset '%s'?"
+msgstr "Biztosan törölni szeretnéd a(z) „%s" beállítást?"
+
+msgid "Rename"
+msgstr "Átnevezés"
+
+msgid "Enter new preset name"
+msgstr "Add meg az új beállítás nevét"
+
+msgid "[ Built-in Presets ]"
+msgstr "[ Beépített beállítások ]"
+
+msgid "[ Your Custom Presets ]"
+msgstr "[ Egyéni beállításaid ]"
+
+msgid "Book info"
+msgstr "Könyv infó"
+
+msgid "Chapter info"
+msgstr "Fejezet infó"
+
+msgid "Daily info"
+msgstr "Napi infó"
+
+msgid "Battery info"
+msgstr "Akkumulátor infó"
+
+msgid "Message info"
+msgstr "Üzenet infó"
+
+msgid "Reorder sections"
+msgstr "Szakaszok átrendezése"
+
+msgid "Section order"
+msgstr "Szakaszok sorrendje"
+
+msgid "At least one section must remain visible."
+msgstr "Legalább egy szakasznak láthatónak kell maradnia."
+
+msgid "Show cover image above book info"
+msgstr "Borítókép megjelenítése a könyv infó felett"
+
+msgid ""
+"Display the book's cover image above the title and progress in the book\n"
+"section."
+msgstr ""
+"A könyv borítóképének megjelenítése a cím és a haladás felett\n"
+"a könyv szakaszban."
+
+msgid "Cover image size"
+msgstr "Borítókép mérete"
+
+msgid "Height limit for the cover image in pixels."
+msgstr "A borítókép magassági korlátja képpontban."
+
+msgid "Cover image size (pixels)"
+msgstr "Borítókép mérete (képpont)"
+
+msgid ""
+"100–150px fits neatly in most layouts. Go up to 250px+ for a prominent\n"
+"cover."
+msgstr ""
+"100–150 px a legtöbb elrendezésbe jól illeszkedik. 250 px+ kiemelkedő\n"
+"borítóhoz."
+
+msgid "Cover border size"
+msgstr "Borítókeret mérete"
+
+msgid ""
+"Width of the border drawn around the cover image. Set to 0 for no\n"
+"border."
+msgstr ""
+"A borítókép körüli keret szélessége. 0 = nincs keret."
+
+msgid "Cover border size (pixels)"
+msgstr "Borítókeret mérete (képpont)"
+
+msgid "1–3px for a subtle outline. 0 to disable."
+msgstr "1–3 px finom körvonalhoz. 0 = letiltva."
+
+msgid "Align cover to text alignment"
+msgstr "Borító igazítása a szövegigazításhoz"
+
+msgid ""
+"When enabled, the cover image follows the text alignment setting instead\n"
+"of always being centered."
+msgstr ""
+"Ha engedélyezve van, a borítókép a szövegigazítási beállítást követi\n"
+"ahelyett, hogy mindig középre legyen igazítva."
+
+msgid "Cover image"
+msgstr "Borítókép"
+
+msgid "Configure the book cover image shown above the book section."
+msgstr "A könyv szakasz felett megjelenő borítókép beállítása."
+
+msgid "Show book author"
+msgstr "Szerző megjelenítése"
+
+msgid "Display the author name below the book title."
+msgstr "A szerző nevének megjelenítése a könyvcím alatt."
+
+msgid "Show series name"
+msgstr "Sorozatnév megjelenítése"
+
+msgid "Display the book's series name and index below the title."
+msgstr "A könyv sorozatnevének és indexének megjelenítése a cím alatt."
+
+msgid "Show book pages (pg x of x)"
+msgstr "Könyv oldalainak megjelenítése (Oldal: x / x)"
+
+msgid "Display total page count for the entire book."
+msgstr "A teljes könyv összes oldalszámának megjelenítése."
+
+msgid "Show book time remaining"
+msgstr "Könyv hátralévő idejének megjelenítése"
+
+msgid ""
+"Estimated reading time left to finish the book, based on your average\n"
+"reading speed."
+msgstr ""
+"A könyv befejezéséig becsült hátralévő olvasási idő, az átlagos\n"
+"olvasási sebesség alapján."
+
+msgid "Show chapter count (ch x of x)"
+msgstr "Fejezetek számának megjelenítése (x. fejezet / x)"
+
+msgid ""
+"Display current chapter number and total chapters (e.g., 'Chapter 5 of\n"
+"12')."
+msgstr ""
+"Az aktuális fejezetszám és az összes fejezet megjelenítése (pl. „5. fejezet / 12")."
+
+msgid "Show chapter pages (pg x of x)"
+msgstr "Fejezet oldalainak megjelenítése (Oldal: x / x)"
+
+msgid "Display the number of pages in the current chapter."
+msgstr "Az aktuális fejezet oldalszámának megjelenítése."
+
+msgid "Show chapter time remaining"
+msgstr "Fejezet hátralévő idejének megjelenítése"
+
+msgid ""
+"Estimated time to finish the current chapter, based on your reading\n"
+"speed."
+msgstr ""
+"Az aktuális fejezet befejezéséig becsült idő, az olvasási sebesség alapján."
+
+msgid "Title Line"
+msgstr "Cím sor"
+
+msgid "Choose what the top line of the daily info section displays."
+msgstr "Válaszd ki, mit jelenítsen meg a napi infó szakasz felső sora."
+
+msgid "Pages read today"
+msgstr "Ma olvasott oldalak"
+
+msgid "e.g. '35 pages read today'"
+msgstr "pl. „35 oldalt olvastál ma""
+
+msgid "Time read today"
+msgstr "Ma olvasott idő"
+
+msgid "e.g. '42 mins read today'"
+msgstr "pl. „42 percet olvastál ma""
+
+msgid "Pages and time read today"
+msgstr "Ma olvasott oldalak és idő"
+
+msgid "e.g. '35 pgs & 42 mins read today'"
+msgstr "pl. „35 old. és 42 percet olvastál ma""
+
+msgid "Goal type"
+msgstr "Cél típusa"
+
+msgid ""
+"Choose whether your daily goal tracks pages read or time spent reading."
+msgstr ""
+"Válaszd ki, hogy a napi célod oldalak számát vagy olvasási időt kövessen."
+
+msgid "Page goal"
+msgstr "Oldal cél"
+
+msgid "Track daily progress by number of pages read."
+msgstr "A napi haladás nyomon követése az olvasott oldalak száma alapján."
+
+msgid "Time goal"
+msgstr "Idő cél"
+
+msgid "Track daily progress by minutes spent reading."
+msgstr "A napi haladás nyomon követése az olvasással töltött percek alapján."
+
+msgid "Daily page goal"
+msgstr "Napi oldal cél"
+
+msgid "Set how many pages you aim to read each day."
+msgstr "Állítsd be, hány oldalt szeretnél naponta olvasni."
+
+msgid "Daily page goal (pages)"
+msgstr "Napi oldal cél (oldal)"
+
+msgid "20–50 pages for a daily habit. 50–100 for dedicated reading sessions."
+msgstr "20–50 oldal napi szokáshoz. 50–100 odafigyelő olvasáshoz."
+
+msgid "Daily time goal"
+msgstr "Napi idő cél"
+
+msgid "Set how many minutes you aim to read each day."
+msgstr "Állítsd be, hány percet szeretnél naponta olvasni."
+
+msgid "Daily time goal (minutes)"
+msgstr "Napi idő cél (perc)"
+
+msgid ""
+"20–30 mins for a daily habit. 60+ mins for dedicated reading sessions."
+msgstr ""
+"20–30 perc napi szokáshoz. 60+ perc odafigyelő olvasáshoz."
+
+msgid "Show current reading streak"
+msgstr "Jelenlegi olvasási sorozat megjelenítése"
+
+msgid "Display consecutive days you've met your reading goal."
+msgstr "Azon egymást követő napok megjelenítése, amelyeken teljesítetted az olvasási célodat."
+
+msgid "Show weekly progress"
+msgstr "Heti haladás megjelenítése"
+
+msgid ""
+"Days this week you have met your reading goal, shown as completed days\n"
+"out of the current weekday (Monday = 1... Sunday = 7). For example:\n"
+"Thursday with goals met on Monday and Tuesday will show 2/4."
+msgstr ""
+"A héten teljesített napok száma, az aktuális hétköznap tört részeként megjelenítve\n"
+"(Hétfő = 1 … Vasárnap = 7). Például: csütörtökön, ha hétfőn és kedden\n"
+"teljesítetted a célt, 2/4 jelenik meg."
+
+msgid "Show daily goal"
+msgstr "Napi cél megjelenítése"
+
+msgid ""
+"Target page mode: e.g. 50 page goal. Target time mode: e.g. 1hr 15min\n"
+"time goal."
+msgstr ""
+"Oldal mód: pl. 50 oldalas cél. Idő mód: pl. 1 ó 15 perces cél."
+
+msgid "Show current time/date on separate line"
+msgstr "Aktuális idő/dátum megjelenítése külön sorban"
+
+msgid ""
+"Display time/date on its own line below battery percentage instead of\n"
+"inline."
+msgstr ""
+"Az idő/dátum megjelenítése saját sorban, az akkumulátor százalék alatt,\n"
+"beágyazott megjelenítés helyett."
+
+msgid "Enable 'Show battery time remaining' to use this option"
+msgstr "Az „Akkumulátor hátralévő idejének megjelenítése" engedélyezése szükséges ehhez a beállításhoz"
+
+msgid "Show date instead of time"
+msgstr "Dátum megjelenítése az idő helyett"
+
+msgid ""
+"Display current date (e.g. '29th Jan') instead of time in battery\n"
+"section"
+msgstr ""
+"Az aktuális dátum megjelenítése (pl. „jan. 29.") az idő helyett\n"
+"az akkumulátor szakaszban"
+
+msgid "Show battery consumption rate"
+msgstr "Akkumulátor-fogyasztási arány megjelenítése"
+
+msgid ""
+"Display battery drain percentage per hour based on recent usage or\n"
+"manual input (see advanced menu)"
+msgstr ""
+"Az óránkénti akkumulátor-fogyasztás százalékának megjelenítése a közelmúltbeli\n"
+"használat vagy kézi bevitel alapján (lásd a speciális menüt)"
+
+msgid "Show battery time remaining"
+msgstr "Akkumulátor hátralévő idejének megjelenítése"
+
+msgid ""
+"Estimated hours and minutes until battery is depleted, based on current\n"
+"drain rate."
+msgstr ""
+"Az akkumulátor lemerüléséig becsült órák és percek száma,\n"
+"az aktuális fogyasztási arány alapján."
+
+msgid "Custom message"
+msgstr "Egyéni üzenet"
+
+msgid "Use a separate custom message just for Customisable Sleep Screen"
+msgstr "Külön egyéni üzenet használata csak a Testreszabható alvóképernyőhöz"
+
+msgid "Book highlights"
+msgstr "Könyv kiemelések"
+
+msgid "Show a random highlight from the current book"
+msgstr "Véletlenszerű kiemelés megjelenítése az aktuális könyvből"
+
+msgid "Custom quotes"
+msgstr "Egyéni idézetek"
+
+msgid ""
+"Show a random quote from the custom_quotes.lua file in the plugin\n"
+"folder."
+msgstr ""
+"Véletlenszerű idézet megjelenítése a bővítmény mappájában lévő\n"
+"custom_quotes.lua fájlból."
+
+msgid "KOReader sleep message"
+msgstr "KOReader alvóüzenet"
+
+msgid ""
+"Uses KOReaders own sleep screen message function. Enable 'Add custom\n"
+"message to sleep screen' to use this (Settings → Screen → Sleep screen\n"
+"→ Sleep screen message)."
+msgstr ""
+"A KOReader saját alvóképernyő-üzenet funkcióját használja. Az engedélyezéshez\n"
+"kapcsold be az „Egyéni üzenet hozzáadása az alvóképernyőhöz" opciót\n"
+"(Beállítások → Képernyő → Alvóképernyő → Alvóképernyő üzenet)."
+
+msgid "Show message header"
+msgstr "Üzenetfejléc megjelenítése"
+
+msgid "Show or hide the header label above the message text."
+msgstr "Az üzenetszöveg feletti fejléccímke megjelenítése vagy elrejtése."
+
+msgid "Message header"
+msgstr "Üzenet fejléce"
+
+msgid ""
+"Custom header text displayed above the message. Supports variables: %d,\n"
+"%y, %t, %b, %r."
+msgstr ""
+"Egyéni fejlécszöveg az üzenet felett. Támogatott változók: %d,\n"
+"%y, %t, %b, %r."
+
+msgid "Change custom message header"
+msgstr "Egyéni üzenetfejléc módosítása"
+
+msgid "Edit custom message"
+msgstr "Egyéni üzenet szerkesztése"
+
+msgid ""
+"Write your custom message text. Only active when 'Custom message' is\n"
+"selected. Supports variables: %d, %y, %t, %b, %r."
+msgstr ""
+"Írd be az egyéni üzenet szövegét. Csak akkor aktív, ha az „Egyéni üzenet"\n"
+"van kiválasztva. Támogatott változók: %d, %y, %t, %b, %r."
+
+msgid "Custom Customisable Sleep Screen message"
+msgstr "Egyéni Testreszabható alvóképernyő üzenet"
+
+msgid "Book highlight maximum length"
+msgstr "Könyv kiemelés maximális hossza"
+
+msgid "Maximum characters to display for highlights (0 = no limit)."
+msgstr "A kiemelésekhez megjelenítendő karakterek maximuma (0 = nincs korlát)."
+
+msgid "Maximum highlight length (characters)"
+msgstr "Maximális kiemelés hossza (karakter)"
+
+msgid ""
+"100–150 chars keeps highlights readable. Set to 0 to show the full\n"
+"highlight."
+msgstr ""
+"100–150 karakter olvashatóan tartja a kiemeléseket. 0 = teljes kiemelés megjelenítése."
+
+msgid "Add quotation marks to highlights"
+msgstr "Idézőjelek hozzáadása a kiemelésekhez"
+
+msgid ""
+"Wraps all highlights in curly double quotes, removing any pre-existing\n"
+"quotation marks."
+msgstr ""
+"Az összes kiemelést tipográfiai idézőjelek közé zárja, eltávolítva\n"
+"a meglévő idézőjeleket."
+
+msgid "Show highlight location"
+msgstr "Kiemelés helyzetének megjelenítése"
+
+msgid ""
+"Display the chapter title and page number where the highlight is found,\n"
+"shown below the highlight text."
+msgstr ""
+"A kiemelés szövege alatt megjelenik a fejezетcím és az oldalszám,\n"
+"ahol a kiemelés található."
+
+msgid "Show quote attribution"
+msgstr "Idézet forrásának megjelenítése"
+
+msgid ""
+"Display the author and book name below the quote, if provided in\n"
+"custom_quotes.lua."
+msgstr ""
+"A szerző és a könyv nevének megjelenítése az idézet alatt,\n"
+"ha meg van adva a custom_quotes.lua fájlban."
+
+msgid "Show titles (top line)"
+msgstr "Címek megjelenítése (felső sor)"
+
+msgid ""
+"Display the main heading text in each section. At least one of titles or\n"
+"subtitles must be visible."
+msgstr ""
+"A főcímszöveg megjelenítése minden szakaszban. Legalább a címek vagy\n"
+"az alcímek egyikének láthatónak kell lennie."
+
+msgid "Cannot hide both titles and subtitles. At least one must be visible."
+msgstr "Nem lehet egyszerre elrejteni a címeket és az alcímeket. Legalább egyiknek láthatónak kell lennie."
+
+msgid "Show subtitles (bottom lines)"
+msgstr "Alcímek megjelenítése (alsó sorok)"
+
+msgid ""
+"Display information below main heading text in each section. At least\n"
+"one of titles or subtitles must be visible."
+msgstr ""
+"Információk megjelenítése a főcímszöveg alatt minden szakaszban.\n"
+"Legalább a címek vagy az alcímek egyikének láthatónak kell lennie."
+
+msgid "Displayed sections"
+msgstr "Megjelenített szakaszok"
+
+msgid ""
+"Toggle which sections show on the sleep screen. At least one must be\n"
+"visible."
+msgstr ""
+"Kapcsold ki-be, mely szakaszok jelenjenek meg az alvóképernyőn.\n"
+"Legalább egyiknek láthatónak kell lennie."
+
+msgid "[ Section Content ]"
+msgstr "[ Szakasz tartalma ]"
+
+msgid "Configure book-specific details."
+msgstr "Könyvspecifikus részletek konfigurálása."
+
+msgid "Configure chapter-specific details"
+msgstr "Fejezetspecifikus részletek konfigurálása"
+
+msgid "Configure reading goal details"
+msgstr "Olvasási cél részleteinek konfigurálása"
+
+msgid "Battery section"
+msgstr "Akkumulátor szakasz"
+
+msgid "Configure battery & time/date details"
+msgstr "Akkumulátor és idő/dátum részleteinek konfigurálása"
+
+msgid "Configure message-specific details"
+msgstr "Üzenetspecifikus részletek konfigurálása"
+
+msgid "Customisable sleep screen settings"
+msgstr "Testreszabható alvóképernyő beállításai"
+
+msgid "Customisable sleep screen presets"
+msgstr "Testreszabható alvóképernyő beállításkészletek"
+
+msgid "Cycle through customisable sleep screen presets"
+msgstr "Váltás a testreszabható alvóképernyő beállításkészletei között"
+
+msgid "Customisable sleep screen"
+msgstr "Testreszabható alvóképernyő"
+
+msgid "Enable customisable sleep screen"
+msgstr "Testreszabható alvóképernyő engedélyezése"
+
+msgid ""
+"Customisable Sleep Screen: no book data found.\n"
+"\n"
+"Open a book and trigger the sleep screen at least once before it will\n"
+"work in the file manager."
+msgstr ""
+"Testreszabható alvóképernyő: nem találhatók könyvadatok.\n"
+"\n"
+"Nyiss meg egy könyvet, és lépj legalább egyszer az alvóképernyőre,\n"
+"mielőtt a fájlkezelőben is működne."
