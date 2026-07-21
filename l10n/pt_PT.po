@@ -62,16 +62,16 @@ msgid "December"
 msgstr "Dezembro"
 
 msgid "st"
-msgstr "st"
+msgstr "º"
 
 msgid "nd"
 msgstr "º"
 
 msgid "rd"
-msgstr "rd"
+msgstr "º"
 
 msgid "th"
-msgstr "th"
+msgstr "º"
 
 msgid "< 1 min"
 msgstr "< 1 min"
