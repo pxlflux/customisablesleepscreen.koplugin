@@ -115,6 +115,7 @@ local function isValidImageFile(filepath)
     if not header or #header < 2 then return false end
     if header:sub(1, 2) == "\xFF\xD8" then return true end
     if header:sub(1, 4) == "\x89PNG"  then return true end
+    if header:sub(1, 4) == "RIFF"  then return true end
     return false
 end
 
@@ -127,7 +128,7 @@ local function getRandomImageFromFolder(folder)
 
     util.findFiles(folder, function(filepath, filename)
         local lower = filename:lower()
-        if (lower:match("%.png$") or lower:match("%.jpg$") or lower:match("%.jpeg$"))
+        if (lower:match("%.png$") or lower:match("%.jpg$") or lower:match("%.jpeg$") or lower:match("%.webp$"))
            and isValidImageFile(filepath) then
             valid_images[#valid_images + 1] = filepath
         end
