@@ -792,7 +792,7 @@ local function buildBackgroundTypeMenu()
                 onConfirm = function(dir_path)
                     restoreFileChooser()
                     PluginStore:saveSetting(SETTINGS.BG_FOLDER, dir_path)
-                    local valid_extensions = { "%.png$", "%.jpg$", "%.jpeg$" }
+                    local valid_extensions = { "%.png$", "%.jpg$", "%.jpeg$", "%.webp$" }
                     local has_images = false
                     pcall(function()
                         local scan_path = dir_path:gsub("/$", "")
