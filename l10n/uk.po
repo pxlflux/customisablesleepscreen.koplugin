@@ -1,7 +1,4 @@
 # CUSTOMISABLE SLEEP SCREEN
-# Copyright (C) 2026
-# This file is distributed under the same license as the KOReader package.
-# pxlflux
 #
 msgid ""
 msgstr ""
