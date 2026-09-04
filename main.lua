@@ -282,29 +282,7 @@ function CustomisableSleepScreen:init()
     end
 
     self.onCloseDocument = function()
-        pcall(function()
-            local ReaderUI = getReaderUI()
-            local ui = ReaderUI and ReaderUI.instance
-            if not (ui and ui.document) then return end
-
-            if ui.statistics and ui.statistics.id_curr_book then
-                local avg_time_before = ui.statistics.avg_time
-                pcall(function() ui.statistics:insertDB(ui.statistics.id_curr_book) end)
-                ui.statistics.avg_time = avg_time_before
-            end
-
-            if ui.doc_settings then
-                pcall(function() ui.doc_settings:flush() end)
-            end
-
-            local state     = ui.view and ui.view.state
-            local ib        = getInfobox()
-            local book_data = ib.collectBookData(ui, state)
-            if book_data then
-                ib.saveLastBookData(book_data)
-                pcall(function() CustomisableSleepScreen:_exportToCoverImage(ui, state, book_data) end)
-            end
-        end)
+        pcall(function() CustomisableSleepScreen:_exportCurrentBookData() end)
     end
 
     local self_ref = self
@@ -316,7 +294,7 @@ function CustomisableSleepScreen:init()
     end
 end
 
-function CustomisableSleepScreen:_exportToCoverImage(ui, state, book_data, export_widget)
+function CustomisableSleepScreen:_exportToCoverImage(ui, state, book_data)
 
     if G_reader_settings:readSetting(SETTINGS.TYPE) ~= "customisable_ss" then
         return
@@ -327,9 +305,8 @@ function CustomisableSleepScreen:_exportToCoverImage(ui, state, book_data, expor
     local export_path = plugin_store:readSetting(SETTINGS.EXPORT_PATH)
     if not export_path or export_path == "" then return end
 
-    local ib          = getInfobox()
-    local owns_widget = export_widget == nil
-    local widget      = export_widget or ib.buildInfoBox(ui, state, book_data)
+    local ib     = getInfobox()
+    local widget = ib.buildInfoBox(ui, state, book_data)
 
     if not widget then return end
 
@@ -361,9 +338,7 @@ function CustomisableSleepScreen:_exportToCoverImage(ui, state, book_data, expor
     end
     bb:free()
 
-    if owns_widget then
-        ib.freeTrackedBBs()
-    end
+    ib.freeTrackedBBs()
 end
 
 function CustomisableSleepScreen:_exportCurrentBookData()
@@ -568,7 +543,6 @@ function CustomisableSleepScreen:_installScreensaverHook()
         local ReaderUI = getReaderUI()
         local ui       = ReaderUI and ReaderUI.instance
         local widget   = nil
-        local export_ui, export_state, export_book_data
 
         if ui and ui.document then
 
@@ -588,7 +562,6 @@ function CustomisableSleepScreen:_installScreensaverHook()
             if book_data then
                 ib.saveLastBookData(book_data)
                 widget = ib.buildInfoBox(ui, state, book_data)
-                export_ui, export_state, export_book_data = ui, state, book_data
             end
         else
             local render_ref = require("css_infobox_render")
@@ -599,7 +572,6 @@ function CustomisableSleepScreen:_installScreensaverHook()
             local book_data = ib.loadLastBookData()
             if book_data then
                 widget = ib.buildInfoBox(nil, nil, book_data)
-                export_book_data = book_data
             else
                 UIManager:show(require("ui/widget/infomessage"):new {
                     text    = _("Customisable Sleep Screen: no book data found.\n\nOpen a book and trigger the sleep screen at least once before it will work in the file manager."),
@@ -622,14 +594,6 @@ function CustomisableSleepScreen:_installScreensaverHook()
         ss_self.screensaver_widget.modal    = true
         ss_self.screensaver_widget.dithered = true
         UIManager:show(ss_self.screensaver_widget, "full")
-
-        if export_book_data then
-            UIManager:scheduleIn(0, function()
-                pcall(function()
-                    css:_exportToCoverImage(export_ui, export_state, export_book_data, widget)
-                end)
-            end)
-        end
 
         local screensaver_delay = G_reader_settings:readSetting("screensaver_delay")
         if screensaver_delay == "gesture" and ui then
