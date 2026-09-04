@@ -1,4 +1,4 @@
-# CUSTOMISABLE SLEEP SCREEN – Magyar fordítás
+# CUSTOMISABLE SLEEP SCREEN
 #
 msgid ""
 msgstr ""
@@ -209,7 +209,7 @@ msgid ""
 "'Default' preset will remain. This cannot be undone."
 msgstr ""
 "Véglegesen törli az összes általad létrehozott egyéni beállítást. A beépített\n"
-"„Alapértelmezett" beállítás megmarad. Ez a művelet nem vonható vissza."
+"„Alapértelmezett” beállítás megmarad. Ez a művelet nem vonható vissza."
 
 msgid ""
 "Are you sure you want to delete all custom presets? (built-in presets\n"
@@ -361,7 +361,7 @@ msgid ""
 "closed."
 msgstr ""
 "Ha engedélyezve van, az alvóképernyő képernyőképe\n"
-"„screensaver.png" névvel kerül mentésre a kiválasztott exportálási mappába\n"
+"„screensaver.png” névvel kerül mentésre a kiválasztott exportálási mappába\n"
 "minden könyvbezáráskor."
 
 msgid "Sleep screen export disabled."
@@ -968,7 +968,7 @@ msgid ""
 "titles and normalises capitalisation. Only works correctly with English\n"
 "chapter titles - disable for non-English books."
 msgstr ""
-"Eltávolítja az olyan szerkezeti előtagokat, mint a „Chapter 5:" vagy „Part II"\n"
+"Eltávolítja az olyan szerkezeti előtagokat, mint a „Chapter 5:” vagy „Part II”\n"
 "a fejezетcímekből, és normalizálja a nagybetű-használatot. Csak angol fejezетcímekkel\n"
 "működik helyesen – nem angol könyvek esetén tiltsd le."
 
@@ -1127,7 +1127,7 @@ msgstr "Jelenlegi beállítások mentése új beállításként"
 
 #, lua-format
 msgid "What would you like to do with preset '%s'?"
-msgstr "Mit szeretnél tenni a(z) „%s" beállítással?"
+msgstr "Mit szeretnél tenni a(z) „%s” beállítással?"
 
 msgid "Update"
 msgstr "Frissítés"
@@ -1138,11 +1138,11 @@ msgstr "Biztosan felülírod a(z) „%s" beállítást a jelenlegi beállításo
 
 #, lua-format
 msgid "Preset '%s' was updated with current settings"
-msgstr "A(z) „%s" beállítás frissítve a jelenlegi beállításokkal"
+msgstr "A(z) „%s” beállítás frissítve a jelenlegi beállításokkal"
 
 #, lua-format
 msgid "Are you sure you want to delete preset '%s'?"
-msgstr "Biztosan törölni szeretnéd a(z) „%s" beállítást?"
+msgstr "Biztosan törölni szeretnéd a(z) „%s” beállítást?"
 
 msgid "Rename"
 msgstr "Átnevezés"
@@ -1272,7 +1272,7 @@ msgid ""
 "Display current chapter number and total chapters (e.g., 'Chapter 5 of\n"
 "12')."
 msgstr ""
-"Az aktuális fejezetszám és az összes fejezet megjelenítése (pl. „5. fejezet / 12")."
+"Az aktuális fejezetszám és az összes fejezet megjelenítése (pl. „5. fejezet / 12”)."
 
 msgid "Show chapter pages (pg x of x)"
 msgstr "Fejezet oldalainak megjelenítése (Oldal: x / x)"
@@ -1299,19 +1299,19 @@ msgid "Pages read today"
 msgstr "Ma olvasott oldalak"
 
 msgid "e.g. '35 pages read today'"
-msgstr "pl. „35 oldalt olvastál ma""
+msgstr "pl. „35 oldalt olvastál ma”"
 
 msgid "Time read today"
 msgstr "Ma olvasott idő"
 
 msgid "e.g. '42 mins read today'"
-msgstr "pl. „42 percet olvastál ma""
+msgstr "pl. „42 percet olvastál ma”"
 
 msgid "Pages and time read today"
 msgstr "Ma olvasott oldalak és idő"
 
 msgid "e.g. '35 pgs & 42 mins read today'"
-msgstr "pl. „35 old. és 42 percet olvastál ma""
+msgstr "pl. „35 old. és 42 percet olvastál ma”"
 
 msgid "Goal type"
 msgstr "Cél típusa"
@@ -1397,7 +1397,7 @@ msgstr ""
 "beágyazott megjelenítés helyett."
 
 msgid "Enable 'Show battery time remaining' to use this option"
-msgstr "Az „Akkumulátor hátralévő idejének megjelenítése" engedélyezése szükséges ehhez a beállításhoz"
+msgstr "Az „Akkumulátor hátralévő idejének megjelenítése” engedélyezése szükséges ehhez a beállításhoz"
 
 msgid "Show date instead of time"
 msgstr "Dátum megjelenítése az idő helyett"
@@ -1406,7 +1406,7 @@ msgid ""
 "Display current date (e.g. '29th Jan') instead of time in battery\n"
 "section"
 msgstr ""
-"Az aktuális dátum megjelenítése (pl. „jan. 29.") az idő helyett\n"
+"Az aktuális dátum megjelenítése (pl. „jan. 29.”) az idő helyett\n"
 "az akkumulátor szakaszban"
 
 msgid "Show battery consumption rate"
@@ -1460,7 +1460,7 @@ msgid ""
 "→ Sleep screen message)."
 msgstr ""
 "A KOReader saját alvóképernyő-üzenet funkcióját használja. Az engedélyezéshez\n"
-"kapcsold be az „Egyéni üzenet hozzáadása az alvóképernyőhöz" opciót\n"
+"kapcsold be az „Egyéni üzenet hozzáadása az alvóképernyőhöz” opciót\n"
 "(Beállítások → Képernyő → Alvóképernyő → Alvóképernyő üzenet)."
 
 msgid "Show message header"
@@ -1489,7 +1489,7 @@ msgid ""
 "Write your custom message text. Only active when 'Custom message' is\n"
 "selected. Supports variables: %d, %y, %t, %b, %r."
 msgstr ""
-"Írd be az egyéni üzenet szövegét. Csak akkor aktív, ha az „Egyéni üzenet"\n"
+"Írd be az egyéni üzenet szövegét. Csak akkor aktív, ha az „Egyéni üzenet”\n"
 "van kiválasztva. Támogatott változók: %d, %y, %t, %b, %r."
 
 msgid "Custom Customisable Sleep Screen message"
