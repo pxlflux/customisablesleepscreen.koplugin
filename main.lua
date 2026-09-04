@@ -282,29 +282,7 @@ function CustomisableSleepScreen:init()
     end
 
     self.onCloseDocument = function()
-        pcall(function()
-            local ReaderUI = getReaderUI()
-            local ui = ReaderUI and ReaderUI.instance
-            if not (ui and ui.document) then return end
-
-            if ui.statistics and ui.statistics.id_curr_book then
-                local avg_time_before = ui.statistics.avg_time
-                pcall(function() ui.statistics:insertDB(ui.statistics.id_curr_book) end)
-                ui.statistics.avg_time = avg_time_before
-            end
-
-            if ui.doc_settings then
-                pcall(function() ui.doc_settings:flush() end)
-            end
-
-            local state     = ui.view and ui.view.state
-            local ib        = getInfobox()
-            local book_data = ib.collectBookData(ui, state)
-            if book_data then
-                ib.saveLastBookData(book_data)
-                pcall(function() CustomisableSleepScreen:_exportToCoverImage(ui, state, book_data) end)
-            end
-        end)
+        pcall(function() CustomisableSleepScreen:_exportCurrentBookData() end)
     end
 
     local self_ref = self
@@ -339,7 +317,10 @@ function CustomisableSleepScreen:_exportToCoverImage(ui, state, book_data)
     local h  = Screen:getHeight()
 
     local ok_bb, bb = pcall(Blitbuffer.new, w, h, Blitbuffer.TYPE_BBRGB32)
-    if not ok_bb then return end
+    if not ok_bb then
+        logger.warn("[Customisable Sleep Screen] export failed: could not create blitbuffer: " .. tostring(bb))
+        return
+    end
 
     local wrapped = FrameContainer:new {
         bordersize = 0,
@@ -350,9 +331,44 @@ function CustomisableSleepScreen:_exportToCoverImage(ui, state, book_data)
 
     export_path = export_path:gsub("/$", "") .. "/screensaver.png"
     local ok = bb:writeToFile(export_path, "png", 90)
+    if not ok then
+        logger.warn("[Customisable Sleep Screen] export failed: could not write " .. tostring(export_path))
+    else
+        logger.info("[Customisable Sleep Screen] exported sleep screen to " .. tostring(export_path))
+    end
     bb:free()
 
     ib.freeTrackedBBs()
+end
+
+function CustomisableSleepScreen:_exportCurrentBookData()
+    local ReaderUI = getReaderUI()
+    local ui       = ReaderUI and ReaderUI.instance
+    local ib       = getInfobox()
+
+    if ui and ui.document then
+        if ui.statistics and ui.statistics.id_curr_book then
+            local avg_time_before = ui.statistics.avg_time
+            pcall(function() ui.statistics:insertDB(ui.statistics.id_curr_book) end)
+            ui.statistics.avg_time = avg_time_before
+        end
+
+        if ui.doc_settings then
+            pcall(function() ui.doc_settings:flush() end)
+        end
+
+        local state     = ui.view and ui.view.state
+        local book_data = ib.collectBookData(ui, state)
+        if book_data then
+            ib.saveLastBookData(book_data)
+            self:_exportToCoverImage(ui, state, book_data)
+        end
+    else
+        local book_data = ib.loadLastBookData()
+        if book_data then
+            self:_exportToCoverImage(nil, nil, book_data)
+        end
+    end
 end
 
 function CustomisableSleepScreen:_onPowerOff()
@@ -468,6 +484,7 @@ function CustomisableSleepScreen:onCloseWidget()
 end
 
 function CustomisableSleepScreen:onSuspend()
+    pcall(function() self:_exportCurrentBookData() end)
     pcall(function() css_settings.flush() end)
     pcall(function() G_reader_settings:flush() end)
 end
