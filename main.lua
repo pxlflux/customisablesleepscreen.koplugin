@@ -329,8 +329,10 @@ function CustomisableSleepScreen:_exportToCoverImage(ui, state, book_data)
     }
     wrapped:paintTo(bb, 0, 0)
 
-    export_path = export_path:gsub("/$", "") .. "/screensaver.png"
-    local ok = bb:writeToFile(export_path, "png", 90)
+    local filename = plugin_store:readSetting(SETTINGS.EXPORT_FILENAME) or "screensaver"
+    local format   = plugin_store:readSetting(SETTINGS.EXPORT_FORMAT) or "png"
+    export_path = export_path:gsub("/$", "") .. "/" .. filename .. "." .. format
+    local ok = bb:writeToFile(export_path, format, 90, format == "bmp")
     if not ok then
         logger.warn("[Customisable Sleep Screen] export failed: could not write " .. tostring(export_path))
     else

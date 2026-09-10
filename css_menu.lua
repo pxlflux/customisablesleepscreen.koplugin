@@ -198,7 +198,7 @@ local function buildAdvancedMenu()
         },
         {
             text      = _("Export sleep screen to file"),
-            help_text = _("When enabled, a screenshot of the sleep screen will be saved as 'screensaver.png' in the selected export folder each time a book is closed."),
+            help_text = _("When enabled, a screenshot of the sleep screen will be saved in the selected export folder each time a book is closed, using the filename and format set below."),
             keep_menu_open = true,
             checked_func = function()
                 return PluginStore:isTrue(SETTINGS.EXPORT_ENABLED)
@@ -219,10 +219,12 @@ local function buildAdvancedMenu()
                         })
                     else
                         PluginStore:saveSetting(SETTINGS.EXPORT_ENABLED, true)
+                        local filename = PluginStore:readSetting(SETTINGS.EXPORT_FILENAME) or "screensaver"
+                        local format   = PluginStore:readSetting(SETTINGS.EXPORT_FORMAT) or "png"
                         UIManager:show(require("ui/widget/infomessage"):new {
                             text    = string.format(
-                                _("Sleep screen will be exported to:\n%s/screensaver.png"),
-                                path),
+                                _("Sleep screen will be exported to:\n%s/%s.%s"),
+                                path, filename, format),
                             timeout = 3,
                         })
                     end
@@ -231,8 +233,62 @@ local function buildAdvancedMenu()
             end,
         },
         {
+            text      = _("Set export filename"),
+            help_text = _("Choose the filename used for the exported image (without extension). Some devices need a specific filename to recognise it as their native sleep screen e.g. 'suspend_others' for Tolino."),
+            keep_menu_open = true,
+            callback = function(touchmenu_instance)
+                local InputDialog = require("ui/widget/inputdialog")
+                local current_filename = PluginStore:readSetting(SETTINGS.EXPORT_FILENAME) or "screensaver"
+                local dialog
+                dialog = InputDialog:new {
+                    title      = _("Export filename"),
+                    input      = current_filename,
+                    input_hint = "screensaver",
+                    buttons    = {{
+                        {
+                            text     = _("Cancel"),
+                            callback = function() UIManager:close(dialog) end,
+                        },
+                        {
+                            text             = _("Save"),
+                            is_enter_default = true,
+                            callback         = function()
+                                local val = dialog:getInputText()
+                                if val and val ~= "" then
+                                    PluginStore:saveSetting(SETTINGS.EXPORT_FILENAME, val)
+                                end
+                                UIManager:close(dialog)
+                                if touchmenu_instance then touchmenu_instance:updateItems() end
+                            end,
+                        },
+                    }},
+                }
+                UIManager:show(dialog)
+            end,
+        },
+        {
+            text      = _("Export format"),
+            help_text = _("Choose the image format for the exported file. BMP is needed for PocketBook's native sleep screen; PNG and JPG suit most other devices."),
+            sub_item_table = {
+                {
+                    text      = _("PNG"),
+                    help_text = _("Lossless, larger file size. Default."),
+                    checked_func = function()
+                        local val = PluginStore:readSetting(SETTINGS.EXPORT_FORMAT)
+                        return val == nil or val == "png"
+                    end,
+                    callback = function()
+                        PluginStore:saveSetting(SETTINGS.EXPORT_FORMAT, "png")
+                    end,
+                    radio = true,
+                },
+                createRadioItem(_("JPG"), _("Lossy, smaller file size."), SETTINGS.EXPORT_FORMAT, "jpg"),
+                createRadioItem(_("BMP"), _("Uncompressed. Required for PocketBook's native sleep screen support."), SETTINGS.EXPORT_FORMAT, "bmp"),
+            },
+        },
+        {
             text      = _("Set export folder"),
-            help_text = _("Choose the folder where screensaver.png will be saved."),
+            help_text = _("Choose the folder where the exported image will be saved."),
             keep_menu_open = true,
             callback = function(touchmenu_instance)
                 local PathChooser = require("ui/widget/pathchooser")

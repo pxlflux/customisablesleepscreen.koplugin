@@ -104,6 +104,8 @@ local USER_CONFIG = {
     GOAL_STAT_SCOPE          = "all",
     EXPORT_PATH              = "",
     EXPORT_ENABLED           = false,
+    EXPORT_FILENAME          = "screensaver",
+    EXPORT_FORMAT            = "png",
 
     COLOR_BOX_BG             = "#FFFFFF",
     COLOR_BOX_BG_DARK        = "#000000",
@@ -230,6 +232,8 @@ local SETTINGS = {
     GOAL_STAT_SCOPE          = "customisable_ss_goal_stat_scope",
     EXPORT_PATH              = "customisable_ss_export_path",
     EXPORT_ENABLED           = "customisable_ss_export_enabled",
+    EXPORT_FILENAME          = "customisable_ss_export_filename",
+    EXPORT_FORMAT            = "customisable_ss_export_format",
 
     COLOR_BOX_BG             = "customisable_ss_color_box_bg",
     COLOR_BOX_BG_DARK        = "customisable_ss_color_box_bg_dark",
