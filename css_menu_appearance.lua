@@ -664,74 +664,14 @@ end
 local function buildBackgroundTypeMenu()
     local options = {
         { text = _("No background"),            val = "transparent" },
-        { text = _("Book cover"),               val = "cover"       },
         { text = _("Solid colour"),             val = "solid"       },
+        { text = _("Book cover"),               val = "cover"       },
+        { text = _("Custom image"),             val = "custom"      },
         { text = _("Random image from folder"), val = "folder"      },
     }
-    local sub_menu = buildNumericMenu("BG_TYPE", options)
+    local radio_items = buildNumericMenu("BG_TYPE", options)
 
-    sub_menu[#sub_menu + 1] = {
-        text      = _("Stretch book cover to fill"),
-        help_text = _("When disabled, book cover will be scaled to fit within the screen while preserving aspect ratio."),
-        enabled_func = function()
-            local bg_type = getSetting("BG_TYPE")
-            return bg_type == "cover" or bg_type == "folder" or bg_type == nil
-        end,
-        checked_func = function()
-            local stretch = getSetting("BG_STRETCH")
-            return stretch == nil and USER_CONFIG.BG_STRETCH or stretch
-        end,
-        callback = function()
-            local current = getSetting("BG_STRETCH")
-            if current == nil then current = USER_CONFIG.BG_STRETCH end
-            PluginStore:saveSetting(SETTINGS.BG_STRETCH, not current)
-        end,
-    }
-
-    sub_menu[#sub_menu + 1] = {
-        text      = _("Cover fill colour"),
-        help_text = _("Background colour for non-stretched covers."),
-        enabled_func = function()
-            local bg_type = getSetting("BG_TYPE")
-            local stretch = getSetting("BG_STRETCH")
-            return (bg_type == "cover" or bg_type == "folder" or bg_type == nil) and not stretch
-        end,
-        keep_menu_open = true,
-        callback = function()
-            local current_color = getSetting("BG_COVER_FILL_COLOR")
-            if current_color == "black" then current_color = "#000000"
-            elseif current_color == "white" then current_color = "#ffffff"
-            end
-            local h, s, v = hexToHSV(current_color)
-            local wheel = getColourWheelWidget():new({
-                title_text = _("Pick cover fill colour"),
-                hue = h, saturation = s, value = v,
-                callback = function(hex)
-                    PluginStore:saveSetting(SETTINGS.BG_COVER_FILL_COLOR, hex)
-                    UIManager:setDirty(nil, "ui")
-                end,
-                cancel_callback = function() UIManager:setDirty(nil, "ui") end,
-            })
-            UIManager:show(wheel)
-        end,
-    }
-
-    sub_menu[#sub_menu + 1] = {
-        text      = _("Cover alignment"),
-        help_text = _("Horizontal alignment of the cover image when not stretched."),
-        enabled_func = function()
-            local bg_type = getSetting("BG_TYPE")
-            local stretch = getSetting("BG_STRETCH")
-            return (bg_type == "cover" or bg_type == "folder" or bg_type == nil) and not stretch
-        end,
-        sub_item_table = {
-            createRadioItem(_("Left"),   nil, SETTINGS.BG_COVER_ALIGN, "left"),
-            createRadioItem(_("Centre"), nil, SETTINGS.BG_COVER_ALIGN, "center"),
-            createRadioItem(_("Right"),  nil, SETTINGS.BG_COVER_ALIGN, "right"),
-        },
-    }
-
-    sub_menu[#sub_menu + 1] = {
+    local solid_background_colour_item = {
         text           = _("Solid background colour"),
         enabled_func   = function() return getSetting("BG_TYPE") == "solid" end,
         keep_menu_open = true,
@@ -751,7 +691,63 @@ local function buildBackgroundTypeMenu()
         end,
     }
 
-    sub_menu[#sub_menu + 1] = {
+    local custom_image_path_item = {
+        text           = _("Custom image path"),
+        help_text      = _("Choose a single image to use as the background."),
+        enabled_func   = function() return getSetting("BG_TYPE") == "custom" end,
+        keep_menu_open = true,
+        callback = function()
+            local PathChooser = require("ui/widget/pathchooser")
+            local FileChooser = require("ui/widget/filechooser")
+            local Menu_orig   = require("ui/widget/menu")
+
+            local was_hidden             = FileChooser.show_hidden
+            local was_lock_home          = G_reader_settings:readSetting("lock_home_folder")
+            local was_updateItems        = FileChooser.updateItems
+            local was_recalculateDimen   = FileChooser._recalculateDimen
+            local was_updateItemsBuildUI = FileChooser._updateItemsBuildUI
+            local was_onCloseWidget      = FileChooser.onCloseWidget
+
+            FileChooser.show_hidden         = true
+            FileChooser.updateItems         = Menu_orig.updateItems
+            FileChooser._recalculateDimen   = Menu_orig._recalculateDimen
+            FileChooser._updateItemsBuildUI = Menu_orig._updateItemsBuildUI
+            FileChooser.onCloseWidget       = Menu_orig.onCloseWidget
+            G_reader_settings:saveSetting("lock_home_folder", false)
+
+            local function restoreFileChooser()
+                FileChooser.show_hidden         = was_hidden
+                FileChooser.updateItems         = was_updateItems
+                FileChooser._recalculateDimen   = was_recalculateDimen
+                FileChooser._updateItemsBuildUI = was_updateItemsBuildUI
+                FileChooser.onCloseWidget       = was_onCloseWidget
+                G_reader_settings:saveSetting("lock_home_folder", was_lock_home)
+            end
+
+            UIManager:show(PathChooser:new {
+                select_directory = false,
+                select_file      = true,
+                show_files       = true,
+                path             = getSetting("BG_IMAGE_PATH") or "/",
+                onConfirm = function(file_path)
+                    restoreFileChooser()
+                    local lower = file_path:lower()
+                    if not (lower:match("%.png$") or lower:match("%.jpg$") or lower:match("%.jpeg$") or lower:match("%.webp$")) then
+                        UIManager:show(require("ui/widget/infomessage"):new {
+                            text    = _("This doesn't look like a supported image file (png, jpg, or webp). No background will be shown."),
+                            timeout = 3,
+                        })
+                    end
+                    PluginStore:saveSetting(SETTINGS.BG_IMAGE_PATH, file_path)
+                end,
+                onCancel = function()
+                    restoreFileChooser()
+                end,
+            })
+        end,
+    }
+
+    local background_folder_path_item = {
         text           = _("Background folder path"),
         enabled_func   = function() return getSetting("BG_TYPE") == "folder" end,
         keep_menu_open = true,
@@ -821,6 +817,82 @@ local function buildBackgroundTypeMenu()
         end,
     }
 
+    local ITEM_AFTER_TYPE = {
+        solid  = solid_background_colour_item,
+        custom = custom_image_path_item,
+        folder = background_folder_path_item,
+    }
+
+    local sub_menu = {}
+    for i, item in ipairs(radio_items) do
+        sub_menu[#sub_menu + 1] = item
+        local extra = ITEM_AFTER_TYPE[options[i].val]
+        if extra then
+            sub_menu[#sub_menu + 1] = extra
+        end
+    end
+
+    sub_menu[#sub_menu + 1] = {
+        text      = _("Stretch book cover to fill"),
+        help_text = _("When disabled, book cover will be scaled to fit within the screen while preserving aspect ratio."),
+        enabled_func = function()
+            local bg_type = getSetting("BG_TYPE")
+            return bg_type == "cover" or bg_type == "folder" or bg_type == "custom" or bg_type == nil
+        end,
+        checked_func = function()
+            local stretch = getSetting("BG_STRETCH")
+            return stretch == nil and USER_CONFIG.BG_STRETCH or stretch
+        end,
+        callback = function()
+            local current = getSetting("BG_STRETCH")
+            if current == nil then current = USER_CONFIG.BG_STRETCH end
+            PluginStore:saveSetting(SETTINGS.BG_STRETCH, not current)
+        end,
+    }
+
+    sub_menu[#sub_menu + 1] = {
+        text      = _("Cover fill colour"),
+        help_text = _("Background colour for non-stretched covers."),
+        enabled_func = function()
+            local bg_type = getSetting("BG_TYPE")
+            local stretch = getSetting("BG_STRETCH")
+            return (bg_type == "cover" or bg_type == "folder" or bg_type == "custom" or bg_type == nil) and not stretch
+        end,
+        keep_menu_open = true,
+        callback = function()
+            local current_color = getSetting("BG_COVER_FILL_COLOR")
+            if current_color == "black" then current_color = "#000000"
+            elseif current_color == "white" then current_color = "#ffffff"
+            end
+            local h, s, v = hexToHSV(current_color)
+            local wheel = getColourWheelWidget():new({
+                title_text = _("Pick cover fill colour"),
+                hue = h, saturation = s, value = v,
+                callback = function(hex)
+                    PluginStore:saveSetting(SETTINGS.BG_COVER_FILL_COLOR, hex)
+                    UIManager:setDirty(nil, "ui")
+                end,
+                cancel_callback = function() UIManager:setDirty(nil, "ui") end,
+            })
+            UIManager:show(wheel)
+        end,
+    }
+
+    sub_menu[#sub_menu + 1] = {
+        text      = _("Cover alignment"),
+        help_text = _("Horizontal alignment of the cover image when not stretched."),
+        enabled_func = function()
+            local bg_type = getSetting("BG_TYPE")
+            local stretch = getSetting("BG_STRETCH")
+            return (bg_type == "cover" or bg_type == "folder" or bg_type == "custom" or bg_type == nil) and not stretch
+        end,
+        sub_item_table = {
+            createRadioItem(_("Left"),   nil, SETTINGS.BG_COVER_ALIGN, "left"),
+            createRadioItem(_("Centre"), nil, SETTINGS.BG_COVER_ALIGN, "center"),
+            createRadioItem(_("Right"),  nil, SETTINGS.BG_COVER_ALIGN, "right"),
+        },
+    }
+
     return sub_menu
 end
 
@@ -829,6 +901,7 @@ local function buildBackgroundMenu()
         createResetMenuItem("background", {
             SETTINGS.BG_DIMMING, SETTINGS.BG_DIMMING_COLOR,
             SETTINGS.BG_TYPE,    SETTINGS.BG_FOLDER,
+            SETTINGS.BG_IMAGE_PATH,
             SETTINGS.BG_STRETCH, SETTINGS.BG_COVER_FILL_COLOR,
             SETTINGS.BG_SOLID_COLOR, SETTINGS.BG_COVER_ALIGN,
         }),

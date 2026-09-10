@@ -83,6 +83,26 @@ local function scaleImageToFit(bb, target_w, target_h, stretch, fill_color, alig
     return trackBB(final_bb)
 end
 
+local function renderImageFileAsBackground(filepath, screen_size)
+    local ok, image_bb = pcall(function()
+        return RenderImage:renderImageFile(filepath, screen_size.w, screen_size.h)
+    end)
+    if not (ok and image_bb) then return nil end
+
+    local stretch    = getSetting("BG_STRETCH")
+    local fill_color = getSetting("BG_COVER_FILL_COLOR")
+    local align      = getSetting("BG_COVER_ALIGN")
+    local scaled_bb  = scaleImageToFit(image_bb, screen_size.w, screen_size.h, stretch, fill_color, align)
+    if not scaled_bb then return nil end
+
+    return ImageWidget:new {
+        image  = scaled_bb,
+        width  = screen_size.w,
+        height = screen_size.h,
+        alpha  = true,
+    }
+end
+
 local function buildBackground(ui)
     if not (ui and ui.document) then return nil end
     local screen_size = Screen:getSize()
@@ -167,23 +187,8 @@ local function getRandomImageFromFolder(folder)
         tried[idx] = true
 
         local random_file = valid_images[idx]
-        local ok, image_bb = pcall(function()
-            return RenderImage:renderImageFile(random_file, screen_size.w, screen_size.h)
-        end)
-
-        if ok and image_bb then
-            local stretch    = getSetting("BG_STRETCH")
-            local fill_color = getSetting("BG_COVER_FILL_COLOR")
-            local align      = getSetting("BG_COVER_ALIGN")
-            local scaled_bb  = scaleImageToFit(image_bb, screen_size.w, screen_size.h, stretch, fill_color, align)
-            if not scaled_bb then return nil end
-            return ImageWidget:new {
-                image  = scaled_bb,
-                width  = screen_size.w,
-                height = screen_size.h,
-                alpha  = true,
-            }
-        end
+        local widget = renderImageFileAsBackground(random_file, screen_size)
+        if widget then return widget end
     end
 
     return nil
@@ -220,6 +225,14 @@ local function buildBackgroundWidget(ui, book_data)
         local img = getRandomImageFromFolder(folder)
         if img then return img end
         return nil
+    end
+
+    if bg_type == "custom" then
+        local path = getSetting("BG_IMAGE_PATH")
+        if not path or path == "" or not util.fileExists(path) or not isValidImageFile(path) then
+            return nil
+        end
+        return renderImageFileAsBackground(path, screen_size)
     end
 
     if ui and ui.document then
