@@ -1023,33 +1023,20 @@ local function buildBatterySection(ui, state, book_data, has_ui, total_width, co
     end
     local charging_symbol = is_charging and "⚡" or ""
 
-    local battery_top_line
-    local subtitle_lines = {}
+    local battery_top_line = string.format("%d%% %s", batt_perc, charging_symbol)
+    local subtitle_lines   = {}
 
+    if current_display then table.insert(subtitle_lines, current_display) end
+    if show_rate then
+        local consumption_rate = require("css_stats").getBatteryConsumptionRate()
+        if consumption_rate and consumption_rate > 0 then
+            table.insert(subtitle_lines, string.format(_("~%.1f%%/hour"), consumption_rate))
+        else
+            table.insert(subtitle_lines, _("Rate unavailable"))
+        end
+    end
     if show_batt_time then
-        battery_top_line = current_display
-            and string.format("%d%% %s · %s", batt_perc, charging_symbol, current_display)
-            or string.format("%d%% %s", batt_perc, charging_symbol)
-        if show_rate then
-            local consumption_rate = require("css_stats").getBatteryConsumptionRate()
-            if consumption_rate and consumption_rate > 0 then
-                table.insert(subtitle_lines, string.format(_("~%.1f%%/hour"), consumption_rate))
-            else
-                table.insert(subtitle_lines, _("Rate unavailable"))
-            end
-        end
         table.insert(subtitle_lines, formatBatteryTime(battery_hours_left))
-    else
-        battery_top_line = string.format("%d%% %s", batt_perc, charging_symbol)
-        if current_display then table.insert(subtitle_lines, current_display) end
-        if show_rate then
-            local consumption_rate = require("css_stats").getBatteryConsumptionRate()
-            if consumption_rate and consumption_rate > 0 then
-                table.insert(subtitle_lines, string.format(_("~%.1f%%/hour"), consumption_rate))
-            else
-                table.insert(subtitle_lines, _("Rate unavailable"))
-            end
-        end
     end
 
     local battery_subtitle = #subtitle_lines > 1
