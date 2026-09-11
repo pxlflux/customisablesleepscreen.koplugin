@@ -25,6 +25,9 @@ local h                = require("css_menu_helpers")
 local getSetting       = h.getSetting
 local createRadioItem  = h.createRadioItem
 local createSpinDialog = h.createSpinDialog
+local buildNumericMenu = h.buildNumericMenu
+
+local bg_mod = require("css_infobox_background")
 
 local presets_mod               = require("css_menu_presets")
 local buildPresetManagementMenu = presets_mod.buildPresetManagementMenu
@@ -39,7 +42,7 @@ local buildColorsIconsBarsMenu  = appearance_mod.buildColorsIconsBarsMenu
 local buildFontsAndTextMenu     = appearance_mod.buildFontsAndTextMenu
 local buildBackgroundMenu       = appearance_mod.buildBackgroundMenu
 
-local function buildAdvancedMenu()
+local function buildAdvancedMenu(ui)
     return {
         {
             text      = _("Delete all custom presets"),
@@ -170,7 +173,7 @@ local function buildAdvancedMenu()
         },
         {
             text      = _("Flash screen to reduce ghosting"),
-            help_text = _("Flashes the screen to blank before showing the sleep screen, clearing residual text/image ghosting from some e-ink panels. Off by default"),
+            help_text = _("Flashes the screen to black before showing the sleep screen, clearing residual text/image ghosting. Off by default, since not every device shows this ghosting."),
             keep_menu_open = true,
             checked_func = function()
                 return PluginStore:isTrue(SETTINGS.ANTI_GHOSTING_FLASH)
@@ -354,10 +357,43 @@ local function buildAdvancedMenu()
                 })
             end,
         },
+        {
+            text      = _("Exclude this book's cover from sleep screen"),
+            help_text = _("Hides the cover for this book only, for when you'd rather it not be shown on your sleep screen - without having to switch presets or background settings each time you read it."),
+            enabled_func = function()
+                return ui and ui.document ~= nil
+            end,
+            checked_func = function()
+                return ui and ui.doc_settings and ui.doc_settings:isTrue(bg_mod.COVER_EXCLUDE_KEY)
+            end,
+            callback = function()
+                if not (ui and ui.doc_settings) then return end
+                if ui.doc_settings:isTrue(bg_mod.COVER_EXCLUDE_KEY) then
+                    ui.doc_settings:makeFalse(bg_mod.COVER_EXCLUDE_KEY)
+                else
+                    ui.doc_settings:makeTrue(bg_mod.COVER_EXCLUDE_KEY)
+                end
+                ui:saveSettings()
+            end,
+        },
+        {
+            text      = _("Cover-excluded fallback background"),
+            help_text = _("What to show instead of the cover. Uses the colour, image, or folder already set in Background → Background type. Only selectable when \"Exclude this book's cover from sleep screen\" is turned on."),
+            enabled_func = function()
+                if not (ui and ui.document and ui.doc_settings) then return false end
+                return ui.doc_settings:isTrue(bg_mod.COVER_EXCLUDE_KEY) == true
+            end,
+            sub_item_table = buildNumericMenu("EXCLUDED_COVER_BG_TYPE", {
+                { text = _("No background (leave screen as-is)"), val = "transparent" },
+                { text = _("Solid colour"),                       val = "solid"       },
+                { text = _("Custom image"),                       val = "custom"      },
+                { text = _("Random image from folder"),           val = "folder"      },
+            }),
+        },
     }
 end
 
-local function getCustomisableSleepScreenSettingsMenu(hide_presets)
+local function getCustomisableSleepScreenSettingsMenu(hide_presets, ui)
     local menu_table = {}
 
     if not hide_presets then
@@ -377,7 +413,7 @@ local function getCustomisableSleepScreenSettingsMenu(hide_presets)
     menu_table[#menu_table + 1] = { text = _("Colours, Icons & Bars"), help_text = _("Customise section colours, icon appearance, and progress bar styling."), sub_item_table = buildColorsIconsBarsMenu()  }
     menu_table[#menu_table + 1] = { text = _("Fonts & Text"),          help_text = _("Configure text appearance."),                                            sub_item_table = buildFontsAndTextMenu()     }
     menu_table[#menu_table + 1] = { text = _("Background"),            help_text = _("Choose what appears behind the information box."),                       sub_item_table = buildBackgroundMenu()       }
-    menu_table[#menu_table + 1] = { text = _("Advanced"),              help_text = _("Advanced configuration options."),                                       sub_item_table = buildAdvancedMenu()           }
+    menu_table[#menu_table + 1] = { text = _("Advanced"),              help_text = _("Advanced configuration options."),                                       sub_item_table = buildAdvancedMenu(ui)         }
 
     menu_table[#menu_table + 1] = {
         text           = _("About"),

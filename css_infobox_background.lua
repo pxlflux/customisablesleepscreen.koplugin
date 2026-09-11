@@ -17,6 +17,18 @@ require("random")
 
 local Screen = Device.screen
 
+local COVER_EXCLUDE_KEY = "customisable_ss_exclude_cover"
+
+local function isCoverExcluded(ui, book_data)
+    if ui and ui.doc_settings then
+        return ui.doc_settings:isTrue(COVER_EXCLUDE_KEY)
+    end
+    if book_data then
+        return book_data.exclude_cover == true
+    end
+    return false
+end
+
 local _active_blitbuffers = {}
 
 local function trackBB(bb)
@@ -194,6 +206,47 @@ local function getRandomImageFromFolder(folder)
     return nil
 end
 
+local function renderSolidBackground(screen_size)
+    local solid_color = getSetting("BG_SOLID_COLOR")
+    local r = tonumber(solid_color:sub(2, 3), 16) or 44
+    local g = tonumber(solid_color:sub(4, 5), 16) or 62
+    local b = tonumber(solid_color:sub(6, 7), 16) or 80
+    local tiny_bb = Blitbuffer.new(1, 1, Blitbuffer.TYPE_BBRGB24)
+    local color   = ffi.new("ColorRGB24", r, g, b)
+    tiny_bb:setPixel(0, 0, color)
+    local scaled_bb = trackBB(RenderImage:scaleBlitBuffer(tiny_bb, screen_size.w, screen_size.h, true))
+    tiny_bb:free()
+    return ImageWidget:new {
+        image  = scaled_bb,
+        width  = screen_size.w,
+        height = screen_size.h,
+    }
+end
+
+local function renderFolderBackground(screen_size)
+    local folder = getSetting("BG_FOLDER")
+    if folder and folder:match("^@plugin/") then
+        folder = _plugin_dir .. folder:sub(9)
+    end
+    return getRandomImageFromFolder(folder)
+end
+
+local function renderCustomBackground(screen_size)
+    local path = getSetting("BG_IMAGE_PATH")
+    if not path or path == "" or not util.fileExists(path) or not isValidImageFile(path) then
+        return nil
+    end
+    return renderImageFileAsBackground(path, screen_size)
+end
+
+local function renderExcludedCoverFallback(screen_size)
+    local fallback_type = getSetting("EXCLUDED_COVER_BG_TYPE")
+    if fallback_type == "solid"  then return renderSolidBackground(screen_size) end
+    if fallback_type == "folder" then return renderFolderBackground(screen_size) end
+    if fallback_type == "custom" then return renderCustomBackground(screen_size) end
+    return nil
+end
+
 local function buildBackgroundWidget(ui, book_data)
     local screen_size = Screen:getSize()
     local bg_type     = getSetting("BG_TYPE")
@@ -201,38 +254,19 @@ local function buildBackgroundWidget(ui, book_data)
     if bg_type == "transparent" then return nil end
 
     if bg_type == "solid" then
-        local solid_color = getSetting("BG_SOLID_COLOR")
-        local r = tonumber(solid_color:sub(2, 3), 16) or 44
-        local g = tonumber(solid_color:sub(4, 5), 16) or 62
-        local b = tonumber(solid_color:sub(6, 7), 16) or 80
-        local tiny_bb = Blitbuffer.new(1, 1, Blitbuffer.TYPE_BBRGB24)
-        local color   = ffi.new("ColorRGB24", r, g, b)
-        tiny_bb:setPixel(0, 0, color)
-        local scaled_bb = trackBB(RenderImage:scaleBlitBuffer(tiny_bb, screen_size.w, screen_size.h, true))
-        tiny_bb:free()
-        return ImageWidget:new {
-            image  = scaled_bb,
-            width  = screen_size.w,
-            height = screen_size.h,
-        }
+        return renderSolidBackground(screen_size)
     end
 
     if bg_type == "folder" then
-        local folder = getSetting("BG_FOLDER")
-        if folder and folder:match("^@plugin/") then
-            folder = _plugin_dir .. folder:sub(9)
-        end
-        local img = getRandomImageFromFolder(folder)
-        if img then return img end
-        return nil
+        return renderFolderBackground(screen_size)
     end
 
     if bg_type == "custom" then
-        local path = getSetting("BG_IMAGE_PATH")
-        if not path or path == "" or not util.fileExists(path) or not isValidImageFile(path) then
-            return nil
-        end
-        return renderImageFileAsBackground(path, screen_size)
+        return renderCustomBackground(screen_size)
+    end
+
+    if isCoverExcluded(ui, book_data) then
+        return renderExcludedCoverFallback(screen_size)
     end
 
     if ui and ui.document then
@@ -310,4 +344,6 @@ return {
     scaleImageToFit       = scaleImageToFit,
     buildBackgroundWidget = buildBackgroundWidget,
     buildDimmingLayer     = buildDimmingLayer,
+    isCoverExcluded       = isCoverExcluded,
+    COVER_EXCLUDE_KEY     = COVER_EXCLUDE_KEY,
 }

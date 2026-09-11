@@ -126,11 +126,15 @@ local function runMigrations(saved_version)
 
     if saved_version == nil then return end
 
-    if versionLessThan(saved_version, 2, 2, 0) then
+    if versionLessThan(saved_version, 2, 3, 0) then
         local old_bold = plugin_store:readSetting("customisable_ss_book_title_bold")
         if old_bold ~= nil then
             plugin_store:saveSetting(SETTINGS.ALL_TITLES_BOLD, old_bold)
             plugin_store:delSetting("customisable_ss_book_title_bold")
+        end
+
+        if plugin_store:readSetting(SETTINGS.SHOW_BATT_DATE) == true then
+            plugin_store:saveSetting(SETTINGS.SHOW_BATT_CLOCK, false)
         end
     end
 end
@@ -427,7 +431,7 @@ function CustomisableSleepScreen:addToMainMenu(menu_items)
             local ok, menu_mod = pcall(require, "css_menu")
             local settings_items = (ok and type(menu_mod) == "table")
                 and (function()
-                    local ok2, items = pcall(menu_mod.getCustomisableSleepScreenSettingsMenu, false)
+                    local ok2, items = pcall(menu_mod.getCustomisableSleepScreenSettingsMenu, false, self.ui)
                     if not ok2 then
                         logger.warn("[CSS] addToMainMenu: settings build failed: " .. tostring(items))
                     end
@@ -493,7 +497,7 @@ end
 
 function CustomisableSleepScreen:_installScreensaverHook()
     if not util.wrapMethod then
-        logger.warn("[CSS] util.wrapMethod not available — screensaver hook cannot be installed")
+        logger.warn("[CSS] util.wrapMethod not available - screensaver hook cannot be installed")
         return
     end
 
@@ -633,14 +637,14 @@ function CustomisableSleepScreen:_onShowSettings()
     if not ok then
         logger.warn("[Customisable Sleep Screen] css_menu load error: " .. tostring(menu_mod))
         local InfoMessage = require("ui/widget/infomessage")
-        UIManager:show(InfoMessage:new { text = "CSS: menu load failed — check crash.log", timeout = 5 })
+        UIManager:show(InfoMessage:new { text = "CSS: menu load failed - check crash.log", timeout = 5 })
         return true
     end
-    local ok2, result = pcall(menu_mod.getCustomisableSleepScreenSettingsMenu, true)
+    local ok2, result = pcall(menu_mod.getCustomisableSleepScreenSettingsMenu, true, self.ui)
     if not ok2 then
         logger.warn("[Customisable Sleep Screen] settings build error: " .. tostring(result))
         local InfoMessage = require("ui/widget/infomessage")
-        UIManager:show(InfoMessage:new { text = "CSS: settings build failed — check crash.log", timeout = 5 })
+        UIManager:show(InfoMessage:new { text = "CSS: settings build failed - check crash.log", timeout = 5 })
         return true
     end
     local menu_widget = require("ui/widget/menu"):new {

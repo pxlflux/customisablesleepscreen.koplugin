@@ -13,7 +13,6 @@ local ProgressWidget  = require("ui/widget/progresswidget")
 local TextWidget      = require("ui/widget/textwidget")
 local VerticalGroup   = require("ui/widget/verticalgroup")
 local VerticalSpan    = require("ui/widget/verticalspan")
-local logger          = require("logger")
 
 local _        = require("gettext")
 local ngettext = function(singular, plural, n)
@@ -42,8 +41,9 @@ local getDocPages        = bookdata.getDocPages
 local addQuotationMarks  = bookdata.addQuotationMarks
 local getDisplayPage     = bookdata.getDisplayPage
 
-local bg_mod  = require("css_infobox_background")
-local trackBB = bg_mod.trackBB
+local bg_mod           = require("css_infobox_background")
+local trackBB          = bg_mod.trackBB
+local isCoverExcluded  = bg_mod.isCoverExcluded
 
 local PluginStore = require("css_settings").plugin()
 
@@ -677,7 +677,7 @@ local function buildBookSection(ui, state, book_data, has_ui, total_width, color
         nil, getSetting("ALL_TITLES_BOLD"), layout
     )
 
-    if getSetting("COVER_IN_BOOK") then
+    if getSetting("COVER_IN_BOOK") and not isCoverExcluded(ui, book_data) then
         local cover_bb = fetchCoverBB(ui, book_data, has_ui)
         if cover_bb then
             local ok_cw, cover_widget = pcall(function()

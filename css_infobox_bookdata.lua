@@ -14,6 +14,9 @@ local getAllStats = stats_mod.getAllStats
 local render     = require("css_infobox_render")
 local getSetting = render.getSetting
 
+local bg_mod             = require("css_infobox_background")
+local COVER_EXCLUDE_KEY  = bg_mod.COVER_EXCLUDE_KEY
+
 require("random")
 
 local function safeGet(obj, ...)
@@ -317,6 +320,7 @@ local function collectBookData(ui, state)
     data.display_page   = getDisplayPage(ui, state)
     data.doc_pages      = getDocPages(ui)
     data.cover_path     = safeGet(ui, "document", "file")
+    data.exclude_cover  = ui.doc_settings and ui.doc_settings:isTrue(COVER_EXCLUDE_KEY) or false
     if ui.toc then
         local ok_raw, raw = pcall(function()
             return util.htmlToPlainTextIfHtml(ui.toc:getTocTitleByPage(data.page) or "")

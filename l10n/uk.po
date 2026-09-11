@@ -1,4 +1,3 @@
-# CUSTOMISABLE SLEEP SCREEN
 #
 msgid ""
 msgstr ""
@@ -9,14 +8,6 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. ---- Display sleep screen strings ----
-msgid "No Chapter"
-msgstr "Немає розділу"
-
-msgid "Untitled"
-msgstr "Без назви"
-
-msgid "Unknown Author"
-msgstr "Автор невідомий"
 
 msgid "January"
 msgstr "Січень"
@@ -66,6 +57,18 @@ msgstr "-й"
 msgid "th"
 msgstr "-й"
 
+msgid "hr"
+msgid_plural "hrs"
+msgstr[0] "год"
+msgstr[1] "год"
+msgstr[2] "год"
+
+msgid "min"
+msgid_plural "mins"
+msgstr[0] "хв"
+msgstr[1] "хв"
+msgstr[2] "хв"
+
 msgid "< 1 min"
 msgstr "< 1 хв"
 
@@ -76,6 +79,12 @@ msgstr "~%d %s залишилось"
 msgid "~<1 hr left"
 msgstr "~<1 год залишилось"
 
+msgid "Untitled"
+msgstr "Без назви"
+
+msgid "Unknown Author"
+msgstr "Автор невідомий"
+
 #, lua-format
 msgid "%s left"
 msgstr "Залишилось %s"
@@ -84,12 +93,21 @@ msgstr "Залишилось %s"
 msgid "Page %d of %d"
 msgstr "Сторінка %d з %d"
 
+msgid "No Chapter"
+msgstr "Немає розділу"
+
 #, lua-format
 msgid "Chapter %d of %d"
 msgstr "Розділ %d з %d"
 
 msgid "0 mins"
 msgstr "0 хв"
+
+msgid "page"
+msgid_plural "pages"
+msgstr[0] "сторінка"
+msgstr[1] "сторінки"
+msgstr[2] "сторінок"
 
 #, lua-format
 msgid "%s %s read today"
@@ -167,47 +185,52 @@ msgid "Message"
 msgstr "Повідомлення"
 
 #. ---- All other strings (menu items, help text, headers, buttons) ----
-msgid "Pick a colour"
-msgstr "Вибрати колір"
 
-msgid "Cancel"
-msgstr "Скасувати"
+msgid "Customisable sleep screen settings"
+msgstr "Налаштування налаштовуваного екрана сну"
 
-msgid "Apply"
-msgstr "Застосувати"
+msgid "Customisable sleep screen presets"
+msgstr "Пресети налаштовуваного екрана сну"
 
-#, lua-format
-msgid "Brightness: %d%%"
-msgstr "Яскравість: %d%%"
+msgid "Cycle through customisable sleep screen presets"
+msgstr "Перебирати пресети налаштовуваного екрана сну"
 
-msgid "Enter hex"
-msgstr "Ввести HEX"
+msgid "Customisable sleep screen"
+msgstr "Налаштовуваний екран сну"
 
-msgid "Enter hex colour code"
-msgstr "Ввести HEX-код кольору"
+msgid "Enable customisable sleep screen"
+msgstr "Увімкнути налаштовуваний екран сну"
 
-msgid "Invalid hex code. Use format: #RRGGBB"
-msgstr "Невірний HEX-код. Використовуйте формат: #RRGGBB"
+msgid ""
+"Customisable Sleep Screen: no book data found.\n\nOpen a book and trigger "
+"the sleep screen at least once before it will work in the file manager."
+msgstr ""
+"Налаштовуваний екран сну: дані книги не знайдено.\n\nВідкрийте книгу і "
+"викличте екран сну хоча б один раз, перш ніж він\nзапрацює у файловому "
+"менеджері."
 
 msgid "Delete all custom presets"
 msgstr "Видалити всі користувацькі пресети"
 
 msgid ""
-"Permanently removes all custom presets you've created. The built-in\n"
+"Permanently removes all custom presets you've created. The built-in "
 "'Default' preset will remain. This cannot be undone."
 msgstr ""
-"Безповоротно видаляє всі створені вами користувацькі пресети.\n"
-"Вбудований пресет «За замовчуванням» залишиться. Цю дію не можна скасувати."
+"Безповоротно видаляє всі створені вами користувацькі пресети.\nВбудований "
+"пресет «За замовчуванням» залишиться. Цю дію не можна скасувати."
 
 msgid ""
-"Are you sure you want to delete all custom presets? (built-in presets\n"
-"will remain)"
+"Are you sure you want to delete all custom presets? (built-in presets will "
+"remain)"
 msgstr ""
-"Ви впевнені, що хочете видалити всі користувацькі пресети?\n"
-"(вбудовані пресети залишаться)"
+"Ви впевнені, що хочете видалити всі користувацькі пресети?\n(вбудовані "
+"пресети залишаться)"
 
 msgid "Delete"
 msgstr "Видалити"
+
+msgid "Cancel"
+msgstr "Скасувати"
 
 msgid "All custom presets deleted. Built-in presets remain."
 msgstr "Усі користувацькі пресети видалено. Вбудовані пресети залишаються."
@@ -216,11 +239,11 @@ msgid "Sleep screen orientation"
 msgstr "Орієнтація екрана сну"
 
 msgid ""
-"Force the sleep screen to display in a specific orientation, regardless\n"
-"of how the device is held."
+"Force the sleep screen to display in a specific orientation, regardless of "
+"how the device is held."
 msgstr ""
-"Примусово відображає екран сну у заданій орієнтації незалежно\n"
-"від положення пристрою."
+"Примусово відображає екран сну у заданій орієнтації незалежно\nвід положення "
+"пристрою."
 
 msgid "Auto (follow device)"
 msgstr "Авто (за пристроєм)"
@@ -299,15 +322,14 @@ msgid "Daily statistics scope"
 msgstr "Охоплення денної статистики"
 
 msgid ""
-"Controls whether today's reading time and page count applies to the\n"
-"current book only, or all books read today. Note: reading streak and\n"
-"weekly goal achievement always reflect all books regardless of this\n"
-"setting."
+"Controls whether today's reading time and page count applies to the current "
+"book only, or all books read today. Note: reading streak and weekly goal "
+"achievement always reflect all books regardless of this setting."
 msgstr ""
-"Визначає, чи застосовується сьогоднішній час читання та кількість сторінок\n"
-"лише до поточної книги, чи до всіх книг, прочитаних сьогодні.\n"
-"Примітка: серія читання та досягнення тижневої цілі завжди відображають\n"
-"усі книги незалежно від цього налаштування."
+"Визначає, чи застосовується сьогоднішній час читання та кількість "
+"сторінок\nлише до поточної книги, чи до всіх книг, прочитаних "
+"сьогодні.\nПримітка: серія читання та досягнення тижневої цілі завжди "
+"відображають\nусі книги незалежно від цього налаштування."
 
 msgid "All books"
 msgstr "Усі книги"
@@ -321,28 +343,39 @@ msgid "Current book only"
 msgstr "Лише поточна книга"
 
 msgid "Today's reading time and page count for the current book only"
+msgstr "Сьогоднішній час читання та кількість сторінок лише для поточної книги"
+
+msgid "Flash screen to reduce ghosting"
+msgstr "Спалах екрана для зменшення шлейфів"
+
+msgid ""
+"Flashes the screen to black before showing the sleep screen, clearing "
+"residual text/image ghosting. Off by default, since not every device shows "
+"this ghosting."
 msgstr ""
-"Сьогоднішній час читання та кількість сторінок лише для поточної книги"
+"Робить екран чорним перед показом екрана сну, усуваючи залишкові шлейфи "
+"тексту/зображень. За замовчуванням вимкнено, оскільки не всі пристрої мають "
+"цей ефект."
 
 msgid "Show in file manager (outside of book)"
 msgstr "Показувати у файловому менеджері (поза книгою)"
 
 msgid ""
-"When enabled, the customisable sleep screen will display in file manager\n"
+"When enabled, the customisable sleep screen will display in file manager "
 "using the last saved book data."
 msgstr ""
-"Якщо увімкнено, налаштовуваний екран сну відображатиметься у файловому\n"
-"менеджері з використанням останніх збережених даних книги."
+"Якщо увімкнено, налаштовуваний екран сну відображатиметься у "
+"файловому\nменеджері з використанням останніх збережених даних книги."
 
 msgid "Hide built-in presets (except Default)"
 msgstr "Приховати вбудовані пресети (крім За замовчуванням)"
 
 msgid ""
-"Hide the built-in presets from the preset list, keeping only the Default\n"
+"Hide the built-in presets from the preset list, keeping only the Default "
 "preset and your custom presets visible."
 msgstr ""
-"Приховує вбудовані пресети зі списку, залишаючи видимими лише пресет\n"
-"«За замовчуванням» та ваші користувацькі пресети."
+"Приховує вбудовані пресети зі списку, залишаючи видимими лише пресет\n«За "
+"замовчуванням» та ваші користувацькі пресети."
 
 msgid "Setting saved. Preset list will update when you reopen this menu."
 msgstr ""
@@ -353,41 +386,116 @@ msgid "Export sleep screen to file"
 msgstr "Експорт екрана сну у файл"
 
 msgid ""
-"When enabled, a screenshot of the sleep screen will be saved as\n"
-"'screensaver.png' in the selected export folder each time a book is\n"
-"closed."
+"When enabled, a screenshot of the sleep screen will be saved in the selected "
+"export folder each time a book is closed, using the filename and format set "
+"below."
 msgstr ""
-"Якщо увімкнено, знімок екрана сну зберігатиметься як\n"
-"'screensaver.png' у вибраній папці експорту щоразу при закритті книги."
+"Якщо увімкнено, знімок екрана сну зберігатиметься у вибраній папці експорту "
+"щоразу під час закриття книги, з використанням імені файлу та формату, "
+"заданих нижче."
 
 msgid "Sleep screen export disabled."
 msgstr "Експорт екрана сну вимкнено."
 
 msgid "No export folder set. Please set an export folder first."
-msgstr ""
-"Папку експорту не задано. Будь ласка, спочатку задайте папку експорту."
+msgstr "Папку експорту не задано. Будь ласка, спочатку задайте папку експорту."
 
 #, lua-format
+msgid "Sleep screen will be exported to:\n%s/%s.%s"
+msgstr "Екран сну буде експортовано до: %s/%s.%s"
+
+msgid "Set export filename"
+msgstr "Задати ім'я файлу експорту"
+
 msgid ""
-"Sleep screen will be exported to:\n"
-"%s/screensaver.png"
+"Choose the filename used for the exported image (without extension). Some "
+"devices need a specific filename to recognise it as their native sleep "
+"screen e.g. 'suspend_others' for Tolino."
 msgstr ""
-"Екран сну буде експортовано до:\n"
-"%s/screensaver.png"
+"Виберіть ім'я файлу для експортованого зображення (без розширення). Деяким "
+"пристроям потрібне певне ім'я файлу, щоб розпізнати його як власний екран "
+"сну, наприклад 'suspend_others' для Tolino."
+
+msgid "Export filename"
+msgstr "Ім'я файлу експорту"
+
+msgid "Save"
+msgstr "Зберегти"
+
+msgid "Export format"
+msgstr "Формат експорту"
+
+msgid ""
+"Choose the image format for the exported file. BMP is needed for "
+"PocketBook's native sleep screen; PNG and JPG suit most other devices."
+msgstr ""
+"Виберіть формат зображення для експортованого файлу. BMP потрібен для "
+"власного екрана сну PocketBook; PNG і JPG підходять для більшості інших "
+"пристроїв."
+
+msgid "PNG"
+msgstr "PNG"
+
+msgid "Lossless, larger file size. Default."
+msgstr "Без втрат, більший розмір файлу. За замовчуванням."
+
+msgid "JPG"
+msgstr "JPG"
+
+msgid "Lossy, smaller file size."
+msgstr "З втратами, менший розмір файлу."
+
+msgid "BMP"
+msgstr "BMP"
+
+msgid "Uncompressed. Required for PocketBook's native sleep screen support."
+msgstr "Без стиснення. Потрібно для підтримки власного екрана сну PocketBook."
 
 msgid "Set export folder"
 msgstr "Задати папку експорту"
 
-msgid "Choose the folder where screensaver.png will be saved."
-msgstr "Виберіть папку, в яку буде збережено screensaver.png."
+msgid "Choose the folder where the exported image will be saved."
+msgstr "Виберіть папку, до якої буде збережено експортоване зображення."
 
 #, lua-format
+msgid "Export folder set to:\n%s"
+msgstr "Папку експорту задано:\n%s"
+
+msgid "Exclude this book's cover from sleep screen"
+msgstr "Приховати обкладинку цієї книги на екрані сну"
+
 msgid ""
-"Export folder set to:\n"
-"%s"
+"Hides the cover for this book only, for when you'd rather it not be shown on "
+"your sleep screen - without having to switch presets or background settings "
+"each time you read it."
 msgstr ""
-"Папку експорту задано:\n"
-"%s"
+"Приховує обкладинку лише для цієї книги, якщо ви не хочете, щоб вона "
+"з'являлася на екрані сну - без потреби змінювати пресет чи налаштування фону "
+"щоразу під час читання."
+
+msgid "Cover-excluded fallback background"
+msgstr "Резервний фон при прихованій обкладинці"
+
+msgid ""
+"What to show instead of the cover. Uses the colour, image, or folder already "
+"set in Background → Background type. Only selectable when \"Exclude this "
+"book's cover from sleep screen\" is turned on."
+msgstr ""
+"Що показувати замість обкладинки. Використовує колір, зображення або папку, "
+"вже задані в розділі Фон → Тип фону. Доступно для вибору, лише якщо "
+"увімкнено опцію «Приховати обкладинку цієї книги на екрані сну»."
+
+msgid "No background (leave screen as-is)"
+msgstr "Без фону (залишити екран як є)"
+
+msgid "Solid colour"
+msgstr "Суцільний колір"
+
+msgid "Custom image"
+msgstr "Власне зображення"
+
+msgid "Random image from folder"
+msgstr "Випадкове зображення з папки"
 
 msgid "Presets"
 msgstr "Пресети"
@@ -405,8 +513,7 @@ msgid "Contents"
 msgstr "Вміст"
 
 msgid "Control which sections appear and what information they display."
-msgstr ""
-"Керує тим, які розділи відображаються та яку інформацію вони показують."
+msgstr "Керує тим, які розділи відображаються та яку інформацію вони показують."
 
 msgid "Layout & Spacing"
 msgstr "Макет і відступи"
@@ -442,18 +549,440 @@ msgid "About"
 msgstr "Про програму"
 
 #, lua-format
+msgid "%s\nVersion: %s\n\nFor updates and issues:\ngithub.com/%s"
+msgstr "%s\nВерсія: %s\n\nОновлення та повідомлення про помилки:\ngithub.com/%s"
+
+msgid "Book info"
+msgstr "Відомості про книгу"
+
+msgid "Chapter info"
+msgstr "Відомості про главу"
+
+msgid "Daily info"
+msgstr "Щоденна інформація"
+
+msgid "Battery info"
+msgstr "Відомості про батарею"
+
+msgid "Message info"
+msgstr "Відомості про повідомлення"
+
+msgid "Reorder sections"
+msgstr "Змінити порядок розділів"
+
+msgid "Section order"
+msgstr "Порядок розділів"
+
+msgid "At least one section must remain visible."
+msgstr "Хоча б один розділ має залишатися видимим."
+
+msgid "Show cover image above book info"
+msgstr "Показувати обкладинку над інформацією про книгу"
+
 msgid ""
-"%s\n"
-"Version: %s\n"
-"\n"
-"For updates and issues:\n"
-"github.com/%s"
+"Display the book's cover image above the title and progress in the book "
+"section."
+msgstr "Відображає обкладинку книги над заголовком і прогресом у розділі\nкниги."
+
+msgid "Cover image size"
+msgstr "Розмір зображення обкладинки"
+
+msgid "Height limit for the cover image in pixels."
+msgstr "Обмеження висоти зображення обкладинки в пікселях."
+
+msgid "Cover image size (pixels)"
+msgstr "Розмір зображення обкладинки (пікселів)"
+
+msgid "100–150px fits neatly in most layouts. Go up to 250px+ for a prominent cover."
 msgstr ""
-"%s\n"
-"Версія: %s\n"
-"\n"
-"Оновлення та повідомлення про помилки:\n"
-"github.com/%s"
+"100–150 пкс акуратно вписується в більшість макетів. До 250 пкс+\nдля "
+"помітної обкладинки."
+
+msgid "Cover border size"
+msgstr "Розмір рамки обкладинки"
+
+msgid "Width of the border drawn around the cover image. Set to 0 for no border."
+msgstr ""
+"Ширина рамки, намальованої навколо зображення обкладинки. Встановіть 0,\nщоб "
+"прибрати рамку."
+
+msgid "Cover border size (pixels)"
+msgstr "Розмір рамки обкладинки (пікселів)"
+
+msgid "1–3px for a subtle outline. 0 to disable."
+msgstr "1–3 пкс — ледь помітний контур. 0 — вимкнути."
+
+msgid "Align cover to text alignment"
+msgstr "Вирівнювати обкладинку за вирівнюванням тексту"
+
+msgid ""
+"When enabled, the cover image follows the text alignment setting instead of "
+"always being centered."
+msgstr ""
+"Якщо увімкнено, зображення обкладинки слідує налаштуванню "
+"вирівнювання\nтексту, а не завжди центрується."
+
+msgid "Cover image"
+msgstr "Зображення обкладинки"
+
+msgid "Configure the book cover image shown above the book section."
+msgstr ""
+"Налаштування зображення обкладинки книги, що відображається над розділом "
+"книги."
+
+msgid "Show book author"
+msgstr "Показувати автора книги"
+
+msgid "Display the author name below the book title."
+msgstr "Відображає ім'я автора під заголовком книги."
+
+msgid "Show series name"
+msgstr "Показати назву серії"
+
+msgid "Display the book's series name and index below the title."
+msgstr "Відображає назву серії книги та її номер під заголовком."
+
+msgid "Show book pages (pg x of x)"
+msgstr "Показувати сторінки книги (стор. x з x)"
+
+msgid "Display total page count for the entire book."
+msgstr "Відображає загальну кількість сторінок усієї книги."
+
+msgid "Show book time remaining"
+msgstr "Показувати час, що залишився до кінця книги"
+
+msgid ""
+"Display estimated reading time left to finish the book, based on your "
+"average reading speed."
+msgstr ""
+"Показує приблизний час читання, що залишився до кінця книги, виходячи з "
+"вашої середньої швидкості читання."
+
+msgid "Show book percentage"
+msgstr "Показувати відсоток книги"
+
+msgid "Display the percentage of the book completed."
+msgstr "Показує відсоток прочитання книги."
+
+msgid "Show chapter count (ch x of x)"
+msgstr "Показувати кількість глав (гл. x з x)"
+
+msgid "Display current chapter number and total chapters (e.g., 'Chapter 5 of 12')."
+msgstr ""
+"Відображає номер поточної глави і загальну кількість глав (напр., «Глава 5 "
+"з\n12»)."
+
+msgid "Show chapter pages (pg x of x)"
+msgstr "Показувати сторінки глави (стор. x з x)"
+
+msgid "Display the number of pages in the current chapter."
+msgstr "Відображає кількість сторінок у поточній главі."
+
+msgid "Show chapter time remaining"
+msgstr "Показувати час, що залишився до кінця глави"
+
+msgid ""
+"Display estimated time to finish the current chapter, based on your reading "
+"speed."
+msgstr ""
+"Показує приблизний час до кінця поточної глави, виходячи з вашої швидкості "
+"читання."
+
+msgid "Show chapter percentage"
+msgstr "Показувати відсоток глави"
+
+msgid "Display the percentage of the current chapter completed."
+msgstr "Показує відсоток проходження поточної глави."
+
+msgid "Title Line"
+msgstr "Рядок заголовка"
+
+msgid "Choose what the top line of the daily info section displays."
+msgstr "Вибирає, що відображається у верхньому рядку розділу щоденної інформації."
+
+msgid "Pages read today"
+msgstr "Сторінок прочитано сьогодні"
+
+msgid "e.g. '35 pages read today'"
+msgstr "напр. «35 сторінок прочитано сьогодні»"
+
+msgid "Time read today"
+msgstr "Час читання сьогодні"
+
+msgid "e.g. '42 mins read today'"
+msgstr "напр. «42 хв прочитано сьогодні»"
+
+msgid "Pages and time read today"
+msgstr "Сторінок і час читання сьогодні"
+
+msgid "e.g. '35 pgs & 42 mins read today'"
+msgstr "напр. «35 стор. і 42 хв прочитано сьогодні»"
+
+msgid "Goal type"
+msgstr "Тип цілі"
+
+msgid "Choose whether your daily goal tracks pages read or time spent reading."
+msgstr ""
+"Вибирає, чи відстежує денна ціль кількість прочитаних сторінок чи час "
+"читання."
+
+msgid "Page goal"
+msgstr "Ціль за сторінками"
+
+msgid "Track daily progress by number of pages read."
+msgstr "Відстежує щоденний прогрес за кількістю прочитаних сторінок."
+
+msgid "Time goal"
+msgstr "Ціль за часом"
+
+msgid "Track daily progress by minutes spent reading."
+msgstr "Відстежує щоденний прогрес за часом читання в хвилинах."
+
+msgid "Daily page goal"
+msgstr "Щоденна ціль за сторінками"
+
+msgid "Set how many pages you aim to read each day."
+msgstr "Задає кількість сторінок, які ви плануєте читати щодня."
+
+msgid "Daily page goal (pages)"
+msgstr "Щоденна ціль за сторінками (сторінок)"
+
+msgid "20–50 pages for a daily habit. 50–100 for dedicated reading sessions."
+msgstr "20–50 сторінок для щоденної звички. 50–100 для присвячених читанню сесій."
+
+msgid "Daily time goal"
+msgstr "Щоденна ціль за часом"
+
+msgid "Set how many minutes you aim to read each day."
+msgstr "Задає кількість хвилин читання на день."
+
+msgid "Daily time goal (minutes)"
+msgstr "Щоденна ціль за часом (хвилини)"
+
+msgid "20–30 mins for a daily habit. 60+ mins for dedicated reading sessions."
+msgstr "20–30 хв для щоденної звички. 60+ хв для присвячених читанню сесій."
+
+msgid "Show current reading streak"
+msgstr "Показувати поточну серію читання"
+
+msgid "Display consecutive days you've met your reading goal."
+msgstr "Відображає кількість днів поспіль, коли ви виконували ціль з читання."
+
+msgid "Show weekly progress"
+msgstr "Показувати тижневий прогрес"
+
+msgid ""
+"Days this week you have met your reading goal, shown as completed days out "
+"of the current weekday (Monday = 1... Sunday = 7). For example: Thursday "
+"with goals met on Monday and Tuesday will show 2/4."
+msgstr ""
+"Дні цього тижня, коли виконано ціль з читання. Відображається як\nвиконані "
+"дні з поточного дня тижня (Пн = 1… Нд = 7). Наприклад:\nу четвер із цілями в "
+"понеділок і вівторок буде показано 2/4."
+
+msgid "Show daily goal"
+msgstr "Показувати денну ціль"
+
+msgid ""
+"Target page mode: e.g. 50 page goal. Target time mode: e.g. 1hr 15min time "
+"goal."
+msgstr ""
+"Режим цілі за сторінками: напр. ціль 50 стор. Режим цілі за часом:\nнапр. "
+"ціль 1 год 15 хв."
+
+msgid "Show goal percentage"
+msgstr "Показувати відсоток цілі"
+
+msgid "Display the percentage of your daily goal completed."
+msgstr "Показує відсоток виконання денної цілі."
+
+msgid "Show clock"
+msgstr "Показувати час"
+
+msgid ""
+"Display the current time. Note this is a snapshot taken when the sleep "
+"screen is shown, it does not update live while the screen is asleep."
+msgstr ""
+"Показує поточний час. Зверніть увагу: це знімок, зроблений у момент показу "
+"екрана сну, він не оновлюється в реальному часі, поки пристрій спить."
+
+msgid "Show date"
+msgstr "Показувати дату"
+
+msgid ""
+"Display the current date. Note this is a snapshot taken when the sleep "
+"screen is shown, it does not update live while the screen is asleep."
+msgstr ""
+"Показує поточну дату. Зверніть увагу: це знімок, зроблений у момент показу "
+"екрана сну, він не оновлюється в реальному часі, поки пристрій спить."
+
+msgid "Show battery consumption rate"
+msgstr "Показувати швидкість витрати батареї"
+
+msgid ""
+"Display battery drain percentage per hour based on recent usage or manual "
+"input (see advanced menu)"
+msgstr ""
+"Відображає відсоток витрати батареї за годину на основі "
+"останнього\nвикористання або ручного введення (див. розширене меню)"
+
+msgid "Show battery time remaining"
+msgstr "Показувати час, що залишився до розряду батареї"
+
+msgid ""
+"Display estimated hours and minutes until battery is depleted, based on "
+"current drain rate."
+msgstr ""
+"Показує приблизну кількість годин і хвилин до розрядки батареї, виходячи з "
+"поточної швидкості витрати."
+
+msgid "Custom message"
+msgstr "Користувацьке повідомлення"
+
+msgid "Use a separate custom message just for Customisable Sleep Screen"
+msgstr "Використати окреме повідомлення тільки для налаштовуваного екрана сну"
+
+msgid "Edit custom message"
+msgstr "Редагувати користувацьке повідомлення"
+
+#, lua-format
+msgid ""
+"Write your custom message text. Only active when 'Custom message' is "
+"selected. Supports variables: %d, %y, %t, %b, %r."
+msgstr ""
+"Введіть текст свого повідомлення. Активно лише коли обрано\n«Користувацьке "
+"повідомлення». Підтримує змінні: %d, %y, %t, %b, %r."
+
+msgid "Custom Customisable Sleep Screen message"
+msgstr "Повідомлення налаштовуваного екрана сну"
+
+msgid "Book highlights"
+msgstr "Виділення з книги"
+
+msgid "Show a random highlight from the current book"
+msgstr "Показувати випадкове виділення з поточної книги"
+
+msgid "Add quotation marks to highlights"
+msgstr "Додати лапки до виділень"
+
+msgid ""
+"Wraps all highlights in curly double quotes, removing any pre-existing "
+"quotation marks."
+msgstr "Обгортає всі виділення в парні подвійні лапки, видаляючи наявні\nзнаки лапок."
+
+msgid "Show highlight location"
+msgstr "Показувати місце розташування виділення"
+
+msgid ""
+"Display the chapter title and page number where the highlight is found, "
+"shown below the highlight text."
+msgstr ""
+"Відображає назву глави та номер сторінки, де знаходиться виділення,\nпід "
+"текстом виділення."
+
+msgid "Book highlight maximum length"
+msgstr "Максимальна довжина виділення з книги"
+
+msgid "Maximum characters to display for highlights (0 = no limit)."
+msgstr "Максимальна кількість символів для відображення виділень (0 = без обмежень)."
+
+msgid "Maximum highlight length (characters)"
+msgstr "Максимальна довжина виділення (символів)"
+
+msgid "100–150 chars keeps highlights readable. Set to 0 to show the full highlight."
+msgstr ""
+"100–150 символів — гарна читабельність виділень. 0 — показувати\nповне "
+"виділення."
+
+msgid "Custom quotes"
+msgstr "Користувацькі цитати"
+
+msgid "Show a random quote from the custom_quotes.lua file in the plugin folder."
+msgstr "Показує випадкову цитату з файлу custom_quotes.lua у папці плагіна."
+
+msgid "Show quote attribution"
+msgstr "Показати авторство цитати"
+
+msgid ""
+"Display the author and book name below the quote, if provided in "
+"custom_quotes.lua."
+msgstr ""
+"Відображає автора і назву книги під цитатою, якщо вказано "
+"в\ncustom_quotes.lua."
+
+msgid "KOReader sleep message"
+msgstr "Повідомлення екрана сну KOReader"
+
+msgid ""
+"Uses KOReaders own sleep screen message function. Enable 'Add custom message "
+"to sleep screen' to use this (Settings → Screen → Sleep screen → Sleep "
+"screen message)."
+msgstr ""
+"Використовує власну функцію повідомлень екрана сну KOReader. "
+"Увімкніть\n«Додати користувацьке повідомлення на екран сну», щоб "
+"скористатися\nцим (Налаштування → Екран → Екран сну → Повідомлення екрана "
+"сну)."
+
+msgid "Show message header"
+msgstr "Показувати заголовок повідомлення"
+
+msgid "Show or hide the header label above the message text."
+msgstr "Показує або приховує мітку заголовка над текстом повідомлення."
+
+msgid "Message header"
+msgstr "Заголовок повідомлення"
+
+#, lua-format
+msgid ""
+"Custom header text displayed above the message. Supports variables: %d, %y, "
+"%t, %b, %r."
+msgstr ""
+"Користувацький текст заголовка, що відображається над "
+"повідомленням.\nПідтримує змінні: %d, %y, %t, %b, %r."
+
+msgid "Change custom message header"
+msgstr "Змінити заголовок користувацького повідомлення"
+
+msgid "Displayed sections"
+msgstr "Відображувані розділи"
+
+msgid "Toggle which sections show on the sleep screen. At least one must be visible."
+msgstr ""
+"Перемикає, які розділи відображаються на екрані сну. Хоча б один\nмає бути "
+"видимим."
+
+msgid "[ Section Content ]"
+msgstr "[ Вміст розділу ]"
+
+msgid "Book section"
+msgstr "Розділ книги"
+
+msgid "Configure book-specific details."
+msgstr "Налаштування параметрів, специфічних для книги."
+
+msgid "Chapter section"
+msgstr "Розділ глави"
+
+msgid "Configure chapter-specific details"
+msgstr "Налаштування параметрів, специфічних для глави"
+
+msgid "Daily goal section"
+msgstr "Розділ денної цілі"
+
+msgid "Configure reading goal details"
+msgstr "Налаштування параметрів цілі читання"
+
+msgid "Battery section"
+msgstr "Розділ батареї"
+
+msgid "Configure battery & time/date details"
+msgstr "Налаштування параметрів батареї та часу/дати"
+
+msgid "Message section"
+msgstr "Розділ повідомлень"
+
+msgid "Configure message-specific details"
+msgstr "Налаштування параметрів, специфічних для повідомлення"
 
 msgid "Top left"
 msgstr "Вгорі зліва"
@@ -486,36 +1015,31 @@ msgid "Dark mode"
 msgstr "Темний режим"
 
 msgid ""
-"Inverts the colour scheme. Text becomes white and backgrounds becomes\n"
-"black. Useful for reading in low-light conditions. Can be combined with\n"
-"monochrome mode."
+"Inverts the colour scheme. Text becomes white and backgrounds becomes black. "
+"Useful for reading in low-light conditions. Can be combined with monochrome "
+"mode."
 msgstr ""
-"Інвертує колірну схему. Текст стає білим, фон — чорним.\n"
-"Корисно для читання при слабкому освітленні. Можна поєднувати з\n"
-"монохромним режимом."
+"Інвертує колірну схему. Текст стає білим, фон — чорним.\nКорисно для читання "
+"при слабкому освітленні. Можна поєднувати з\nмонохромним режимом."
 
 msgid "Monochrome mode"
 msgstr "Монохромний режим"
 
 msgid ""
-"Suitable for B&W e-readers. Assigns one colour to all sections using\n"
-"monochrome light or monochrome dark hex values. Overwrites individual\n"
+"Suitable for B&W e-readers. Assigns one colour to all sections using "
+"monochrome light or monochrome dark hex values. Overwrites individual "
 "assigned section colours. Can be combined with dark mode."
 msgstr ""
-"Підходить для чорно-білих електронних книг. Призначає один колір усім\n"
-"розділам, використовуючи світлі або темні монохромні значення HEX.\n"
-"Перезаписує індивідуально призначені кольори розділів. Можна поєднувати\n"
-"з темним режимом."
+"Підходить для чорно-білих електронних книг. Призначає один колір "
+"усім\nрозділам, використовуючи світлі або темні монохромні значення "
+"HEX.\nПерезаписує індивідуально призначені кольори розділів. Можна "
+"поєднувати\nз темним режимом."
 
 msgid "Section gaps"
 msgstr "Проміжки між розділами"
 
-msgid ""
-"Add transparent gaps between sections to make each appear as a separate\n"
-"box"
-msgstr ""
-"Додає прозорі проміжки між розділами, щоб кожен виглядав\n"
-"окремим блоком"
+msgid "Add transparent gaps between sections to make each appear as a separate box"
+msgstr "Додає прозорі проміжки між розділами, щоб кожен виглядав\nокремим блоком"
 
 msgid "Enable section gaps"
 msgstr "Увімкнути проміжки між розділами"
@@ -530,11 +1054,11 @@ msgid "Section gap size (pixels)"
 msgstr "Розмір проміжку між розділами (пікселів)"
 
 msgid ""
-"10–20px gives a subtle separation. 30–50px makes sections feel like\n"
-"distinct cards."
+"10–20px gives a subtle separation. 30–50px makes sections feel like distinct "
+"cards."
 msgstr ""
-"10–20 пкс — непомітне розділення. 30–50 пкс — розділи виглядають\n"
-"як окремі картки."
+"10–20 пкс — непомітне розділення. 30–50 пкс — розділи виглядають\nяк окремі "
+"картки."
 
 msgid "Position"
 msgstr "Положення"
@@ -546,43 +1070,42 @@ msgid "Position offset"
 msgstr "Зміщення положення"
 
 msgid ""
-"Nudge the box from its anchor position. Useful for pushing rounded\n"
-"corners off-screen."
+"Nudge the box from its anchor position. Useful for pushing rounded corners "
+"off-screen."
 msgstr ""
-"Зсуває блок від точки прив'язки. Корисно для виведення заокруглених\n"
-"кутів за межі екрана."
+"Зсуває блок від точки прив'язки. Корисно для виведення заокруглених\nкутів "
+"за межі екрана."
 
 msgid "Horizontal offset (px)"
 msgstr "Горизонтальне зміщення (пкс)"
 
 msgid ""
-"Nudges the box left (-) or right (+) from its anchor. Useful for pushing\n"
+"Nudges the box left (-) or right (+) from its anchor. Useful for pushing "
 "rounded corners off-screen."
 msgstr ""
-"Зсуває блок вліво (-) або вправо (+) від точки прив'язки. Корисно для\n"
-"виведення заокруглених кутів за межі екрана."
+"Зсуває блок вліво (-) або вправо (+) від точки прив'язки. Корисно "
+"для\nвиведення заокруглених кутів за межі екрана."
 
 msgid "Vertical offset (px)"
 msgstr "Вертикальне зміщення (пкс)"
 
 msgid ""
-"Nudges the box up (+) or down (-) from its anchor. Useful for pushing\n"
+"Nudges the box up (+) or down (-) from its anchor. Useful for pushing "
 "rounded corners off-screen."
 msgstr ""
-"Зсуває блок вгору (+) або вниз (-) від точки прив'язки. Корисно для\n"
-"виведення заокруглених кутів за межі екрана."
+"Зсуває блок вгору (+) або вниз (-) від точки прив'язки. Корисно "
+"для\nвиведення заокруглених кутів за межі екрана."
 
 msgid "Width"
 msgstr "Ширина"
 
-msgid ""
-"Horizontal width of the information box as a percentage of screen width."
-msgstr ""
-"Горизонтальна ширина інформаційного блоку у відсотках від ширини екрана."
+msgid "Horizontal width of the information box as a percentage of screen width."
+msgstr "Горизонтальна ширина інформаційного блоку у відсотках від ширини екрана."
 
 msgid "Box width (%)"
 msgstr "Ширина блоку (%)"
 
+#, lua-format
 msgid "60–70% suits portrait screens."
 msgstr "60–70% підходить для екранів у книжковій орієнтації."
 
@@ -595,6 +1118,7 @@ msgstr "Прозорість інформаційного блоку."
 msgid "Opacity (%)"
 msgstr "Непрозорість (%)"
 
+#, lua-format
 msgid "75% is semi-transparent. 100% is fully opaque."
 msgstr "75% — напівпрозорий. 100% — повністю непрозорий."
 
@@ -620,37 +1144,36 @@ msgid "Border trim size (px)"
 msgstr "Розмір декоративної рамки (пкс)"
 
 msgid ""
-"0 for no trim. 1–2px is subtle, 4–6px is a bold decorative outline\n"
-"around the primary border."
+"0 for no trim. 1–2px is subtle, 4–6px is a bold decorative outline around "
+"the primary border."
 msgstr ""
-"0 — без окантовки. 1–2 пкс — ледь помітна, 4–6 пкс — жирний\n"
-"декоративний контур навколо основної рамки."
+"0 — без окантовки. 1–2 пкс — ледь помітна, 4–6 пкс — жирний\nдекоративний "
+"контур навколо основної рамки."
 
 msgid "Corner radius"
 msgstr "Радіус кутів"
 
 msgid ""
-"Round the corners of the info box. Also moves progress bars inline with\n"
-"the text when active."
+"Round the corners of the info box. Also moves progress bars inline with the "
+"text when active."
 msgstr ""
-"Заокруглює кути інформаційного блоку. Також переносить смуги прогресу\n"
-"в рядок з текстом, коли активовано."
+"Заокруглює кути інформаційного блоку. Також переносить смуги прогресу\nв "
+"рядок з текстом, коли активовано."
 
 msgid "Corner radius (px)"
 msgstr "Радіус кутів (пкс)"
 
 msgid ""
-"0 for square corners. 15–30px for softly rounded. 150px+ for a\n"
-"pill-shaped box (depending on the section box height)."
+"0 for square corners. 15–30px for softly rounded. 150px+ for a pill-shaped "
+"box (depending on the section box height)."
 msgstr ""
-"0 — гострі кути. 15–30 пкс — м'яко заокруглені. 150 пкс+ — блок\n"
-"у формі пігулки (залежить від висоти блоку розділу)."
+"0 — гострі кути. 15–30 пкс — м'яко заокруглені. 150 пкс+ — блок\nу формі "
+"пігулки (залежить від висоти блоку розділу)."
 
 msgid "Internal padding"
 msgstr "Внутрішні відступи"
 
-msgid ""
-"Space between section borders and their content, configurable per side."
+msgid "Space between section borders and their content, configurable per side."
 msgstr ""
 "Простір між рамками розділів та їхнім вмістом, налаштовується для кожної "
 "сторони окремо."
@@ -658,8 +1181,8 @@ msgstr ""
 msgid "Top"
 msgstr "Зверху"
 
-msgid "Internal padding — top (px)"
-msgstr "Внутрішній відступ — зверху (пкс)"
+msgid "Internal padding - top (px)"
+msgstr "Внутрішній відступ - зверху (пікс.)"
 
 msgid "Space above section content."
 msgstr "Простір над вмістом розділу."
@@ -667,8 +1190,8 @@ msgstr "Простір над вмістом розділу."
 msgid "Bottom"
 msgstr "Знизу"
 
-msgid "Internal padding — bottom (px)"
-msgstr "Внутрішній відступ — знизу (пкс)"
+msgid "Internal padding - bottom (px)"
+msgstr "Внутрішній відступ - знизу (пікс.)"
 
 msgid "Space below section content."
 msgstr "Простір під вмістом розділу."
@@ -676,39 +1199,35 @@ msgstr "Простір під вмістом розділу."
 msgid "Left"
 msgstr "Ліворуч"
 
-msgid "Internal padding — left (px)"
-msgstr "Внутрішній відступ — зліва (пкс)"
+msgid "Internal padding - left (px)"
+msgstr "Внутрішній відступ - зліва (пікс.)"
 
-msgid ""
-"Space to the left of section content. Increase when using large corner\n"
-"radii."
+msgid "Space to the left of section content. Increase when using large corner radii."
 msgstr ""
-"Простір ліворуч від вмісту розділу. Збільшіть при використанні\n"
-"великих радіусів кутів."
+"Простір ліворуч від вмісту розділу. Збільшіть при використанні\nвеликих "
+"радіусів кутів."
 
 msgid "Right"
 msgstr "Праворуч"
 
-msgid "Internal padding — right (px)"
-msgstr "Внутрішній відступ — справа (пкс)"
+msgid "Internal padding - right (px)"
+msgstr "Внутрішній відступ - справа (пікс.)"
 
 msgid ""
-"Space to the right of section content. Increase when using large corner\n"
+"Space to the right of section content. Increase when using large corner "
 "radii."
 msgstr ""
-"Простір праворуч від вмісту розділу. Збільшіть при використанні\n"
-"великих радіусів кутів."
+"Простір праворуч від вмісту розділу. Збільшіть при використанні\nвеликих "
+"радіусів кутів."
 
 msgid "Set all sides equally"
 msgstr "Однаково для всіх сторін"
 
-msgid "Internal padding — all sides (px)"
-msgstr "Внутрішній відступ — усі сторони (пкс)"
+msgid "Internal padding - all sides (px)"
+msgstr "Внутрішній відступ - з усіх боків (пікс.)"
 
-msgid ""
-"Sets top, bottom, left and right padding to the same value in one step."
-msgstr ""
-"Задає однакове значення відступу для верху, низу, лівої та правої сторін."
+msgid "Sets top, bottom, left and right padding to the same value in one step."
+msgstr "Задає однакове значення відступу для верху, низу, лівої та правої сторін."
 
 msgid "Icon to text gap"
 msgstr "Відступ від іконки до тексту"
@@ -719,9 +1238,7 @@ msgstr "Горизонтальна відстань між іконками ро
 msgid "Icon to text gap (px)"
 msgstr "Відступ від іконки до тексту (пкс)"
 
-msgid ""
-"8–12px gives comfortable breathing room between icon and text. 0 is\n"
-"flush."
+msgid "8–12px gives comfortable breathing room between icon and text. 0 is flush."
 msgstr "8–12 пкс — комфортний відступ між іконкою і текстом. 0 — впритул."
 
 msgid "No icon sets found in customisablesleepscreen.koplugin/icons/"
@@ -736,21 +1253,8 @@ msgstr "Задає кольори смуг прогресу для кожног�
 msgid "Use saved colours for icon fill"
 msgstr "Використовувати збережені кольори для заливки іконок"
 
-msgid ""
-"When enabled, icons will match the colour of their section's progress\n"
-"bar."
-msgstr ""
-"Якщо увімкнено, іконки відповідатимуть кольору смуги прогресу\n"
-"свого розділу."
-
-msgid "Book section"
-msgstr "Розділ книги"
-
-msgid "Chapter section"
-msgstr "Розділ глави"
-
-msgid "Daily goal section"
-msgstr "Розділ денної цілі"
+msgid "When enabled, icons will match the colour of their section's progress bar."
+msgstr "Якщо увімкнено, іконки відповідатимуть кольору смуги прогресу\nсвого розділу."
 
 msgid "Battery section (High)"
 msgstr "Розділ батареї (Високий)"
@@ -764,20 +1268,17 @@ msgstr "Розділ батареї (Низький)"
 msgid "Battery section (Charging)"
 msgstr "Розділ батареї (Зарядка)"
 
-msgid "Message section"
-msgstr "Розділ повідомлень"
-
 msgid "Colours (modes)"
 msgstr "Кольори (режими)"
 
 msgid ""
-"Configure colours for monochrome mode, infobox background, and text.\n"
-"Light and dark correspond to the current dark mode setting. Monochrome\n"
-"replaces all colours with that single chosen color."
+"Configure colours for monochrome mode, infobox background, and text. Light "
+"and dark correspond to the current dark mode setting. Monochrome replaces "
+"all colours with that single chosen color."
 msgstr ""
-"Налаштування кольорів для монохромного режиму, фону інформаційного\n"
-"блоку та тексту. Світлий і темний відповідають поточному налаштуванню\n"
-"темного режиму. Монохромний замінює всі кольори одним обраним кольором."
+"Налаштування кольорів для монохромного режиму, фону інформаційного\nблоку та "
+"тексту. Світлий і темний відповідають поточному налаштуванню\nтемного "
+"режиму. Монохромний замінює всі кольори одним обраним кольором."
 
 msgid "Monochrome mode (light)"
 msgstr "Монохромний режим (світлий)"
@@ -819,8 +1320,7 @@ msgid "Progress bar height"
 msgstr "Висота смуги прогресу"
 
 msgid "Thickness of the horizontal progress bars shown in each section."
-msgstr ""
-"Товщина горизонтальних смуг прогресу, що відображаються в кожному розділі."
+msgstr "Товщина горизонтальних смуг прогресу, що відображаються в кожному розділі."
 
 msgid "Bar height (px)"
 msgstr "Висота смуги (пкс)"
@@ -844,24 +1344,22 @@ msgid "Show decorative bar on message section"
 msgstr "Показати декоративну смугу в розділі повідомлень"
 
 msgid ""
-"Displays a purely decorative progress bar under the message section,\n"
-"matching the message section colour and the progress bars in other\n"
-"sections."
+"Displays a purely decorative progress bar under the message section, "
+"matching the message section colour and the progress bars in other sections."
 msgstr ""
-"Відображає суто декоративну смугу прогресу під розділом повідомлень,\n"
-"що відповідає кольору розділу повідомлень і смугам прогресу в інших\n"
-"розділах."
+"Відображає суто декоративну смугу прогресу під розділом повідомлень,\nщо "
+"відповідає кольору розділу повідомлень і смугам прогресу в інших\nрозділах."
 
 msgid "Inline progress bars"
 msgstr "Вбудовані смуги прогресу"
 
 msgid ""
-"Progress bars sit inside the text area rather than spanning the full\n"
-"section width. Automatically enabled when corner radius > 0."
+"Progress bars sit inside the text area rather than spanning the full section "
+"width. Automatically enabled when corner radius > 0."
 msgstr ""
-"Смуги прогресу розташовуються всередині текстової області, а не\n"
-"розтягуються на всю ширину розділу. Автоматично вмикається, коли радіус\n"
-"кутів > 0."
+"Смуги прогресу розташовуються всередині текстової області, а "
+"не\nрозтягуються на всю ширину розділу. Автоматично вмикається, коли "
+"радіус\nкутів > 0."
 
 msgid "Enable inline bars"
 msgstr "Увімкнути вбудовані смуги"
@@ -898,21 +1396,22 @@ msgid "Bar width"
 msgstr "Ширина смуги"
 
 msgid ""
-"Width of the inline progress bar as a percentage of the available text\n"
+"Width of the inline progress bar as a percentage of the available text "
 "column. Alignment follows the text alignment setting."
 msgstr ""
-"Ширина вбудованої смуги прогресу у відсотках від доступної текстової\n"
-"колонки. Вирівнювання відповідає налаштуванню вирівнювання тексту."
+"Ширина вбудованої смуги прогресу у відсотках від доступної "
+"текстової\nколонки. Вирівнювання відповідає налаштуванню вирівнювання тексту."
 
 msgid "Inline bar width (%)"
 msgstr "Ширина вбудованої смуги (%)"
 
+#, lua-format
 msgid ""
-"100% fills the text column. The bar is aligned to match your text\n"
-"alignment setting."
+"100% fills the text column. The bar is aligned to match your text alignment "
+"setting."
 msgstr ""
-"100% — заповнює текстову колонку. Смуга вирівнюється відповідно до\n"
-"налаштування вирівнювання тексту."
+"100% — заповнює текстову колонку. Смуга вирівнюється відповідно "
+"до\nналаштування вирівнювання тексту."
 
 msgid "Title font face"
 msgstr "Шрифт заголовка"
@@ -953,9 +1452,7 @@ msgstr "Горизонтальне вирівнювання всього тек�
 msgid "Book multiline titles"
 msgstr "Багаторядкові заголовки книг"
 
-msgid ""
-"If deselected book titles will be truncated to a single line with an\n"
-"ellipsis"
+msgid "If deselected book titles will be truncated to a single line with an ellipsis"
 msgstr ""
 "Якщо вимкнено, заголовки книг будуть обрізані до одного рядка з трьома "
 "крапками"
@@ -964,7 +1461,7 @@ msgid "Chapter multiline titles"
 msgstr "Багаторядкові заголовки глав"
 
 msgid ""
-"If deselected chapter titles will be truncated to a single line with an\n"
+"If deselected chapter titles will be truncated to a single line with an "
 "ellipsis"
 msgstr ""
 "Якщо вимкнено, заголовки глав будуть обрізані до одного рядка з трьома "
@@ -974,13 +1471,13 @@ msgid "Clean chapter titles"
 msgstr "Очищати заголовки глав"
 
 msgid ""
-"Removes structural prefixes like 'Chapter 5:' or 'Part II' from chapter\n"
-"titles and normalises capitalisation. Only works correctly with English\n"
+"Removes structural prefixes like 'Chapter 5:' or 'Part II' from chapter "
+"titles and normalises capitalisation. Only works correctly with English "
 "chapter titles - disable for non-English books."
 msgstr ""
-"Видаляє структурні префікси на кшталт «Глава 5:» або «Частина II» із\n"
-"заголовків глав і нормалізує регістр. Коректно працює лише з англійськими\n"
-"заголовками глав — вимкніть для книг іншими мовами."
+"Видаляє структурні префікси на кшталт «Глава 5:» або «Частина II» "
+"із\nзаголовків глав і нормалізує регістр. Коректно працює лише з "
+"англійськими\nзаголовками глав — вимкніть для книг іншими мовами."
 
 msgid "Make titles bold"
 msgstr "Виділити заголовки жирним"
@@ -994,21 +1491,40 @@ msgstr "Без фону"
 msgid "Book cover"
 msgstr "Обкладинка книги"
 
-msgid "Solid colour"
-msgstr "Суцільний колір"
+msgid "Solid background colour"
+msgstr "Суцільний колір фону"
 
-msgid "Random image from folder"
-msgstr "Випадкове зображення з папки"
+msgid "Pick background colour"
+msgstr "Вибрати колір фону"
+
+msgid "Custom image path"
+msgstr "Шлях до власного зображення"
+
+msgid "Choose a single image to use as the background."
+msgstr "Виберіть одне зображення для використання як фон."
+
+msgid ""
+"This doesn't look like a supported image file (png, jpg, or webp). No "
+"background will be shown."
+msgstr ""
+"Це не схоже на підтримуваний файл зображення (png, jpg або webp). Фон не "
+"буде показано."
+
+msgid "Background folder path"
+msgstr "Шлях до папки з фоновими зображеннями"
+
+msgid "No images found in the selected folder. No background will be shown."
+msgstr "Зображення у вибраній папці не знайдено. Фон не буде відображатися."
 
 msgid "Stretch book cover to fill"
 msgstr "Розтягнути обкладинку книги"
 
 msgid ""
-"When disabled, book cover will be scaled to fit within the screen while\n"
+"When disabled, book cover will be scaled to fit within the screen while "
 "preserving aspect ratio."
 msgstr ""
-"Якщо вимкнено, обкладинка книги буде масштабована відповідно до розміру\n"
-"екрана зі збереженням пропорцій."
+"Якщо вимкнено, обкладинка книги буде масштабована відповідно до "
+"розміру\nекрана зі збереженням пропорцій."
 
 msgid "Cover fill colour"
 msgstr "Колір заливки обкладинки"
@@ -1023,21 +1539,7 @@ msgid "Cover alignment"
 msgstr "Вирівнювання обкладинки"
 
 msgid "Horizontal alignment of the cover image when not stretched."
-msgstr ""
-"Горизонтальне вирівнювання зображення обкладинки за відсутності "
-"розтягування."
-
-msgid "Solid background colour"
-msgstr "Суцільний колір фону"
-
-msgid "Pick background colour"
-msgstr "Вибрати колір фону"
-
-msgid "Background folder path"
-msgstr "Шлях до папки з фоновими зображеннями"
-
-msgid "No images found in the selected folder. No background will be shown."
-msgstr "Зображення у вибраній папці не знайдено. Фон не буде відображатися."
+msgstr "Горизонтальне вирівнювання зображення обкладинки за відсутності розтягування."
 
 msgid "Background type"
 msgstr "Тип фону"
@@ -1060,9 +1562,55 @@ msgstr "Непрозорість накладання"
 msgid "Overlay opacity (%)"
 msgstr "Непрозорість накладання (%)"
 
+#, lua-format
 msgid "0% is no overlay. 20–40% adds a soft tint. 100% is fully opaque."
-msgstr ""
-"0% — без накладання. 20–40% — м'який відтінок. 100% — повністю непрозорий."
+msgstr "0% — без накладання. 20–40% — м'який відтінок. 100% — повністю непрозорий."
+
+msgid "None"
+msgstr "Немає"
+
+msgid "Active preset: "
+msgstr "Активний пресет: "
+
+msgid "Save current settings as new preset"
+msgstr "Зберегти поточні налаштування як новий пресет"
+
+#, lua-format
+msgid "What would you like to do with preset '%s'?"
+msgstr "Що ви хочете зробити з пресетом «%s»?"
+
+msgid "Update"
+msgstr "Оновити"
+
+#, lua-format
+msgid "Are you sure you want to overwrite preset '%s' with current settings?"
+msgstr "Ви впевнені, що хочете перезаписати пресет «%s» поточними налаштуваннями?"
+
+#, lua-format
+msgid "Preset '%s' was updated with current settings"
+msgstr "Пресет «%s» оновлено поточними налаштуваннями"
+
+#, lua-format
+msgid "Are you sure you want to delete preset '%s'?"
+msgstr "Ви впевнені, що хочете видалити пресет «%s»?"
+
+msgid "Rename"
+msgstr "Перейменувати"
+
+msgid "Enter new preset name"
+msgstr "Введіть нову назву пресета"
+
+msgid "[ Built-in Presets ]"
+msgstr "[ Вбудовані пресети ]"
+
+msgid "[ Your Custom Presets ]"
+msgstr "[ Ваші користувацькі пресети ]"
+
+msgid "Apply"
+msgstr "Застосувати"
+
+msgid "Invalid hex code. Use format: #RRGGBB"
+msgstr "Невірний HEX-код. Використовуйте формат: #RRGGBB"
 
 msgid "Reset layout & spacing settings to default"
 msgstr "Скинути налаштування макета і відступів до значень за замовчуванням"
@@ -1083,15 +1631,13 @@ msgid "Contents settings reset to defaults"
 msgstr "Налаштування вмісту скинуто до значень за замовчуванням"
 
 msgid "Reset colours, icons & bars settings to default"
-msgstr ""
-"Скинути налаштування кольорів, іконок і смуг до значень за замовчуванням"
+msgstr "Скинути налаштування кольорів, іконок і смуг до значень за замовчуванням"
 
 msgid "Are you sure you want to reset colours, icons & bars settings?"
 msgstr "Ви впевнені, що хочете скинути налаштування кольорів, іконок і смуг?"
 
 msgid "Colours, icons & bars settings reset to defaults"
-msgstr ""
-"Налаштування кольорів, іконок і смуг скинуто до значень за замовчуванням"
+msgstr "Налаштування кольорів, іконок і смуг скинуто до значень за замовчуванням"
 
 msgid "Reset fonts & text settings to default"
 msgstr "Скинути налаштування шрифтів і тексту до значень за замовчуванням"
@@ -1124,521 +1670,15 @@ msgstr "Значення буде відновлено з: %s"
 msgid "Reset"
 msgstr "Скинути"
 
-msgid "Save"
-msgstr "Зберегти"
-
-msgid "None"
-msgstr "Немає"
-
-msgid "Active preset: "
-msgstr "Активний пресет: "
-
-msgid "Save current settings as new preset"
-msgstr "Зберегти поточні налаштування як новий пресет"
+msgid "Pick a colour"
+msgstr "Вибрати колір"
 
 #, lua-format
-msgid "What would you like to do with preset '%s'?"
-msgstr "Що ви хочете зробити з пресетом «%s»?"
+msgid "Brightness: %d%%"
+msgstr "Яскравість: %d%%"
 
-msgid "Update"
-msgstr "Оновити"
+msgid "Enter hex"
+msgstr "Ввести HEX"
 
-#, lua-format
-msgid "Are you sure you want to overwrite preset '%s' with current settings?"
-msgstr ""
-"Ви впевнені, що хочете перезаписати пресет «%s» поточними налаштуваннями?"
-
-#, lua-format
-msgid "Preset '%s' was updated with current settings"
-msgstr "Пресет «%s» оновлено поточними налаштуваннями"
-
-#, lua-format
-msgid "Are you sure you want to delete preset '%s'?"
-msgstr "Ви впевнені, що хочете видалити пресет «%s»?"
-
-msgid "Rename"
-msgstr "Перейменувати"
-
-msgid "Enter new preset name"
-msgstr "Введіть нову назву пресета"
-
-msgid "[ Built-in Presets ]"
-msgstr "[ Вбудовані пресети ]"
-
-msgid "[ Your Custom Presets ]"
-msgstr "[ Ваші користувацькі пресети ]"
-
-msgid "Book info"
-msgstr "Відомості про книгу"
-
-msgid "Chapter info"
-msgstr "Відомості про главу"
-
-msgid "Daily info"
-msgstr "Щоденна інформація"
-
-msgid "Battery info"
-msgstr "Відомості про батарею"
-
-msgid "Message info"
-msgstr "Відомості про повідомлення"
-
-msgid "Reorder sections"
-msgstr "Змінити порядок розділів"
-
-msgid "Section order"
-msgstr "Порядок розділів"
-
-msgid "At least one section must remain visible."
-msgstr "Хоча б один розділ має залишатися видимим."
-
-msgid "Show cover image above book info"
-msgstr "Показувати обкладинку над інформацією про книгу"
-
-msgid ""
-"Display the book's cover image above the title and progress in the book\n"
-"section."
-msgstr ""
-"Відображає обкладинку книги над заголовком і прогресом у розділі\n"
-"книги."
-
-msgid "Cover image size"
-msgstr "Розмір зображення обкладинки"
-
-msgid "Height limit for the cover image in pixels."
-msgstr "Обмеження висоти зображення обкладинки в пікселях."
-
-msgid "Cover image size (pixels)"
-msgstr "Розмір зображення обкладинки (пікселів)"
-
-msgid ""
-"100–150px fits neatly in most layouts. Go up to 250px+ for a prominent\n"
-"cover."
-msgstr ""
-"100–150 пкс акуратно вписується в більшість макетів. До 250 пкс+\n"
-"для помітної обкладинки."
-
-msgid "Cover border size"
-msgstr "Розмір рамки обкладинки"
-
-msgid ""
-"Width of the border drawn around the cover image. Set to 0 for no\n"
-"border."
-msgstr ""
-"Ширина рамки, намальованої навколо зображення обкладинки. Встановіть 0,\n"
-"щоб прибрати рамку."
-
-msgid "Cover border size (pixels)"
-msgstr "Розмір рамки обкладинки (пікселів)"
-
-msgid "1–3px for a subtle outline. 0 to disable."
-msgstr "1–3 пкс — ледь помітний контур. 0 — вимкнути."
-
-msgid "Align cover to text alignment"
-msgstr "Вирівнювати обкладинку за вирівнюванням тексту"
-
-msgid ""
-"When enabled, the cover image follows the text alignment setting instead\n"
-"of always being centered."
-msgstr ""
-"Якщо увімкнено, зображення обкладинки слідує налаштуванню вирівнювання\n"
-"тексту, а не завжди центрується."
-
-msgid "Cover image"
-msgstr "Зображення обкладинки"
-
-msgid "Configure the book cover image shown above the book section."
-msgstr ""
-"Налаштування зображення обкладинки книги, що відображається над розділом "
-"книги."
-
-msgid "Show book author"
-msgstr "Показувати автора книги"
-
-msgid "Display the author name below the book title."
-msgstr "Відображає ім'я автора під заголовком книги."
-
-msgid "Show series name"
-msgstr "Показати назву серії"
-
-msgid "Display the book's series name and index below the title."
-msgstr "Відображає назву серії книги та її номер під заголовком."
-
-msgid "Show book pages (pg x of x)"
-msgstr "Показувати сторінки книги (стор. x з x)"
-
-msgid "Display total page count for the entire book."
-msgstr "Відображає загальну кількість сторінок усієї книги."
-
-msgid "Show book time remaining"
-msgstr "Показувати час, що залишився до кінця книги"
-
-msgid ""
-"Estimated reading time left to finish the book, based on your average\n"
-"reading speed."
-msgstr ""
-"Орієнтовний час читання, що залишився до кінця книги, на основі вашої\n"
-"середньої швидкості читання."
-
-msgid "Show chapter count (ch x of x)"
-msgstr "Показувати кількість глав (гл. x з x)"
-
-msgid ""
-"Display current chapter number and total chapters (e.g., 'Chapter 5 of\n"
-"12')."
-msgstr ""
-"Відображає номер поточної глави і загальну кількість глав (напр., «Глава 5 з\n"
-"12»)."
-
-msgid "Show chapter pages (pg x of x)"
-msgstr "Показувати сторінки глави (стор. x з x)"
-
-msgid "Display the number of pages in the current chapter."
-msgstr "Відображає кількість сторінок у поточній главі."
-
-msgid "Show chapter time remaining"
-msgstr "Показувати час, що залишився до кінця глави"
-
-msgid ""
-"Estimated time to finish the current chapter, based on your reading\n"
-"speed."
-msgstr ""
-"Орієнтовний час до кінця поточної глави, на основі вашої швидкості\n"
-"читання."
-
-msgid "Title Line"
-msgstr "Рядок заголовка"
-
-msgid "Choose what the top line of the daily info section displays."
-msgstr ""
-"Вибирає, що відображається у верхньому рядку розділу щоденної інформації."
-
-msgid "Pages read today"
-msgstr "Сторінок прочитано сьогодні"
-
-msgid "e.g. '35 pages read today'"
-msgstr "напр. «35 сторінок прочитано сьогодні»"
-
-msgid "Time read today"
-msgstr "Час читання сьогодні"
-
-msgid "e.g. '42 mins read today'"
-msgstr "напр. «42 хв прочитано сьогодні»"
-
-msgid "Pages and time read today"
-msgstr "Сторінок і час читання сьогодні"
-
-msgid "e.g. '35 pgs & 42 mins read today'"
-msgstr "напр. «35 стор. і 42 хв прочитано сьогодні»"
-
-msgid "Goal type"
-msgstr "Тип цілі"
-
-msgid ""
-"Choose whether your daily goal tracks pages read or time spent reading."
-msgstr ""
-"Вибирає, чи відстежує денна ціль кількість прочитаних сторінок чи час "
-"читання."
-
-msgid "Page goal"
-msgstr "Ціль за сторінками"
-
-msgid "Track daily progress by number of pages read."
-msgstr "Відстежує щоденний прогрес за кількістю прочитаних сторінок."
-
-msgid "Time goal"
-msgstr "Ціль за часом"
-
-msgid "Track daily progress by minutes spent reading."
-msgstr "Відстежує щоденний прогрес за часом читання в хвилинах."
-
-msgid "Daily page goal"
-msgstr "Щоденна ціль за сторінками"
-
-msgid "Set how many pages you aim to read each day."
-msgstr "Задає кількість сторінок, які ви плануєте читати щодня."
-
-msgid "Daily page goal (pages)"
-msgstr "Щоденна ціль за сторінками (сторінок)"
-
-msgid "20–50 pages for a daily habit. 50–100 for dedicated reading sessions."
-msgstr ""
-"20–50 сторінок для щоденної звички. 50–100 для присвячених читанню сесій."
-
-msgid "Daily time goal"
-msgstr "Щоденна ціль за часом"
-
-msgid "Set how many minutes you aim to read each day."
-msgstr "Задає кількість хвилин читання на день."
-
-msgid "Daily time goal (minutes)"
-msgstr "Щоденна ціль за часом (хвилини)"
-
-msgid "20–30 mins for a daily habit. 60+ mins for dedicated reading sessions."
-msgstr "20–30 хв для щоденної звички. 60+ хв для присвячених читанню сесій."
-
-msgid "Show current reading streak"
-msgstr "Показувати поточну серію читання"
-
-msgid "Display consecutive days you've met your reading goal."
-msgstr "Відображає кількість днів поспіль, коли ви виконували ціль з читання."
-
-msgid "Show weekly progress"
-msgstr "Показувати тижневий прогрес"
-
-msgid ""
-"Days this week you have met your reading goal, shown as completed days\n"
-"out of the current weekday (Monday = 1... Sunday = 7). For example:\n"
-"Thursday with goals met on Monday and Tuesday will show 2/4."
-msgstr ""
-"Дні цього тижня, коли виконано ціль з читання. Відображається як\n"
-"виконані дні з поточного дня тижня (Пн = 1… Нд = 7). Наприклад:\n"
-"у четвер із цілями в понеділок і вівторок буде показано 2/4."
-
-msgid "Show daily goal"
-msgstr "Показувати денну ціль"
-
-msgid ""
-"Target page mode: e.g. 50 page goal. Target time mode: e.g. 1hr 15min\n"
-"time goal."
-msgstr ""
-"Режим цілі за сторінками: напр. ціль 50 стор. Режим цілі за часом:\n"
-"напр. ціль 1 год 15 хв."
-
-msgid "Show current time/date on separate line"
-msgstr "Показувати поточний час/дату на окремому рядку"
-
-msgid ""
-"Display time/date on its own line below battery percentage instead of\n"
-"inline."
-msgstr ""
-"Відображає час/дату на окремому рядку під відсотком заряду батареї,\n"
-"а не в рядку."
-
-msgid "Enable 'Show battery time remaining' to use this option"
-msgstr ""
-"Увімкніть «Показувати час, що залишився до розряду батареї», щоб використати"
-" цю опцію"
-
-msgid "Show date instead of time"
-msgstr "Показувати дату замість часу"
-
-msgid ""
-"Display current date (e.g. '29th Jan') instead of time in battery\n"
-"section"
-msgstr ""
-"Відображає поточну дату (напр., «29 січ.») замість часу в розділі\n"
-"батареї"
-
-msgid "Show battery consumption rate"
-msgstr "Показувати швидкість витрати батареї"
-
-msgid ""
-"Display battery drain percentage per hour based on recent usage or\n"
-"manual input (see advanced menu)"
-msgstr ""
-"Відображає відсоток витрати батареї за годину на основі останнього\n"
-"використання або ручного введення (див. розширене меню)"
-
-msgid "Show battery time remaining"
-msgstr "Показувати час, що залишився до розряду батареї"
-
-msgid ""
-"Estimated hours and minutes until battery is depleted, based on current\n"
-"drain rate."
-msgstr ""
-"Орієнтовний час у годинах і хвилинах до розряду батареї, на основі\n"
-"поточної швидкості витрати."
-
-msgid "Custom message"
-msgstr "Користувацьке повідомлення"
-
-msgid "Use a separate custom message just for Customisable Sleep Screen"
-msgstr "Використати окреме повідомлення тільки для налаштовуваного екрана сну"
-
-msgid "Book highlights"
-msgstr "Виділення з книги"
-
-msgid "Show a random highlight from the current book"
-msgstr "Показувати випадкове виділення з поточної книги"
-
-msgid "Custom quotes"
-msgstr "Користувацькі цитати"
-
-msgid ""
-"Show a random quote from the custom_quotes.lua file in the plugin\n"
-"folder."
-msgstr "Показує випадкову цитату з файлу custom_quotes.lua у папці плагіна."
-
-msgid "KOReader sleep message"
-msgstr "Повідомлення екрана сну KOReader"
-
-msgid ""
-"Uses KOReaders own sleep screen message function. Enable 'Add custom\n"
-"message to sleep screen' to use this (Settings → Screen → Sleep screen\n"
-"→ Sleep screen message)."
-msgstr ""
-"Використовує власну функцію повідомлень екрана сну KOReader. Увімкніть\n"
-"«Додати користувацьке повідомлення на екран сну», щоб скористатися\n"
-"цим (Налаштування → Екран → Екран сну → Повідомлення екрана сну)."
-
-msgid "Show message header"
-msgstr "Показувати заголовок повідомлення"
-
-msgid "Show or hide the header label above the message text."
-msgstr "Показує або приховує мітку заголовка над текстом повідомлення."
-
-msgid "Message header"
-msgstr "Заголовок повідомлення"
-
-msgid ""
-"Custom header text displayed above the message. Supports variables: %d,\n"
-"%y, %t, %b, %r."
-msgstr ""
-"Користувацький текст заголовка, що відображається над повідомленням.\n"
-"Підтримує змінні: %d, %y, %t, %b, %r."
-
-msgid "Change custom message header"
-msgstr "Змінити заголовок користувацького повідомлення"
-
-msgid "Edit custom message"
-msgstr "Редагувати користувацьке повідомлення"
-
-msgid ""
-"Write your custom message text. Only active when 'Custom message' is\n"
-"selected. Supports variables: %d, %y, %t, %b, %r."
-msgstr ""
-"Введіть текст свого повідомлення. Активно лише коли обрано\n"
-"«Користувацьке повідомлення». Підтримує змінні: %d, %y, %t, %b, %r."
-
-msgid "Custom Customisable Sleep Screen message"
-msgstr "Повідомлення налаштовуваного екрана сну"
-
-msgid "Book highlight maximum length"
-msgstr "Максимальна довжина виділення з книги"
-
-msgid "Maximum characters to display for highlights (0 = no limit)."
-msgstr ""
-"Максимальна кількість символів для відображення виділень (0 = без обмежень)."
-
-msgid "Maximum highlight length (characters)"
-msgstr "Максимальна довжина виділення (символів)"
-
-msgid ""
-"100–150 chars keeps highlights readable. Set to 0 to show the full\n"
-"highlight."
-msgstr ""
-"100–150 символів — гарна читабельність виділень. 0 — показувати\n"
-"повне виділення."
-
-msgid "Add quotation marks to highlights"
-msgstr "Додати лапки до виділень"
-
-msgid ""
-"Wraps all highlights in curly double quotes, removing any pre-existing\n"
-"quotation marks."
-msgstr ""
-"Обгортає всі виділення в парні подвійні лапки, видаляючи наявні\n"
-"знаки лапок."
-
-msgid "Show highlight location"
-msgstr "Показувати місце розташування виділення"
-
-msgid ""
-"Display the chapter title and page number where the highlight is found,\n"
-"shown below the highlight text."
-msgstr ""
-"Відображає назву глави та номер сторінки, де знаходиться виділення,\n"
-"під текстом виділення."
-
-msgid "Show quote attribution"
-msgstr "Показати авторство цитати"
-
-msgid ""
-"Display the author and book name below the quote, if provided in\n"
-"custom_quotes.lua."
-msgstr ""
-"Відображає автора і назву книги під цитатою, якщо вказано в\n"
-"custom_quotes.lua."
-
-msgid "Show titles (top line)"
-msgstr "Показувати заголовки (верхній рядок)"
-
-msgid ""
-"Display the main heading text in each section. At least one of titles or\n"
-"subtitles must be visible."
-msgstr ""
-"Відображає основний заголовок у кожному розділі. Хоча б один з\n"
-"елементів — заголовки чи підзаголовки — має бути видимим."
-
-msgid "Cannot hide both titles and subtitles. At least one must be visible."
-msgstr ""
-"Не можна приховати одночасно заголовки і підзаголовки. Хоча б один має бути "
-"видимим."
-
-msgid "Show subtitles (bottom lines)"
-msgstr "Показувати підзаголовки (нижні рядки)"
-
-msgid ""
-"Display information below main heading text in each section. At least\n"
-"one of titles or subtitles must be visible."
-msgstr ""
-"Відображає інформацію під основним заголовком у кожному розділі. Хоча б\n"
-"один з елементів — заголовки чи підзаголовки — має бути видимим."
-
-msgid "Displayed sections"
-msgstr "Відображувані розділи"
-
-msgid ""
-"Toggle which sections show on the sleep screen. At least one must be\n"
-"visible."
-msgstr ""
-"Перемикає, які розділи відображаються на екрані сну. Хоча б один\n"
-"має бути видимим."
-
-msgid "[ Section Content ]"
-msgstr "[ Вміст розділу ]"
-
-msgid "Configure book-specific details."
-msgstr "Налаштування параметрів, специфічних для книги."
-
-msgid "Configure chapter-specific details"
-msgstr "Налаштування параметрів, специфічних для глави"
-
-msgid "Configure reading goal details"
-msgstr "Налаштування параметрів цілі читання"
-
-msgid "Battery section"
-msgstr "Розділ батареї"
-
-msgid "Configure battery & time/date details"
-msgstr "Налаштування параметрів батареї та часу/дати"
-
-msgid "Configure message-specific details"
-msgstr "Налаштування параметрів, специфічних для повідомлення"
-
-msgid "Customisable sleep screen settings"
-msgstr "Налаштування налаштовуваного екрана сну"
-
-msgid "Customisable sleep screen presets"
-msgstr "Пресети налаштовуваного екрана сну"
-
-msgid "Cycle through customisable sleep screen presets"
-msgstr "Перебирати пресети налаштовуваного екрана сну"
-
-msgid "Customisable sleep screen"
-msgstr "Налаштовуваний екран сну"
-
-msgid "Enable customisable sleep screen"
-msgstr "Увімкнути налаштовуваний екран сну"
-
-msgid ""
-"Customisable Sleep Screen: no book data found.\n"
-"\n"
-"Open a book and trigger the sleep screen at least once before it will\n"
-"work in the file manager."
-msgstr ""
-"Налаштовуваний екран сну: дані книги не знайдено.\n"
-"\n"
-"Відкрийте книгу і викличте екран сну хоча б один раз, перш ніж він\n"
-"запрацює у файловому менеджері."
+msgid "Enter hex colour code"
+msgstr "Ввести HEX-код кольору"

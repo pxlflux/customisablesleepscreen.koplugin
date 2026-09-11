@@ -3,7 +3,6 @@
 local Blitbuffer      = require("ffi/blitbuffer")
 local logger          = require("logger")
 local Device          = require("device")
-local AlphaContainer  = require("ui/widget/container/alphacontainer")
 local FrameContainer  = require("ui/widget/container/framecontainer")
 local HorizontalGroup = require("ui/widget/horizontalgroup")
 local HorizontalSpan  = require("ui/widget/horizontalspan")

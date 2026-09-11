@@ -4,7 +4,38 @@ local logger = require("logger")
 local _dir   = (debug.getinfo(1, "S").source:match("^@(.+)/[^/]+$") or ".") .. "/"
 
 local function parsePluralExpression(expr)
+    local function stripOuterParens(s)
+        while true do
+            s = s:match("^%s*(.-)%s*$")
+            if s:sub(1, 1) == "(" and s:sub(-1) == ")" then
+                local depth = 0
+                local wraps_whole = true
+                for i = 1, #s do
+                    local c = s:sub(i, i)
+                    if c == "(" then
+                        depth = depth + 1
+                    elseif c == ")" then
+                        depth = depth - 1
+                        if depth == 0 and i < #s then
+                            wraps_whole = false
+                            break
+                        end
+                    end
+                end
+                if wraps_whole then
+                    s = s:sub(2, -2)
+                else
+                    break
+                end
+            else
+                break
+            end
+        end
+        return s
+    end
+
     local function translateTernary(s)
+        s = stripOuterParens(s)
         local function findQuestion(str)
             local depth = 0
             for i = 1, #str do
@@ -56,7 +87,10 @@ local function parsePluralExpression(expr)
     expr = translateTernary(expr)
 
     local loadfunc = loadstring or load
-    local fn, err = loadfunc("return function(n) return " .. expr .. " end")
+    local fn, err = loadfunc(
+        "return function(n) local r = (" .. expr .. "); " ..
+        "if type(r) == 'boolean' then return r and 1 or 0 end; return r end"
+    )
     if not fn then return nil end
 
     local ok, pluralFn = pcall(fn)
@@ -89,7 +123,10 @@ local function parsePO(path)
             for line in header:gmatch("([^\n]*)\n?") do
                 local plural_line = line:match("^Plural%-Forms:%s*(.-)%s*$")
                 if plural_line then
-                    pluralizer = parsePluralExpression(plural_line)
+                    local plural_expr = plural_line:match("plural%s*=%s*(.-)%s*;?%s*$")
+                    if plural_expr then
+                        pluralizer = parsePluralExpression(plural_expr)
+                    end
                     break
                 end
             end

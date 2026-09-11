@@ -26,7 +26,7 @@ Originally released as a patch, this project has now been rebuilt as a KOReader 
 - Quick access through taps and gestures shortcuts
 - Sleep screen orientation lock
 - Export sleep screen as image for use with android screen saver.
-- Language support for 13 languages: `de`, `es`, `fr`, `it`, `ja`, `ko`, `nl`, `pl`, `pt_BR`, `ru`, `tr`, `vi`, `zh_CN`
+- Language support for 16 languages: `de`, `es`, `fr`, `hu`, `it`, `ja`, `ko`, `nl`, `pl`, `pt_BR`, `pt_PT`, `ru`, `tr`, `uk`, `vi`, `zh_CN`
 
 ## Compatibility:
 

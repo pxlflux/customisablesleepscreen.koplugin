@@ -651,9 +651,7 @@ local function buildFontsAndTextMenu()
         createToggleItem(_("Book multiline titles"),    _("If deselected book titles will be truncated to a single line with an ellipsis"),    SETTINGS.BOOK_MULTILINE, USER_CONFIG.BOOK_MULTILINE),
         createToggleItem(_("Chapter multiline titles"), _("If deselected chapter titles will be truncated to a single line with an ellipsis"), SETTINGS.CHAP_MULTILINE, USER_CONFIG.CHAP_MULTILINE),
         createToggleItem(_("Clean chapter titles"),
-            _("Removes structural prefixes like 'Chapter 5:' or 'Part II' from chapter titles " ..
-            "and normalises capitalisation. Only works correctly with English chapter titles " ..
-            "- disable for non-English books."),
+            _("Removes structural prefixes like 'Chapter 5:' or 'Part II' from chapter titles and normalises capitalisation. Only works correctly with English chapter titles - disable for non-English books."),
             SETTINGS.CLEAN_CHAP, USER_CONFIG.CLEAN_CHAP),
         createFlipNilOrFalseItem(_("Make titles bold"),
             _("Display the section titles in bold font weight for extra emphasis."),
@@ -904,6 +902,7 @@ local function buildBackgroundMenu()
             SETTINGS.BG_IMAGE_PATH,
             SETTINGS.BG_STRETCH, SETTINGS.BG_COVER_FILL_COLOR,
             SETTINGS.BG_SOLID_COLOR, SETTINGS.BG_COVER_ALIGN,
+            SETTINGS.EXCLUDED_COVER_BG_TYPE,
         }),
         { text = _("Background type"),    sub_item_table = buildBackgroundTypeMenu(), help_text = _("Choose what appears behind the information box.") },
         {
