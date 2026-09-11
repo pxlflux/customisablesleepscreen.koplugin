@@ -774,7 +774,7 @@ local function buildChapterSection(ui, state, book_data, has_ui, total_width, co
     local page_now
 
     if has_ui then
-        page_now = getDisplayPage(ui, state)
+        page_now = getCurrentPage(ui, state)
         if ui.toc and ui.toc.toc and #ui.toc.toc > 0 then
             local raw          = ui.toc:getTocTitleByPage(page_now) or ""
             local should_clean = getSettingWithDefault(SETTINGS.CLEAN_CHAP, USER_CONFIG.CLEAN_CHAP)
