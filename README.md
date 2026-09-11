@@ -34,11 +34,11 @@ The following list assumes KOReader’s latest build (2026.03 Snowflake) is inst
 
 | Device                 | Status          | Notes                                                             |
 | ---------------------- | --------------- | ----------------------------------------------------------------- |
-| Kobo                   | ✅ Works         | Most supported platform. Tested on Kobo Libra Colour              |
-| Kindle                 | ✅ Works         | Tested on Kindle PW 10^(th) Gen                                   |
+| Kobo                   | ✅ Works         | Most supported platform. Tested on Kobo Libra Colour.              |
+| Kindle                 | ✅ Works         | Tested on Kindle PW 10<sup>th</sup> Gen.                                   |
 | Android / Desktop      | 🟠 Partial support | KOReader’s Sleep Screen feature is unavailable on these platforms however an image can be exported to use with the devices screensaver. |
+| PocketBook             | 🟠 Partial support | Device firmware overrides KOReader’s Sleep Screen, but an exported image can be set as PocketBook’s own sleep image. Note: PocketBook caches this image, so a reboot may sometimes be needed to see updates - not ideal for frequently updated book stats but it's the best solution currently for this device.           |
 | Cervantes / reMarkable | 🟡 Unverified   | Untested on these devices.                                        |
-| PocketBook             | ❌ Not supported | Device firmware overrides KOReader’s Sleep Screen                 |
 
 ## Notes:
 
