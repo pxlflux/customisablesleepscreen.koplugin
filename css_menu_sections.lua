@@ -172,8 +172,11 @@ local function buildBookSectionContentMenu()
             _("Display total page count for the entire book."),
             SETTINGS.SHOW_BOOK_PAGES, false),
         createFlipNilOrTrueItem(_("Show book time remaining"),
-            _("Estimated reading time left to finish the book, based on your average reading speed."),
+            _("Display estimated reading time left to finish the book, based on your average reading speed."),
             SETTINGS.SHOW_BOOK_TIME_REMAINING),
+        createFlipNilOrTrueItem(_("Show book percentage"),
+            _("Display the percentage of the book completed."),
+            SETTINGS.SHOW_BOOK_PERCENTAGE),
     }
 end
 
@@ -186,8 +189,11 @@ local function buildChapterSectionContentMenu()
             _("Display the number of pages in the current chapter."),
             SETTINGS.SHOW_CHAP_PAGES, false),
         createFlipNilOrTrueItem(_("Show chapter time remaining"),
-            _("Estimated time to finish the current chapter, based on your reading speed."),
+            _("Display estimated time to finish the current chapter, based on your reading speed."),
             SETTINGS.SHOW_CHAP_TIME_REMAINING),
+        createFlipNilOrTrueItem(_("Show chapter percentage"),
+            _("Display the percentage of the current chapter completed."),
+            SETTINGS.SHOW_CHAP_PERCENTAGE),
     }
 end
 
@@ -294,39 +300,25 @@ local function buildGoalSectionContentMenu()
                 PluginStore:flipNilOrTrue(SETTINGS.SHOW_GOAL_PAGES)
             end,
         },
+        createFlipNilOrTrueItem(_("Show goal percentage"),
+            _("Display the percentage of your daily goal completed."),
+            SETTINGS.SHOW_GOAL_PERCENTAGE),
     }
 end
 
 local function buildBatterySectionContentMenu()
     return {
-        {
-            text      = _("Show current time/date on separate line"),
-            help_text = _("Display time/date on its own line below battery percentage instead of inline."),
-            help_text_func = function()
-                local val = getSetting("SHOW_BATT_TIME")
-                if val == false then return _("Enable 'Show battery time remaining' to use this option") end
-                return nil
-            end,
-            enabled_func = function()
-                local val = getSetting("SHOW_BATT_TIME")
-                return val == nil or val == true
-            end,
-            checked_func = function() return PluginStore:isTrue(SETTINGS.SHOW_BATT_TIME_SEPARATE) end,
-            callback     = function() PluginStore:flipNilOrFalse(SETTINGS.SHOW_BATT_TIME_SEPARATE) end,
-        },
-        {
-            text      = _("Show date instead of time"),
-            help_text = _("Display current date (e.g. '29th Jan') instead of time in battery section"),
-            checked_func = function() return getSetting("SHOW_BATT_DATE") end,
-            callback = function()
-                PluginStore:saveSetting(SETTINGS.SHOW_BATT_DATE, not getSetting("SHOW_BATT_DATE"))
-            end,
-        },
+        createFlipNilOrTrueItem(_("Show clock"),
+            _("Display the current time. Note this is a snapshot taken when the sleep screen is shown, it does not update live while the screen is asleep."),
+            SETTINGS.SHOW_BATT_CLOCK),
+        createToggleItem(_("Show date"),
+            _("Display the current date. Note this is a snapshot taken when the sleep screen is shown, it does not update live while the screen is asleep."),
+            SETTINGS.SHOW_BATT_DATE, false),
         createToggleItem(_("Show battery consumption rate"),
             _("Display battery drain percentage per hour based on recent usage or manual input (see advanced menu)"),
             SETTINGS.SHOW_BATT_RATE, false),
         createFlipNilOrTrueItem(_("Show battery time remaining"),
-            _("Estimated hours and minutes until battery is depleted, based on current drain rate."),
+            _("Display estimated hours and minutes until battery is depleted, based on current drain rate."),
             SETTINGS.SHOW_BATT_TIME, true),
     }
 end
@@ -336,30 +328,6 @@ local function buildMessageSectionContentMenu()
         createRadioItem(_("Custom message"),
             _("Use a separate custom message just for Customisable Sleep Screen"),
             SETTINGS.MESSAGE_SOURCE, "custom"),
-        createRadioItem(_("Book highlights"),
-            _("Show a random highlight from the current book"),
-            SETTINGS.MESSAGE_SOURCE, "highlight"),
-        createRadioItem(_("Custom quotes"),
-            _("Show a random quote from the custom_quotes.lua file in the plugin folder."),
-            SETTINGS.MESSAGE_SOURCE, "custom_quotes"),
-        createRadioItem(_("KOReader sleep message"),
-            _("Uses KOReaders own sleep screen message function. Enable 'Add custom message to sleep screen' to use this (Settings → Screen → Sleep screen → Sleep screen message)."),
-            SETTINGS.MESSAGE_SOURCE, "koreader",
-            function() return G_reader_settings:isTrue(SETTINGS.SHOW_MSG_GLOBAL) end),
-        createToggleItem(
-            _("Show message header"),
-            _("Show or hide the header label above the message text."),
-            SETTINGS.SHOW_MSG_HEADER, true
-        ),
-        {
-            text           = _("Message header"),
-            help_text      = _("Custom header text displayed above the message. Supports variables: %d, %y, %t, %b, %r."),
-            keep_menu_open = true,
-            callback = function()
-                createTextInputDialog(_("Change custom message header"), getSetting("MSG_HEADER"),
-                    function(value) PluginStore:saveSetting(SETTINGS.MSG_HEADER, value) end)
-            end,
-        },
         {
             text           = _("Edit custom message"),
             help_text      = _("Write your custom message text. Only active when 'Custom message' is selected. Supports variables: %d, %y, %t, %b, %r."),
@@ -371,23 +339,9 @@ local function buildMessageSectionContentMenu()
                     function(value) PluginStore:saveSetting(SETTINGS.CUSTOM_MESSAGE, value) end)
             end,
         },
-        {
-            text           = _("Book highlight maximum length"),
-            help_text      = _("Maximum characters to display for highlights (0 = no limit)."),
-            enabled_func   = function() return getSetting("MESSAGE_SOURCE") == "highlight" end,
-            keep_menu_open = true,
-            callback = function()
-                local current_value = getSetting("MAX_HIGHLIGHT_LENGTH") or 0
-                createSpinDialog(
-                    _("Maximum highlight length (characters)"),
-                    current_value > 0 and current_value or USER_CONFIG.MAX_HIGHLIGHT_LENGTH,
-                    0, 1000, 25,
-                    function(val) PluginStore:saveSetting(SETTINGS.MAX_HIGHLIGHT_LENGTH, val) end,
-                    _("100–150 chars keeps highlights readable. Set to 0 to show the full highlight."),
-                    nil, 100
-                )
-            end,
-        },
+        createRadioItem(_("Book highlights"),
+            _("Show a random highlight from the current book"),
+            SETTINGS.MESSAGE_SOURCE, "highlight"),
         {
             text      = _("Add quotation marks to highlights"),
             help_text = _("Wraps all highlights in curly double quotes, removing any pre-existing quotation marks."),
@@ -413,6 +367,26 @@ local function buildMessageSectionContentMenu()
             end,
         },
         {
+            text           = _("Book highlight maximum length"),
+            help_text      = _("Maximum characters to display for highlights (0 = no limit)."),
+            enabled_func   = function() return getSetting("MESSAGE_SOURCE") == "highlight" end,
+            keep_menu_open = true,
+            callback = function()
+                local current_value = getSetting("MAX_HIGHLIGHT_LENGTH") or 0
+                createSpinDialog(
+                    _("Maximum highlight length (characters)"),
+                    current_value > 0 and current_value or USER_CONFIG.MAX_HIGHLIGHT_LENGTH,
+                    0, 1000, 25,
+                    function(val) PluginStore:saveSetting(SETTINGS.MAX_HIGHLIGHT_LENGTH, val) end,
+                    _("100–150 chars keeps highlights readable. Set to 0 to show the full highlight."),
+                    nil, 100
+                )
+            end,
+        },
+        createRadioItem(_("Custom quotes"),
+            _("Show a random quote from the custom_quotes.lua file in the plugin folder."),
+            SETTINGS.MESSAGE_SOURCE, "custom_quotes"),
+        {
             text         = _("Show quote attribution"),
             help_text    = _("Display the author and book name below the quote, if provided in custom_quotes.lua."),
             enabled_func = function() return getSetting("MESSAGE_SOURCE") == "custom_quotes" end,
@@ -422,53 +396,22 @@ local function buildMessageSectionContentMenu()
                     not getSetting("SHOW_QUOTE_ATTRIBUTION"))
             end,
         },
-    }
-end
-
-local function buildTitleSubtitleToggles()
-    return {
+        createRadioItem(_("KOReader sleep message"),
+            _("Uses KOReaders own sleep screen message function. Enable 'Add custom message to sleep screen' to use this (Settings → Screen → Sleep screen → Sleep screen message)."),
+            SETTINGS.MESSAGE_SOURCE, "koreader",
+            function() return G_reader_settings:isTrue(SETTINGS.SHOW_MSG_GLOBAL) end),
+        createToggleItem(
+            _("Show message header"),
+            _("Show or hide the header label above the message text."),
+            SETTINGS.SHOW_MSG_HEADER, true
+        ),
         {
-            text      = _("Show titles (top line)"),
-            help_text = _("Display the main heading text in each section. At least one of titles or subtitles must be visible."),
-            checked_func = function() return getSetting("SHOW_TITLES") ~= false end,
+            text           = _("Message header"),
+            help_text      = _("Custom header text displayed above the message. Supports variables: %d, %y, %t, %b, %r."),
+            keep_menu_open = true,
             callback = function()
-                local current_titles    = getSetting("SHOW_TITLES")
-                local current_subtitles = getSetting("SHOW_SUBTITLES")
-                if current_titles == false then
-                    PluginStore:saveSetting(SETTINGS.SHOW_TITLES, true)
-                else
-                    if current_subtitles == false then
-                        UIManager:show(require("ui/widget/infomessage"):new {
-                            text    = _("Cannot hide both titles and subtitles. At least one must be visible."),
-                            timeout = 3,
-                        })
-                        return
-                    else
-                        PluginStore:saveSetting(SETTINGS.SHOW_TITLES, false)
-                    end
-                end
-            end,
-        },
-        {
-            text      = _("Show subtitles (bottom lines)"),
-            help_text = _("Display information below main heading text in each section. At least one of titles or subtitles must be visible."),
-            checked_func = function() return getSetting("SHOW_SUBTITLES") ~= false end,
-            callback = function()
-                local current_titles    = getSetting("SHOW_TITLES")
-                local current_subtitles = getSetting("SHOW_SUBTITLES")
-                if current_subtitles == false then
-                    PluginStore:saveSetting(SETTINGS.SHOW_SUBTITLES, true)
-                else
-                    if current_titles == false then
-                        UIManager:show(require("ui/widget/infomessage"):new {
-                            text    = _("Cannot hide both titles and subtitles. At least one must be visible."),
-                            timeout = 3,
-                        })
-                        return
-                    else
-                        PluginStore:saveSetting(SETTINGS.SHOW_SUBTITLES, false)
-                    end
-                end
+                createTextInputDialog(_("Change custom message header"), getSetting("MSG_HEADER"),
+                    function(value) PluginStore:saveSetting(SETTINGS.MSG_HEADER, value) end)
             end,
         },
     }
@@ -481,18 +424,20 @@ local function buildContentsMenu()
             SETTINGS.SHOW_GOAL,                SETTINGS.SHOW_BATT,
             SETTINGS.SHOW_MSG,                 SETTINGS.SECTION_ORDER,
             SETTINGS.SHOW_BOOK_AUTHOR,         SETTINGS.SHOW_BOOK_PAGES,
-            SETTINGS.SHOW_BOOK_TIME_REMAINING, SETTINGS.SHOW_CHAP_COUNT,
-            SETTINGS.SHOW_CHAP_PAGES,          SETTINGS.SHOW_CHAP_TIME_REMAINING,
+            SETTINGS.SHOW_BOOK_TIME_REMAINING, SETTINGS.SHOW_BOOK_PERCENTAGE,
+            SETTINGS.SHOW_CHAP_COUNT,          SETTINGS.SHOW_CHAP_PAGES,
+            SETTINGS.SHOW_CHAP_TIME_REMAINING, SETTINGS.SHOW_CHAP_PERCENTAGE,
             SETTINGS.DAILY_GOAL,               SETTINGS.GOAL_TYPE,
             SETTINGS.DAILY_GOAL_MINUTES,       SETTINGS.SHOW_GOAL_STREAK,
             SETTINGS.SHOW_GOAL_ACHIEVEMENT,    SETTINGS.SHOW_GOAL_PAGES,
-            SETTINGS.GOAL_TITLE_TYPE,          SETTINGS.SHOW_MSG_HEADER,
-            SETTINGS.SHOW_BATT_TIME_SEPARATE,  SETTINGS.SHOW_BATT_DATE,
+            SETTINGS.SHOW_GOAL_PERCENTAGE,     SETTINGS.GOAL_TITLE_TYPE,
+            SETTINGS.SHOW_MSG_HEADER,
+            SETTINGS.SHOW_BATT_DATE,
             SETTINGS.SHOW_BATT_RATE,           SETTINGS.SHOW_BATT_TIME,
+            SETTINGS.SHOW_BATT_CLOCK,
             SETTINGS.MESSAGE_SOURCE,           SETTINGS.MSG_HEADER,
             SETTINGS.CUSTOM_MESSAGE,           SETTINGS.MAX_HIGHLIGHT_LENGTH,
             SETTINGS.HIGHLIGHT_ADD_QUOTES,     SETTINGS.SHOW_HIGHLIGHT_LOCATION,
-            SETTINGS.SHOW_TITLES,              SETTINGS.SHOW_SUBTITLES,
             SETTINGS.COVER_IN_BOOK,            SETTINGS.COVER_SIZE,
             SETTINGS.COVER_BORDER_SIZE,        SETTINGS.COVER_ALIGN_TO_TEXT,
             SETTINGS.SHOW_QUOTE_ATTRIBUTION,
@@ -509,9 +454,6 @@ local function buildContentsMenu()
         { text = _("Battery section"),    help_text = _("Configure battery & time/date details"),   sub_item_table = buildBatterySectionContentMenu() },
         { text = _("Message section"),    help_text = _("Configure message-specific details"),      sub_item_table = buildMessageSectionContentMenu() },
     }
-    for i, item in ipairs(buildTitleSubtitleToggles()) do
-        menu[#menu + 1] = item
-    end
     return menu
 end
 
@@ -524,5 +466,4 @@ return {
     buildGoalSectionContentMenu    = buildGoalSectionContentMenu,
     buildBatterySectionContentMenu = buildBatterySectionContentMenu,
     buildMessageSectionContentMenu = buildMessageSectionContentMenu,
-    buildTitleSubtitleToggles      = buildTitleSubtitleToggles,
 }

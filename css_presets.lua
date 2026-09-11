@@ -174,7 +174,6 @@ local PRELOADED_PRESETS = {
         [SETTINGS.SHOW_GOAL_STREAK]         = true,
         [SETTINGS.SHOW_BATT]                = false,
         [SETTINGS.SHOW_BATT_RATE]           = true,
-        [SETTINGS.SHOW_BATT_TIME_SEPARATE]  = true,
         [SETTINGS.SECTION_ORDER]            = { "message", "book", "chapter", "goal", "battery" },
         [SETTINGS.SECTION_GAP_SIZE]         = 20,
         [SETTINGS.POS]                      = "top_center",

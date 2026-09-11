@@ -434,12 +434,9 @@ local function buildSection(total_width, title, subtitle, icon_name, progress, c
         end
     end
 
-    local show_titles    = layout and layout.show_titles    or getSetting("SHOW_TITLES") ~= false
-    local show_subtitles = layout and layout.show_subtitles or getSetting("SHOW_SUBTITLES") ~= false
-
     local text_group
-    local has_title    = show_titles and title and title ~= ""
-    local has_subtitle = show_subtitles and subtitle
+    local has_title    = title and title ~= ""
+    local has_subtitle = subtitle
 
     if has_title and has_subtitle then
         text_group = VerticalGroup:new { align = "left", width = text_width,
@@ -646,9 +643,12 @@ local function buildBookSection(ui, state, book_data, has_ui, total_width, color
         time_left_str = formatDuration(avg_time * pages_left)
     end
 
-    local progress_line = string.format("%d%%", math.floor(progress * 100 + 0.5))
+    local show_book_pct = getSettingWithDefault(SETTINGS.SHOW_BOOK_PERCENTAGE, true)
+    local progress_line = show_book_pct and string.format("%d%%", math.floor(progress * 100 + 0.5)) or nil
     if time_left_str then
-        progress_line = progress_line .. " · " .. string.format(_("%s left"), time_left_str)
+        progress_line = progress_line
+            and (progress_line .. " · " .. string.format(_("%s left"), time_left_str))
+            or string.format(_("%s left"), time_left_str)
     end
 
     local subtitle_lines = {}
@@ -663,7 +663,7 @@ local function buildBookSection(ui, state, book_data, has_ui, total_width, color
     if PluginStore:isTrue(SETTINGS.SHOW_BOOK_PAGES)  then
         table.insert(subtitle_lines, string.format(_("Page %d of %d"), page_now, page_total))
     end
-    table.insert(subtitle_lines, progress_line)
+    if progress_line then table.insert(subtitle_lines, progress_line) end
 
     local book_subtitle = createMultiLineSubtitle(subtitle_lines, subtitle_face, colors.subtext)
 
@@ -814,8 +814,13 @@ local function buildChapterSection(ui, state, book_data, has_ui, total_width, co
         time_left = formatDuration(avg_time * chap_pages_left)
     end
 
-    local chap_sub = string.format("%d%%", math.floor(chap_progress * 100 + 0.5))
-    if time_left then chap_sub = chap_sub .. " · " .. string.format(_("%s left"), time_left) end
+    local show_chap_pct = getSettingWithDefault(SETTINGS.SHOW_CHAP_PERCENTAGE, true)
+    local chap_sub = show_chap_pct and string.format("%d%%", math.floor(chap_progress * 100 + 0.5)) or nil
+    if time_left then
+        chap_sub = chap_sub
+            and (chap_sub .. " · " .. string.format(_("%s left"), time_left))
+            or string.format(_("%s left"), time_left)
+    end
 
     local subtitle_lines  = {}
     local show_chap_count = getSetting("SHOW_CHAP_COUNT")
@@ -827,11 +832,11 @@ local function buildChapterSection(ui, state, book_data, has_ui, total_width, co
     if show_chap_pages then
         table.insert(subtitle_lines, string.format(_("Page %d of %d"), c_done, c_tot))
     end
-    table.insert(subtitle_lines, chap_sub)
+    if chap_sub then table.insert(subtitle_lines, chap_sub) end
 
     local final_subtitle = #subtitle_lines > 1
         and createMultiLineSubtitle(subtitle_lines, subtitle_face, colors.subtext)
-        or chap_sub
+        or subtitle_lines[1]
 
     local allow_multiline = getSettingWithDefault(SETTINGS.CHAP_MULTILINE, USER_CONFIG.CHAP_MULTILINE)
 
@@ -916,7 +921,8 @@ local function buildGoalSection(ui, state, book_data, has_ui, total_width, color
             table.insert(subtitle_lines, string.format(_("%d/%d days met this week"), days_met, days_in_week))
         end
 
-        local show_detail = getSettingWithDefault(SETTINGS.SHOW_GOAL_PAGES, USER_CONFIG.SHOW_GOAL_PAGES)
+        local show_detail   = getSettingWithDefault(SETTINGS.SHOW_GOAL_PAGES, USER_CONFIG.SHOW_GOAL_PAGES)
+        local show_goal_pct = getSettingWithDefault(SETTINGS.SHOW_GOAL_PERCENTAGE, true)
         if show_detail then
             local done_str   = formatDuration(day_dur_safe) or _("0 mins")
             local h          = math.floor(daily_goal_minutes / 60)
@@ -930,12 +936,17 @@ local function buildGoalSection(ui, state, book_data, has_ui, total_width, color
             else
                 target_str = string.format("%d %s", daily_goal_minutes, ngettext("min", "mins", daily_goal_minutes))
             end
-            local status = goal_achieved and _("Achieved!") or (goal_pct .. "%")
-            table.insert(subtitle_lines, string.format("%s · %s %s", status, target_str, _("goal")))
-        else
-            table.insert(subtitle_lines, goal_achieved
-                and _("Goal achieved!")
-                or string.format(_("%d%% of goal"), goal_pct))
+            if goal_achieved then
+                table.insert(subtitle_lines, string.format("%s · %s %s", _("Achieved!"), target_str, _("goal")))
+            elseif show_goal_pct then
+                table.insert(subtitle_lines, string.format("%s · %s %s", goal_pct .. "%", target_str, _("goal")))
+            else
+                table.insert(subtitle_lines, string.format("%s %s", target_str, _("goal")))
+            end
+        elseif goal_achieved then
+            table.insert(subtitle_lines, _("Goal achieved!"))
+        elseif show_goal_pct then
+            table.insert(subtitle_lines, string.format(_("%d%% of goal"), goal_pct))
         end
 
     else
@@ -953,14 +964,21 @@ local function buildGoalSection(ui, state, book_data, has_ui, total_width, color
         end
 
         local show_goal_pages = getSettingWithDefault(SETTINGS.SHOW_GOAL_PAGES, USER_CONFIG.SHOW_GOAL_PAGES)
+        local show_goal_pct   = getSettingWithDefault(SETTINGS.SHOW_GOAL_PERCENTAGE, true)
         if show_goal_pages then
-            local status = goal_achieved and _("Achieved!") or (goal_pct .. "%")
-            table.insert(subtitle_lines, string.format("%s · %s", status,
-                string.format(_("%d page goal"), daily_goal)))
-        else
-            table.insert(subtitle_lines, goal_achieved
-                and _("Goal achieved!")
-                or string.format(_("%d%% of goal"), goal_pct))
+            if goal_achieved then
+                table.insert(subtitle_lines, string.format("%s · %s", _("Achieved!"),
+                    string.format(_("%d page goal"), daily_goal)))
+            elseif show_goal_pct then
+                table.insert(subtitle_lines, string.format("%s · %s", goal_pct .. "%",
+                    string.format(_("%d page goal"), daily_goal)))
+            else
+                table.insert(subtitle_lines, string.format(_("%d page goal"), daily_goal))
+            end
+        elseif goal_achieved then
+            table.insert(subtitle_lines, _("Goal achieved!"))
+        elseif show_goal_pct then
+            table.insert(subtitle_lines, string.format(_("%d%% of goal"), goal_pct))
         end
     end
 
@@ -991,19 +1009,27 @@ local function buildBatterySection(ui, state, book_data, has_ui, total_width, co
 
     local show_batt_date     = getSettingWithDefault(SETTINGS.SHOW_BATT_DATE,          USER_CONFIG.SHOW_BATT_DATE)
     local show_batt_time     = getSettingWithDefault(SETTINGS.SHOW_BATT_TIME,          true)
-    local show_time_separate = getSettingWithDefault(SETTINGS.SHOW_BATT_TIME_SEPARATE, USER_CONFIG.SHOW_BATT_TIME_SEPARATE)
+    local show_batt_clock    = getSettingWithDefault(SETTINGS.SHOW_BATT_CLOCK,         true)
     local show_rate          = PluginStore:isTrue(SETTINGS.SHOW_BATT_RATE)
 
-    local time_fmt        = G_reader_settings:isTrue("twelve_hour_clock") and "%I:%M %p" or "%H:%M"
-    local current_display = show_batt_date and formatDate() or os.date(time_fmt):gsub("^0", "")
+    local time_fmt   = G_reader_settings:isTrue("twelve_hour_clock") and "%I:%M %p" or "%H:%M"
+    local clock_str  = show_batt_clock and os.date(time_fmt):gsub("^0", "") or nil
+    local date_str   = show_batt_date and formatDate() or nil
+    local current_display
+    if clock_str and date_str then
+        current_display = clock_str .. " · " .. date_str
+    else
+        current_display = clock_str or date_str
+    end
     local charging_symbol = is_charging and "⚡" or ""
 
     local battery_top_line
     local subtitle_lines = {}
 
-    if show_time_separate then
-        battery_top_line = string.format("%d%% %s", batt_perc, charging_symbol)
-        table.insert(subtitle_lines, current_display)
+    if show_batt_time then
+        battery_top_line = current_display
+            and string.format("%d%% %s · %s", batt_perc, charging_symbol, current_display)
+            or string.format("%d%% %s", batt_perc, charging_symbol)
         if show_rate then
             local consumption_rate = require("css_stats").getBatteryConsumptionRate()
             if consumption_rate and consumption_rate > 0 then
@@ -1012,31 +1038,16 @@ local function buildBatterySection(ui, state, book_data, has_ui, total_width, co
                 table.insert(subtitle_lines, _("Rate unavailable"))
             end
         end
-        if show_batt_time then
-            table.insert(subtitle_lines, formatBatteryTime(battery_hours_left))
-        end
+        table.insert(subtitle_lines, formatBatteryTime(battery_hours_left))
     else
-        if show_batt_time then
-            battery_top_line = string.format("%d%% %s · %s", batt_perc, charging_symbol, current_display)
-            if show_rate then
-                local consumption_rate = require("css_stats").getBatteryConsumptionRate()
-                if consumption_rate and consumption_rate > 0 then
-                    table.insert(subtitle_lines, string.format(_("~%.1f%%/hour"), consumption_rate))
-                else
-                    table.insert(subtitle_lines, _("Rate unavailable"))
-                end
-            end
-            table.insert(subtitle_lines, formatBatteryTime(battery_hours_left))
-        else
-            battery_top_line = string.format("%d%% %s", batt_perc, charging_symbol)
-            table.insert(subtitle_lines, current_display)
-            if show_rate then
-                local consumption_rate = require("css_stats").getBatteryConsumptionRate()
-                if consumption_rate and consumption_rate > 0 then
-                    table.insert(subtitle_lines, string.format(_("~%.1f%%/hour"), consumption_rate))
-                else
-                    table.insert(subtitle_lines, _("Rate unavailable"))
-                end
+        battery_top_line = string.format("%d%% %s", batt_perc, charging_symbol)
+        if current_display then table.insert(subtitle_lines, current_display) end
+        if show_rate then
+            local consumption_rate = require("css_stats").getBatteryConsumptionRate()
+            if consumption_rate and consumption_rate > 0 then
+                table.insert(subtitle_lines, string.format(_("~%.1f%%/hour"), consumption_rate))
+            else
+                table.insert(subtitle_lines, _("Rate unavailable"))
             end
         end
     end

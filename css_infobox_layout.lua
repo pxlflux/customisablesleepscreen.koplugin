@@ -158,8 +158,6 @@ local function buildInfoBox(ui, state, book_data)
             icon_use_bar_color = getSetting("ICON_USE_BAR_COLOR"),
             icon_set       = getSetting("ICON_SET"),
             text_align     = getSetting("TEXT_ALIGN"),
-            show_titles    = getSetting("SHOW_TITLES") ~= false,
-            show_subtitles = getSetting("SHOW_SUBTITLES") ~= false,
             section_radius = getSetting("SECTION_RADIUS"),
             bar_inline     = (getSetting("BAR_INLINE") == true)
                           or (getSetting("SECTION_GAPS_ENABLED") and (getSetting("SECTION_RADIUS") or 0) > 0),
