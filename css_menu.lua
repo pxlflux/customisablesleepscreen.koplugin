@@ -169,6 +169,17 @@ local function buildAdvancedMenu()
             },
         },
         {
+            text      = _("Flash screen to reduce ghosting"),
+            help_text = _("Flashes the screen to blank before showing the sleep screen, clearing residual text/image ghosting from some e-ink panels. Off by default"),
+            keep_menu_open = true,
+            checked_func = function()
+                return PluginStore:isTrue(SETTINGS.ANTI_GHOSTING_FLASH)
+            end,
+            callback = function()
+                PluginStore:saveSetting(SETTINGS.ANTI_GHOSTING_FLASH, not PluginStore:isTrue(SETTINGS.ANTI_GHOSTING_FLASH))
+            end,
+        },
+        {
             text      = _("Show in file manager (outside of book)"),
             help_text = _("When enabled, the customisable sleep screen will display in file manager using the last saved book data."),
             checked_func = function()

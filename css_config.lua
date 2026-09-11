@@ -59,6 +59,7 @@ local USER_CONFIG = {
     SECTION_PADDING_RIGHT    = 12,
     ICON_TEXT_GAP            = 16,
     SLEEP_ORIENTATION        = "auto",
+    ANTI_GHOSTING_FLASH      = false,
 
     COLOR_BOOK_FILL          = "#82A9D9",
     COLOR_CHAPTER_FILL       = "#F2C2CF",
@@ -185,6 +186,7 @@ local SETTINGS = {
     SECTION_PADDING_RIGHT    = "customisable_ss_section_padding_right",
     ICON_TEXT_GAP            = "customisable_ss_icon_text_gap",
     SLEEP_ORIENTATION        = "customisable_ss_sleep_orientation",
+    ANTI_GHOSTING_FLASH      = "customisable_ss_anti_ghosting_flash",
 
     COLOR_BOOK_FILL          = "customisable_ss_color_book",
     COLOR_CHAPTER_FILL       = "customisable_ss_color_chapter",

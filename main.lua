@@ -533,6 +533,16 @@ function CustomisableSleepScreen:_installScreensaverHook()
             css._saved_rotation = nil
         end
 
+        if css_settings.plugin():isTrue(SETTINGS.ANTI_GHOSTING_FLASH) then
+            pcall(function()
+                if Device:hasEinkScreen() then
+                    local Blitbuffer = require("ffi/blitbuffer")
+                    Screen.bb:fill(Blitbuffer.COLOR_BLACK)
+                    Screen:refreshFull(0, 0, Screen:getWidth(), Screen:getHeight())
+                end
+            end)
+        end
+
         local ib = getInfobox()
 
         if ss_self.screensaver_widget then
